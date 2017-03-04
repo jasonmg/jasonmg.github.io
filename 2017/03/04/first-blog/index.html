@@ -82,9 +82,7 @@
         		<a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
             	<ul class="sb-submenu">
 				  	
-				    <li><a href="/categories/AAA/" class="animsition-link">AAA<small>(1)</small></a></li>
-				    
-				    <li><a href="/categories/AAA/BBB/" class="animsition-link">BBB<small>(1)</small></a></li>
+				    <li><a href="/categories/C/" class="animsition-link">C<small>(1)</small></a></li>
 				    
 				</ul>
         	</li>
@@ -165,6 +163,8 @@
     | 
     <a href='/tags/test/'>test</a>,
     
+    <a href='/tags/test3/'>test3</a>,
+    
     <a href='/tags/test1/'>test1</a>
     
     
@@ -175,23 +175,41 @@
         <div class="col-md-8 col-md-offset-2">
       		<blockquote><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque hendrerit lacus ut purus iaculis feugiat. Sed nec tempor elit, quis aliquam neque. Curabitur sed diam eget dolor fermentum semper at eu lorem.</p>
 </blockquote>
+<p>##Hexo插件之百度主动提交链接<br><a href="http://hui-wang.info/2016/10/23/Hexo%E6%8F%92%E4%BB%B6%E4%B9%8B%E7%99%BE%E5%BA%A6%E4%B8%BB%E5%8A%A8%E6%8F%90%E4%BA%A4%E9%93%BE%E6%8E%A5/" target="_blank" rel="external">http://hui-wang.info/2016/10/23/Hexo%E6%8F%92%E4%BB%B6%E4%B9%8B%E7%99%BE%E5%BA%A6%E4%B8%BB%E5%8A%A8%E6%8F%90%E4%BA%A4%E9%93%BE%E6%8E%A5/</a></p>
+<p>##为 Hexo 主题添加评论模块 — Disqus, 多说, 友言<br><a href="http://www.tuicool.com/articles/jq2Aj2Z" target="_blank" rel="external">http://www.tuicool.com/articles/jq2Aj2Z</a></p>
+<p>在以下配置文件添加：<br><br>site/_config.yaml<br>themes/xxx/_config.yaml</p>
+<blockquote>
+<p> disqus_shortname: jason1900</p>
+</blockquote>
+
             <div class="clearfix"></div>
             <hr class="nogutter">
         </div>
         <nav class="pagination" role="pagination">
     
-    <a class="pull-left" href="/2017/03/04/second-blog/" style="float: left;">
-        ← second blog
+    <a class="pull-left" href="/2017/03/05/tst/" style="float: left;">
+        ← tst
     </a>
     
-    
-    <a class="pull-right" href="/2017/03/04/hello-world/">
-        Hello World →
-    </a>
     
 </nav>
 
         <div class="duoshuo">
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+	var disqus_shortname = 'jason1900';
+	window.addEventListener('load', function(){
+		(function(){
+			var dsq = document.createElement('script');
+			dsq.type = 'text/javascript';
+			dsq.async = true;
+			dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+			(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+		}());
+	});
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
 
 
 </div>
