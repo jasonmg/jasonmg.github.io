@@ -3,24 +3,10 @@
 
 
     
-  <url>
-    <loc>http://yoursite.com/2017/03/05/tst/</loc>
-    <lastmod>2017-03-04T17:58:34.000Z</lastmod>
-    <data>
-        <display>
-        <title>tst</title>
-        <pubTime>2017-03-04T17:58:34.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
     
   <url>
     <loc>http://yoursite.com/2017/03/04/first-blog/</loc>
-    <lastmod>2017-03-04T17:45:57.000Z</lastmod>
+    <lastmod>2017-03-05T03:47:43.000Z</lastmod>
     <data>
         <display>
         <title>first blog</title>
@@ -37,6 +23,22 @@
              
               <breadCrumb title="C" url="http://yoursite.com/categories/C/"/>
           
+        </display>
+    </data>
+    </url>
+
+    
+    
+  <url>
+    <loc>http://yoursite.com/2017/03/05/tst/</loc>
+    <lastmod>2017-03-04T17:58:34.000Z</lastmod>
+    <data>
+        <display>
+        <title>tst</title>
+        <pubTime>2017-03-04T17:58:34.000Z</pubTime>
+        
+         
+           
         </display>
     </data>
     </url>
