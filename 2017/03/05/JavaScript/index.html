@@ -174,15 +174,15 @@
 <p>闭包是可访问上一层函数作用域里变量的函数，即便上一层函数已经关闭。</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">var add = (function () &#123;</div><div class="line">    var counter = 0;</div><div class="line">    return function () &#123;return counter += 1;&#125;</div><div class="line">&#125;)();</div><div class="line"></div><div class="line">add();</div><div class="line">add();</div><div class="line">add();</div><div class="line"></div><div class="line">// 计数器为 3</div></pre></td></tr></table></figure>
-<p>###实例解析:<br>变量 add 指定了函数自我调用的返回字值。<br><br>自我调用函数只执行一次。设置计数器为 0。并返回函数表达式。<br><br>add变量可以作为一个函数使用。非常棒的部分是它可以访问函数上一层作用域的计数器。<br><br>这个叫作 JavaScript 闭包。它使得函数拥有私有变量变成可能。<br><br>计数器受匿名函数的作用域保护，只能通过 add 方法修改。<br></p>
+<p>##实例解析:<br>变量 add 指定了函数自我调用的返回字值。<br><br>自我调用函数只执行一次。设置计数器为 0。并返回函数表达式。<br><br>add变量可以作为一个函数使用。非常棒的部分是它可以访问函数上一层作用域的计数器。<br><br>这个叫作 JavaScript 闭包。它使得函数拥有私有变量变成可能。<br><br>计数器受匿名函数的作用域保护，只能通过 add 方法修改。<br></p>
 
             <div class="clearfix"></div>
             <hr class="nogutter">
         </div>
         <nav class="pagination" role="pagination">
     
-    <a class="pull-left" href="/2017/03/08/RactiveAPI/" style="float: left;">
-        ← 
+    <a class="pull-left" href="/2017/05/21/面向函数vs面向对象/" style="float: left;">
+        ← 面向函数vs面向对象
     </a>
     
     

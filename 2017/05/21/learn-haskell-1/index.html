@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<!--<![endif]-->
+
+<head>
+  <title>learn haskell - 1 | Jason&#39;s Blog</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="Jason's Blog">
+    <meta name="author" content="jason">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="Jason&#39;s Blog" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+    
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+  
+  
+  <link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="atom.xml">
+  
+  
+
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <!-- Dropdown Menu -->
+			 
+            
+        	<li>
+        		<a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/categories/language/" class="animsition-link">language<small>(1)</small></a></li>
+				    
+				</ul>
+        	</li>
+			
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
+            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/logo.png" alt="Logo" width="35px;"/> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">Jason's Blog</a></li>
+                            <li class="nolink"><span>Always </span>Creative.</li>
+                            
+                            <li><a href="https://github.com/jasonmg" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            
+                            
+                            <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a></li>
+                            
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+
+      
+<section id="intro">
+    <div class="container">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2017-05-21T08:48:19.000Z" itemprop="datePublished">
+          2017-05-21
+      </time>
+    
+    
+    | 
+    <a href='/tags/haskell/'>haskell</a>
+    
+    
+</span>
+                <h1>learn haskell - 1</h1>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<p>#15 Monoid, Semigroup</p>
+<p>##Algebra</p>
+<ol>
+<li>Algebra generally refers to one of the most import fields of mathematics. In this usage, it means the study of mathematical symbols and the rules governing their manipulation.</li>
+<li>In Haskell or more generally say in Functional programming, “An algebra” refers to some operations and the set they operate over. that means we care less about the particulars of the values or data we are working with and more about the general rules of the use.</li>
+<li>In Haskell, these algebras can be implemented with typeclasses; the typeclasses define the set of operations. when we talk about operations over a set, the set is type the operations are for.</li>
+</ol>
+<h2 id="Monoid"><a href="#Monoid" class="headerlink" title="Monoid"></a>Monoid</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">class Monoid m where</div><div class="line">	mempty  :: m </div><div class="line">	mappend :: m -&gt; m -&gt; m</div><div class="line">	mconcat :: [m] -&gt; m</div><div class="line">	mconcat = foldr mappend mempty</div></pre></td></tr></table></figure>
+<ul>
+<li>One of those algebras we use in haskell is Monoid. </li>
+<li>the monoidal operation is less about combining the values and more about finding a summary value for the set. Mappending is perhaps best thought of not as a way of combining values in the way that addition or list concatenation does, But as a way to condense any set of values to a summary value.</li>
+<li>A monoid is a binary associative operation with an identity.</li>
+<li>in plain English, a monoid is a function that takes two arguments and follow two laws:<ol>
+<li>associativity</li>
+<li>identity</li>
+</ol>
+</li>
+<li>Monoid is the typeclass that generalizes these laws across type.</li>
+<li>Monoid is the typeclass just abstracts the pattern(above law) out, giving you the ability to use the operations over a larger range of types.</li>
+</ul>
+<blockquote>
+<p>There is some sense in which it might fell strange to think of this as a combining or <em>mappending</em> operation. Unless we recall that mappending is less about combining and more about condensing or reducing.  i.e. (Bool for monoid)</p>
+</blockquote>
+<p>##common usage<br>A common use of monoids is to structure and describe common modes of processing data. </p>
+<p>Sometimes this is to describe an API for incrementally processing a large dataset, sometimes to describe guarantees needed to roll up aggregations(think summation) in a parallel, concurrent, or distributed processing framework.</p>
+<p>One reason is that with a monoid we get another function called mconcat for free. mconcat takes a list of values in a monoid and combines them all together. For example mconcat [a,b,c] is equal to a <code>mappend</code> (b <code>mappend</code> c). Any time you have a monoid you have this quick and easy way to combine a whole list together.(<a href="http://blog.sigfpe.com/2009/01/haskell-monoids-and-their-uses.html" target="_blank" rel="external">http://blog.sigfpe.com/2009/01/haskell-monoids-and-their-uses.html</a>)</p>
+<p>#Semigroup<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">class Semigroup a where</div><div class="line">	(&lt;&gt;) :: a -&gt; a -&gt; a</div></pre></td></tr></table></figure></p>
+<ol>
+<li>Compared with Moniod, Semigroup simple drop the identity value, keep associativity and it;s law.</li>
+</ol>
+<h1 id="Functor"><a href="#Functor" class="headerlink" title="Functor"></a><a href="https://segmentfault.com/a/1190000003954370" target="_blank" rel="external">Functor</a></h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">class Functor f where</div><div class="line">	fmap or &lt;$&gt; :: (a -&gt; b) -&gt; f a -&gt; f b</div><div class="line">	</div><div class="line">Type constants    has kind * </div><div class="line">Type constructors has kind * -&gt; *</div></pre></td></tr></table></figure>
+<ol>
+<li>A Fnctor is a way to apply a function over or around some structure that we don’t want to later. That is, we want to apply the function to the value that is “inside” some structure and leave the structure alone.</li>
+<li>Functor is a typeclass for function application “over” or “through”, or “past” some structure “f” that we want to ignore and leave untouched.</li>
+<li>Functor is a way of lifting over structure(mapping) in such a manner that you don’t have to care about the structure because you’re not allowed to touch the structure anyway.</li>
+<li>the Goal of the functor fmap is to leave the outer struture untouched while transforming the type arguments inside.</li>
+</ol>
+<p>#<a href="https://segmentfault.com/a/1190000003954370#articleHeader9" target="_blank" rel="external">函子的复合</a><br>让自己相信范畴之间的函子可以复合并不太难，函子的复合类似于集合之间的函数复合。两个函子的复合，就是两个函子分别对各自的对象进行映射的复合，对于态射也是这样。恒等态射穿过两个函子之后，它还是恒等态射。复合的态射穿过两个函子之后还是复合的态射。函子的复合只涉及这些东西。特别是，自函子很容易复合。还记得 maybeTail 么？下面我用 Haskell 内建的列表来重新实现它（用 [] 替换 Nil，用 : 替换 Cons）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">maybeTail :: [a] -&gt; Maybe [a]</div><div class="line">maybeTail [] = Nothing</div><div class="line">maybeTail (x:xs) = Just xs</div></pre></td></tr></table></figure>
+<p>maybeTail 返回的结果是两个作用于 a 的函子 Maybe 与 [] 复合后的类型。这些函子，每一个都配备了一个 fmap，但是如果我们想将一个函数 f 作用于复合的函子 Maybe [] 所包含的内容，该怎么做？我们不得不突破两层函子的封装：使用 fmap 突破 Maybe，再使用 fmap 突破列表。例如，要对一个 Maybe [Int] 中所包含的元素求平方，可以这样做：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">square x = x * x</div><div class="line"></div><div class="line">mis :: Maybe [Int]</div><div class="line">mis = Just [1, 2, 3]</div><div class="line"></div><div class="line">mis2 = fmap (fmap square) mis</div></pre></td></tr></table></figure>
+<p>经过类型分析，对于外部的 fmap，编译器会使用 Maybe 版本的；对于内部的 fmap，编译器会使用列表版本的。于是，上述代码也可以写为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mis2 = (fmap . fmap) square mis</div></pre></td></tr></table></figure>
+<h1 id="Monoid-amp-Functor"><a href="#Monoid-amp-Functor" class="headerlink" title="Monoid &amp; Functor"></a>Monoid &amp; Functor</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">-- lifting (a -&gt; b) over f in f a</div><div class="line">fmap  :: Functor     f =&gt;   (a -&gt; b) -&gt; f a        -&gt; f b</div><div class="line"></div><div class="line">apply :: Applicative f =&gt; f (a -&gt; b) -&gt; f a        -&gt; f b</div><div class="line"></div><div class="line">-- binding (a -&gt; m b) over m in m a</div><div class="line">bind  :: Monad       m =&gt; m a        -&gt; (a -&gt; m b) -&gt; m b</div></pre></td></tr></table></figure>
+<ol>
+<li>Monoid gives us a means of mashing two values of the same type together.<br>Monoid’s core operation, mappend smashes the structures together — when you mappend two list, they become one list, so the structures themselves have been joined.</li>
+<li>Functor, on the other hand, if for function application over some structure we don’t want to have to think about.<br>Functor’s core operation, fmap applies a function to a value that is within some structure while leaving that structure unaltered.</li>
+</ol>
+<p>#Applicative</p>
+<ol>
+<li>The applicative typeclass allows for function application lifted over structure (like Functor). But with Applicative the function we’re applying is also embedded in some structure.</li>
+<li>Applicative is moniodal functor.</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">class Functor f =&gt; Applicative f where</div><div class="line">	pure           :: a -&gt; f a</div><div class="line">	(apply or &lt;*&gt;) :: f (a -&gt; b) -&gt; f a -&gt; f b</div></pre></td></tr></table></figure>
+<p>#Lifts<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">liftA :: Applicative f =&gt; (a  -&gt; b) -&gt; f a  -&gt; f b</div><div class="line">liftM :: Monad       f =&gt; (a1 -&gt; r) -&gt; f a1 -&gt; f r</div><div class="line"></div><div class="line">liftA2 :: Applicative f =&gt; (a-&gt; b-&gt; c) -&gt; f a  -&gt; f b  -&gt; f c</div><div class="line">liftM2 :: Monad       f =&gt; (a1-&gt;a2-&gt;c) -&gt; f a1 -&gt; f a2 -&gt; f c</div></pre></td></tr></table></figure></p>
+<h1 id="Monad"><a href="#Monad" class="headerlink" title="Monad"></a>Monad</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">class Applicative m =&gt; monad m where</div><div class="line">	(&gt;&gt;= or bind)  :: m a -&gt; (a -&gt; m b) -&gt; m b </div><div class="line">	(&gt;&gt;)           :: m a -&gt; m b -&gt; m b</div><div class="line">	return         :: a -&gt; m a</div></pre></td></tr></table></figure>
+<ol>
+<li>Monads are applicative functors.</li>
+<li>chain of dependency <strong>Functor-&gt;Applicative-&gt;Monad</strong>, Whenever you’re implemented an instance of Monoad for a type you necessarily have an Applicative and a Functor as well.</li>
+</ol>
+<h1 id="Foldable"><a href="#Foldable" class="headerlink" title="Foldable"></a>Foldable</h1><h1 id="Traversable"><a href="#Traversable" class="headerlink" title="Traversable"></a>Traversable</h1><ol>
+<li>In a literal sense, Anytime you need to flip two type constructors aroud, or map something and then flip them around, that’s probably Traversable.</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">class Traversable t where</div><div class="line">	traverse  :: Applicative f =&gt; (a -&gt; f b) -&gt; t a -&gt; f (t b)</div><div class="line">	sequenceA :: Applicative f =&gt; t (f a) -&gt; f (t a)</div></pre></td></tr></table></figure>
+<h1 id="Writer-monad"><a href="#Writer-monad" class="headerlink" title="Writer monad"></a>Writer monad</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">instance (Monoid w) =&gt; Monad (Writer w) where  </div><div class="line">    return x = Writer (x, mempty)  </div><div class="line">    (Writer (x,v)) &gt;&gt;= f = let (Writer (y, v&apos;)) = f x in Writer (y, v `mappend` v&apos;)</div></pre></td></tr></table></figure>
+<ol>
+<li>Writer Monad is for values that have another value attached that acts as a sort of log value.</li>
+</ol>
+<p>#Reader monad<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">addStuff :: Int -&gt; Int  </div><div class="line">addStuff x = let  </div><div class="line">    a = (*2) x  </div><div class="line">    b = (+10) x  </div><div class="line">    in a+b</div></pre></td></tr></table></figure></p>
+<ol>
+<li>We see that the reader monad allows us to treat functions as values with a context. We can act as if we already know what the functions will return. It does this by gluing functions together into one function and then giving that function’s parameter to all of the functions that it was glued from. So if we have a lot of functions that are all just missing one parameter and they’d eventually be applied to the same thing, we can use the reader monad to sort of extract their future results and the &gt;&gt;= implementation will make sure that it all works out.</li>
+</ol>
+
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+        <nav class="pagination" role="pagination">
+    
+    <a class="pull-left" href="/2017/05/21/函数式编程/" style="float: left;">
+        ← 函数式编程
+    </a>
+    
+    
+    <a class="pull-right" href="/2017/05/21/learn-haskell-0/">
+        learn haskell - 0 →
+    </a>
+    
+</nav>
+
+        <div class="duoshuo">
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+	var disqus_shortname = 'jason1900';
+	window.addEventListener('load', function(){
+		(function(){
+			var dsq = document.createElement('script');
+			dsq.type = 'text/javascript';
+			dsq.async = true;
+			dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+			(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+		}());
+	});
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+
+</div>
+    </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By jason. All Rights Reserved.
+                </p>
+                <p>Theme By <a href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/jasonmg" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    
+                    
+                    <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a>&nbsp;</li>
+                    
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+
+    resizeHero();
+
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/jquery.flexslider-min.js"></script><!-- Flexslider plugin -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$('#intro').find('img').each(function(){
+  var alt = this.alt;
+
+  if (alt){
+    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
+  }
+
+  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
+});
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+<!-- Initiate flexslider plugin -->
+<script type="text/javascript">
+    $(document).ready(function($) {
+      (function(){
+        console.log('font');
+        var getCss = function(path) {
+          var head = document.getElementsByTagName('head')[0];
+          link = document.createElement('link');
+          link.href = path;
+          link.rel = 'stylesheet';
+          link.type = 'text/css';
+          head.appendChild(link);
+        };
+        getCss('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+        getCss('https://fonts.googleapis.com/css?family=Open+Sans:400,600');
+      })();
+      $('.flexslider').flexslider({
+        animation: "fade",
+        prevText: "",
+        nextText: "",
+        directionNav: true
+      });
+    });
+</script>
+
+</body>
+</html>

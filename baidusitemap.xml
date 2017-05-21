@@ -4,8 +4,123 @@
 
     
   <url>
+    <loc>http://yoursite.com/2017/05/21/learn-database/</loc>
+    <lastmod>2017-05-21T09:19:06.000Z</lastmod>
+    <data>
+        <display>
+        <title>learn database</title>
+        <pubTime>2017-05-21T09:09:16.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2017/05/21/%E5%BB%BA%E7%AB%8B%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</loc>
+    <lastmod>2017-05-21T09:16:20.000Z</lastmod>
+    <data>
+        <display>
+        <title>建立个人博客</title>
+        <pubTime>2017-05-21T09:11:40.000Z</pubTime>
+        
+        <tag>blog</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2017/05/21/python2vs3/</loc>
+    <lastmod>2017-05-21T09:10:24.000Z</lastmod>
+    <data>
+        <display>
+        <title>python2vs3</title>
+        <pubTime>2017-05-21T09:10:05.000Z</pubTime>
+        
+        <tag>python</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2017/05/21/learn-storm/</loc>
+    <lastmod>2017-05-21T09:08:30.000Z</lastmod>
+    <data>
+        <display>
+        <title>learn storm</title>
+        <pubTime>2017-05-21T09:08:00.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2017/05/21/%E8%8C%83%E7%95%B4/</loc>
+    <lastmod>2017-05-21T08:57:53.000Z</lastmod>
+    <data>
+        <display>
+        <title>范畴</title>
+        <pubTime>2017-05-21T08:57:18.000Z</pubTime>
+        
+        <tag>category</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2017/05/21/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/</loc>
+    <lastmod>2017-05-21T08:56:54.000Z</lastmod>
+    <data>
+        <display>
+        <title>函数式编程</title>
+        <pubTime>2017-05-21T08:56:41.000Z</pubTime>
+        
+        <tag>functional</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2017/05/21/RactiveAPI/</loc>
+    <lastmod>2017-05-21T08:55:42.000Z</lastmod>
+    <data>
+        <display>
+        <title>Ractive programming</title>
+        <pubTime>2017-05-21T04:18:28.000Z</pubTime>
+        
+        <tag>FP, reactive</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2017/05/21/%E9%9D%A2%E5%90%91%E5%87%BD%E6%95%B0vs%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</loc>
-    <lastmod>2017-05-21T08:41:30.000Z</lastmod>
+    <lastmod>2017-05-21T08:55:06.000Z</lastmod>
     <data>
         <display>
         <title>面向函数vs面向对象</title>
@@ -21,13 +136,15 @@
 
     
   <url>
-    <loc>http://yoursite.com/2017/05/21/java8/</loc>
-    <lastmod>2017-05-21T08:40:53.000Z</lastmod>
+    <loc>http://yoursite.com/2017/05/21/learn-haskell-1/</loc>
+    <lastmod>2017-05-21T08:52:36.000Z</lastmod>
     <data>
         <display>
-        <title>java8</title>
-        <pubTime>2017-05-21T08:40:53.000Z</pubTime>
+        <title>learn haskell - 1</title>
+        <pubTime>2017-05-21T08:48:19.000Z</pubTime>
         
+        <tag>haskell</tag>
+         
          
            
         </display>
@@ -36,13 +153,15 @@
 
     
   <url>
-    <loc>http://yoursite.com/2017/03/08/RactiveAPI/</loc>
-    <lastmod>2017-03-08T01:31:59.000Z</lastmod>
+    <loc>http://yoursite.com/2017/05/21/learn-haskell-0/</loc>
+    <lastmod>2017-05-21T08:50:57.000Z</lastmod>
     <data>
         <display>
-        <title></title>
-        <pubTime>2017-03-08T01:31:57.000Z</pubTime>
+        <title>learn haskell - 0</title>
+        <pubTime>2017-05-21T08:48:07.000Z</pubTime>
         
+        <tag>haskell</tag>
+         
          
            
         </display>
@@ -52,7 +171,7 @@
     
   <url>
     <loc>http://yoursite.com/2017/03/05/JavaScript/</loc>
-    <lastmod>2017-03-06T01:43:18.000Z</lastmod>
+    <lastmod>2017-05-21T08:50:23.000Z</lastmod>
     <data>
         <display>
         <title>JavaScript</title>
@@ -65,6 +184,21 @@
              
               <breadCrumb title="language" url="http://yoursite.com/categories/language/"/>
           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2017/05/21/java8/</loc>
+    <lastmod>2017-05-21T08:40:53.000Z</lastmod>
+    <data>
+        <display>
+        <title>java8</title>
+        <pubTime>2017-05-21T08:40:53.000Z</pubTime>
+        
+         
+           
         </display>
     </data>
     </url>

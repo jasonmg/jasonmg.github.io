@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-05-21T08:40:53.000Z</updated>
+  <updated>2017-05-21T09:16:20.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,513 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>建立个人博客</title>
+    <link href="http://yoursite.com/2017/05/21/%E5%BB%BA%E7%AB%8B%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/"/>
+    <id>http://yoursite.com/2017/05/21/建立个人博客/</id>
+    <published>2017-05-21T09:11:40.000Z</published>
+    <updated>2017-05-21T09:16:20.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="github-page-Hexo"><a href="#github-page-Hexo" class="headerlink" title="github-page+Hexo"></a>github-page+Hexo</h1><p><a href="http://www.jianshu.com/p/ecd51e8ef2fa" target="_blank" rel="external">http://www.jianshu.com/p/ecd51e8ef2fa</a><br><a href="https://segmentfault.com/a/1190000004947261" target="_blank" rel="external">https://segmentfault.com/a/1190000004947261</a><br><a href="https://github.com/hexojs/hexo/wiki/Themes" target="_blank" rel="external">https://github.com/hexojs/hexo/wiki/Themes</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;github-page-Hexo&quot;&gt;&lt;a href=&quot;#github-page-Hexo&quot; class=&quot;headerlink&quot; title=&quot;github-page+Hexo&quot;&gt;&lt;/a&gt;github-page+Hexo&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;http:
+    
+    </summary>
+    
+    
+      <category term="blog" scheme="http://yoursite.com/tags/blog/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>python2vs3</title>
+    <link href="http://yoursite.com/2017/05/21/python2vs3/"/>
+    <id>http://yoursite.com/2017/05/21/python2vs3/</id>
+    <published>2017-05-21T09:10:05.000Z</published>
+    <updated>2017-05-21T09:10:24.000Z</updated>
+    
+    <content type="html"><![CDATA[<ol>
+<li>除法</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>python2</th>
+<th>python3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10/3 = 3</td>
+<td>10/3 = 3.333333 </td>
+</tr>
+<tr>
+<td></td>
+<td>10 //3 = 3</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li><p>返回闭包时牢记的一点就是：返回函数不要引用任何循环变量，或者后续会发生变化的变量。</p>
+</li>
+<li><p>此外，我们也需要跟踪程序的执行，查看变量的值是否正确，这个过程称为调试。Python的pdb可以让我们以单步方式执行代码。</p>
+</li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;ol&gt;
+&lt;li&gt;除法&lt;/li&gt;
+&lt;/ol&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;python2&lt;/th&gt;
+&lt;th&gt;python3&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;10/3 = 3&lt;/td&gt;
+&lt;td&gt;10/3 = 3.333
+    
+    </summary>
+    
+    
+      <category term="python" scheme="http://yoursite.com/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>learn database</title>
+    <link href="http://yoursite.com/2017/05/21/learn-database/"/>
+    <id>http://yoursite.com/2017/05/21/learn-database/</id>
+    <published>2017-05-21T09:09:16.000Z</published>
+    <updated>2017-05-21T09:19:06.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>#DataBase</p>
+<p>Relational Database </p>
+<p>##Advantage</p>
+<ol>
+<li>A relational database is an excellent choice for query flexibility.</li>
+</ol>
+<p>##weakness</p>
+<ol>
+<li>Partitioning is not one of the strong suits of relational databases like Post- greSQL. </li>
+<li>If your data requirements are too flexible to easily fit into the rigid schema requirements of a relational database or you don’t need the overhead of a full database, require very high-volume reads and writes as key values, or need to store only large blobs of data, then one of the other data- stores might be a better fit.</li>
+</ol>
+<p>#Riak (AP)</p>
+<ol>
+<li>Riak is inspired by Amazon’s Dynamo paper</li>
+<li>Riak lacks robust support for ad hoc queries, and key-value stores, by design, have trouble linking values together (in other words, they have no foreign keys).</li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;#DataBase&lt;/p&gt;
+&lt;p&gt;Relational Database &lt;/p&gt;
+&lt;p&gt;##Advantage&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;A relational database is an excellent choice for query flexibility.
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>learn storm</title>
+    <link href="http://yoursite.com/2017/05/21/learn-storm/"/>
+    <id>http://yoursite.com/2017/05/21/learn-storm/</id>
+    <published>2017-05-21T09:08:00.000Z</published>
+    <updated>2017-05-21T09:08:30.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>#Storm</p>
+<ol>
+<li>When designing a topology, one important thing to keep in mind is message reliability. If a message can’t be processed, you need to decide what to do with the individual message and what to do with the topology as a whole. </li>
+<li>In Storm, it is the author’s responsibility to guarantee message reliability according to the needs of each topology. </li>
+</ol>
+<p>##Bolt</p>
+<h3 id="Reliable-versus-Unreliable-Bolts"><a href="#Reliable-versus-Unreliable-Bolts" class="headerlink" title="Reliable versus Unreliable Bolts"></a>Reliable versus Unreliable Bolts</h3><ol>
+<li>the best way to keep track of the original spout instance is to include a reference to the originating spout in the message tuple. This technique is called <strong>Anchoring</strong>. </li>
+<li>A topology is a tree of nodes in which messages (tuples) travel along one or more branches. Each node will ack(tuple) or fail(tuple) so that Storm knows when a mes- sage fails and notifies the spout or spouts that produced the message.</li>
+</ol>
+<p>#Thrift</p>
+<ol>
+<li>Its primary goal is to enable efficient and reliable communication across                          programming languages by abstracting the portions of each language that tend to<br>require the most customization into a common library that is implemented in each      language.</li>
+<li>Specifically, Thrift allows developers to<br>define datatypes and service interfaces in a single language-neutral<br>file and generate all the necessary code to build RPC clients and<br>servers</li>
+<li>A key design choice in the implementation of Thrift was to decouple<br>the transport layer from the code generation layer.</li>
+</ol>
+<p>##Type</p>
+<ol>
+<li><p>base types supported by Thrift are:</p>
+<ul>
+<li>bool A boolean value, true or false</li>
+<li>byte A signed byte</li>
+<li>i16 A 16-bit signed integer</li>
+<li>i32 A 32-bit signed integer</li>
+<li>i64 A 64-bit signed integer</li>
+<li>double A 64-bit floating point number</li>
+<li>string An encoding-agnostic text or binary string</li>
+</ul>
+</li>
+<li><p>Structs <br><br> A struct is essentially equivalent to a class in object oriented<br>programming languages.</p>
+</li>
+<li><p>Containers <br><br>  containers are strongly typed containers that map to the most<br>commonly used containers in common programming languages.</p>
+</li>
+<li><p>Exceptions<br><br> Exceptions are syntactically and functionally equivalent to structs<br>except that they are declared using the exception keyword instead<br>of the struct keyword.</p>
+</li>
+<li><p>Services<br><br> Services are defined using Thrift types. Definition of a service is<br>semantically equivalent to defining an interface (or a pure virtual<br>abstract class) in object oriented programming. </p>
+</li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;#Storm&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;When designing a topology, one important thing to keep in mind is message reliability. If a message can’t be processe
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>范畴</title>
+    <link href="http://yoursite.com/2017/05/21/%E8%8C%83%E7%95%B4/"/>
+    <id>http://yoursite.com/2017/05/21/范畴/</id>
+    <published>2017-05-21T08:57:18.000Z</published>
+    <updated>2017-05-21T08:57:53.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>#范畴</p>
+<ol>
+<li>用箭头将对象连接起来就可以构造出范畴</li>
+<li>范畴论与箭头(函数)的复合有关 </li>
+<li>复合是从右向左发生的</li>
+<li>复合是可结合的（结合律）</li>
+<li>任一对象 A，都有一个箭头，它是复合的最小单位。(id)</li>
+<li>一个范畴由对象与箭头（态射）构成。箭头可以复合，这种复合满足结合律。每个对象都有一个恒等箭头，它是箭头复合的基本单位。</li>
+<li>在积极阻碍我们探视对象的内部方面，范畴论具有非凡的意义。范畴论中的一个对象，像一个星云。对于它，你所知的只是它与其他对象之间的关系，亦即它与其他对象相连接的箭头。这就是 Internet 搜索引擎对网站进行排名时所用的策略，它只分析输入与输出的链接（除非它受欺骗）.</li>
+</ol>
+<blockquote>
+<p>在面向对象编程中，一个理想的对象应该是只暴露它的抽象接口（纯表面，无体积），其方法则扮演箭头的角色。如果为了理解一个对象如何与其他对象进行复合，当你发现不得不深入挖掘对象的实现之时，此时你所用的编程范式的原本优势就荡然无存了。</p>
+</blockquote>
+<p>#Catamorphism<br>catamorphism 表示从一个代数到另一个代数的独一无二的映射。</p>
+<p>#类型与函数</p>
+<ol>
+<li>类型与函数构成的范畴在编程中担任着重要的角色</li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;#范畴&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;用箭头将对象连接起来就可以构造出范畴&lt;/li&gt;
+&lt;li&gt;范畴论与箭头(函数)的复合有关 &lt;/li&gt;
+&lt;li&gt;复合是从右向左发生的&lt;/li&gt;
+&lt;li&gt;复合是可结合的（结合律）&lt;/li&gt;
+&lt;li&gt;任一对象 A，都有一个箭头，它是复合的最小单位。
+    
+    </summary>
+    
+    
+      <category term="category" scheme="http://yoursite.com/tags/category/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>函数式编程</title>
+    <link href="http://yoursite.com/2017/05/21/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/"/>
+    <id>http://yoursite.com/2017/05/21/函数式编程/</id>
+    <published>2017-05-21T08:56:41.000Z</published>
+    <updated>2017-05-21T08:56:54.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>#Closures</p>
+<ol>
+<li>A closure is a function that carries an implicit binding to all the variables referenced within it. in other words, the function encloses a context around the things it references.</li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;#Closures&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;A closure is a function that carries an implicit binding to all the variables referenced within it. in other words
+    
+    </summary>
+    
+    
+      <category term="functional" scheme="http://yoursite.com/tags/functional/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>learn haskell - 1</title>
+    <link href="http://yoursite.com/2017/05/21/learn-haskell-1/"/>
+    <id>http://yoursite.com/2017/05/21/learn-haskell-1/</id>
+    <published>2017-05-21T08:48:19.000Z</published>
+    <updated>2017-05-21T08:52:36.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>#15 Monoid, Semigroup</p>
+<p>##Algebra</p>
+<ol>
+<li>Algebra generally refers to one of the most import fields of mathematics. In this usage, it means the study of mathematical symbols and the rules governing their manipulation.</li>
+<li>In Haskell or more generally say in Functional programming, “An algebra” refers to some operations and the set they operate over. that means we care less about the particulars of the values or data we are working with and more about the general rules of the use.</li>
+<li>In Haskell, these algebras can be implemented with typeclasses; the typeclasses define the set of operations. when we talk about operations over a set, the set is type the operations are for.</li>
+</ol>
+<h2 id="Monoid"><a href="#Monoid" class="headerlink" title="Monoid"></a>Monoid</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">class Monoid m where</div><div class="line">	mempty  :: m </div><div class="line">	mappend :: m -&gt; m -&gt; m</div><div class="line">	mconcat :: [m] -&gt; m</div><div class="line">	mconcat = foldr mappend mempty</div></pre></td></tr></table></figure>
+<ul>
+<li>One of those algebras we use in haskell is Monoid. </li>
+<li>the monoidal operation is less about combining the values and more about finding a summary value for the set. Mappending is perhaps best thought of not as a way of combining values in the way that addition or list concatenation does, But as a way to condense any set of values to a summary value.</li>
+<li>A monoid is a binary associative operation with an identity.</li>
+<li>in plain English, a monoid is a function that takes two arguments and follow two laws:<ol>
+<li>associativity</li>
+<li>identity</li>
+</ol>
+</li>
+<li>Monoid is the typeclass that generalizes these laws across type.</li>
+<li>Monoid is the typeclass just abstracts the pattern(above law) out, giving you the ability to use the operations over a larger range of types.</li>
+</ul>
+<blockquote>
+<p>There is some sense in which it might fell strange to think of this as a combining or <em>mappending</em> operation. Unless we recall that mappending is less about combining and more about condensing or reducing.  i.e. (Bool for monoid)</p>
+</blockquote>
+<p>##common usage<br>A common use of monoids is to structure and describe common modes of processing data. </p>
+<p>Sometimes this is to describe an API for incrementally processing a large dataset, sometimes to describe guarantees needed to roll up aggregations(think summation) in a parallel, concurrent, or distributed processing framework.</p>
+<p>One reason is that with a monoid we get another function called mconcat for free. mconcat takes a list of values in a monoid and combines them all together. For example mconcat [a,b,c] is equal to a <code>mappend</code> (b <code>mappend</code> c). Any time you have a monoid you have this quick and easy way to combine a whole list together.(<a href="http://blog.sigfpe.com/2009/01/haskell-monoids-and-their-uses.html" target="_blank" rel="external">http://blog.sigfpe.com/2009/01/haskell-monoids-and-their-uses.html</a>)</p>
+<p>#Semigroup<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">class Semigroup a where</div><div class="line">	(&lt;&gt;) :: a -&gt; a -&gt; a</div></pre></td></tr></table></figure></p>
+<ol>
+<li>Compared with Moniod, Semigroup simple drop the identity value, keep associativity and it;s law.</li>
+</ol>
+<h1 id="Functor"><a href="#Functor" class="headerlink" title="Functor"></a><a href="https://segmentfault.com/a/1190000003954370" target="_blank" rel="external">Functor</a></h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">class Functor f where</div><div class="line">	fmap or &lt;$&gt; :: (a -&gt; b) -&gt; f a -&gt; f b</div><div class="line">	</div><div class="line">Type constants    has kind * </div><div class="line">Type constructors has kind * -&gt; *</div></pre></td></tr></table></figure>
+<ol>
+<li>A Fnctor is a way to apply a function over or around some structure that we don’t want to later. That is, we want to apply the function to the value that is “inside” some structure and leave the structure alone.</li>
+<li>Functor is a typeclass for function application “over” or “through”, or “past” some structure “f” that we want to ignore and leave untouched.</li>
+<li>Functor is a way of lifting over structure(mapping) in such a manner that you don’t have to care about the structure because you’re not allowed to touch the structure anyway.</li>
+<li>the Goal of the functor fmap is to leave the outer struture untouched while transforming the type arguments inside.</li>
+</ol>
+<p>#<a href="https://segmentfault.com/a/1190000003954370#articleHeader9" target="_blank" rel="external">函子的复合</a><br>让自己相信范畴之间的函子可以复合并不太难，函子的复合类似于集合之间的函数复合。两个函子的复合，就是两个函子分别对各自的对象进行映射的复合，对于态射也是这样。恒等态射穿过两个函子之后，它还是恒等态射。复合的态射穿过两个函子之后还是复合的态射。函子的复合只涉及这些东西。特别是，自函子很容易复合。还记得 maybeTail 么？下面我用 Haskell 内建的列表来重新实现它（用 [] 替换 Nil，用 : 替换 Cons）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">maybeTail :: [a] -&gt; Maybe [a]</div><div class="line">maybeTail [] = Nothing</div><div class="line">maybeTail (x:xs) = Just xs</div></pre></td></tr></table></figure>
+<p>maybeTail 返回的结果是两个作用于 a 的函子 Maybe 与 [] 复合后的类型。这些函子，每一个都配备了一个 fmap，但是如果我们想将一个函数 f 作用于复合的函子 Maybe [] 所包含的内容，该怎么做？我们不得不突破两层函子的封装：使用 fmap 突破 Maybe，再使用 fmap 突破列表。例如，要对一个 Maybe [Int] 中所包含的元素求平方，可以这样做：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">square x = x * x</div><div class="line"></div><div class="line">mis :: Maybe [Int]</div><div class="line">mis = Just [1, 2, 3]</div><div class="line"></div><div class="line">mis2 = fmap (fmap square) mis</div></pre></td></tr></table></figure>
+<p>经过类型分析，对于外部的 fmap，编译器会使用 Maybe 版本的；对于内部的 fmap，编译器会使用列表版本的。于是，上述代码也可以写为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mis2 = (fmap . fmap) square mis</div></pre></td></tr></table></figure>
+<h1 id="Monoid-amp-Functor"><a href="#Monoid-amp-Functor" class="headerlink" title="Monoid &amp; Functor"></a>Monoid &amp; Functor</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">-- lifting (a -&gt; b) over f in f a</div><div class="line">fmap  :: Functor     f =&gt;   (a -&gt; b) -&gt; f a        -&gt; f b</div><div class="line"></div><div class="line">apply :: Applicative f =&gt; f (a -&gt; b) -&gt; f a        -&gt; f b</div><div class="line"></div><div class="line">-- binding (a -&gt; m b) over m in m a</div><div class="line">bind  :: Monad       m =&gt; m a        -&gt; (a -&gt; m b) -&gt; m b</div></pre></td></tr></table></figure>
+<ol>
+<li>Monoid gives us a means of mashing two values of the same type together.<br>Monoid’s core operation, mappend smashes the structures together — when you mappend two list, they become one list, so the structures themselves have been joined.</li>
+<li>Functor, on the other hand, if for function application over some structure we don’t want to have to think about.<br>Functor’s core operation, fmap applies a function to a value that is within some structure while leaving that structure unaltered.</li>
+</ol>
+<p>#Applicative</p>
+<ol>
+<li>The applicative typeclass allows for function application lifted over structure (like Functor). But with Applicative the function we’re applying is also embedded in some structure.</li>
+<li>Applicative is moniodal functor.</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">class Functor f =&gt; Applicative f where</div><div class="line">	pure           :: a -&gt; f a</div><div class="line">	(apply or &lt;*&gt;) :: f (a -&gt; b) -&gt; f a -&gt; f b</div></pre></td></tr></table></figure>
+<p>#Lifts<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">liftA :: Applicative f =&gt; (a  -&gt; b) -&gt; f a  -&gt; f b</div><div class="line">liftM :: Monad       f =&gt; (a1 -&gt; r) -&gt; f a1 -&gt; f r</div><div class="line"></div><div class="line">liftA2 :: Applicative f =&gt; (a-&gt; b-&gt; c) -&gt; f a  -&gt; f b  -&gt; f c</div><div class="line">liftM2 :: Monad       f =&gt; (a1-&gt;a2-&gt;c) -&gt; f a1 -&gt; f a2 -&gt; f c</div></pre></td></tr></table></figure></p>
+<h1 id="Monad"><a href="#Monad" class="headerlink" title="Monad"></a>Monad</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">class Applicative m =&gt; monad m where</div><div class="line">	(&gt;&gt;= or bind)  :: m a -&gt; (a -&gt; m b) -&gt; m b </div><div class="line">	(&gt;&gt;)           :: m a -&gt; m b -&gt; m b</div><div class="line">	return         :: a -&gt; m a</div></pre></td></tr></table></figure>
+<ol>
+<li>Monads are applicative functors.</li>
+<li>chain of dependency <strong>Functor-&gt;Applicative-&gt;Monad</strong>, Whenever you’re implemented an instance of Monoad for a type you necessarily have an Applicative and a Functor as well.</li>
+</ol>
+<h1 id="Foldable"><a href="#Foldable" class="headerlink" title="Foldable"></a>Foldable</h1><h1 id="Traversable"><a href="#Traversable" class="headerlink" title="Traversable"></a>Traversable</h1><ol>
+<li>In a literal sense, Anytime you need to flip two type constructors aroud, or map something and then flip them around, that’s probably Traversable.</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">class Traversable t where</div><div class="line">	traverse  :: Applicative f =&gt; (a -&gt; f b) -&gt; t a -&gt; f (t b)</div><div class="line">	sequenceA :: Applicative f =&gt; t (f a) -&gt; f (t a)</div></pre></td></tr></table></figure>
+<h1 id="Writer-monad"><a href="#Writer-monad" class="headerlink" title="Writer monad"></a>Writer monad</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">instance (Monoid w) =&gt; Monad (Writer w) where  </div><div class="line">    return x = Writer (x, mempty)  </div><div class="line">    (Writer (x,v)) &gt;&gt;= f = let (Writer (y, v&apos;)) = f x in Writer (y, v `mappend` v&apos;)</div></pre></td></tr></table></figure>
+<ol>
+<li>Writer Monad is for values that have another value attached that acts as a sort of log value.</li>
+</ol>
+<p>#Reader monad<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">addStuff :: Int -&gt; Int  </div><div class="line">addStuff x = let  </div><div class="line">    a = (*2) x  </div><div class="line">    b = (+10) x  </div><div class="line">    in a+b</div></pre></td></tr></table></figure></p>
+<ol>
+<li>We see that the reader monad allows us to treat functions as values with a context. We can act as if we already know what the functions will return. It does this by gluing functions together into one function and then giving that function’s parameter to all of the functions that it was glued from. So if we have a lot of functions that are all just missing one parameter and they’d eventually be applied to the same thing, we can use the reader monad to sort of extract their future results and the &gt;&gt;= implementation will make sure that it all works out.</li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;#15 Monoid, Semigroup&lt;/p&gt;
+&lt;p&gt;##Algebra&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Algebra generally refers to one of the most import fields of mathematics. In this usa
+    
+    </summary>
+    
+    
+      <category term="haskell" scheme="http://yoursite.com/tags/haskell/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>learn haskell - 0</title>
+    <link href="http://yoursite.com/2017/05/21/learn-haskell-0/"/>
+    <id>http://yoursite.com/2017/05/21/learn-haskell-0/</id>
+    <published>2017-05-21T08:48:07.000Z</published>
+    <updated>2017-05-21T08:50:57.000Z</updated>
+    
+    <content type="html"><![CDATA[<ol>
+<li>Typealias :: </li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">type String = [Char]</div></pre></td></tr></table></figure>
+<ol>
+<li>typeclass :: </li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">class TooMany a where</div><div class="line">		tooMany :: a -&gt; Bool</div><div class="line"></div><div class="line">instance TooMany Int where</div><div class="line">		tooMany n = n &gt; 40</div></pre></td></tr></table></figure>
+<ol>
+<li>datatype  :: </li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">data MyType = MyData | MyData1 deriving (Eq, Show)</div></pre></td></tr></table></figure>
+<ol>
+<li>newtype ::  </li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">newtype Many = (Int, String)</div></pre></td></tr></table></figure>
+<p>#Syntax Rules</p>
+<ol>
+<li>Any operator that starts with a colon (:) must be an infix type or data constructor. all infix data constructors must start with a colon. The type constructor of functions, (-&gt;) is the only infix type constructor that doesn’t start with a colon. Another exception is that they cannot be :: as this syntax is reserved for type assertions.</li>
+</ol>
+<h1 id="Record-syntax"><a href="#Record-syntax" class="headerlink" title="Record syntax"></a>Record syntax</h1><ol>
+<li>Records in Haskell are product types with additional syntax to provide convenient accessors to fields within the recod.</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">data Person = Person String Int deriving (Eq, Show) </div><div class="line">data Person = </div><div class="line">   		Person &#123; name :: String,</div><div class="line">   				   age :: Int &#125;</div><div class="line">   				 deriving (Eq, Show)</div></pre></td></tr></table></figure>
+<p>#ghci</p>
+<ol>
+<li>you can using the :{ :} block syntax to write multiple line in REPL.</li>
+<li>type :set -Wall when init ghci</li>
+<li>use :browse to see a list of the type signatures and functions we loaded from the module xxx .</li>
+</ol>
+<p>#1 basic expression and function</p>
+<ol>
+<li>we use :load to  load your test.hs in GHCi</li>
+<li>unload the file from ghci, use :m or :module</li>
+<li>the order of the declarations in source code doesn’t matter because GHCI loads the entire file at once. but when you enter code one by one in GHCi it’s matters.</li>
+<li><em>indentation of the haskell is important</em><br>5.</li>
+</ol>
+<h2 id="functions"><a href="#functions" class="headerlink" title="functions"></a>functions</h2><ol>
+<li>functions are how we factor out the pattern into something we  can reuse with different input. p61</li>
+<li>definition function in ghci you have to use <strong>let</strong> , ie: let triple x = x* 3</li>
+<li>function start with lowercase, modules and types, ie: Integer start with captial letter</li>
+<li><p>you can use functions in an infix or prefix style with a small changes in syntax</p>
+<blockquote>
+<p>10 <code>div</code> 4</p>
+<p>div 10 4</p>
+</blockquote>
+</li>
+<li>associativity and precedence, use :info to check, detail pls visit p67</li>
+<li>parenthesizing <strong>infix</strong> functions if you want refer it without apply arugments, or use them as prefix operators. however (-2) is special, try use (2-) instead.</li>
+</ol>
+<h3 id="where-and-let-in"><a href="#where-and-let-in" class="headerlink" title="where and let..in"></a>where and let..in</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">printInc n = print pluseTwo</div><div class="line">		where plusTwo= n +2</div><div class="line"></div><div class="line">printInc2 n = let plusTwo = n +2</div><div class="line">  		in print plusTwo</div></pre></td></tr></table></figure>
+<p>####desugaring let to lambda<br>printInc2 n = (\plusTwo -&gt; print plusTwo) ( n + 2 )</p>
+<h4 id=""><a href="#" class="headerlink" title="($)"></a>($)</h4><p>this is mean evaluate everything to the right of me first, ie: (2^) $ 2+2 = 16</p>
+<p>#2 strings</p>
+<ol>
+<li>type are a way of categorizing values.</li>
+<li><em>:type</em> to find out the type of a value, expression or function, the <strong>::</strong>symbol is read as “has the type”, and everything after <strong>::</strong> is our types.</li>
+</ol>
+<p>#3 basic type</p>
+<ol>
+<li>term level is where your values live and is the code that executes when your program is running . </li>
+<li>type level is used during the static analysis &amp; verification of your program.</li>
+<li>A typeclass is a set of operations defined with respect to a polymorphic type. when a type is an instance of a typeclass, values of that type can be used in the standard operations defined for that typeclass.</li>
+<li>A guideline for differentiating the two kinds of constructors is that type constructors always go to the left of the <strong>=</strong> in a data declaration.</li>
+</ol>
+<p>#Type Constructor &amp; Data Constructor</p>
+<ol>
+<li>Type constructor is used to refer to types which must have arguments applied to become a type.</li>
+<li>type constructor is the name of the type and is capitalized When you are reading or writing type signatures(the type level of your code) the type names or type constructors are what you use.</li>
+</ol>
+<hr>
+<ol>
+<li>Data constructors in haskell provide a means of creating values that inhabit a given type. </li>
+<li>Data constructor are the values that inhabit the type they are defined in. they are values that show up in your code, at the term level instead of the tpe level.</li>
+</ol>
+<p>#4 Advanced Type</p>
+<ol>
+<li>Every value has a type, Types are how we group a set of values together that share something in common.</li>
+<li>(-&gt;) is the type constructor for functions, the value of type(-&gt;) that shows up at term-level is the function. p149</li>
+<li>In Haskell, type signatures may have three kinds of types:<ul>
+<li>concrete</li>
+<li>constrained polymorphic</li>
+<li>parametrically polymorphic. ie: function -&gt;  length, id</li>
+</ul>
+</li>
+<li>Haskell;s type inference is built on an extended version of Damas-Hindley-Minler type system.</li>
+</ol>
+<p>#4.1 Newtype</p>
+<ol>
+<li>newtype is different in that it permits only one constructor and only one field.</li>
+<li>it has no runtime overhead, as it reusees the representation of the type it contains. The differents between newtype and type is contains is gone by the time the compiler generates the code.</li>
+<li>{-# GeneralizedNewTypeDeriving #-}  we can use it to reuse the typeclass instance which it contains without define it by our own. </li>
+</ol>
+<h2 id="why-you-might-use-newtype"><a href="#why-you-might-use-newtype" class="headerlink" title="why you might use newtype"></a>why you might use newtype</h2><ol>
+<li>Signal intent: using newtype make it clear that you only intend for it to be a wrapper for the underlying type.</li>
+<li>Improve type safety: avoid mixing up many values of the same representation, such as Text or Integer</li>
+<li>Add different typeclass instances to a type that is otherwise unchanged representationally.</li>
+</ol>
+<p>#4.2 Type alias(Synonyms)</p>
+<ol>
+<li>Try to avoid using type synonyms with unstructured data like text or binary. Type synonyms are best used when you want something lighter weight than <strong>newtypes</strong> but also want your type signatures to be more explicit.</li>
+</ol>
+<p>#5 typeclass</p>
+<ol>
+<li>A typeclass is a means of expressing faculties or interfaces that multiple datatypes may have in common. this enables us to write code exclusively in terms of those commonalities without repeating yourself for each instance.</li>
+<li>Typeclasses and types in Haskell are, in a sense, opposites. Where a declaration of a type defines how that type in particular is created, a declaration of a typeclass defines how a set of types are consumed or used in computations.</li>
+<li>typeclass are being like interfaces in other programming languages.</li>
+<li>typeclass allow use to generalize over a set of types in order to define and execute a standard set of features for those types.</li>
+<li>types can be made more specific, but not more general or polymorphic. p200</li>
+<li>keep your typeclass instances for a type in the same file as that type.</li>
+</ol>
+<h2 id="side-effect"><a href="#side-effect" class="headerlink" title="side effect"></a>side effect</h2><p>The function is not just applied to the arguments that are in it’s scope but also asked to affect the world outside it’s scope in some way, namely by showing you it’s result on the screen. this is known as a side effect.</p>
+<p>#6 More Functional patterns</p>
+<ol>
+<li>A value that can be used as an argument to a function is a first-class value.</li>
+</ol>
+<p>##High Order Function</p>
+<ol>
+<li>We were able to rely on the behavior of compare but make changes in the part we wanted to change. This is the value of HOFs. they give us the beginning of a powerful method for reusing and composing code.</li>
+</ol>
+<p>##Point free style</p>
+<ol>
+<li>it’s important to remember that the functions in composition are applied from right to left, like Pacman munching from the right side, reducing the expressions as he goes.</li>
+</ol>
+<p>#11 Alegbraic datatypes</p>
+<ol>
+<li>data constructors can take arguments. those are guments will be specific types, but not specific values. you can’t say “bool without the possibility of False as a value.”</li>
+<li>Alegbraic datatypes in Haskell are algebraic because we can describe the patterns of argument structures using two basic operations: Sum and Product. Chapter 11.7</li>
+</ol>
+<p>#11.1 Kind</p>
+<ol>
+<li>Kind are types of type constructors, primarily encoding the number of arguments they take.</li>
+<li>kinds are types one level up. they are used to describe the types of type constructors.</li>
+<li>the kind * represents a concrete type. There is nothing left awaiting application.</li>
+</ol>
+<p>#12 Maybe Either and Kind</p>
+<p>##lifted and unlifted types</p>
+<ol>
+<li>To be precise , Kind * is the kind of all standard lifted types, while types that have the kind # are unlifted. A lifted type, which includes any datatype you could define yourself, is any that can be inhabited by bottom.</li>
+<li>Unlifted types are any type which cannot be inhabited by bottom. types of kind # are often native machine types and raw pointers. p493</li>
+<li></li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;ol&gt;
+&lt;li&gt;Typealias :: &lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td
+    
+    </summary>
+    
+    
+      <category term="haskell" scheme="http://yoursite.com/tags/haskell/"/>
+    
+  </entry>
   
   <entry>
     <title>java8</title>
@@ -30,11 +537,43 @@
   </entry>
   
   <entry>
+    <title>Ractive programming</title>
+    <link href="http://yoursite.com/2017/05/21/RactiveAPI/"/>
+    <id>http://yoursite.com/2017/05/21/RactiveAPI/</id>
+    <published>2017-05-21T04:18:28.000Z</published>
+    <updated>2017-05-21T08:55:42.000Z</updated>
+    
+    <content type="html"><![CDATA[<ol>
+<li><p>RxJava支持很多java 8 Stream类似的相同高层次操作比如map和filter，区别是RxJava是异步的。</p>
+</li>
+<li><p>Reactive programming is programming with asynchronous data streams.</p>
+</li>
+<li>You are able to create data streams of anything, not just from click and hover events. Streams are cheap and ubiquitous, anything can be a stream: variables, user inputs, properties, caches, data structures, etc。</li>
+<li>A stream is a sequence of ongoing events ordered in time。</li>
+<li>Reactive Programming raises the level of abstraction of your code so you can focus on the interdependence of events that define the business logic, rather than having to constantly fiddle with a large amount of implementation details</li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;ol&gt;
+&lt;li&gt;&lt;p&gt;RxJava支持很多java 8 Stream类似的相同高层次操作比如map和filter，区别是RxJava是异步的。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Reactive programming is programming with asynchron
+    
+    </summary>
+    
+    
+      <category term="FP, reactive" scheme="http://yoursite.com/tags/FP-reactive/"/>
+    
+  </entry>
+  
+  <entry>
     <title>面向函数vs面向对象</title>
     <link href="http://yoursite.com/2017/05/21/%E9%9D%A2%E5%90%91%E5%87%BD%E6%95%B0vs%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"/>
     <id>http://yoursite.com/2017/05/21/面向函数vs面向对象/</id>
     <published>2017-05-21T04:18:28.000Z</published>
-    <updated>2017-05-21T08:41:30.000Z</updated>
+    <updated>2017-05-21T08:55:06.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="顺应语言的潮流"><a href="#顺应语言的潮流" class="headerlink" title="顺应语言的潮流"></a>顺应语言的潮流</h1><p>如果你回望主流语言发展的方向，你会发现现在越来越多的语言开始转向（支持） 函数作为一等公民.</p>
 <ol>
@@ -69,6 +608,8 @@
 <ol>
 <li>OOP 封装可变(状态)在class里面（方法不可重用）</li>
 <li>FP 尽可能的减少可变状态，组合已有的高阶抽象方法</li>
+<li>OOP 抽象数据，</li>
+<li>FP 抽象行为。</li>
 </ol>
 <hr>
 <ol>
@@ -86,6 +627,9 @@
 <li>它允许有些解决方案变的很容易, 比如多线程运行，在imperative program里面你必须自己实现，因为你自己控制了底层的循环(for loop), 而在java8中实现知识一行代码的改动<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">listOfEmps</div><div class="line">	.parallelStream() // 并发实现 </div><div class="line">	.filter(...)</div><div class="line">	.transform(...)</div><div class="line">	.convert(...)</div></pre></td></tr></table></figure>
 </li>
 </ol>
+<hr>
+<p>FYI:</p>
+<p><a href="https://www.ibm.com/developerworks/cn/java/j-ft6/" target="_blank" rel="external">函数式思维: 耦合和组合，第 2 部分</a></p>
 </tr>]]></content>
     
     <summary type="html">
@@ -100,46 +644,18 @@
   </entry>
   
   <entry>
-    <title></title>
-    <link href="http://yoursite.com/2017/03/08/RactiveAPI/"/>
-    <id>http://yoursite.com/2017/03/08/RactiveAPI/</id>
-    <published>2017-03-08T01:31:57.000Z</published>
-    <updated>2017-03-08T01:31:59.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>Ractive API</p>
-<ol>
-<li>RxJava支持很多java 8 Stream类似的相同高层次操作比如map和filter，区别是RxJava是异步的。</li>
-<li></li>
-</ol>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Ractive API&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;RxJava支持很多java 8 Stream类似的相同高层次操作比如map和filter，区别是RxJava是异步的。&lt;/li&gt;
-&lt;li&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
     <title>JavaScript</title>
     <link href="http://yoursite.com/2017/03/05/JavaScript/"/>
     <id>http://yoursite.com/2017/03/05/JavaScript/</id>
     <published>2017-03-04T16:00:00.000Z</published>
-    <updated>2017-03-06T01:43:18.000Z</updated>
+    <updated>2017-05-21T08:50:23.000Z</updated>
     
     <content type="html"><![CDATA[<p>#闭包</p>
 <blockquote>
 <p>闭包是可访问上一层函数作用域里变量的函数，即便上一层函数已经关闭。</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">var add = (function () &#123;</div><div class="line">    var counter = 0;</div><div class="line">    return function () &#123;return counter += 1;&#125;</div><div class="line">&#125;)();</div><div class="line"></div><div class="line">add();</div><div class="line">add();</div><div class="line">add();</div><div class="line"></div><div class="line">// 计数器为 3</div></pre></td></tr></table></figure>
-<p>###实例解析:<br>变量 add 指定了函数自我调用的返回字值。<br><br>自我调用函数只执行一次。设置计数器为 0。并返回函数表达式。<br><br>add变量可以作为一个函数使用。非常棒的部分是它可以访问函数上一层作用域的计数器。<br><br>这个叫作 JavaScript 闭包。它使得函数拥有私有变量变成可能。<br><br>计数器受匿名函数的作用域保护，只能通过 add 方法修改。<br></p>
+<p>##实例解析:<br>变量 add 指定了函数自我调用的返回字值。<br><br>自我调用函数只执行一次。设置计数器为 0。并返回函数表达式。<br><br>add变量可以作为一个函数使用。非常棒的部分是它可以访问函数上一层作用域的计数器。<br><br>这个叫作 JavaScript 闭包。它使得函数拥有私有变量变成可能。<br><br>计数器受匿名函数的作用域保护，只能通过 add 方法修改。<br></p>
 ]]></content>
     
     <summary type="html">
