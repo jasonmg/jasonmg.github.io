@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-05-21T15:48:02.000Z</updated>
+  <updated>2017-05-21T16:27:01.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://yoursite.com/2017/05/21/foldRight-foldLeft/"/>
     <id>http://yoursite.com/2017/05/21/foldRight-foldLeft/</id>
     <published>2017-05-21T12:03:46.000Z</published>
-    <updated>2017-05-21T15:48:02.000Z</updated>
+    <updated>2017-05-21T16:27:01.000Z</updated>
     
     <content type="html"><![CDATA[<p>当我们用到FP list我们会接触到list里面大量的工具方法，比如 foreach, map, flatMap, reduce 等等, 但是有一种方法 fold, foldLeft, foldRight 也会大量用到本章主要讲解 fp list中 fold* 的用法。</p>
 <p>fold 简单理解就是折叠的意思：</p>
@@ -34,15 +34,19 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">1 : 2 : 3 : [] </div><div class="line">or</div><div class="line">1 : ( 2 : ( 3 : [] ) ) </div><div class="line">or</div><div class="line">: 1 ( : 2 ( : 3 [] )</div></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">  : &lt;----------|</div><div class="line"> / \           </div><div class="line">1   : &lt;--------| this is spine</div><div class="line">   / \         </div><div class="line">  2   : &lt;------|</div><div class="line">     / \</div><div class="line">    3  []</div></pre></td></tr></table></figure>
 <p>当我们理解list的构造过程的时候，我们通常认为 value 1 首先初始化,然后由(:)去构造， 但是实际上,(:) 包含value 1,<br>正因为如此才能实现 haskell list的惰性求值。 这样spine和value就相互独立，你可以对spine单独遍历，从而必初始化集合元素的值。<br>但我们对构造list集合的时候我们是从右向左运算， 也即是先把3放入[]中，然后往前放入2，往前放入1. 因为haskel list默认是惰性的，所以如果没有用到这个list 他将一直不会求值。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">foldr :: (a -&gt; b -&gt; b) -&gt; b -&gt; [a] -&gt; b</div><div class="line">foldr f acc []  = acc</div><div class="line">foldr f acc (x:xs) = f x (foldr f acc xs)</div><div class="line"></div><div class="line">foldl :: (b -&gt; a -&gt; b) -&gt; b -&gt; [a] -&gt; b</div><div class="line">foldl f acc [] = acc</div><div class="line">foldl f acc (x:xs) = foldl f (f acc x) xs</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">foldr :: (a -&gt; b -&gt; b) -&gt; b -&gt; [a] -&gt; b</div><div class="line">foldr f acc []  = acc</div><div class="line">foldr f acc (x:xs) = f x (foldr f acc xs)</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">foldl :: (b -&gt; a -&gt; b) -&gt; b -&gt; [a] -&gt; b</div><div class="line">foldl f acc [] = acc</div><div class="line">foldl f acc (x:xs) = foldl f (f acc x) xs</div></pre></td></tr></table></figure>
 <p>我们拿map和fold相比较, 你可以基本就认为 fold基本上跟map是一样的，只不过map mapping 函数至每一个元素并返回list，而fold替换(:)至函数并返回一个最终值。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">map :: (a-&gt;b) -&gt; [a] -&gt; [b]</div><div class="line">map    (+1)1   :     2 :     3 : []</div><div class="line">       (+1)1   : (+1)2 : (+1)3 : []</div><div class="line">       </div><div class="line">foldr (+) 0 (1 : 2 : 3 : [])</div><div class="line">            (1 + (2 + (3 + 0)))</div><div class="line"></div><div class="line">foldl (+) 0 (1 : 2 : 3 : [])</div><div class="line">            (0 + (1 + (2 + 3)))  </div><div class="line">            </div><div class="line">fold (+) (1 : 2 : 3 : [])</div><div class="line">         (1 + (2 + (3 + 0)))</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">map :: (a-&gt;b) -&gt; [a] -&gt; [b]</div><div class="line">map    (+1)1   :     2 :     3 : []</div><div class="line">       (+1)1   : (+1)2 : (+1)3 : []</div><div class="line">       </div><div class="line">foldr (+) 0 (1 : 2 : 3 : [])</div><div class="line">            (1 + (2 + (3 + 0)))</div><div class="line"></div><div class="line">foldl (+) 0 (1 : 2 : 3 : [])</div><div class="line">          (((0 + 1) + 2) + 3)  </div><div class="line">            </div><div class="line">fold (+) (1 : 2 : 3 : [])</div><div class="line">         (1 + (2 + (3 + 0)))</div></pre></td></tr></table></figure>
 <p>在折叠的时候分两个阶段</p>
 <ul>
 <li>traversal 遍历阶段 是指fold对spine进行递归 </li>
 <li>folding   折叠是指 在相应的遍历元素上应用fold函数求值</li>
 </ul>
-<p>foldr, foldl 对spine的遍历方向都是一样的（从右向左）, 两者的不同是结合顺序</p>
+<p>foldr, foldl 对spine的遍历方向都是一样的（从右向左）, 两者的不同是结合顺序(括号的顺序).</p>
+<p>foldr的递归定义f 接受list head 和剩余的fold返回值，根据foldr折叠的时候分两个阶段和惰性求值的特性，如果f不要求对第二个参数求值(rest of the fold)这样的话list中的元素就不会再求值<br>这样带来的好处就是 foldr 不仅可以避免对list里的一些或者全部元素求值，还可以避免对list的spine进行遍历。 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">foldr f acc (x:xs) = f x (foldr f acc xs)</div><div class="line">                         ^--------------^</div><div class="line">                         rest of the fold</div></pre></td></tr></table></figure>
+<p>由于这样的特性，所以foldr可以用于那些可能无限长度的list进行操作。</p>
 ]]></content>
     
     <summary type="html">

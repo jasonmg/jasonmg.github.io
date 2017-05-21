@@ -17,7 +17,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>foldRight foldLeft | Jason&#39;s Blog</title>
+  <title>Archives: 2017/5 | Jason&#39;s Blog</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -61,7 +61,7 @@
 </head>
 
 <!--
-<body class="post-template">
+<body class="home-template">
 -->
 <body id="index" class="lightnav animsition">
 
@@ -149,87 +149,78 @@
         <!-- ============================ Header & Logo bar =========================== -->
 
 
-      
-<section id="intro">
-    <div class="container">
-        <div class="row col-md-offset-2">
-            <div class="col-md-8">
-    			<span class="post-meta">
-      <time datetime="2017-05-21T12:03:46.000Z" itemprop="datePublished">
-          2017-05-21
-      </time>
-    
-    
-    | 
-    <a href='/tags/list/'>list</a>
-    
-    
-</span>
-                <h1>foldRight foldLeft</h1>
+      <!-- ============================ Hero Image =========================== -->
+
+<section id="hero" class="scrollme">
+    <div class="container-fluid element-img" style="background: url(/img/bg_img1.jpg) no-repeat center center fixed;background-size: cover">
+        <div class="row">
+            <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 vertical-align cover boost text-center">
+                <div class="center-me animateme" data-when="exit" data-from="0" data-to="0.6" data-opacity="0" data-translatey="100">
+                    <div>
+                        
+                        <h2>Life is Brilliant! &nbsp;&nbsp;&nbsp;&nbsp     得知若惊 失之若惊</h2>
+                        <p></p>
+                        
+                        <h2></h2>
+                        <p></p>
+                        
+
+                    </div>
+                </div>
             </div>
+            <!-- // .col-md-12 -->
         </div>
-        <div class="col-md-8 col-md-offset-2">
-      		<p>当我们用到FP list我们会接触到list里面大量的工具方法，比如 foreach, map, flatMap, reduce 等等, 但是有一种方法 fold, foldLeft, foldRight 也会大量用到本章主要讲解 fp list中 fold* 的用法。</p>
-<p>fold 简单理解就是折叠的意思：</p>
-<ul>
-<li>foldLeft 是从左边开始折叠</li>
-<li>foldRight 是从右边开始折叠</li>
-<li>fold 是从右边开始折叠 但是没有初始值</li>
-</ul>
-<p>那么foldLeft 和 foldRight除了折叠方向不一样呢，还有什么性能差别码？为什么会存在两种不同的折叠方向？ 要了解这些 我们还要先从了解list开始。本文以haskell list 为栗子。其声明为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">data [] a = [] | a : [a]</div></pre></td></tr></table></figure></p>
-<p>其中(:)为数据构造器，它接受两个参数 head 和 rest of list.<br>当我们在haskell中讨论到数据结构，特别是 list, sequences, trees 我们基本上是谈论 <strong>spine</strong>(脊柱)，可以理解为 脊柱链接集合中的各个值。<br>就拿list来举例， list spine is (:) ,比如 [1,2,3,4] 数据构造过程大概为:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">1 : 2 : 3 : [] </div><div class="line">or</div><div class="line">1 : ( 2 : ( 3 : [] ) ) </div><div class="line">or</div><div class="line">: 1 ( : 2 ( : 3 [] )</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">  : &lt;----------|</div><div class="line"> / \           </div><div class="line">1   : &lt;--------| this is spine</div><div class="line">   / \         </div><div class="line">  2   : &lt;------|</div><div class="line">     / \</div><div class="line">    3  []</div></pre></td></tr></table></figure>
-<p>当我们理解list的构造过程的时候，我们通常认为 value 1 首先初始化,然后由(:)去构造， 但是实际上,(:) 包含value 1,<br>正因为如此才能实现 haskell list的惰性求值。 这样spine和value就相互独立，你可以对spine单独遍历，从而必初始化集合元素的值。<br>但我们对构造list集合的时候我们是从右向左运算， 也即是先把3放入[]中，然后往前放入2，往前放入1. 因为haskel list默认是惰性的，所以如果没有用到这个list 他将一直不会求值。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">foldr :: (a -&gt; b -&gt; b) -&gt; b -&gt; [a] -&gt; b</div><div class="line">foldr f acc []  = acc</div><div class="line">foldr f acc (x:xs) = f x (foldr f acc xs)</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">foldl :: (b -&gt; a -&gt; b) -&gt; b -&gt; [a] -&gt; b</div><div class="line">foldl f acc [] = acc</div><div class="line">foldl f acc (x:xs) = foldl f (f acc x) xs</div></pre></td></tr></table></figure>
-<p>我们拿map和fold相比较, 你可以基本就认为 fold基本上跟map是一样的，只不过map mapping 函数至每一个元素并返回list，而fold替换(:)至函数并返回一个最终值。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">map :: (a-&gt;b) -&gt; [a] -&gt; [b]</div><div class="line">map    (+1)1   :     2 :     3 : []</div><div class="line">       (+1)1   : (+1)2 : (+1)3 : []</div><div class="line">       </div><div class="line">foldr (+) 0 (1 : 2 : 3 : [])</div><div class="line">            (1 + (2 + (3 + 0)))</div><div class="line"></div><div class="line">foldl (+) 0 (1 : 2 : 3 : [])</div><div class="line">          (((0 + 1) + 2) + 3)  </div><div class="line">            </div><div class="line">fold (+) (1 : 2 : 3 : [])</div><div class="line">         (1 + (2 + (3 + 0)))</div></pre></td></tr></table></figure>
-<p>在折叠的时候分两个阶段</p>
-<ul>
-<li>traversal 遍历阶段 是指fold对spine进行递归 </li>
-<li>folding   折叠是指 在相应的遍历元素上应用fold函数求值</li>
-</ul>
-<p>foldr, foldl 对spine的遍历方向都是一样的（从右向左）, 两者的不同是结合顺序(括号的顺序).</p>
-<p>foldr的递归定义f 接受list head 和剩余的fold返回值，根据foldr折叠的时候分两个阶段和惰性求值的特性，如果f不要求对第二个参数求值(rest of the fold)这样的话list中的元素就不会再求值<br>这样带来的好处就是 foldr 不仅可以避免对list里的一些或者全部元素求值，还可以避免对list的spine进行遍历。 </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">foldr f acc (x:xs) = f x (foldr f acc xs)</div><div class="line">                         ^--------------^</div><div class="line">                         rest of the fold</div></pre></td></tr></table></figure>
-<p>由于这样的特性，所以foldr可以用于那些可能无限长度的list进行操作。</p>
-
-            <div class="clearfix"></div>
-            <hr class="nogutter">
-        </div>
-        <nav class="pagination" role="pagination">
-    
-    
-    <a class="pull-right" href="/2017/05/21/建立个人博客/">
-        建立个人博客 →
-    </a>
-    
-</nav>
-
-        <div class="duoshuo">
-<div id="disqus_thread"></div>
-<script type="text/javascript">
-	var disqus_shortname = 'jason1900';
-	window.addEventListener('load', function(){
-		(function(){
-			var dsq = document.createElement('script');
-			dsq.type = 'text/javascript';
-			dsq.async = true;
-			dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-			(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-		}());
-	});
-</script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
-
-
-
-</div>
+        <div class="herofade beige-dk"></div>
     </div>
 </section>
 
+<!-- Height spacing helper -->
+<div class="heightblock"></div>
+<!-- // End height spacing helper -->
 
+<!-- ============================ END Hero Image =========================== -->
+
+
+
+
+<section id="services">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <div class="row boxes">
+                    
+                    
+                        
+                        
+                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
+                            
+                              <h4 class="title"><a href="/2017/05/21/面向函数vs面向对象/">面向函数vs面向对象</a></h4>
+                            
+                            <p><time datetime="2017-05-21T04:18:28.000Z"><a href="/2017/05/21/面向函数vs面向对象/">2017-05-21</a></time></p>
+                        </div>
+                    
+                        
+                        
+                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
+                            
+                              <h4 class="title"><a href="/2017/05/21/RactiveAPI/">Ractive programming</a></h4>
+                            
+                            <p><time datetime="2017-05-21T04:18:28.000Z"><a href="/2017/05/21/RactiveAPI/">2017-05-21</a></time></p>
+                        </div>
+                    
+                </div>
+            </div>    
+        </div>
+    </div>
+</section> 
+
+<section id="statement">
+    <div class="container text-center wow fadeInUp" data-wow-delay="0.5s">
+        <div class="row">
+            <p>走吧 走吧 人生难免经历苦痛挣扎</p>
+        </div>
+    </div>
+</section>
       
 <!-- ============================ Footer =========================== -->
 
