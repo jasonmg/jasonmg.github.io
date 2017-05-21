@@ -17,7 +17,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>JavaScript | Jason&#39;s Blog</title>
+  <title>foldRight foldLeft | Jason&#39;s Blog</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -155,36 +155,51 @@
         <div class="row col-md-offset-2">
             <div class="col-md-8">
     			<span class="post-meta">
-      <time datetime="2017-03-04T16:00:00.000Z" itemprop="datePublished">
-          2017-03-05
+      <time datetime="2017-05-21T12:03:46.000Z" itemprop="datePublished">
+          2017-05-21
       </time>
     
     
     | 
-    <a href='/tags/js/'>js</a>
+    <a href='/tags/list/'>list</a>
     
     
 </span>
-                <h1>JavaScript</h1>
+                <h1>foldRight foldLeft</h1>
             </div>
         </div>
         <div class="col-md-8 col-md-offset-2">
-      		<p>#闭包</p>
-<blockquote>
-<p>闭包是可访问上一层函数作用域里变量的函数，即便上一层函数已经关闭。</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">var add = (function () &#123;</div><div class="line">    var counter = 0;</div><div class="line">    return function () &#123;return counter += 1;&#125;</div><div class="line">&#125;)();</div><div class="line"></div><div class="line">add();</div><div class="line">add();</div><div class="line">add();</div><div class="line"></div><div class="line">// 计数器为 3</div></pre></td></tr></table></figure>
-<p>##实例解析:<br>变量 add 指定了函数自我调用的返回字值。<br><br>自我调用函数只执行一次。设置计数器为 0。并返回函数表达式。<br><br>add变量可以作为一个函数使用。非常棒的部分是它可以访问函数上一层作用域的计数器。<br><br>这个叫作 JavaScript 闭包。它使得函数拥有私有变量变成可能。<br><br>计数器受匿名函数的作用域保护，只能通过 add 方法修改。<br></p>
+      		<p>当我们用到FP list我们会接触到list里面大量的工具方法，比如 foreach, map, flatMap, reduce 等等, 但是有一种方法 fold, foldLeft, foldRight 也会大量用到本章主要讲解 fp list中 fold* 的用法。</p>
+<p>fold 简单理解就是折叠的意思：</p>
+<ul>
+<li>foldLeft 是从左边开始折叠</li>
+<li>foldRight 是从右边开始折叠</li>
+<li>fold 是从右边开始折叠 但是没有初始值</li>
+</ul>
+<p>那么foldLeft 和 foldRight除了折叠方向不一样呢，还有什么性能差别码？为什么会存在两种不同的折叠方向？ 要了解这些 我们还要先从了解list开始。本文以haskell list 为栗子。其声明为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">data [] a = [] | a : [a]</div></pre></td></tr></table></figure></p>
+<p>其中(:)为数据构造器，它接受两个参数 head 和 rest of list.<br>当我们在haskell中讨论到数据结构，特别是 list, sequences, trees 我们基本上是谈论 <strong>spine</strong>(脊柱)，可以理解为 脊柱链接集合中的各个值。<br>就拿list来举例， list spine is (:) ,比如 [1,2,3,4] 数据构造过程大概为:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">1 : 2 : 3 : [] </div><div class="line">or</div><div class="line">1 : ( 2 : ( 3 : [] ) ) </div><div class="line">or</div><div class="line">: 1 ( : 2 ( : 3 [] )</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">  : &lt;----------|</div><div class="line"> / \           </div><div class="line">1   : &lt;--------| this is spine</div><div class="line">   / \         </div><div class="line">  2   : &lt;------|</div><div class="line">     / \</div><div class="line">    3  []</div></pre></td></tr></table></figure>
+<p>当我们理解list的构造过程的时候，我们通常认为 value 1 首先初始化,然后由(:)去构造， 但是实际上,(:) 包含value 1,<br>正因为如此才能实现 haskell list的惰性求值。 这样spine和value就相互独立，你可以对spine单独遍历，从而必初始化集合元素的值。<br>但我们对构造list集合的时候我们是从右向左运算， 也即是先把3放入[]中，然后往前放入2，往前放入1. 因为haskel list默认是惰性的，所以如果没有用到这个list 他将一直不会求值。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">foldr :: (a -&gt; b -&gt; b) -&gt; b -&gt; [a] -&gt; b</div><div class="line">foldr f acc []  = acc</div><div class="line">foldr f acc (x:xs) = f x (foldr f acc xs)</div><div class="line"></div><div class="line">foldl :: (b -&gt; a -&gt; b) -&gt; b -&gt; [a] -&gt; b</div><div class="line">foldl f acc [] = acc</div><div class="line">foldl f acc (x:xs) = foldl f (f acc x) xs</div></pre></td></tr></table></figure>
+<p>我们拿map和fold相比较, 你可以基本就认为 fold基本上跟map是一样的，只不过map mapping 函数至每一个元素并返回list，而fold替换(:)至函数并返回一个最终值。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">map :: (a-&gt;b) -&gt; [a] -&gt; [b]</div><div class="line">map    (+1)1   :     2 :     3 : []</div><div class="line">       (+1)1   : (+1)2 : (+1)3 : []</div><div class="line">       </div><div class="line">foldr (+) 0 (1 : 2 : 3 : [])</div><div class="line">            (1 + (2 + (3 + 0)))</div><div class="line"></div><div class="line">foldl (+) 0 (1 : 2 : 3 : [])</div><div class="line">            (0 + (1 + (2 + 3)))  </div><div class="line">            </div><div class="line">fold (+) (1 : 2 : 3 : [])</div><div class="line">         (1 + (2 + (3 + 0)))</div></pre></td></tr></table></figure>
+<p>在折叠的时候分两个阶段</p>
+<ul>
+<li>traversal 遍历阶段 是指fold对spine进行递归 </li>
+<li>folding   折叠是指 在相应的遍历元素上应用fold函数求值</li>
+</ul>
+<p>foldr, foldl 对spine的遍历方向都是一样的（从右向左）, 两者的不同是结合顺序</p>
 
             <div class="clearfix"></div>
             <hr class="nogutter">
         </div>
         <nav class="pagination" role="pagination">
     
-    <a class="pull-left" href="/2017/03/05/Start/" style="float: left;">
-        ← 你好
-    </a>
     
+    <a class="pull-right" href="/2017/05/21/建立个人博客/">
+        建立个人博客 →
+    </a>
     
 </nav>
 
@@ -197,7 +212,7 @@
 			var dsq = document.createElement('script');
 			dsq.type = 'text/javascript';
 			dsq.async = true;
-			dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+			dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
 			(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
 		}());
 	});
