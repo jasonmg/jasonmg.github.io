@@ -4,8 +4,75 @@
 
     
   <url>
+    <loc>http://yoursite.com/2017/05/21/%E9%9D%A2%E5%90%91%E5%87%BD%E6%95%B0vs%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</loc>
+    <lastmod>2017-05-21T08:41:30.000Z</lastmod>
+    <data>
+        <display>
+        <title>面向函数vs面向对象</title>
+        <pubTime>2017-05-21T04:18:28.000Z</pubTime>
+        
+        <tag>FP, OOP</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2017/05/21/java8/</loc>
+    <lastmod>2017-05-21T08:40:53.000Z</lastmod>
+    <data>
+        <display>
+        <title>java8</title>
+        <pubTime>2017-05-21T08:40:53.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2017/03/08/RactiveAPI/</loc>
+    <lastmod>2017-03-08T01:31:59.000Z</lastmod>
+    <data>
+        <display>
+        <title></title>
+        <pubTime>2017-03-08T01:31:57.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2017/03/05/JavaScript/</loc>
+    <lastmod>2017-03-06T01:43:18.000Z</lastmod>
+    <data>
+        <display>
+        <title>JavaScript</title>
+        <pubTime>2017-03-04T16:00:00.000Z</pubTime>
+        
+        <tag>js</tag>
+         
+         
+           
+             
+              <breadCrumb title="language" url="http://yoursite.com/categories/language/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2017/03/05/Start/</loc>
-    <lastmod>2017-03-05T08:23:37.000Z</lastmod>
+    <lastmod>2017-03-06T01:20:52.000Z</lastmod>
     <data>
         <display>
         <title>你好</title>

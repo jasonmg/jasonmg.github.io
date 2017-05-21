@@ -1,0 +1,1896 @@
+<!DOCTYPE html>
+<!-- saved from url=(0043)https://developer.qiniu.com/kodo/sdk/java#8 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="ac9359Sr4TRElmVnXWtZhfWTfkcJHN76j2DWkragyEHaDbm/xvIgMFrmAep46AwGwO7/P2Z0f7VXLlUPckTMAw==">
+    
+    <meta name="keywords" content="qiniu,developer">
+    <meta name="description" content="developer">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="updated" content="2017-03-01 18:23:29 +0800">
+    <meta name="version" content="58b6a121954033694c2a8a86">
+    <meta name="article_id" content="5874992c9540331a37265426">
+    <title>Java SDK - 七牛开发者中心</title>
+    <link rel="icon" type="image/x-icon" href="https://developer.qiniu.com/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="./Java SDK - 七牛开发者中心_files/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./Java SDK - 七牛开发者中心_files/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="./Java SDK - 七牛开发者中心_files/docco.min.css">
+
+    <link rel="stylesheet" media="all" href="./Java SDK - 七牛开发者中心_files/application-51c0ee84a16c3da95dc3c46248d776c97f98498512c9449135333aacfd6be777.css">
+    <script async="" src="./Java SDK - 七牛开发者中心_files/analytics.js"></script><script type="text/javascript" async="" src="./Java SDK - 七牛开发者中心_files/vds.js"></script><script src="./Java SDK - 七牛开发者中心_files/application-72de41544f0c6375358526aa2ea7970e166c981100760bf233bbd3c62f117636.js"></script>
+
+    <script type="text/javascript">
+      var _vds = _vds || [];
+      window._vds = _vds;
+      (function(){
+        _vds.push(['setAccountId', 'e10434e9266f49aabde60a116a0fd4af']);
+        (function() {
+          var vds = document.createElement('script');
+          vds.type='text/javascript';
+          vds.async = true;
+          vds.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'dn-growing.qbox.me/vds.js';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(vds, s);
+        })();
+      })();
+    </script>
+  </head>
+
+  <body class="articles-page articles-page-show">
+    <!--[if lt IE 10]>
+      <p class="browsehappy">您正在使用 <strong>旧浏览器</strong> . 为了更好的体验，请 <a href="http://browsehappy.com/">更新</a> 您的浏览器.</p>
+    <![endif]-->
+
+    <nav class="navbar navbar-default navbar-fixed-top" id="navbar">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="sidebar-toggle" href="javascript:;"><i class="fa fa-bars"></i></a>
+          <a class="navbar-brand" href="https://developer.qiniu.com/"><img width="50" src="./Java SDK - 七牛开发者中心_files/logo-white-b90d685a6b146884636382426d11b7236f5f7ca1c5dfafdb6fa777a0f976fc1f.png" alt="Logo white"><span>开发者中心</span></a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="dropdown" id="spaces-dropdown">
+              <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                产品与服务 <i class="fa fa-angle-down"></i>
+              </a>
+              <ul class="dropdown-menu space-dropdown-menu">
+                <li class="kodo"><a href="https://developer.qiniu.com/kodo">对象存储</a></li>
+                <li class="dora"><a href="https://developer.qiniu.com/dora">数据处理</a></li>
+                <li class="fusion"><a href="https://developer.qiniu.com/fusion">融合 CDN</a></li>
+                <li class="pili"><a href="https://developer.qiniu.com/pili">直播云</a></li>
+              </ul>
+            </li>
+            <li class="mobile ">
+              <a href="https://developer.qiniu.com/sdk">SDK</a>
+            </li>
+            <li class="mobile ">
+              <a href="https://developer.qiniu.com/solutions/education">解决方案</a>
+            </li>
+            <!--
+            <li class="">
+              <a href="/faq">常见问题</a>
+            </li>
+            -->
+            <li class="mobile"><a target="_blank" href="https://support.qiniu.com/">技术支持</a></li>
+          </ul>
+
+          <ul class="nav navbar-nav navbar-right">
+            <li class="mobile ">
+              <a href="https://developer.qiniu.com/sdk">SDK</a>
+            </li>
+            <li class="mobile ">
+              <a href="https://developer.qiniu.com/solutions/education">解决方案</a>
+            </li>
+            <li class="mobile search-item">
+              <a href="https://developer.qiniu.com/search">搜索</a>
+            </li>
+            <li class="mobile"><a target="_blank" href="https://support.qiniu.com/">技术支持</a></li>
+            <li><a target="_blank" href="https://portal.qiniu.com/signin">登录</a></li>
+            <li><a target="_blank" href="https://portal.qiniu.com/signup">注册</a></li>
+          </ul>
+
+          <div class="search-form nav navbar-nav navbar-right col-md-2 col-sm-2">
+            <form action="https://developer.qiniu.com/search">
+              <input type="text" name="keyword" class="form-control search-box" placeholder="搜索" tabindex="1">
+              <i class="icon fa fa-search"></i>
+            </form>
+          </div>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+
+    <div class="topic-container" slug="java" space="kodo">
+  <div class="topic-sidebar-wrap">
+
+  <h3 class="space-title kodo"><a href="https://developer.qiniu.com/kodo">对象存储</a></h3>
+  <div class="doctree">
+    <ul>
+        <li class="branch closed">
+          <a class="node-title category" href="javascript:;">
+            <span>使用文档</span>
+            <i class="icon fa"></i>
+          </a>
+          <ol>
+      <li class="leaf"><a class="node-title   tree-level-1" href="https://developer.qiniu.com/kodo/manual/product-introduction"><span>产品简介</span><i class="icon fa"></i></a></li><li class="leaf"><a class="node-title   tree-level-1" href="https://developer.qiniu.com/kodo/manual/console-quickstart"><span>快速入门</span><i class="icon fa"></i></a></li><li class="leaf"><a class="node-title   tree-level-1" href="https://developer.qiniu.com/kodo/manual/concepts"><span>基本概念介绍</span><i class="icon fa"></i></a></li><li class="leaf"><a class="node-title   tree-level-1" href="https://developer.qiniu.com/kodo/manual/region-endpoint"><span>访问域名和存储区域</span><i class="icon fa"></i></a></li><li class="leaf"><a class="node-title   tree-level-1" href="https://developer.qiniu.com/kodo/manual/programming-model"><span>编程模型</span><i class="icon fa"></i></a></li><li class="branch closed"><a class="node-title   tree-level-1" href="https://developer.qiniu.com/kodo/manual/security"><span>安全机制</span><i class="icon fa"></i></a><ol><li class="leaf"><a class="node-title   tree-level-2" href="https://developer.qiniu.com/kodo/manual/put-policy"><span>上传策略</span><i class="icon fa"></i></a></li><li class="leaf"><a class="node-title   tree-level-2" href="https://developer.qiniu.com/kodo/manual/upload-token"><span>上传凭证</span><i class="icon fa"></i></a></li><li class="leaf"><a class="node-title   tree-level-2" href="https://developer.qiniu.com/kodo/manual/download-token"><span>下载凭证</span><i class="icon fa"></i></a></li><li class="leaf"><a class="node-title   tree-level-2" href="https://developer.qiniu.com/kodo/manual/access-token"><span>管理凭证</span><i class="icon fa"></i></a></li></ol></li><li class="branch closed"><a class="node-title   tree-level-1" href="https://developer.qiniu.com/kodo/manual/upload-types"><span>上传资源</span><i class="icon fa"></i></a><ol><li class="leaf"><a class="node-title   tree-level-2" href="https://developer.qiniu.com/kodo/manual/form-upload"><span>表单上传</span><i class="icon fa"></i></a></li><li class="leaf"><a class="node-title   tree-level-2" href="https://developer.qiniu.com/kodo/manual/chunked-upload"><span>分片上传</span><i class="icon fa"></i></a></li><li class="leaf"><a class="node-title   tree-level-2" href="https://developer.qiniu.com/kodo/manual/simple-response"><span>简单反馈</span><i class="icon fa"></i></a></li><li class="leaf"><a class="node-title   tree-level-2" href="https://developer.qiniu.com/kodo/manual/callback"><span>回调通知</span><i class="icon fa"></i></a></li><li class="leaf"><a class="node-title   tree-level-2" href="https://developer.qiniu.com/kodo/manual/redirect"><span>303 重定向</span><i class="icon fa"></i></a></li><li class="leaf"><a class="node-title   tree-level-2" href="https://developer.qiniu.com/kodo/manual/persistent-op"><span>异步数据预处理</span><i class="icon fa"></i></a></li><li class="leaf"><a class="node-title   tree-level-2" href="https://developer.qiniu.com/kodo/manual/response-body"><span>自定义响应内容</span><i class="icon fa"></i></a></li><li class="leaf"><a class="node-title   tree-level-2" href="https://developer.qiniu.com/kodo/manual/vars"><span>变量</span><i class="icon fa"></i></a></li></ol></li><li class="branch closed"><a class="node-title   tree-level-1" href="https://developer.qiniu.com/kodo/manual/download-process"><span>下载资源</span><i class="icon fa"></i></a><ol><li class="leaf"><a class="node-title   tree-level-2" href="https://developer.qiniu.com/kodo/manual/download-public"><span>公开资源下载</span><i class="icon fa"></i></a></li><li class="leaf"><a class="node-title   tree-level-2" href="https://developer.qiniu.com/kodo/manual/download-private"><span>私有资源下载</span><i class="icon fa"></i></a></li><li class="leaf"><a class="node-title   tree-level-2" href="https://developer.qiniu.com/kodo/manual/download-anti-leech"><span>防盗链</span><i class="icon fa"></i></a></li><li class="leaf"><a class="node-title   tree-level-2" href="https://developer.qiniu.com/kodo/manual/download-response"><span>下载响应</span><i class="icon fa"></i></a></li><li class="leaf"><a class="node-title   tree-level-2" href="https://developer.qiniu.com/kodo/manual/download-setting"><span>下载设置</span><i class="icon fa"></i></a></li><li class="leaf"><a class="node-title   tree-level-2" href="https://developer.qiniu.com/kodo/manual/advanced-download"><span>高级下载</span><i class="icon fa"></i></a></li></ol></li><li class="branch closed"><a class="node-title   tree-level-1" href="https://developer.qiniu.com/kodo/manual/buckets"><span>管理存储空间</span><i class="icon fa"></i></a><ol><li class="leaf"><a class="node-title   tree-level-2" href="https://developer.qiniu.com/kodo/manual/delete-bucket"><span>删除存储空间</span><i class="icon fa"></i></a></li><li class="leaf"><a class="node-title   tree-level-2" href="https://developer.qiniu.com/kodo/manual/cross-regional-synchronization"><span>设置跨区域同步</span><i class="icon fa"></i></a></li></ol></li><li class="leaf"><a class="node-title   tree-level-1" href="https://developer.qiniu.com/kodo/manual/appendix"><span>附录</span><i class="icon fa"></i></a></li></ol></li></ul>
+    <ul>
+        <li class="branch closed">
+          <a class="node-title category" href="javascript:;">
+            <span>API Reference</span>
+            <i class="icon fa"></i>
+          </a>
+          <ol>
+      <li class="leaf"><a class="node-title   tree-level-1" href="https://developer.qiniu.com/kodo/api/api-overview"><span>API概览</span><i class="icon fa"></i></a></li><li class="leaf"><a class="node-title   tree-level-1" href="https://developer.qiniu.com/kodo/api/data-format"><span>数据格式</span><i class="icon fa"></i></a></li><li class="leaf"><a class="node-title   tree-level-1" href="https://developer.qiniu.com/kodo/api/user-info"><span>获取账户信息</span><i class="icon fa"></i></a></li><li class="leaf"><a class="node-title   tree-level-1" href="https://developer.qiniu.com/kodo/api/user-buckets"><span>获取账户空间</span><i class="icon fa"></i></a></li><li class="leaf"><a class="node-title   tree-level-1" href="https://developer.qiniu.com/kodo/api/mkbucketv2"><span>创建存储空间</span><i class="icon fa"></i></a></li><li class="leaf"><a class="node-title   tree-level-1" href="https://developer.qiniu.com/kodo/api/bucket-domainlist"><span>获取空间域名</span><i class="icon fa"></i></a></li><li class="leaf"><a class="node-title   tree-level-1" href="https://developer.qiniu.com/kodo/api/drop-bucket"><span>删除存储空间</span><i class="icon fa"></i></a></li><li class="branch closed"><a class="node-title   tree-level-1" href="https://developer.qiniu.com/kodo/api/upload-interface"><span>上传资源接口</span><i class="icon fa"></i></a><ol><li class="leaf"><a class="node-title   tree-level-2" href="https://developer.qiniu.com/kodo/api/upload"><span>直传文件</span><i class="icon fa"></i></a></li><li class="leaf"><a class="node-title   tree-level-2" href="https://developer.qiniu.com/kodo/api/mkblk"><span>创建块</span><i class="icon fa"></i></a></li><li class="leaf"><a class="node-title   tree-level-2" href="https://developer.qiniu.com/kodo/api/bput"><span>上传片</span><i class="icon fa"></i></a></li><li class="leaf"><a class="node-title   tree-level-2" href="https://developer.qiniu.com/kodo/api/mkfile"><span>创建文件</span><i class="icon fa"></i></a></li></ol></li><li class="branch closed"><a class="node-title   tree-level-1" href="https://developer.qiniu.com/kodo/api/rs"><span>管理资源接口</span><i class="icon fa"></i></a><ol><li class="leaf"><a class="node-title   tree-level-2" href="https://developer.qiniu.com/kodo/api/update-file-lifecycle"><span>更新文件生命周期</span><i class="icon fa"></i></a></li><li class="leaf"><a class="node-title   tree-level-2" href="https://developer.qiniu.com/kodo/api/stat"><span>资源元信息查询</span><i class="icon fa"></i></a></li><li class="leaf"><a class="node-title   tree-level-2" href="https://developer.qiniu.com/kodo/api/chgm"><span>资源元信息修改</span><i class="icon fa"></i></a></li><li class="leaf"><a class="node-title   tree-level-2" href="https://developer.qiniu.com/kodo/api/move"><span>资源移动／重命名</span><i class="icon fa"></i></a></li><li class="leaf"><a class="node-title   tree-level-2" href="https://developer.qiniu.com/kodo/api/copy"><span>资源复制</span><i class="icon fa"></i></a></li><li class="leaf"><a class="node-title   tree-level-2" href="https://developer.qiniu.com/kodo/api/delete"><span>资源删除</span><i class="icon fa"></i></a></li><li class="leaf"><a class="node-title   tree-level-2" href="https://developer.qiniu.com/kodo/api/list"><span>资源列举</span><i class="icon fa"></i></a></li><li class="leaf"><a class="node-title   tree-level-2" href="https://developer.qiniu.com/kodo/api/fetch"><span>第三方资源抓取</span><i class="icon fa"></i></a></li><li class="leaf"><a class="node-title   tree-level-2" href="https://developer.qiniu.com/kodo/api/batch"><span>批量操作</span><i class="icon fa"></i></a></li><li class="leaf"><a class="node-title   tree-level-2" href="https://developer.qiniu.com/kodo/api/mirror"><span>设置镜像源</span><i class="icon fa"></i></a></li><li class="leaf"><a class="node-title   tree-level-2" href="https://developer.qiniu.com/kodo/api/prefetch"><span>镜像资源更新</span><i class="icon fa"></i></a></li></ol></li><li class="leaf"><a class="node-title   tree-level-1" href="https://developer.qiniu.com/kodo/api/http-code"><span>HTTP状态码</span><i class="icon fa"></i></a></li><li class="leaf"><a class="node-title   tree-level-1" href="https://developer.qiniu.com/kodo/api/http-extender"><span>HTTP扩展字段</span><i class="icon fa"></i></a></li><li class="leaf"><a class="node-title   tree-level-1" href="https://developer.qiniu.com/kodo/api/errors"><span>错误格式</span><i class="icon fa"></i></a></li></ol></li></ul>
+    <ul>
+        <li class="branch">
+          <a class="node-title category" href="javascript:;">
+            <span>SDK</span>
+            <i class="icon fa"></i>
+          </a>
+          <ol>
+      <li class="leaf"><a class="node-title   tree-level-1" href="https://developer.qiniu.com/kodo/sdk/objc"><span>Objective-C SDK</span><i class="icon fa"></i></a></li><li class="branch closed"><a class="node-title   tree-level-1" href="https://developer.qiniu.com/kodo/sdk/android"><span>Android SDK</span><i class="icon fa"></i></a><ol><li class="leaf"><a class="node-title   tree-level-2" href="https://developer.qiniu.com/kodo/sdk/android-sdk-6"><span>Android SDK历史文档</span><i class="icon fa"></i></a></li></ol></li><li class="branch"><a class="node-title active  tree-level-1" href="https://developer.qiniu.com/kodo/sdk/java"><span>Java SDK</span><i class="icon fa"></i></a><ol><li class="leaf"><a class="node-title   tree-level-2" href="https://developer.qiniu.com/kodo/sdk/java-sdk-6"><span>Java SDK 历史文档</span><i class="icon fa"></i></a></li></ol></li><li class="branch closed"><a class="node-title   tree-level-1" href="https://developer.qiniu.com/kodo/sdk/php"><span>PHP SDK</span><i class="icon fa"></i></a><ol><li class="leaf"><a class="node-title   tree-level-2" href="https://developer.qiniu.com/kodo/sdk/legacy-php"><span>PHP SDK历史文档</span><i class="icon fa"></i></a></li></ol></li><li class="leaf"><a class="node-title   tree-level-1" href="https://developer.qiniu.com/kodo/sdk/python"><span>Python SDK</span><i class="icon fa"></i></a></li><li class="leaf"><a class="node-title   tree-level-1" href="https://developer.qiniu.com/kodo/sdk/ruby"><span>Ruby SDK</span><i class="icon fa"></i></a></li><li class="leaf"><a class="node-title   tree-level-1" href="https://developer.qiniu.com/kodo/sdk/nodejs"><span>Node.js SDK</span><i class="icon fa"></i></a></li><li class="leaf"><a class="node-title   tree-level-1" href="https://developer.qiniu.com/kodo/sdk/csharp"><span>C# SDK</span><i class="icon fa"></i></a></li><li class="leaf"><a class="node-title   tree-level-1" href="https://developer.qiniu.com/kodo/sdk/cpp"><span>C/C++ SDK</span><i class="icon fa"></i></a></li><li class="branch closed"><a class="node-title   tree-level-1" href="https://developer.qiniu.com/kodo/sdk/go"><span>Go SDK</span><i class="icon fa"></i></a><ol><li class="leaf"><a class="node-title   tree-level-2" href="https://developer.qiniu.com/kodo/sdk/go-v6"><span>Go SDK历史版本</span><i class="icon fa"></i></a></li></ol></li><li class="leaf"><a class="node-title   tree-level-1" href="https://developer.qiniu.com/kodo/sdk/javascript"><span>JavaScript SDK</span><i class="icon fa"></i></a></li></ol></li></ul>
+    <ul>
+        <li class="branch closed">
+          <a class="node-title category" href="javascript:;">
+            <span>工具</span>
+            <i class="icon fa"></i>
+          </a>
+          <ol>
+      <li class="leaf"><a class="node-title   tree-level-1" href="https://developer.qiniu.com/kodo/tools/qsunsync"><span>同步上传Windows客户端</span><i class="icon fa"></i></a></li><li class="branch closed"><a class="node-title   tree-level-1" href="https://developer.qiniu.com/kodo/tools/qrsbox"><span>多平台同步上传客户端</span><i class="icon fa"></i></a><ol><li class="leaf"><a class="node-title   tree-level-2" href="https://developer.qiniu.com/kodo/manual/ignore-rules"><span>ignore 规则</span><i class="icon fa"></i></a></li></ol></li><li class="leaf"><a class="node-title   tree-level-1" href="https://developer.qiniu.com/kodo/tools/qshell"><span>命令行工具</span><i class="icon fa"></i></a></li><li class="leaf"><a class="node-title   tree-level-1" href="https://developer.qiniu.com/kodo/tools/qrsctl"><span>命令行辅助工具</span><i class="icon fa"></i></a></li><li class="leaf"><a class="node-title   tree-level-1" href="https://developer.qiniu.com/kodo/tools/qfetch"><span>数据迁移工具</span><i class="icon fa"></i></a></li><li class="leaf"><a class="node-title   tree-level-1" href="https://developer.qiniu.com/kodo/tools/qwebtest"><span>检测工具</span><i class="icon fa"></i></a></li><li class="leaf"><a class="node-title   tree-level-1" href="https://developer.qiniu.com/kodo/tools/qrsync"><span>qrsync（已废弃）</span><i class="icon fa"></i></a></li></ol></li></ul>
+    <ul>
+        <li class="branch closed">
+          <a class="node-title category" href="javascript:;">
+            <span>常见问题</span>
+            <i class="icon fa"></i>
+          </a>
+          <ol>
+      <li class="leaf"><a class="node-title   tree-level-1" href="https://developer.qiniu.com/kodo/kb/from-the-generated-token-parsing-upload-strategy"><span>从生成的token解析上传策略</span><i class="icon fa"></i></a></li><li class="leaf"><a class="node-title   tree-level-1" href="https://developer.qiniu.com/kodo/kb/using-qshell-qupload-upload-file"><span>使用qshell qupload上传文件</span><i class="icon fa"></i></a></li><li class="leaf"><a class="node-title   tree-level-1" href="https://developer.qiniu.com/kodo/kb/bytes-0-b-space-file"><span>空间文件字节数为0B</span><i class="icon fa"></i></a></li><li class="leaf"><a class="node-title   tree-level-1" href="https://developer.qiniu.com/kodo/kb/seven-cattle-server-ip-address"><span>七牛服务器地址ip</span><i class="icon fa"></i></a></li><li class="leaf"><a class="node-title   tree-level-1" href="https://developer.qiniu.com/kodo/kb/using-qshell-synchronize-directories"><span>使用qshell 同步目录</span><i class="icon fa"></i></a></li><li class="leaf"><a class="node-title   tree-level-1" href="https://developer.qiniu.com/kodo/kb/under-windows-add-qshell-path-environment-variable"><span>windows下添加qshell路径到环境变量</span><i class="icon fa"></i></a></li><li class="leaf"><a class="node-title   tree-level-1" href="https://developer.qiniu.com/kodo/kb/java-lists-delimiter-parameter-problem"><span>列举条目时delimiter参数问题</span><i class="icon fa"></i></a></li><li class="leaf"><a class="node-title   tree-level-1" href="https://developer.qiniu.com/kodo/kb/how-to-create-the-folder-under-the-space"><span>如何在空间下创建文件夹？</span><i class="icon fa"></i></a></li><li class="leaf"><a class="node-title   tree-level-1" href="https://developer.qiniu.com/kodo/kb/how-to-modify-the-link-to-the-default-domain-name"><span>如何修改链接中的默认域名？</span><i class="icon fa"></i></a></li><li class="leaf"><a class="node-title   tree-level-1" href="https://developer.qiniu.com/kodo/kb/special-access-to-key-resources"><span>特殊key资源的访问</span><i class="icon fa"></i></a></li><li class="leaf"><a class="node-title   tree-level-1" href="https://developer.qiniu.com/kodo/kb/how-to-upload-photos-to-seven-niuyun-base64-code"><span>如何上传base64编码图片到七牛云</span><i class="icon fa"></i></a></li><li class="leaf"><a class="node-title   tree-level-1" href="https://developer.qiniu.com/kodo/kb/users-set-up-c-the-explanation-of-the-sdk"><span>用户搭建c# sdk的解说</span><i class="icon fa"></i></a></li><li class="leaf"><a class="node-title   tree-level-1" href="https://developer.qiniu.com/kodo/kb/seven-niuyun-upload-download-instructions"><span>七牛云上传下载操作指南</span><i class="icon fa"></i></a></li><li class="leaf"><a class="node-title   tree-level-1" href="https://developer.qiniu.com/kodo/kb/on-the-list-and-avoid-overtime"><span>关于list超时及规避方式</span><i class="icon fa"></i></a></li><li class="leaf"><a class="node-title   tree-level-1" href="https://developer.qiniu.com/kodo/kb/how-to-own-space-ip-access-number"><span>统计日志</span><i class="icon fa"></i></a></li><li class="leaf"><a class="node-title   tree-level-1" href="https://developer.qiniu.com/kodo/kb/how-in-the-xcode-import-seven-cows-objc-sdk"><span>如何在Xcode导入七牛objc-sdk</span><i class="icon fa"></i></a></li><li class="leaf"><a class="node-title   tree-level-1" href="https://developer.qiniu.com/kodo/kb/how-to-ali-cloud-oss-files-on-migration-to-seven-niuyun-storage"><span>如何将阿里云OSS上的文件迁移到七牛云存储？</span><i class="icon fa"></i></a></li><li class="leaf"><a class="node-title   tree-level-1" href="https://developer.qiniu.com/kodo/kb/seven-niuyun-necessary-knowledge-storage"><span>七牛云存储必备知识</span><i class="icon fa"></i></a></li><li class="leaf"><a class="node-title   tree-level-1" href="https://developer.qiniu.com/kodo/kb/upload-the-token-download-token-and-token-of-the-life-cycle-management"><span>上传下载及管理凭证的生命周期</span><i class="icon fa"></i></a></li><li class="leaf"><a class="node-title   tree-level-1" href="https://developer.qiniu.com/kodo/kb/seven-niuyun-support-for-text-file-download-optimization"><span>七牛云对文本文件下载优化的支持</span><i class="icon fa"></i></a></li><li class="leaf"><a class="node-title   tree-level-1" href="https://developer.qiniu.com/kodo/kb/video-tutorials-binding-domain"><span>视频教程---绑定域名</span><i class="icon fa"></i></a></li><li class="leaf"><a class="node-title   tree-level-1" href="https://developer.qiniu.com/kodo/kb/the-dns-server-problem-identification-and-modification"><span>DNS 服务器问题确认及修改</span><i class="icon fa"></i></a></li><li class="leaf"><a class="node-title   tree-level-1" href="https://developer.qiniu.com/kodo/kb/404-file-does-not-return-a-status-code-of-404"><span>404文件不返回404状态码</span><i class="icon fa"></i></a></li><li class="leaf"><a class="node-title   tree-level-1" href="https://developer.qiniu.com/kodo/kb/space-maxage-attribute-to-the-cache-control"><span>空间属性maxAge实现对缓存控制</span><i class="icon fa"></i></a></li><li class="leaf"><a class="node-title   tree-level-1" href="https://developer.qiniu.com/kodo/kb/what-is-the-style-and-the-style-separators"><span>什么是样式以及样式分隔符？</span><i class="icon fa"></i></a></li><li class="leaf"><a class="node-title   tree-level-1" href="https://developer.qiniu.com/kodo/kb/webp-and-webm-format-to-upload-file-can-t-display-properly"><span>webp和webm格式文件上传后无法正常显示</span><i class="icon fa"></i></a></li><li class="leaf"><a class="node-title   tree-level-1" href="https://developer.qiniu.com/kodo/kb/seven-cattle-key-what-is-the-difference-between-the-value-storage-systems-with-no-database-system"><span>七牛的 key-value 存储系统跟 NoSQL 数据库系统有什么区别？</span><i class="icon fa"></i></a></li><li class="leaf"><a class="node-title   tree-level-1" href="https://developer.qiniu.com/kodo/kb/breakpoint-continuingly-download-function"><span>断点续传下载功能说明</span><i class="icon fa"></i></a></li><li class="leaf"><a class="node-title   tree-level-1" href="https://developer.qiniu.com/kodo/kb/upload-error-code-403"><span>上传 403 错误码</span><i class="icon fa"></i></a></li><li class="leaf"><a class="node-title   tree-level-1" href="https://developer.qiniu.com/kodo/kb/how-to-acquire-the-outside-storage-file-links"><span>如何获取存储文件的外链接</span><i class="icon fa"></i></a></li><li class="leaf"><a class="node-title   tree-level-1" href="https://developer.qiniu.com/kodo/kb/js-sdk-using-common-problems"><span>JS_SDK使用常见问题</span><i class="icon fa"></i></a></li><li class="leaf"><a class="node-title   tree-level-1" href="https://developer.qiniu.com/kodo/kb/the-difference-between-the-original-protection-and-private-space"><span>原图保护与私有空间的区别</span><i class="icon fa"></i></a></li><li class="leaf"><a class="node-title   tree-level-1" href="https://developer.qiniu.com/kodo/kb/image-storage-function-in-the-source-station-to-grab-resources-rules-in-effect-at-the-time-of-the-url-contains-a-question-mark"><span>镜像存储功能在源站 URL 含有问号时的抓取资源规则</span><i class="icon fa"></i></a></li><li class="leaf"><a class="node-title   tree-level-1" href="https://developer.qiniu.com/kodo/kb/batch-upload-and-file-upload-more-resources"><span>资源批量上传和多文件上传</span><i class="icon fa"></i></a></li><li class="leaf"><a class="node-title   tree-level-1" href="https://developer.qiniu.com/kodo/kb/what-is-the-original-protection"><span>什么是原图保护？</span><i class="icon fa"></i></a></li><li class="leaf"><a class="node-title   tree-level-1" href="https://developer.qiniu.com/kodo/kb/set-the-page-404"><span>设置404页面</span><i class="icon fa"></i></a></li><li class="leaf"><a class="node-title   tree-level-1" href="https://developer.qiniu.com/kodo/kb/upload-error-code-401"><span>上传 401 错误码</span><i class="icon fa"></i></a></li><li class="leaf"><a class="node-title   tree-level-1" href="https://developer.qiniu.com/kodo/kb/seven-niuyun-data-migration-plan"><span>七牛云数据迁移方案</span><i class="icon fa"></i></a></li><li class="leaf"><a class="node-title   tree-level-1" href="https://developer.qiniu.com/kodo/kb/upload-process-in-the-case-of-using-magic-variable-authentication-app-callback-token"><span>上传过程中，在使用魔法变量的情况下验证 app callback token</span><i class="icon fa"></i></a></li><li class="leaf"><a class="node-title   tree-level-1" href="https://developer.qiniu.com/kodo/kb/download-the-401-error-code"><span>下载401错误码</span><i class="icon fa"></i></a></li><li class="leaf"><a class="node-title   tree-level-1" href="https://developer.qiniu.com/kodo/kb/set-the-robots-txt-file"><span>设置  robots.txt 文件</span><i class="icon fa"></i></a></li><li class="leaf"><a class="node-title   tree-level-1" href="https://developer.qiniu.com/kodo/kb/how-to-heat-transfer-to-the-seven-niuyun-online-data"><span>如何将线上的数据热迁移到七牛云？</span><i class="icon fa"></i></a></li><li class="leaf"><a class="node-title   tree-level-1" href="https://developer.qiniu.com/kodo/kb/download-the-file-contents-appear-garbled"><span>下载文件内容出现乱码</span><i class="icon fa"></i></a></li><li class="leaf"><a class="node-title   tree-level-1" href="https://developer.qiniu.com/kodo/kb/seven-niuyun-storage-file-upload-base-and-service"><span>上传文件的基础知识</span><i class="icon fa"></i></a></li><li class="leaf"><a class="node-title   tree-level-1" href="https://developer.qiniu.com/kodo/kb/video-tutorials-basic-use"><span>视频教程----基本使用</span><i class="icon fa"></i></a></li><li class="leaf"><a class="node-title   tree-level-1" href="https://developer.qiniu.com/kodo/kb/seven-cattle-service-callback-authentication"><span>七牛服务的回调鉴权</span><i class="icon fa"></i></a></li><li class="leaf"><a class="node-title   tree-level-1" href="https://developer.qiniu.com/kodo/kb/about-seven-cows-space-bucket-using-the-interpretation-of-the-scene"><span>关于七牛空间（bucket） 使用场景的解释</span><i class="icon fa"></i></a></li><li class="leaf"><a class="node-title   tree-level-1" href="https://developer.qiniu.com/kodo/kb/teach-you-how-to-use-seven-niuyun-storage"><span>教你如何使用七牛云存储</span><i class="icon fa"></i></a></li><li class="leaf"><a class="node-title   tree-level-1" href="https://developer.qiniu.com/kodo/kb/seven-cattle-upload-crc32-check-and-usage"><span>七牛上传 crc32 校检说明与用法</span><i class="icon fa"></i></a></li><li class="leaf"><a class="node-title   tree-level-1" href="https://developer.qiniu.com/kodo/kb/hotlinking-prevention-and-mirror-the-source-domain-name-configuration-steps"><span>防盗链和镜像源的域名配置详解</span><i class="icon fa"></i></a></li><li class="leaf"><a class="node-title   tree-level-1" href="https://developer.qiniu.com/kodo/kb/audio-and-video-support-and-audio-and-video"><span>音视频支持和音视频播放</span><i class="icon fa"></i></a></li></ol></li></ul>
+    <ul>
+        <li class="branch closed">
+          <a class="node-title category" href="javascript:;">
+            <span>术语表</span>
+            <i class="icon fa"></i>
+          </a>
+          <ol>
+      <li class="leaf"><a class="node-title   tree-level-1" href="https://developer.qiniu.com/kodo/glossary/e"><span>E</span><i class="icon fa"></i></a></li><li class="leaf"><a class="node-title   tree-level-1" href="https://developer.qiniu.com/kodo/glossary/h"><span>H</span><i class="icon fa"></i></a></li><li class="leaf"><a class="node-title   tree-level-1" href="https://developer.qiniu.com/kodo/glossary/j"><span>J</span><i class="icon fa"></i></a></li><li class="leaf"><a class="node-title   tree-level-1" href="https://developer.qiniu.com/kodo/glossary/l"><span>L</span><i class="icon fa"></i></a></li><li class="leaf"><a class="node-title   tree-level-1" href="https://developer.qiniu.com/kodo/glossary/u"><span>U</span><i class="icon fa"></i></a></li></ol></li></ul>
+  </div>
+</div>
+
+  <div class="topic-content-wrap">
+    <div class="container">
+      <div class="article-content">
+        <div class="topic-title">
+          <div class="rating-right">
+            <div class="rating">
+              <li index="1" data-toggle="tooltip" data-placement="top" container="body" title="" data-original-title="根本没有帮助"><i class="fa fa-star-o"></i></li>
+              <li index="2" data-toggle="tooltip" data-placement="top" container="body" title="" data-original-title="文档较差"><i class="fa fa-star-o"></i></li>
+              <li index="3" data-toggle="tooltip" data-placement="top" container="body" title="" data-original-title="文档一般"><i class="fa fa-star-o"></i></li>
+              <li index="4" data-toggle="tooltip" data-placement="top" container="body" title="" data-original-title="文档不错"><i class="fa fa-star-o"></i></li>
+              <li index="5" data-toggle="tooltip" data-placement="top" container="body" title="" data-original-title="文档很好"><i class="fa fa-star-o"></i></li>
+            </div>
+          </div>
+          <h1>            <span>Java SDK</span>            </h1>
+          <p class="topic-meta">admin 更新时间：2017-03-01 18:23:29</p>
+        </div>
+
+        <div class="topic-detail">
+          <p><a id="intro" target="_blank"></a></p>
+
+<h1 id="1" class="anchor-target">简介</h1>
+
+<p>此 SDK 适用于 Java 7 及以上版本。使用此 SDK 构建您的网络应用程序，能让您以非常便捷地方式将数据安全地存储到七牛云上。无论您的网络应用是一个网站程序，还是包括从云端（服务端程序）到终端（手持设备应用）的架构服务或应用，通过七牛云及其 SDK，都能让您应用程序的终端用户高速上传和下载，同时也让您的服务端更加轻盈。</p>
+
+<p>Java SDK 属于七牛服务端SDK之一，主要有如下功能：</p>
+
+<ol>
+<li>提供生成客户端上传所需的上传凭证的功能</li>
+<li>提供文件从服务端直接上传七牛的功能</li>
+<li>提供对七牛空间中文件进行管理的功能</li>
+<li>提供对七牛空间中文件进行处理的功能</li>
+<li>提供七牛CDN相关的刷新，预取，日志功能</li>
+</ol>
+
+<p><a id="opensource" target="_blank"></a></p>
+
+<h1 id="2" class="anchor-target">开源</h1>
+
+<ul>
+<li><a href="https://github.com/qiniu" target="_blank">Java SDK 项目地址</a></li>
+<li><a href="https://github.com/qiniu/java-sdk/releases" target="_blank">Java SDK 发布地址</a></li>
+<li><a href="https://developer.qiniu.com/kodo/sdk/java-sdk-6" target="_blank">Java SDK 历史文档</a></li>
+</ul>
+
+<p><a id="install" target="_blank"></a></p>
+
+<h1 id="3" class="anchor-target">安装</h1>
+
+<ul>
+<li><a href="https://developer.qiniu.com/kodo/sdk/java#install-by-gradle" target="_blank">使用Gradle</a></li>
+<li><a href="https://developer.qiniu.com/kodo/sdk/java#install-by-maven" target="_blank">使用Maven</a></li>
+<li><a href="https://developer.qiniu.com/kodo/sdk/java#install-by-yourself" target="_blank">手动安装</a></li>
+</ul>
+
+<p><a id="install-by-gradle" target="_blank"></a></p>
+
+<h3>Gradle</h3>
+
+<pre><div class="tools"><button title="" class="btn copybtn" data-toggle="tooltip" data-placement="top" container="body" data-original-title="拷贝代码" data-clipboard-text="compile &#39;com.qiniu:qiniu-java-sdk:7.2.+&#39;
+">拷贝</button></div><code class="hljs nginx"><ol start="1"><li><span class="hljs-attribute">compile</span> <span class="hljs-string">'com.qiniu:qiniu-java-sdk:7.2.+'</span></li></ol></code></pre>
+
+<p><a id="install-by-maven" target="_blank"></a></p>
+
+<h3>Maven</h3>
+
+<pre><div class="tools"><button title="" class="btn copybtn" data-toggle="tooltip" data-placement="top" container="body" data-original-title="拷贝代码" data-clipboard-text="&lt;dependency&gt;
+  &lt;groupId&gt;com.qiniu&lt;/groupId&gt;
+  &lt;artifactId&gt;qiniu-java-sdk&lt;/artifactId&gt;
+  &lt;version&gt;[7.2.0, 7.2.99]&lt;/version&gt;
+&lt;/dependency&gt;
+">拷贝</button></div><code class="hljs xml"><ol start="1"><li><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span></li><li>  <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>com.qiniu<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span></li><li>  <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>qiniu-java-sdk<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span></li><li>  <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>[7.2.0, 7.2.99]<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span></li><li><span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span></li></ol></code></pre>
+
+<p>这里的<code>version</code>指定了一个版本范围，每次更新<code>pom.xml</code>的时候会尝试去下载<code>7.2.x</code>版本中的最新版本，你可以手动指定一个固定的版本。</p>
+
+<p><a id="install-by-yourself" target="_blank"></a></p>
+
+<h3>手动下载</h3>
+
+<p>请尽量使用包管理工具自动解决依赖问题。如果条件实在不满足，只能通过手动下载jar包的方式来解决。本项目自身jar及依赖的第三方库如下：</p>
+
+<p>Java SDK依赖的第三方库及其版本如下：</p>
+
+<pre><div class="tools"><button title="" class="btn copybtn" data-toggle="tooltip" data-placement="top" container="body" data-original-title="拷贝代码" data-clipboard-text="&lt;dependencies&gt;
+    &lt;dependency&gt;
+      &lt;groupId&gt;com.squareup.okhttp3&lt;/groupId&gt;
+      &lt;artifactId&gt;okhttp&lt;/artifactId&gt;
+      &lt;version&gt;3.3.1&lt;/version&gt;
+      &lt;scope&gt;compile&lt;/scope&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+      &lt;groupId&gt;com.google.code.gson&lt;/groupId&gt;
+      &lt;artifactId&gt;gson&lt;/artifactId&gt;
+      &lt;version&gt;2.6.2&lt;/version&gt;
+      &lt;scope&gt;compile&lt;/scope&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+      &lt;groupId&gt;com.qiniu&lt;/groupId&gt;
+      &lt;artifactId&gt;happy-dns-java&lt;/artifactId&gt;
+      &lt;version&gt;0.1.4&lt;/version&gt;
+      &lt;scope&gt;compile&lt;/scope&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+      &lt;groupId&gt;junit&lt;/groupId&gt;
+      &lt;artifactId&gt;junit&lt;/artifactId&gt;
+      &lt;version&gt;4.12&lt;/version&gt;
+      &lt;scope&gt;test&lt;/scope&gt;
+    &lt;/dependency&gt;
+  &lt;/dependencies&gt;
+">拷贝</button></div><code class="hljs xml"><ol start="1"><li><span class="hljs-tag">&lt;<span class="hljs-name">dependencies</span>&gt;</span></li><li>    <span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span></li><li>      <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>com.squareup.okhttp3<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span></li><li>      <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>okhttp<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span></li><li>      <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>3.3.1<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span></li><li>      <span class="hljs-tag">&lt;<span class="hljs-name">scope</span>&gt;</span>compile<span class="hljs-tag">&lt;/<span class="hljs-name">scope</span>&gt;</span></li><li>    <span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span></li><li>    <span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span></li><li>      <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>com.google.code.gson<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span></li><li>      <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>gson<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span></li><li>      <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>2.6.2<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span></li><li>      <span class="hljs-tag">&lt;<span class="hljs-name">scope</span>&gt;</span>compile<span class="hljs-tag">&lt;/<span class="hljs-name">scope</span>&gt;</span></li><li>    <span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span></li><li>    <span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span></li><li>      <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>com.qiniu<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span></li><li>      <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>happy-dns-java<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span></li><li>      <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>0.1.4<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span></li><li>      <span class="hljs-tag">&lt;<span class="hljs-name">scope</span>&gt;</span>compile<span class="hljs-tag">&lt;/<span class="hljs-name">scope</span>&gt;</span></li><li>    <span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span></li><li>    <span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span></li><li>      <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>junit<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span></li><li>      <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>junit<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span></li><li>      <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>4.12<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span></li><li>      <span class="hljs-tag">&lt;<span class="hljs-name">scope</span>&gt;</span>test<span class="hljs-tag">&lt;/<span class="hljs-name">scope</span>&gt;</span></li><li>    <span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span></li><li>  <span class="hljs-tag">&lt;/<span class="hljs-name">dependencies</span>&gt;</span></li></ol></code></pre>
+
+<table>
+<thead>
+<tr>
+<th>库名称</th>
+<th>库项目地址</th>
+<th>库下载地址</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>qiniu-java-sdk</td>
+<td><a href="https://github.com/qiniu/java-sdk" target="_blank">链接🔗</a></td>
+<td><a href="http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22qiniu-java-sdk%22" target="_blank">链接🔗</a></td>
+</tr>
+
+<tr>
+<td>happy-dns-java</td>
+<td><a href="https://github.com/qiniu/happy-dns-java" target="_blank">链接🔗</a></td>
+<td><a href="http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22happy-dns-java%22" target="_blank">链接🔗</a></td>
+</tr>
+
+<tr>
+<td>okhttp3</td>
+<td><a href="https://github.com/square/okhttp" target="_blank">链接🔗</a></td>
+<td><a href="http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22com.squareup.okhttp3%22" target="_blank">链接🔗</a></td>
+</tr>
+
+<tr>
+<td>gson</td>
+<td><a href="https://github.com/google/gson" target="_blank">链接🔗</a></td>
+<td><a href="http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22com.google.code.gson%22" target="_blank">链接🔗</a></td>
+</tr>
+
+<tr>
+<td>junit</td>
+<td><a href="http://junit.org/junit4/" target="_blank">链接🔗</a></td>
+<td><a href="http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22junit%22" target="_blank">链接🔗</a></td>
+</tr>
+</tbody>
+</table>
+
+<p>可以点击每个库的下载链接，然后选择对应的jar进行下载，然后引入到项目中。</p>
+
+<p><a id="api-auth" target="_blank"></a></p>
+
+<h1 id="4" class="anchor-target">鉴权</h1>
+
+<p>七牛Java SDK的所有的功能，都需要合法的授权。授权凭证的签算需要七牛账号下的一对有效的<code>Access Key</code>和<code>Secret Key</code>，这对密钥可以通过如下步骤获得：</p>
+
+<ol>
+<li>点击<a href="https://portal.qiniu.com/signup" target="_blank">注册🔗</a>开通七牛开发者帐号</li>
+<li>如果已有账号，直接登录七牛开发者后台，点击<a href="https://portal.qiniu.com/user/key" target="_blank">这里🔗</a>查看 Access Key 和 Secret Key</li>
+</ol>
+
+<p><a id="io-put" target="_blank"></a></p>
+
+<h1 id="5" class="anchor-target">文件上传</h1>
+
+<ul>
+<li><a href="https://developer.qiniu.com/kodo/sdk/java#upload-flow" target="_blank">上传流程</a></li>
+<li><a href="https://developer.qiniu.com/kodo/sdk/java#upload-token" target="_blank">客户端上传凭证</a><a target="_blank">
+
+</a><ul><a target="_blank">
+</a><li><a target="_blank"></a><a href="https://developer.qiniu.com/kodo/sdk/java#simple-uptoken" target="_blank">简单上传凭证</a><a target="_blank"></a></li><a target="_blank">
+</a><li><a target="_blank"></a><a href="https://developer.qiniu.com/kodo/sdk/java#overwrite-uptoken" target="_blank">覆盖上传凭证</a><a target="_blank"></a></li><a target="_blank">
+</a><li><a target="_blank"></a><a href="https://developer.qiniu.com/kodo/sdk/java#returnbody-uptoken" target="_blank">自定义上传回复凭证</a><a target="_blank"></a></li><a target="_blank">
+</a><li><a target="_blank"></a><a href="https://developer.qiniu.com/kodo/sdk/java#callback-uptoken" target="_blank">带回调业务服务器的凭证</a><a target="_blank"></a></li><a target="_blank">
+</a><li><a target="_blank"></a><a href="https://developer.qiniu.com/kodo/sdk/java#pfop-uptoken" target="_blank">带数据处理的凭证</a><a target="_blank"></a></li><a target="_blank">
+</a><li><a target="_blank"></a><a href="https://developer.qiniu.com/kodo/sdk/java#param-uptoken" target="_blank">带自定义参数的凭证</a><a target="_blank"></a></li><a target="_blank">
+</a><li><a target="_blank"></a><a href="https://developer.qiniu.com/kodo/sdk/java#general-uptoken" target="_blank">综合上传凭证</a><a target="_blank"></a></li><a target="_blank">
+</a></ul></li><a target="_blank">
+</a><li><a target="_blank"></a><a href="https://developer.qiniu.com/kodo/sdk/java#server-upload" target="_blank">服务器直传</a><a target="_blank">
+
+</a><ul><a target="_blank">
+</a><li><a target="_blank"></a><a href="https://developer.qiniu.com/kodo/sdk/java#upload-config" target="_blank">构建配置类</a><a target="_blank"></a></li><a target="_blank">
+</a><li><a target="_blank"></a><a href="https://developer.qiniu.com/kodo/sdk/java#upload-file" target="_blank">文件上传</a><a target="_blank"></a></li><a target="_blank">
+</a><li><a target="_blank"></a><a href="https://developer.qiniu.com/kodo/sdk/java#upload-bytes" target="_blank">字节数组上传</a><a target="_blank"></a></li><a target="_blank">
+</a><li><a target="_blank"></a><a href="https://developer.qiniu.com/kodo/sdk/java#upload-stream" target="_blank">数据流上传</a><a target="_blank"></a></li><a target="_blank">
+</a><li><a target="_blank"></a><a href="https://developer.qiniu.com/kodo/sdk/java#upload-resumable" target="_blank">断点续传</a><a target="_blank"></a></li><a target="_blank">
+</a><li><a target="_blank"></a><a href="https://developer.qiniu.com/kodo/sdk/java#upload-result-parse" target="_blank">解析自定义回复内容</a></li>
+<li><a href="https://developer.qiniu.com/kodo/sdk/java#upload-callback-verify" target="_blank">业务服务器验证七牛回调</a></li>
+</ul></li>
+</ul>
+
+<p><a id="upload-flow" target="_blank"></a></p>
+
+<h3>上传流程</h3>
+
+<p>七牛文件上传分为客户端上传（主要是指网页端和移动端等面向终端用户的场景）和服务端上传两种场景，具体可以参考文档<a href="https://developer.qiniu.com/kodo/manual/programming-model" target="_blank">七牛业务流程</a>。</p>
+
+<p>服务端SDK在上传方面主要提供两种功能，一种是生成客户端上传所需要的上传凭证，另外一种是直接上传文件到云端。</p>
+
+<p><a id="upload-token" target="_blank"></a></p>
+
+<h3>客户端上传凭证</h3>
+
+<p>客户端（移动端或者Web端）上传文件的时候，需要从客户自己的业务服务器获取上传凭证，而这些上传凭证是通过服务端的SDK来生成的，然后通过客户自己的业务API分发给客户端使用。根据上传的业务需求不同，七牛云Java SDK支持丰富的上传凭证生成方式。</p>
+
+<p><a id="simple-uptoken" target="_blank"></a></p>
+
+<h4>简单上传的凭证</h4>
+
+<p>最简单的上传凭证只需要<code>AccessKey</code>，<code>SecretKey</code>和<code>Bucket</code>就可以。</p>
+
+<pre><div class="tools"><button title="" class="btn copybtn" data-toggle="tooltip" data-placement="top" container="body" data-original-title="拷贝代码" data-clipboard-text="String accessKey = &quot;access key&quot;;
+String secretKey = &quot;secret key&quot;;
+String bucket = &quot;bucket name&quot;;
+
+Auth auth = Auth.create(accessKey, secretKey);
+String upToken = auth.uploadToken(bucket);
+System.out.println(upToken);
+">拷贝</button></div><code class="hljs javascript"><ol start="1"><li><span class="hljs-built_in">String</span> accessKey = <span class="hljs-string">"access key"</span>;</li><li><span class="hljs-built_in">String</span> secretKey = <span class="hljs-string">"secret key"</span>;</li><li><span class="hljs-built_in">String</span> bucket = <span class="hljs-string">"bucket name"</span>;</li><li></li><li>Auth auth = Auth.create(accessKey, secretKey);</li><li><span class="hljs-built_in">String</span> upToken = auth.uploadToken(bucket);</li><li>System.out.println(upToken);</li></ol></code></pre>
+
+<p><a id="overwrite-uptoken" target="_blank"></a></p>
+
+<h4>覆盖上传的凭证</h4>
+
+<p>覆盖上传除了需要<code>简单上传</code>所需要的信息之外，还需要想进行覆盖的文件名称，这个文件名称同时可是客户端上传代码中指定的文件名，两者必须一致。</p>
+
+<pre><div class="tools"><button title="" class="btn copybtn" data-toggle="tooltip" data-placement="top" container="body" data-original-title="拷贝代码" data-clipboard-text="String accessKey = &quot;access key&quot;;
+String secretKey = &quot;secret key&quot;;
+String bucket = &quot;bucket name&quot;;
+String key = &quot;file key&quot;;
+
+Auth auth = Auth.create(accessKey, secretKey);
+String upToken = auth.uploadToken(bucket, key);
+System.out.println(upToken);
+">拷贝</button></div><code class="hljs javascript"><ol start="1"><li><span class="hljs-built_in">String</span> accessKey = <span class="hljs-string">"access key"</span>;</li><li><span class="hljs-built_in">String</span> secretKey = <span class="hljs-string">"secret key"</span>;</li><li><span class="hljs-built_in">String</span> bucket = <span class="hljs-string">"bucket name"</span>;</li><li><span class="hljs-built_in">String</span> key = <span class="hljs-string">"file key"</span>;</li><li></li><li>Auth auth = Auth.create(accessKey, secretKey);</li><li><span class="hljs-built_in">String</span> upToken = auth.uploadToken(bucket, key);</li><li>System.out.println(upToken);</li></ol></code></pre>
+
+<p><a id="returnbody-uptoken" target="_blank"></a></p>
+
+<h4>自定义上传回复的凭证</h4>
+
+<p>默认情况下，文件上传到七牛之后，在没有设置<code>returnBody</code>或者<code>回调</code>相关的参数情况下，七牛返回给上传端的回复格式为<code>hash</code>和<code>key</code>，例如：</p>
+
+<pre><div class="tools"><button title="" class="btn copybtn" data-toggle="tooltip" data-placement="top" container="body" data-original-title="拷贝代码" data-clipboard-text="{&quot;hash&quot;:&quot;Ftgm-CkWePC9fzMBTRNmPMhGBcSV&quot;,&quot;key&quot;:&quot;qiniu.jpg&quot;}
+">拷贝</button></div><code class="hljs json"><ol start="1"><li>{<span class="hljs-attr">"hash"</span>:<span class="hljs-string">"Ftgm-CkWePC9fzMBTRNmPMhGBcSV"</span>,<span class="hljs-attr">"key"</span>:<span class="hljs-string">"qiniu.jpg"</span>}</li></ol></code></pre>
+
+<p>有时候我们希望能自定义这个返回的JSON格式的内容，可以通过设置<code>returnBody</code>参数来实现，在<code>returnBody</code>中，我们可以使用七牛支持的<a href="https://developer.qiniu.com/kodo/manual/vars#magicvar" target="_blank">魔法变量</a>和<a href="https://developer.qiniu.com/kodo/manual/vars#xvar" target="_blank">自定义变量</a>。</p>
+
+<pre><div class="tools"><button title="" class="btn copybtn" data-toggle="tooltip" data-placement="top" container="body" data-original-title="拷贝代码" data-clipboard-text="String accessKey = &quot;access key&quot;;
+String secretKey = &quot;secret key&quot;;
+String bucket = &quot;bucket name&quot;;
+
+Auth auth = Auth.create(accessKey, secretKey);
+StringMap putPolicy = new StringMap();
+putPolicy.put(&quot;returnBody&quot;, &quot;{\&quot;key\&quot;:\&quot;$(key)\&quot;,\&quot;hash\&quot;:\&quot;$(etag)\&quot;,\&quot;bucket\&quot;:\&quot;$(bucket)\&quot;,\&quot;fsize\&quot;:$(fsize)}&quot;);
+long expireSeconds = 3600;
+String upToken = auth.uploadToken(bucket, null, expireSeconds, putPolicy);
+System.out.println(upToken);
+">拷贝</button></div><code class="hljs javascript"><ol start="1"><li><span class="hljs-built_in">String</span> accessKey = <span class="hljs-string">"access key"</span>;</li><li><span class="hljs-built_in">String</span> secretKey = <span class="hljs-string">"secret key"</span>;</li><li><span class="hljs-built_in">String</span> bucket = <span class="hljs-string">"bucket name"</span>;</li><li></li><li>Auth auth = Auth.create(accessKey, secretKey);</li><li>StringMap putPolicy = <span class="hljs-keyword">new</span> StringMap();</li><li>putPolicy.put(<span class="hljs-string">"returnBody"</span>, <span class="hljs-string">"{\"key\":\"$(key)\",\"hash\":\"$(etag)\",\"bucket\":\"$(bucket)\",\"fsize\":$(fsize)}"</span>);</li><li>long expireSeconds = <span class="hljs-number">3600</span>;</li><li><span class="hljs-built_in">String</span> upToken = auth.uploadToken(bucket, <span class="hljs-literal">null</span>, expireSeconds, putPolicy);</li><li>System.out.println(upToken);</li></ol></code></pre>
+
+<p>则文件上传到七牛之后，收到的回复内容如下：</p>
+
+<pre><div class="tools"><button title="" class="btn copybtn" data-toggle="tooltip" data-placement="top" container="body" data-original-title="拷贝代码" data-clipboard-text="{&quot;key&quot;:&quot;qiniu.jpg&quot;,&quot;hash&quot;:&quot;Ftgm-CkWePC9fzMBTRNmPMhGBcSV&quot;,&quot;bucket&quot;:&quot;if-bc&quot;,&quot;fsize&quot;:39335}
+">拷贝</button></div><code class="hljs json"><ol start="1"><li>{<span class="hljs-attr">"key"</span>:<span class="hljs-string">"qiniu.jpg"</span>,<span class="hljs-attr">"hash"</span>:<span class="hljs-string">"Ftgm-CkWePC9fzMBTRNmPMhGBcSV"</span>,<span class="hljs-attr">"bucket"</span>:<span class="hljs-string">"if-bc"</span>,<span class="hljs-attr">"fsize"</span>:<span class="hljs-number">39335</span>}</li></ol></code></pre>
+
+<p><a id="callback-uptoken" target="_blank"></a></p>
+
+<h4>带回调业务服务器的凭证</h4>
+
+<p>上面生成的<code>自定义上传回复</code>的上传凭证适用于上传端（无论是客户端还是服务端）和七牛服务器之间进行直接交互的情况下。在客户端上传的场景之下，有时候客户端需要在文件上传到七牛之后，从业务服务器获取相关的信息，这个时候就要用到七牛的上传回调及相关回调参数的设置。</p>
+
+<pre><div class="tools"><button title="" class="btn copybtn" data-toggle="tooltip" data-placement="top" container="body" data-original-title="拷贝代码" data-clipboard-text="String accessKey = &quot;access key&quot;;
+String secretKey = &quot;secret key&quot;;
+String bucket = &quot;bucket name&quot;;
+
+Auth auth = Auth.create(accessKey, secretKey);
+StringMap putPolicy = new StringMap();
+putPolicy.put(&quot;callbackUrl&quot;, &quot;http://api.example.com/qiniu/upload/callback&quot;);
+putPolicy.put(&quot;callbackBody&quot;, &quot;{\&quot;key\&quot;:\&quot;$(key)\&quot;,\&quot;hash\&quot;:\&quot;$(etag)\&quot;,\&quot;bucket\&quot;:\&quot;$(bucket)\&quot;,\&quot;fsize\&quot;:$(fsize)}&quot;);
+putPolicy.put(&quot;callbackBodyType&quot;, &quot;application/json&quot;);
+long expireSeconds = 3600;
+String upToken = auth.uploadToken(bucket, null, expireSeconds, putPolicy);
+System.out.println(upToken);
+">拷贝</button></div><code class="hljs javascript"><ol start="1"><li><span class="hljs-built_in">String</span> accessKey = <span class="hljs-string">"access key"</span>;</li><li><span class="hljs-built_in">String</span> secretKey = <span class="hljs-string">"secret key"</span>;</li><li><span class="hljs-built_in">String</span> bucket = <span class="hljs-string">"bucket name"</span>;</li><li></li><li>Auth auth = Auth.create(accessKey, secretKey);</li><li>StringMap putPolicy = <span class="hljs-keyword">new</span> StringMap();</li><li>putPolicy.put(<span class="hljs-string">"callbackUrl"</span>, <span class="hljs-string">"http://api.example.com/qiniu/upload/callback"</span>);</li><li>putPolicy.put(<span class="hljs-string">"callbackBody"</span>, <span class="hljs-string">"{\"key\":\"$(key)\",\"hash\":\"$(etag)\",\"bucket\":\"$(bucket)\",\"fsize\":$(fsize)}"</span>);</li><li>putPolicy.put(<span class="hljs-string">"callbackBodyType"</span>, <span class="hljs-string">"application/json"</span>);</li><li>long expireSeconds = <span class="hljs-number">3600</span>;</li><li><span class="hljs-built_in">String</span> upToken = auth.uploadToken(bucket, <span class="hljs-literal">null</span>, expireSeconds, putPolicy);</li><li>System.out.println(upToken);</li></ol></code></pre>
+
+<p>在使用了上传回调的情况下，客户端收到的回复就是业务服务器响应七牛的JSON格式内容。
+通常情况下，我们建议使用<code>application/json</code>格式来设置<code>callbackBody</code>，保持数据格式的统一性。实际情况下，<code>callbackBody</code>也支持<code>application/x-www-form-urlencoded</code>格式来组织内容，这个主要看业务服务器在接收到<code>callbackBody</code>的内容时如果解析。例如：</p>
+
+<pre><div class="tools"><button title="" class="btn copybtn" data-toggle="tooltip" data-placement="top" container="body" data-original-title="拷贝代码" data-clipboard-text="String accessKey = &quot;access key&quot;;
+String secretKey = &quot;secret key&quot;;
+String bucket = &quot;bucket name&quot;;
+
+Auth auth = Auth.create(accessKey, secretKey);
+StringMap putPolicy = new StringMap();
+putPolicy.put(&quot;callbackUrl&quot;, &quot;http://api.example.com/qiniu/upload/callback&quot;);
+putPolicy.put(&quot;callbackBody&quot;, &quot;key=$(key)&amp;hash=$(etag)&amp;bucket=$(bucket)&amp;fsize=$(fsize)&quot;);
+long expireSeconds = 3600;
+String upToken = auth.uploadToken(bucket, null, expireSeconds, putPolicy);
+System.out.println(upToken);
+">拷贝</button></div><code class="hljs javascript"><ol start="1"><li><span class="hljs-built_in">String</span> accessKey = <span class="hljs-string">"access key"</span>;</li><li><span class="hljs-built_in">String</span> secretKey = <span class="hljs-string">"secret key"</span>;</li><li><span class="hljs-built_in">String</span> bucket = <span class="hljs-string">"bucket name"</span>;</li><li></li><li>Auth auth = Auth.create(accessKey, secretKey);</li><li>StringMap putPolicy = <span class="hljs-keyword">new</span> StringMap();</li><li>putPolicy.put(<span class="hljs-string">"callbackUrl"</span>, <span class="hljs-string">"http://api.example.com/qiniu/upload/callback"</span>);</li><li>putPolicy.put(<span class="hljs-string">"callbackBody"</span>, <span class="hljs-string">"key=$(key)&amp;hash=$(etag)&amp;bucket=$(bucket)&amp;fsize=$(fsize)"</span>);</li><li>long expireSeconds = <span class="hljs-number">3600</span>;</li><li><span class="hljs-built_in">String</span> upToken = auth.uploadToken(bucket, <span class="hljs-literal">null</span>, expireSeconds, putPolicy);</li><li>System.out.println(upToken);</li></ol></code></pre>
+
+<p><a id="pfop-uptoken" target="_blank"></a></p>
+
+<h4>带数据处理的凭证</h4>
+
+<p>七牛支持在文件上传到七牛之后，立即对其进行多种指令的数据处理，这个只需要在生成的上传凭证中指定相关的处理参数即可。</p>
+
+<pre><div class="tools"><button title="" class="btn copybtn" data-toggle="tooltip" data-placement="top" container="body" data-original-title="拷贝代码" data-clipboard-text="String accessKey = &quot;access key&quot;;
+String secretKey = &quot;secret key&quot;;
+String bucket = &quot;bucket name&quot;;
+
+Auth auth = Auth.create(accessKey, secretKey);
+StringMap putPolicy = new StringMap();
+//数据处理指令，支持多个指令
+String saveMp4Entry = String.format(&quot;%s:avthumb_test_target.mp4&quot;, bucket);
+String saveJpgEntry = String.format(&quot;%s:vframe_test_target.jpg&quot;, bucket);
+String avthumbMp4Fop = String.format(&quot;avthumb/mp4|saveas/%s&quot;, UrlSafeBase64.encodeToString(saveMp4Entry));
+String vframeJpgFop = String.format(&quot;vframe/jpg/offset/1|saveas/%s&quot;, UrlSafeBase64.encodeToString(saveJpgEntry));
+//将多个数据处理指令拼接起来
+String persistentOpfs = StringUtils.join(new String[]{
+        avthumbMp4Fop, vframeJpgFop
+}, &quot;;&quot;);
+putPolicy.put(&quot;persistentOps&quot;, persistentOpfs);
+//数据处理队列名称，必填
+putPolicy.put(&quot;persistentPipeline&quot;, &quot;mps-pipe1&quot;);
+//数据处理完成结果通知地址
+putPolicy.put(&quot;persistentNotifyUrl&quot;, &quot;http://api.example.com/qiniu/pfop/notify&quot;);
+
+long expireSeconds = 3600;
+String upToken = auth.uploadToken(bucket, null, expireSeconds, putPolicy);
+System.out.println(upToken);    
+">拷贝</button></div><code class="hljs javascript"><ol start="1"><li><span class="hljs-built_in">String</span> accessKey = <span class="hljs-string">"access key"</span>;</li><li><span class="hljs-built_in">String</span> secretKey = <span class="hljs-string">"secret key"</span>;</li><li><span class="hljs-built_in">String</span> bucket = <span class="hljs-string">"bucket name"</span>;</li><li></li><li>Auth auth = Auth.create(accessKey, secretKey);</li><li>StringMap putPolicy = <span class="hljs-keyword">new</span> StringMap();</li><li><span class="hljs-comment">//数据处理指令，支持多个指令</span></li><li><span class="hljs-built_in">String</span> saveMp4Entry = <span class="hljs-built_in">String</span>.format(<span class="hljs-string">"%s:avthumb_test_target.mp4"</span>, bucket);</li><li><span class="hljs-built_in">String</span> saveJpgEntry = <span class="hljs-built_in">String</span>.format(<span class="hljs-string">"%s:vframe_test_target.jpg"</span>, bucket);</li><li><span class="hljs-built_in">String</span> avthumbMp4Fop = <span class="hljs-built_in">String</span>.format(<span class="hljs-string">"avthumb/mp4|saveas/%s"</span>, UrlSafeBase64.encodeToString(saveMp4Entry));</li><li><span class="hljs-built_in">String</span> vframeJpgFop = <span class="hljs-built_in">String</span>.format(<span class="hljs-string">"vframe/jpg/offset/1|saveas/%s"</span>, UrlSafeBase64.encodeToString(saveJpgEntry));</li><li><span class="hljs-comment">//将多个数据处理指令拼接起来</span></li><li><span class="hljs-built_in">String</span> persistentOpfs = StringUtils.join(<span class="hljs-keyword">new</span> <span class="hljs-built_in">String</span>[]{</li><li>        avthumbMp4Fop, vframeJpgFop</li><li>}, <span class="hljs-string">";"</span>);</li><li>putPolicy.put(<span class="hljs-string">"persistentOps"</span>, persistentOpfs);</li><li><span class="hljs-comment">//数据处理队列名称，必填</span></li><li>putPolicy.put(<span class="hljs-string">"persistentPipeline"</span>, <span class="hljs-string">"mps-pipe1"</span>);</li><li><span class="hljs-comment">//数据处理完成结果通知地址</span></li><li>putPolicy.put(<span class="hljs-string">"persistentNotifyUrl"</span>, <span class="hljs-string">"http://api.example.com/qiniu/pfop/notify"</span>);</li><li></li><li>long expireSeconds = <span class="hljs-number">3600</span>;</li><li><span class="hljs-built_in">String</span> upToken = auth.uploadToken(bucket, <span class="hljs-literal">null</span>, expireSeconds, putPolicy);</li><li>System.out.println(upToken);    </li></ol></code></pre>
+
+<p>队列 pipeline 请参阅<a href="https://portal.qiniu.com/dora/create-mps" target="_blank">创建私有队列</a>；转码操作具体参数请参阅<a href="https://developer.qiniu.com/dora/api/audio-and-video-transcoding-avthumb" target="_blank">音视频转码</a>；saveas 请参阅<a href="https://developer.qiniu.com/dora/api/processing-results-save-saveas" target="_blank">处理结果另存</a>。</p>
+
+<p><a id="param-uptoken" target="_blank"></a></p>
+
+<h4>带自定义参数的凭证</h4>
+
+<p>七牛支持客户端上传文件的时候定义一些自定义参数，这些参数可以在<code>returnBody</code>和<code>callbackBody</code>里面和七牛内置支持的魔法变量（即系统变量）通过相同的方式来引用。这些自定义的参数名称必须以<code>x:</code>开头。例如客户端上传的时候指定了自定义的参数<code>x:user</code>和<code>x:age</code>分别是<code>String</code>和<code>int</code>类型。那么可以通过下面的方式引用：</p>
+
+<pre><div class="tools"><button title="" class="btn copybtn" data-toggle="tooltip" data-placement="top" container="body" data-original-title="拷贝代码" data-clipboard-text="putPolicy.put(&quot;returnBody&quot;, &quot;{\&quot;key\&quot;:\&quot;$(key)\&quot;,\&quot;hash\&quot;:\&quot;$(etag)\&quot;,\&quot;bucket\&quot;:\&quot;$(bucket)\&quot;,\&quot;fsize\&quot;:$(fsize),\&quot;user\&quot;:\&quot;$(x:user)\&quot;,\&quot;age\&quot;,$(x:age)}&quot;);
+">拷贝</button></div><code class="hljs bash"><ol start="1"><li>putPolicy.put(<span class="hljs-string">"returnBody"</span>, <span class="hljs-string">"{\"key\":\"<span class="hljs-variable">$(key)</span>\",\"hash\":\"<span class="hljs-variable">$(etag)</span>\",\"bucket\":\"<span class="hljs-variable">$(bucket)</span>\",\"fsize\":<span class="hljs-variable">$(fsize)</span>,\"user\":\"<span class="hljs-variable">$(x:user)</span>\",\"age\",<span class="hljs-variable">$(x:age)</span>}"</span>);</li></ol></code></pre>
+
+<p>或者</p>
+
+<pre><div class="tools"><button title="" class="btn copybtn" data-toggle="tooltip" data-placement="top" container="body" data-original-title="拷贝代码" data-clipboard-text="putPolicy.put(&quot;callbackBody&quot;, &quot;{\&quot;key\&quot;:\&quot;$(key)\&quot;,\&quot;hash\&quot;:\&quot;$(etag)\&quot;,\&quot;bucket\&quot;:\&quot;$(bucket)\&quot;,\&quot;fsize\&quot;:$(fsize),\&quot;user\&quot;:\&quot;$(x:user)\&quot;,\&quot;age\&quot;,$(x:age)}&quot;);
+">拷贝</button></div><code class="hljs bash"><ol start="1"><li>putPolicy.put(<span class="hljs-string">"callbackBody"</span>, <span class="hljs-string">"{\"key\":\"<span class="hljs-variable">$(key)</span>\",\"hash\":\"<span class="hljs-variable">$(etag)</span>\",\"bucket\":\"<span class="hljs-variable">$(bucket)</span>\",\"fsize\":<span class="hljs-variable">$(fsize)</span>,\"user\":\"<span class="hljs-variable">$(x:user)</span>\",\"age\",<span class="hljs-variable">$(x:age)</span>}"</span>);</li></ol></code></pre>
+
+<p><a id="general-uptoken" target="_blank"></a></p>
+
+<h4>综合上传凭证</h4>
+
+<p>上面的生成上传凭证的方法，都是通过设置<a href="https://developer.qiniu.com/kodo/manual/put-policy" target="_blank">上传策略🔗</a>相关的参数来支持的，这些参数可以通过不同的组合方式来满足不同的业务需求，可以灵活地组织你所需要的上传凭证。</p>
+
+<p><a id="server-upload" target="_blank"></a></p>
+
+<h3>服务端直传</h3>
+
+<p>服务端直传是指客户利用七牛服务端SDK从服务端直接上传文件到七牛云，交互的双方一般都在机房里面，所以服务端可以自己生成上传凭证，然后利用SDK中的上传逻辑进行上传，最后从七牛云获取上传的结果，这个过程中由于双方都是业务服务器，所以很少利用到上传回调的功能，而是直接自定义<code>returnBody</code>来获取自定义的回复内容。</p>
+
+<p><a id="upload-config" target="_blank"></a></p>
+
+<h4>构建配置类</h4>
+
+<p>七牛存储支持空间创建在不同的机房，在使用七牛的Java SDK中的<code>UploadManager</code>上传文件之前，必须要构建一个上传用的<code>Configuration</code>对象，在该对象中，可以指定空间对应的<code>Zone</code>以及其他的一些影响上传的参数。</p>
+
+<pre><div class="tools"><button title="" class="btn copybtn" data-toggle="tooltip" data-placement="top" container="body" data-original-title="拷贝代码" data-clipboard-text="//构造一个带指定Zone对象的配置类
+Configuration cfg = new Configuration(Zone.zone0());
+//...其他参数参考类注释
+
+UploadManager uploadManager = new UploadManager(cfg);
+//...生成上传凭证，然后准备上传
+">拷贝</button></div><code class="hljs cpp"><ol start="1"><li><span class="hljs-comment">//构造一个带指定Zone对象的配置类</span></li><li>Configuration cfg = <span class="hljs-keyword">new</span> Configuration(Zone.zone0());</li><li><span class="hljs-comment">//...其他参数参考类注释</span></li><li></li><li>UploadManager uploadManager = <span class="hljs-keyword">new</span> UploadManager(cfg);</li><li><span class="hljs-comment">//...生成上传凭证，然后准备上传</span></li></ol></code></pre>
+
+<p>其中关于<code>Zone</code>对象和机房的关系如下：</p>
+
+<table>
+<thead>
+<tr>
+<th>机房</th>
+<th>Zone对象</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>华东</td>
+<td><code>Zone.zone0()</code></td>
+</tr>
+
+<tr>
+<td>华北</td>
+<td><code>Zone.zone1()</code></td>
+</tr>
+
+<tr>
+<td>华南</td>
+<td><code>Zone.zone2()</code></td>
+</tr>
+
+<tr>
+<td>北美</td>
+<td><code>Zone.zoneNa0()</code></td>
+</tr>
+</tbody>
+</table>
+
+<p><a id="upload-file" target="_blank"></a></p>
+
+<h4>文件上传</h4>
+
+<p>最简单的就是上传本地文件，直接指定文件的完整路径即可上传。</p>
+
+<pre><div class="tools"><button title="" class="btn copybtn" data-toggle="tooltip" data-placement="top" container="body" data-original-title="拷贝代码" data-clipboard-text="//构造一个带指定Zone对象的配置类
+Configuration cfg = new Configuration(Zone.zone0());
+//...其他参数参考类注释
+
+UploadManager uploadManager = new UploadManager(cfg);
+//...生成上传凭证，然后准备上传
+String accessKey = &quot;your access key&quot;;
+String secretKey = &quot;your secret key&quot;;
+String bucket = &quot;your bucket name&quot;;
+//如果是Windows情况下，格式是 D:\\qiniu\\test.png
+String localFilePath = &quot;/home/qiniu/test.png&quot;;
+//默认不指定key的情况下，以文件内容的hash值作为文件名
+String key = null;
+
+Auth auth = Auth.create(accessKey, secretKey);
+String upToken = auth.uploadToken(bucket);
+
+try {
+    Response response = uploadManager.put(localFilePath, key, upToken);
+    //解析上传成功的结果
+    DefaultPutRet putRet = new Gson().fromJson(response.bodyString(), DefaultPutRet.class);
+    System.out.println(putRet.key);
+    System.out.println(putRet.hash);
+} catch (QiniuException ex) {
+    Response r = ex.response;
+    System.err.println(r.toString());
+    try {
+        System.err.println(r.bodyString());
+    } catch (QiniuException ex2) {
+        //ignore
+    }
+}
+">拷贝</button></div><code class="hljs javascript"><ol start="1"><li><span class="hljs-comment">//构造一个带指定Zone对象的配置类</span></li><li>Configuration cfg = <span class="hljs-keyword">new</span> Configuration(Zone.zone0());</li><li><span class="hljs-comment">//...其他参数参考类注释</span></li><li></li><li>UploadManager uploadManager = <span class="hljs-keyword">new</span> UploadManager(cfg);</li><li><span class="hljs-comment">//...生成上传凭证，然后准备上传</span></li><li><span class="hljs-built_in">String</span> accessKey = <span class="hljs-string">"your access key"</span>;</li><li><span class="hljs-built_in">String</span> secretKey = <span class="hljs-string">"your secret key"</span>;</li><li><span class="hljs-built_in">String</span> bucket = <span class="hljs-string">"your bucket name"</span>;</li><li><span class="hljs-comment">//如果是Windows情况下，格式是 D:\\qiniu\\test.png</span></li><li><span class="hljs-built_in">String</span> localFilePath = <span class="hljs-string">"/home/qiniu/test.png"</span>;</li><li><span class="hljs-comment">//默认不指定key的情况下，以文件内容的hash值作为文件名</span></li><li><span class="hljs-built_in">String</span> key = <span class="hljs-literal">null</span>;</li><li></li><li>Auth auth = Auth.create(accessKey, secretKey);</li><li><span class="hljs-built_in">String</span> upToken = auth.uploadToken(bucket);</li><li></li><li><span class="hljs-keyword">try</span> {</li><li>    Response response = uploadManager.put(localFilePath, key, upToken);</li><li>    <span class="hljs-comment">//解析上传成功的结果</span></li><li>    DefaultPutRet putRet = <span class="hljs-keyword">new</span> Gson().fromJson(response.bodyString(), DefaultPutRet.class);</li><li>    System.out.println(putRet.key);</li><li>    System.out.println(putRet.hash);</li><li>} <span class="hljs-keyword">catch</span> (QiniuException ex) {</li><li>    Response r = ex.response;</li><li>    System.err.println(r.toString());</li><li>    <span class="hljs-keyword">try</span> {</li><li>        System.err.println(r.bodyString());</li><li>    } <span class="hljs-keyword">catch</span> (QiniuException ex2) {</li><li>        <span class="hljs-comment">//ignore</span></li><li>    }</li><li>}</li></ol></code></pre>
+
+<p><a id="upload-bytes" target="_blank"></a></p>
+
+<h4>字节数组上传</h4>
+
+<p>可以支持将内存中的字节数组上传到空间中。</p>
+
+<pre><div class="tools"><button title="" class="btn copybtn" data-toggle="tooltip" data-placement="top" container="body" data-original-title="拷贝代码" data-clipboard-text="//构造一个带指定Zone对象的配置类
+Configuration cfg = new Configuration(Zone.zone0());
+//...其他参数参考类注释
+
+UploadManager uploadManager = new UploadManager(cfg);
+//...生成上传凭证，然后准备上传
+String accessKey = &quot;your access key&quot;;
+String secretKey = &quot;your secret key&quot;;
+String bucket = &quot;your bucket name&quot;;
+
+//默认不指定key的情况下，以文件内容的hash值作为文件名
+String key = null;
+
+try {
+    byte[] uploadBytes = &quot;hello qiniu cloud&quot;.getBytes(&quot;utf-8&quot;);
+    Auth auth = Auth.create(accessKey, secretKey);
+    String upToken = auth.uploadToken(bucket);
+
+    try {
+        Response response = uploadManager.put(uploadBytes, key, upToken);
+        //解析上传成功的结果
+        DefaultPutRet putRet = new Gson().fromJson(response.bodyString(), DefaultPutRet.class);
+        System.out.println(putRet.key);
+        System.out.println(putRet.hash);
+    } catch (QiniuException ex) {
+        Response r = ex.response;
+        System.err.println(r.toString());
+        try {
+            System.err.println(r.bodyString());
+        } catch (QiniuException ex2) {
+            //ignore
+        }
+    }
+} catch (UnsupportedEncodingException ex) {
+    //ignore
+}
+">拷贝</button></div><code class="hljs javascript"><ol start="1"><li><span class="hljs-comment">//构造一个带指定Zone对象的配置类</span></li><li>Configuration cfg = <span class="hljs-keyword">new</span> Configuration(Zone.zone0());</li><li><span class="hljs-comment">//...其他参数参考类注释</span></li><li></li><li>UploadManager uploadManager = <span class="hljs-keyword">new</span> UploadManager(cfg);</li><li><span class="hljs-comment">//...生成上传凭证，然后准备上传</span></li><li><span class="hljs-built_in">String</span> accessKey = <span class="hljs-string">"your access key"</span>;</li><li><span class="hljs-built_in">String</span> secretKey = <span class="hljs-string">"your secret key"</span>;</li><li><span class="hljs-built_in">String</span> bucket = <span class="hljs-string">"your bucket name"</span>;</li><li></li><li><span class="hljs-comment">//默认不指定key的情况下，以文件内容的hash值作为文件名</span></li><li><span class="hljs-built_in">String</span> key = <span class="hljs-literal">null</span>;</li><li></li><li><span class="hljs-keyword">try</span> {</li><li>    byte[] uploadBytes = <span class="hljs-string">"hello qiniu cloud"</span>.getBytes(<span class="hljs-string">"utf-8"</span>);</li><li>    Auth auth = Auth.create(accessKey, secretKey);</li><li>    <span class="hljs-built_in">String</span> upToken = auth.uploadToken(bucket);</li><li></li><li>    <span class="hljs-keyword">try</span> {</li><li>        Response response = uploadManager.put(uploadBytes, key, upToken);</li><li>        <span class="hljs-comment">//解析上传成功的结果</span></li><li>        DefaultPutRet putRet = <span class="hljs-keyword">new</span> Gson().fromJson(response.bodyString(), DefaultPutRet.class);</li><li>        System.out.println(putRet.key);</li><li>        System.out.println(putRet.hash);</li><li>    } <span class="hljs-keyword">catch</span> (QiniuException ex) {</li><li>        Response r = ex.response;</li><li>        System.err.println(r.toString());</li><li>        <span class="hljs-keyword">try</span> {</li><li>            System.err.println(r.bodyString());</li><li>        } <span class="hljs-keyword">catch</span> (QiniuException ex2) {</li><li>            <span class="hljs-comment">//ignore</span></li><li>        }</li><li>    }</li><li>} <span class="hljs-keyword">catch</span> (UnsupportedEncodingException ex) {</li><li>    <span class="hljs-comment">//ignore</span></li><li>}</li></ol></code></pre>
+
+<p><a id="upload-stream" target="_blank"></a></p>
+
+<h4>数据流上传</h4>
+
+<p>这里演示的是<code>InputStream</code>对象的上传，适用于所有的<code>InputStream</code>子类。这里的<code>ByteInputStream</code>只用于演示目的，实际用法根据情况而定。</p>
+
+<pre><div class="tools"><button title="" class="btn copybtn" data-toggle="tooltip" data-placement="top" container="body" data-original-title="拷贝代码" data-clipboard-text="//构造一个带指定Zone对象的配置类
+Configuration cfg = new Configuration(Zone.zone0());
+//...其他参数参考类注释
+
+UploadManager uploadManager = new UploadManager(cfg);
+//...生成上传凭证，然后准备上传
+String accessKey = &quot;your access key&quot;;
+String secretKey = &quot;your secret key&quot;;
+String bucket = &quot;your bucket name&quot;;
+
+//默认不指定key的情况下，以文件内容的hash值作为文件名
+String key = null;
+
+try {
+    byte[] uploadBytes = &quot;hello qiniu cloud&quot;.getBytes(&quot;utf-8&quot;);
+    ByteArrayInputStream byteInputStream=new ByteArrayInputStream(uploadBytes);
+    Auth auth = Auth.create(accessKey, secretKey);
+    String upToken = auth.uploadToken(bucket);
+
+    try {
+        Response response = uploadManager.put(byteInputStream,key,upToken,null, null);
+        //解析上传成功的结果
+        DefaultPutRet putRet = new Gson().fromJson(response.bodyString(), DefaultPutRet.class);
+        System.out.println(putRet.key);
+        System.out.println(putRet.hash);
+    } catch (QiniuException ex) {
+        Response r = ex.response;
+        System.err.println(r.toString());
+        try {
+            System.err.println(r.bodyString());
+        } catch (QiniuException ex2) {
+            //ignore
+        }
+    }
+} catch (UnsupportedEncodingException ex) {
+    //ignore
+}
+">拷贝</button></div><code class="hljs javascript"><ol start="1"><li><span class="hljs-comment">//构造一个带指定Zone对象的配置类</span></li><li>Configuration cfg = <span class="hljs-keyword">new</span> Configuration(Zone.zone0());</li><li><span class="hljs-comment">//...其他参数参考类注释</span></li><li></li><li>UploadManager uploadManager = <span class="hljs-keyword">new</span> UploadManager(cfg);</li><li><span class="hljs-comment">//...生成上传凭证，然后准备上传</span></li><li><span class="hljs-built_in">String</span> accessKey = <span class="hljs-string">"your access key"</span>;</li><li><span class="hljs-built_in">String</span> secretKey = <span class="hljs-string">"your secret key"</span>;</li><li><span class="hljs-built_in">String</span> bucket = <span class="hljs-string">"your bucket name"</span>;</li><li></li><li><span class="hljs-comment">//默认不指定key的情况下，以文件内容的hash值作为文件名</span></li><li><span class="hljs-built_in">String</span> key = <span class="hljs-literal">null</span>;</li><li></li><li><span class="hljs-keyword">try</span> {</li><li>    byte[] uploadBytes = <span class="hljs-string">"hello qiniu cloud"</span>.getBytes(<span class="hljs-string">"utf-8"</span>);</li><li>    ByteArrayInputStream byteInputStream=<span class="hljs-keyword">new</span> ByteArrayInputStream(uploadBytes);</li><li>    Auth auth = Auth.create(accessKey, secretKey);</li><li>    <span class="hljs-built_in">String</span> upToken = auth.uploadToken(bucket);</li><li></li><li>    <span class="hljs-keyword">try</span> {</li><li>        Response response = uploadManager.put(byteInputStream,key,upToken,<span class="hljs-literal">null</span>, <span class="hljs-literal">null</span>);</li><li>        <span class="hljs-comment">//解析上传成功的结果</span></li><li>        DefaultPutRet putRet = <span class="hljs-keyword">new</span> Gson().fromJson(response.bodyString(), DefaultPutRet.class);</li><li>        System.out.println(putRet.key);</li><li>        System.out.println(putRet.hash);</li><li>    } <span class="hljs-keyword">catch</span> (QiniuException ex) {</li><li>        Response r = ex.response;</li><li>        System.err.println(r.toString());</li><li>        <span class="hljs-keyword">try</span> {</li><li>            System.err.println(r.bodyString());</li><li>        } <span class="hljs-keyword">catch</span> (QiniuException ex2) {</li><li>            <span class="hljs-comment">//ignore</span></li><li>        }</li><li>    }</li><li>} <span class="hljs-keyword">catch</span> (UnsupportedEncodingException ex) {</li><li>    <span class="hljs-comment">//ignore</span></li><li>}</li></ol></code></pre>
+
+<p><a id="upload-resumable" target="_blank"></a></p>
+
+<h4>断点续上传</h4>
+
+<pre><div class="tools"><button title="" class="btn copybtn" data-toggle="tooltip" data-placement="top" container="body" data-original-title="拷贝代码" data-clipboard-text="//构造一个带指定Zone对象的配置类
+Configuration cfg = new Configuration(Zone.zone0());
+//...其他参数参考类注释
+
+//...生成上传凭证，然后准备上传
+String accessKey = &quot;your access key&quot;;
+String secretKey = &quot;your secret key&quot;;
+String bucket = &quot;your bucket name&quot;;
+//如果是Windows情况下，格式是 D:\\qiniu\\test.png
+String localFilePath = &quot;/home/qiniu/test.mp4&quot;;
+//默认不指定key的情况下，以文件内容的hash值作为文件名
+String key = null;
+
+Auth auth = Auth.create(accessKey, secretKey);
+String upToken = auth.uploadToken(bucket);
+
+String localTempDir = Paths.get(System.getenv(&quot;java.io.tmpdir&quot;), bucket).toString();
+try {
+    //设置断点续传文件进度保存目录
+    FileRecorder fileRecorder = new FileRecorder(localTempDir);
+    UploadManager uploadManager = new UploadManager(cfg, fileRecorder);
+    try {
+        Response response = uploadManager.put(localFilePath, key, upToken);
+        //解析上传成功的结果
+        DefaultPutRet putRet = new Gson().fromJson(response.bodyString(), DefaultPutRet.class);
+        System.out.println(putRet.key);
+        System.out.println(putRet.hash);
+    } catch (QiniuException ex) {
+        Response r = ex.response;
+        System.err.println(r.toString());
+        try {
+            System.err.println(r.bodyString());
+        } catch (QiniuException ex2) {
+            //ignore
+        }
+    }
+} catch (IOException ex) {
+    ex.printStackTrace();
+}
+">拷贝</button></div><code class="hljs javascript"><ol start="1"><li><span class="hljs-comment">//构造一个带指定Zone对象的配置类</span></li><li>Configuration cfg = <span class="hljs-keyword">new</span> Configuration(Zone.zone0());</li><li><span class="hljs-comment">//...其他参数参考类注释</span></li><li></li><li><span class="hljs-comment">//...生成上传凭证，然后准备上传</span></li><li><span class="hljs-built_in">String</span> accessKey = <span class="hljs-string">"your access key"</span>;</li><li><span class="hljs-built_in">String</span> secretKey = <span class="hljs-string">"your secret key"</span>;</li><li><span class="hljs-built_in">String</span> bucket = <span class="hljs-string">"your bucket name"</span>;</li><li><span class="hljs-comment">//如果是Windows情况下，格式是 D:\\qiniu\\test.png</span></li><li><span class="hljs-built_in">String</span> localFilePath = <span class="hljs-string">"/home/qiniu/test.mp4"</span>;</li><li><span class="hljs-comment">//默认不指定key的情况下，以文件内容的hash值作为文件名</span></li><li><span class="hljs-built_in">String</span> key = <span class="hljs-literal">null</span>;</li><li></li><li>Auth auth = Auth.create(accessKey, secretKey);</li><li><span class="hljs-built_in">String</span> upToken = auth.uploadToken(bucket);</li><li></li><li><span class="hljs-built_in">String</span> localTempDir = Paths.get(System.getenv(<span class="hljs-string">"java.io.tmpdir"</span>), bucket).toString();</li><li><span class="hljs-keyword">try</span> {</li><li>    <span class="hljs-comment">//设置断点续传文件进度保存目录</span></li><li>    FileRecorder fileRecorder = <span class="hljs-keyword">new</span> FileRecorder(localTempDir);</li><li>    UploadManager uploadManager = <span class="hljs-keyword">new</span> UploadManager(cfg, fileRecorder);</li><li>    <span class="hljs-keyword">try</span> {</li><li>        Response response = uploadManager.put(localFilePath, key, upToken);</li><li>        <span class="hljs-comment">//解析上传成功的结果</span></li><li>        DefaultPutRet putRet = <span class="hljs-keyword">new</span> Gson().fromJson(response.bodyString(), DefaultPutRet.class);</li><li>        System.out.println(putRet.key);</li><li>        System.out.println(putRet.hash);</li><li>    } <span class="hljs-keyword">catch</span> (QiniuException ex) {</li><li>        Response r = ex.response;</li><li>        System.err.println(r.toString());</li><li>        <span class="hljs-keyword">try</span> {</li><li>            System.err.println(r.bodyString());</li><li>        } <span class="hljs-keyword">catch</span> (QiniuException ex2) {</li><li>            <span class="hljs-comment">//ignore</span></li><li>        }</li><li>    }</li><li>} <span class="hljs-keyword">catch</span> (IOException ex) {</li><li>    ex.printStackTrace();</li><li>}</li></ol></code></pre>
+
+<p><a id="upload-result-parse" target="_blank"></a></p>
+
+<h3>解析自定义回复内容</h3>
+
+<p>有些情况下，七牛返回给上传端的内容不是默认的<code>hash</code>和<code>key</code>形式，这种情况下，可能出现在自定义<code>returnBody</code>或者自定义了<code>callbackBody</code>的情况下，前者一般是服务端直传的场景，而后者则是接受上传回调的场景，这两种场景之下，都涉及到需要将自定义的回复内容解析为<code>Java</code>的类对象，一般建议在交互过程中，都采用<code>JSON</code>的方式，这样处理起来方法比较一致，而且<code>JSON</code>的方法最通用。</p>
+
+<p>遇到诸如自定义<code>returnBody</code>的情况：</p>
+
+<pre><div class="tools"><button title="" class="btn copybtn" data-toggle="tooltip" data-placement="top" container="body" data-original-title="拷贝代码" data-clipboard-text="putPolicy.put(&quot;returnBody&quot;, &quot;{\&quot;key\&quot;:\&quot;$(key)\&quot;,\&quot;hash\&quot;:\&quot;$(etag)\&quot;,\&quot;bucket\&quot;:\&quot;$(bucket)\&quot;,\&quot;fsize\&quot;:$(fsize)}&quot;);
+">拷贝</button></div><code class="hljs bash"><ol start="1"><li>putPolicy.put(<span class="hljs-string">"returnBody"</span>, <span class="hljs-string">"{\"key\":\"<span class="hljs-variable">$(key)</span>\",\"hash\":\"<span class="hljs-variable">$(etag)</span>\",\"bucket\":\"<span class="hljs-variable">$(bucket)</span>\",\"fsize\":<span class="hljs-variable">$(fsize)</span>}"</span>);</li></ol></code></pre>
+
+<p>或者是自定义了<code>callbackBody</code>的情况：</p>
+
+<pre><div class="tools"><button title="" class="btn copybtn" data-toggle="tooltip" data-placement="top" container="body" data-original-title="拷贝代码" data-clipboard-text="putPolicy.put(&quot;callbackBody&quot;, &quot;{\&quot;key\&quot;:\&quot;$(key)\&quot;,\&quot;hash\&quot;:\&quot;$(etag)\&quot;,\&quot;bucket\&quot;:\&quot;$(bucket)\&quot;,\&quot;fsize\&quot;:$(fsize)}&quot;);
+">拷贝</button></div><code class="hljs bash"><ol start="1"><li>putPolicy.put(<span class="hljs-string">"callbackBody"</span>, <span class="hljs-string">"{\"key\":\"<span class="hljs-variable">$(key)</span>\",\"hash\":\"<span class="hljs-variable">$(etag)</span>\",\"bucket\":\"<span class="hljs-variable">$(bucket)</span>\",\"fsize\":<span class="hljs-variable">$(fsize)</span>}"</span>);</li></ol></code></pre>
+
+<p>我们只需要自己定义了对应的类，例如：</p>
+
+<pre><div class="tools"><button title="" class="btn copybtn" data-toggle="tooltip" data-placement="top" container="body" data-original-title="拷贝代码" data-clipboard-text="class MyPutRet {
+    public String key;
+    public String hash;
+    public String bucket;
+    public long fsize;
+}
+">拷贝</button></div><code class="hljs cs"><ol start="1"><li><span class="hljs-keyword">class</span> <span class="hljs-title">MyPutRet</span> {</li><li>    <span class="hljs-keyword">public</span> String key;</li><li>    <span class="hljs-keyword">public</span> String hash;</li><li>    <span class="hljs-keyword">public</span> String bucket;</li><li>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">long</span> fsize;</li><li>}</li></ol></code></pre>
+
+<p>然后在获取到上传回复的<code>Response</code>对象时，使用如下的方法就可以转为自定义回复的类对象了：</p>
+
+<pre><div class="tools"><button title="" class="btn copybtn" data-toggle="tooltip" data-placement="top" container="body" data-original-title="拷贝代码" data-clipboard-text="MyPutRet myPutRet=response.jsonToObject(MyPutRet.class);
+">拷贝</button></div><code class="hljs cpp"><ol start="1"><li>MyPutRet myPutRet=response.jsonToObject(MyPutRet.<span class="hljs-keyword">class</span>);</li></ol></code></pre>
+
+<p><a id="upload-callback-verify" target="_blank"></a></p>
+
+<h3>业务服务器验证七牛回调</h3>
+
+<p>在上传策略里面设置了上传回调相关参数的时候，七牛在文件上传到服务器之后，会主动地向<code>callbackUrl</code>发送POST请求的回调，回调的内容为<code>callbackBody</code>模版所定义的内容，如果这个模版里面引用了<a href="https://developer.qiniu.com/kodo/manual/vars#magicvar" target="_blank">魔法变量</a>或者<a href="https://developer.qiniu.com/kodo/manual/vars#xvar" target="_blank">自定义变量</a>，那么这些变量会被自动填充对应的值，然后在发送给业务服务器。</p>
+
+<p>业务服务器在收到来自七牛的回调请求的时候，可以根据请求头部的<code>Authorization</code>字段来进行验证，查看该请求是否是来自七牛的未经篡改的请求。</p>
+
+<pre><div class="tools"><button title="" class="btn copybtn" data-toggle="tooltip" data-placement="top" container="body" data-original-title="拷贝代码" data-clipboard-text="String accessKey = &quot;your access key&quot;;
+String secretKey = &quot;your secret key&quot;;
+
+/*
+* 这两个参数就是在定义PutPolicy参数时指定的内容
+*/
+
+//回调地址
+String callbackUrl = &quot;http://api.example.com/qiniu/callback&quot;;
+//定义回调内容的组织格式
+//String callbackBodyType = &quot;application/x-www-form-urlencoded&quot;;
+String callbackBodyType = &quot;application/json&quot;;
+
+/**
+ * 这两个参数根据实际所使用的HTTP框架进行获取
+ */
+//通过获取请求的HTTP头部Authorization字段获得
+String callbackAuthHeader = &quot;xxx&quot;;
+//通过读取回调POST请求体获得，不要设置为null
+byte[] callbackBody = null;
+
+
+Auth auth = Auth.create(accessKey, secretKey);
+//检查是否为七牛合法的回调请求
+boolean validCallback = auth.isValidCallback(callbackAuthHeader, callbackUrl, callbackBody, callbackBodyType);
+if (validCallback) {
+    //继续处理其他业务逻辑
+} else {
+    //这是哪里的请求，被劫持，篡改了吧？
+}
+
+">拷贝</button></div><code class="hljs javascript"><ol start="1"><li><span class="hljs-built_in">String</span> accessKey = <span class="hljs-string">"your access key"</span>;</li><li><span class="hljs-built_in">String</span> secretKey = <span class="hljs-string">"your secret key"</span>;</li><li></li><li><span class="hljs-comment">/*</span></li><li>* 这两个参数就是在定义PutPolicy参数时指定的内容</li><li>*/</li><li></li><li><span class="hljs-comment">//回调地址</span></li><li><span class="hljs-built_in">String</span> callbackUrl = <span class="hljs-string">"http://api.example.com/qiniu/callback"</span>;</li><li><span class="hljs-comment">//定义回调内容的组织格式</span></li><li><span class="hljs-comment">//String callbackBodyType = "application/x-www-form-urlencoded";</span></li><li><span class="hljs-built_in">String</span> callbackBodyType = <span class="hljs-string">"application/json"</span>;</li><li></li><li><span class="hljs-comment">/**</span></li><li> * 这两个参数根据实际所使用的HTTP框架进行获取</li><li> */</li><li><span class="hljs-comment">//通过获取请求的HTTP头部Authorization字段获得</span></li><li><span class="hljs-built_in">String</span> callbackAuthHeader = <span class="hljs-string">"xxx"</span>;</li><li><span class="hljs-comment">//通过读取回调POST请求体获得，不要设置为null</span></li><li>byte[] callbackBody = <span class="hljs-literal">null</span>;</li><li></li><li></li><li>Auth auth = Auth.create(accessKey, secretKey);</li><li><span class="hljs-comment">//检查是否为七牛合法的回调请求</span></li><li>boolean validCallback = auth.isValidCallback(callbackAuthHeader, callbackUrl, callbackBody, callbackBodyType);</li><li><span class="hljs-keyword">if</span> (validCallback) {</li><li>    <span class="hljs-comment">//继续处理其他业务逻辑</span></li><li>} <span class="hljs-keyword">else</span> {</li><li>    <span class="hljs-comment">//这是哪里的请求，被劫持，篡改了吧？</span></li><li>}</li><li></li></ol></code></pre>
+
+<p><a id="io-get" target="_blank"></a></p>
+
+<h1 id="6" class="anchor-target">下载文件</h1>
+
+<ul>
+<li><a href="https://developer.qiniu.com/kodo/sdk/java#public-get" target="_blank">公开空间</a></li>
+<li><a href="https://developer.qiniu.com/kodo/sdk/java#private-get" target="_blank">私有空间</a></li>
+</ul>
+
+<p>文件下载分为公开空间的文件下载和私有空间的文件下载。</p>
+
+<p><a id="public-get" target="_blank"></a></p>
+
+<h3>公开空间</h3>
+
+<p>对于公开空间，其访问的链接主要是将空间绑定的域名（可以是七牛空间的默认域名或者是绑定的自定义域名）拼接上空间里面的文件名即可访问，标准情况下需要在拼接链接之前，将文件名进行<code>urlencode</code>以兼容不同的字符。</p>
+
+<pre><div class="tools"><button title="" class="btn copybtn" data-toggle="tooltip" data-placement="top" container="body" data-original-title="拷贝代码" data-clipboard-text="String fileName = &quot;七牛/云存储/qiniu.jpg&quot;;
+String domainOfBucket = &quot;http://devtools.qiniu.com&quot;;
+String encodedFileName = URLEncoder.encode(fileName, &quot;utf-8&quot;);
+String finalUrl = String.format(&quot;%s/%s&quot;, domainOfBucket, encodedFileName);
+System.out.println(finalUrl);
+">拷贝</button></div><code class="hljs javascript"><ol start="1"><li><span class="hljs-built_in">String</span> fileName = <span class="hljs-string">"七牛/云存储/qiniu.jpg"</span>;</li><li><span class="hljs-built_in">String</span> domainOfBucket = <span class="hljs-string">"http://devtools.qiniu.com"</span>;</li><li><span class="hljs-built_in">String</span> encodedFileName = URLEncoder.encode(fileName, <span class="hljs-string">"utf-8"</span>);</li><li><span class="hljs-built_in">String</span> finalUrl = <span class="hljs-built_in">String</span>.format(<span class="hljs-string">"%s/%s"</span>, domainOfBucket, encodedFileName);</li><li>System.out.println(finalUrl);</li></ol></code></pre>
+
+<p><a id="private-get" target="_blank"></a></p>
+
+<h3>私有空间</h3>
+
+<p>对于私有空间，首先需要按照公开空间的文件访问方式构建对应的公开空间访问链接，然后再对这个链接进行私有授权签名。</p>
+
+<pre><div class="tools"><button title="" class="btn copybtn" data-toggle="tooltip" data-placement="top" container="body" data-original-title="拷贝代码" data-clipboard-text="String fileName = &quot;七牛/云存储/qiniu.jpg&quot;;
+String domainOfBucket = &quot;http://devtools.qiniu.com&quot;;
+String encodedFileName = URLEncoder.encode(fileName, &quot;utf-8&quot;);
+String publicUrl = String.format(&quot;%s/%s&quot;, domainOfBucket, encodedFileName);
+
+String accessKey = &quot;your access key&quot;;
+String secretKey = &quot;your secret key&quot;;
+Auth auth = Auth.create(accessKey, secretKey);
+long expireInSeconds = 3600;//1小时，可以自定义链接过期时间
+String finalUrl = auth.privateDownloadUrl(publicUrl, expireInSeconds);
+
+System.out.println(finalUrl);
+">拷贝</button></div><code class="hljs javascript"><ol start="1"><li><span class="hljs-built_in">String</span> fileName = <span class="hljs-string">"七牛/云存储/qiniu.jpg"</span>;</li><li><span class="hljs-built_in">String</span> domainOfBucket = <span class="hljs-string">"http://devtools.qiniu.com"</span>;</li><li><span class="hljs-built_in">String</span> encodedFileName = URLEncoder.encode(fileName, <span class="hljs-string">"utf-8"</span>);</li><li><span class="hljs-built_in">String</span> publicUrl = <span class="hljs-built_in">String</span>.format(<span class="hljs-string">"%s/%s"</span>, domainOfBucket, encodedFileName);</li><li></li><li><span class="hljs-built_in">String</span> accessKey = <span class="hljs-string">"your access key"</span>;</li><li><span class="hljs-built_in">String</span> secretKey = <span class="hljs-string">"your secret key"</span>;</li><li>Auth auth = Auth.create(accessKey, secretKey);</li><li>long expireInSeconds = <span class="hljs-number">3600</span>;<span class="hljs-comment">//1小时，可以自定义链接过期时间</span></li><li><span class="hljs-built_in">String</span> finalUrl = auth.privateDownloadUrl(publicUrl, expireInSeconds);</li><li></li><li>System.out.println(finalUrl);</li></ol></code></pre>
+
+<p><a id="rs" target="_blank"></a></p>
+
+<h1 id="7" class="anchor-target">资源管理</h1>
+
+<p>资源管理包括的主要功能有：</p>
+
+<ul>
+<li><a href="https://developer.qiniu.com/kodo/sdk/java#rs-stat" target="_blank">获取文件信息</a></li>
+<li><a href="https://developer.qiniu.com/kodo/sdk/java#rs-chgm" target="_blank">修改文件类型</a></li>
+<li><a href="https://developer.qiniu.com/kodo/sdk/java#rs-move" target="_blank">移动或重命名文件</a></li>
+<li><a href="https://developer.qiniu.com/kodo/sdk/java#rs-copy" target="_blank">复制文件副本</a></li>
+<li><a href="https://developer.qiniu.com/kodo/sdk/java#rs-delete" target="_blank">删除空间中的文件</a></li>
+<li><a href="https://developer.qiniu.com/kodo/sdk/java#rs-delete-after-days" target="_blank">设置或更新文件生存时间</a></li>
+<li><a href="https://developer.qiniu.com/kodo/sdk/java#rs-list" target="_blank">获取空间文件列表</a></li>
+<li><a href="https://developer.qiniu.com/kodo/sdk/java#rs-fetch" target="_blank">抓取网络资源到空间</a></li>
+<li><a href="https://developer.qiniu.com/kodo/sdk/java#rs-batch" target="_blank">资源管理批量操作</a>
+
+<ul>
+<li><a href="https://developer.qiniu.com/kodo/sdk/java#rs-batch-stat" target="_blank">批量获取文件信息</a><a target="_blank"></a></li><a target="_blank">
+</a><li><a target="_blank"></a><a href="https://developer.qiniu.com/kodo/sdk/java#rs-batch-chgm" target="_blank">批量修改文件类型</a><a target="_blank"></a></li><a target="_blank">
+</a><li><a target="_blank"></a><a href="https://developer.qiniu.com/kodo/sdk/java#rs-batch-delete" target="_blank">批量删除文件</a><a target="_blank"></a></li><a target="_blank">
+</a><li><a target="_blank"></a><a href="https://developer.qiniu.com/kodo/sdk/java#rs-batch-move" target="_blank">批量移动或重命名文件</a><a target="_blank"></a></li><a target="_blank">
+</a><li><a target="_blank"></a><a href="https://developer.qiniu.com/kodo/sdk/java#rs-batch-copy" target="_blank">批量复制文件</a><a target="_blank"></a></li><a target="_blank">
+</a><li><a target="_blank"></a><a href="https://developer.qiniu.com/kodo/sdk/java#rs-batch-mixops" target="_blank">批量混合指令操作</a><a target="_blank"></a></li><a target="_blank">
+</a><li><a target="_blank"></a><a href="https://developer.qiniu.com/kodo/sdk/java#rs-prefetch" target="_blank">更新镜像存储空间中的文件内容</a><a target="_blank"></a></li><a target="_blank">
+</a></ul></li><a target="_blank">
+</a><li><a target="_blank"></a><a href="https://developer.qiniu.com/kodo/sdk/java#rs-prefetch" target="_blank">更新镜像存储空间中文件内容</a></li>
+</ul>
+
+<p><a id="rs-stat" target="_blank"></a></p>
+
+<h2>获取文件信息</h2>
+
+<pre><div class="tools"><button title="" class="btn copybtn" data-toggle="tooltip" data-placement="top" container="body" data-original-title="拷贝代码" data-clipboard-text="//构造一个带指定Zone对象的配置类
+Configuration cfg = new Configuration(Zone.zone0());
+//...其他参数参考类注释
+
+String accessKey = &quot;your access key&quot;;
+String secretKey = &quot;your secret key&quot;;
+String bucket = &quot;your bucket name&quot;;
+String key = &quot;your file key&quot;;
+
+Auth auth = Auth.create(accessKey, secretKey);
+BucketManager bucketManager = new BucketManager(auth, cfg);
+try {
+    FileInfo fileInfo = bucketManager.stat(bucket, key);
+    System.out.println(fileInfo.hash);
+    System.out.println(fileInfo.fsize);
+    System.out.println(fileInfo.mimeType);
+    System.out.println(fileInfo.putTime);
+} catch (QiniuException ex) {
+    System.err.println(ex.response.toString());
+}
+">拷贝</button></div><code class="hljs cs"><ol start="1"><li><span class="hljs-comment">//构造一个带指定Zone对象的配置类</span></li><li>Configuration cfg = <span class="hljs-keyword">new</span> Configuration(Zone.zone0());</li><li><span class="hljs-comment">//...其他参数参考类注释</span></li><li></li><li>String accessKey = <span class="hljs-string">"your access key"</span>;</li><li>String secretKey = <span class="hljs-string">"your secret key"</span>;</li><li>String bucket = <span class="hljs-string">"your bucket name"</span>;</li><li>String key = <span class="hljs-string">"your file key"</span>;</li><li></li><li>Auth auth = Auth.create(accessKey, secretKey);</li><li>BucketManager bucketManager = <span class="hljs-keyword">new</span> BucketManager(auth, cfg);</li><li><span class="hljs-keyword">try</span> {</li><li>    FileInfo fileInfo = bucketManager.stat(bucket, key);</li><li>    System.<span class="hljs-keyword">out</span>.println(fileInfo.hash);</li><li>    System.<span class="hljs-keyword">out</span>.println(fileInfo.fsize);</li><li>    System.<span class="hljs-keyword">out</span>.println(fileInfo.mimeType);</li><li>    System.<span class="hljs-keyword">out</span>.println(fileInfo.putTime);</li><li>} <span class="hljs-keyword">catch</span> (QiniuException ex) {</li><li>    System.err.println(ex.response.toString());</li><li>}</li></ol></code></pre>
+
+<p><a id="rs-chgm" target="_blank"></a></p>
+
+<h2>修改文件类型</h2>
+
+<pre><div class="tools"><button title="" class="btn copybtn" data-toggle="tooltip" data-placement="top" container="body" data-original-title="拷贝代码" data-clipboard-text="//构造一个带指定Zone对象的配置类
+Configuration cfg = new Configuration(Zone.zone0());
+//...其他参数参考类注释
+
+String accessKey = &quot;your access key&quot;;
+String secretKey = &quot;your secret key&quot;;
+
+String bucket = &quot;your bucket name&quot;;
+String key = &quot;your file key&quot;;
+String newMimeType = &quot;new mime type&quot;;
+
+Auth auth = Auth.create(accessKey, secretKey);
+BucketManager bucketManager = new BucketManager(auth, cfg);
+
+//修改文件类型
+try {
+    bucketManager.changeMime(bucket, key, newMimeType);
+} catch (QiniuException ex) {
+    System.out.println(ex.response.toString());
+}
+">拷贝</button></div><code class="hljs javascript"><ol start="1"><li><span class="hljs-comment">//构造一个带指定Zone对象的配置类</span></li><li>Configuration cfg = <span class="hljs-keyword">new</span> Configuration(Zone.zone0());</li><li><span class="hljs-comment">//...其他参数参考类注释</span></li><li></li><li><span class="hljs-built_in">String</span> accessKey = <span class="hljs-string">"your access key"</span>;</li><li><span class="hljs-built_in">String</span> secretKey = <span class="hljs-string">"your secret key"</span>;</li><li></li><li><span class="hljs-built_in">String</span> bucket = <span class="hljs-string">"your bucket name"</span>;</li><li><span class="hljs-built_in">String</span> key = <span class="hljs-string">"your file key"</span>;</li><li><span class="hljs-built_in">String</span> newMimeType = <span class="hljs-string">"new mime type"</span>;</li><li></li><li>Auth auth = Auth.create(accessKey, secretKey);</li><li>BucketManager bucketManager = <span class="hljs-keyword">new</span> BucketManager(auth, cfg);</li><li></li><li><span class="hljs-comment">//修改文件类型</span></li><li><span class="hljs-keyword">try</span> {</li><li>    bucketManager.changeMime(bucket, key, newMimeType);</li><li>} <span class="hljs-keyword">catch</span> (QiniuException ex) {</li><li>    System.out.println(ex.response.toString());</li><li>}</li></ol></code></pre>
+
+<p><a id="rs-move" target="_blank"></a></p>
+
+<h2>移动或重命名文件</h2>
+
+<p>移动操作本身支持移动文件到相同，不同空间中，在移动的同时也可以支持文件重命名。唯一的限制条件是，移动的源空间和目标空间必须在同一个机房。</p>
+
+<table>
+<thead>
+<tr>
+<th>源空间</th>
+<th>目标空间</th>
+<th>源文件名</th>
+<th>目标文件名</th>
+<th>描述</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>BucketA</td>
+<td>BucketA</td>
+<td>KeyA</td>
+<td>KeyB</td>
+<td>相当于同空间文件重命名</td>
+</tr>
+
+<tr>
+<td>BucketA</td>
+<td>BucketB</td>
+<td>KeyA</td>
+<td>KeyA</td>
+<td>移动文件到BucketB，文件名一致</td>
+</tr>
+
+<tr>
+<td>BucketA</td>
+<td>BucketB</td>
+<td>KeyA</td>
+<td>KeyB</td>
+<td>移动文件到BucketB，文件名变成KeyB</td>
+</tr>
+</tbody>
+</table>
+
+<p><code>move</code>操作支持强制覆盖选项，即如果目标文件已存在，可以设置强制覆盖参数<code>force</code>来覆盖那个文件的内容。</p>
+
+<pre><div class="tools"><button title="" class="btn copybtn" data-toggle="tooltip" data-placement="top" container="body" data-original-title="拷贝代码" data-clipboard-text="//构造一个带指定Zone对象的配置类
+Configuration cfg = new Configuration(Zone.zone0());
+//...其他参数参考类注释
+
+String accessKey = &quot;your access key&quot;;
+String secretKey = &quot;your secret key&quot;;
+
+String fromBucket = &quot;from bucket name&quot;;
+String fromKey = &quot;from key&quot;;
+String toBucket = &quot;to bucket name&quot;;
+String toKey = &quot;to key&quot;;
+
+Auth auth = Auth.create(accessKey, secretKey);
+BucketManager bucketManager = new BucketManager(auth, cfg);
+try {
+    bucketManager.move(fromBucket, fromKey, toBucket, toKey);
+} catch (QiniuException ex) {
+    //如果遇到异常，说明移动失败
+    System.err.println(ex.code());
+    System.err.println(ex.response.toString());
+}
+">拷贝</button></div><code class="hljs javascript"><ol start="1"><li><span class="hljs-comment">//构造一个带指定Zone对象的配置类</span></li><li>Configuration cfg = <span class="hljs-keyword">new</span> Configuration(Zone.zone0());</li><li><span class="hljs-comment">//...其他参数参考类注释</span></li><li></li><li><span class="hljs-built_in">String</span> accessKey = <span class="hljs-string">"your access key"</span>;</li><li><span class="hljs-built_in">String</span> secretKey = <span class="hljs-string">"your secret key"</span>;</li><li></li><li><span class="hljs-built_in">String</span> fromBucket = <span class="hljs-string">"from bucket name"</span>;</li><li><span class="hljs-built_in">String</span> fromKey = <span class="hljs-string">"from key"</span>;</li><li><span class="hljs-built_in">String</span> toBucket = <span class="hljs-string">"to bucket name"</span>;</li><li><span class="hljs-built_in">String</span> toKey = <span class="hljs-string">"to key"</span>;</li><li></li><li>Auth auth = Auth.create(accessKey, secretKey);</li><li>BucketManager bucketManager = <span class="hljs-keyword">new</span> BucketManager(auth, cfg);</li><li><span class="hljs-keyword">try</span> {</li><li>    bucketManager.move(fromBucket, fromKey, toBucket, toKey);</li><li>} <span class="hljs-keyword">catch</span> (QiniuException ex) {</li><li>    <span class="hljs-comment">//如果遇到异常，说明移动失败</span></li><li>    System.err.println(ex.code());</li><li>    System.err.println(ex.response.toString());</li><li>}</li></ol></code></pre>
+
+<p><a id="rs-copy" target="_blank"></a></p>
+
+<h2>复制文件副本</h2>
+
+<p>文件的复制和文件移动其实操作一样，主要的区别是移动后源文件不存在了，而复制的结果是源文件还存在，只是多了一个新的文件副本。</p>
+
+<pre><div class="tools"><button title="" class="btn copybtn" data-toggle="tooltip" data-placement="top" container="body" data-original-title="拷贝代码" data-clipboard-text="//构造一个带指定Zone对象的配置类
+Configuration cfg = new Configuration(Zone.zone0());
+//...其他参数参考类注释
+
+String accessKey = &quot;your access key&quot;;
+String secretKey = &quot;your secret key&quot;;
+
+String fromBucket = &quot;from bucket name&quot;;
+String fromKey = &quot;from key&quot;;
+String toBucket = &quot;to bucket name&quot;;
+String toKey = &quot;to key&quot;;
+
+Auth auth = Auth.create(accessKey, secretKey);
+BucketManager bucketManager = new BucketManager(auth, cfg);
+try {
+    bucketManager.copy(fromBucket, fromKey, toBucket, toKey);
+} catch (QiniuException ex) {
+    //如果遇到异常，说明复制失败
+    System.err.println(ex.code());
+    System.err
+}
+">拷贝</button></div><code class="hljs javascript"><ol start="1"><li><span class="hljs-comment">//构造一个带指定Zone对象的配置类</span></li><li>Configuration cfg = <span class="hljs-keyword">new</span> Configuration(Zone.zone0());</li><li><span class="hljs-comment">//...其他参数参考类注释</span></li><li></li><li><span class="hljs-built_in">String</span> accessKey = <span class="hljs-string">"your access key"</span>;</li><li><span class="hljs-built_in">String</span> secretKey = <span class="hljs-string">"your secret key"</span>;</li><li></li><li><span class="hljs-built_in">String</span> fromBucket = <span class="hljs-string">"from bucket name"</span>;</li><li><span class="hljs-built_in">String</span> fromKey = <span class="hljs-string">"from key"</span>;</li><li><span class="hljs-built_in">String</span> toBucket = <span class="hljs-string">"to bucket name"</span>;</li><li><span class="hljs-built_in">String</span> toKey = <span class="hljs-string">"to key"</span>;</li><li></li><li>Auth auth = Auth.create(accessKey, secretKey);</li><li>BucketManager bucketManager = <span class="hljs-keyword">new</span> BucketManager(auth, cfg);</li><li><span class="hljs-keyword">try</span> {</li><li>    bucketManager.copy(fromBucket, fromKey, toBucket, toKey);</li><li>} <span class="hljs-keyword">catch</span> (QiniuException ex) {</li><li>    <span class="hljs-comment">//如果遇到异常，说明复制失败</span></li><li>    System.err.println(ex.code());</li><li>    System.err</li><li>}</li></ol></code></pre>
+
+<p><a id="rs-delete" target="_blank"></a></p>
+
+<h2>删除空间中的文件</h2>
+
+<pre><div class="tools"><button title="" class="btn copybtn" data-toggle="tooltip" data-placement="top" container="body" data-original-title="拷贝代码" data-clipboard-text="//构造一个带指定Zone对象的配置类
+Configuration cfg = new Configuration(Zone.zone0());
+//...其他参数参考类注释
+
+String accessKey = &quot;your access key&quot;;
+String secretKey = &quot;your secret key&quot;;
+
+String bucket = &quot;your bucket name&quot;;
+String key = &quot;your file key&quot;;
+
+Auth auth = Auth.create(accessKey, secretKey);
+BucketManager bucketManager = new BucketManager(auth, cfg);
+try {
+    bucketManager.delete(bucket, key);
+} catch (QiniuException ex) {
+    //如果遇到异常，说明删除失败
+    System.err.println(ex.code());
+    System.err.println(ex.response.toString());
+}
+">拷贝</button></div><code class="hljs javascript"><ol start="1"><li><span class="hljs-comment">//构造一个带指定Zone对象的配置类</span></li><li>Configuration cfg = <span class="hljs-keyword">new</span> Configuration(Zone.zone0());</li><li><span class="hljs-comment">//...其他参数参考类注释</span></li><li></li><li><span class="hljs-built_in">String</span> accessKey = <span class="hljs-string">"your access key"</span>;</li><li><span class="hljs-built_in">String</span> secretKey = <span class="hljs-string">"your secret key"</span>;</li><li></li><li><span class="hljs-built_in">String</span> bucket = <span class="hljs-string">"your bucket name"</span>;</li><li><span class="hljs-built_in">String</span> key = <span class="hljs-string">"your file key"</span>;</li><li></li><li>Auth auth = Auth.create(accessKey, secretKey);</li><li>BucketManager bucketManager = <span class="hljs-keyword">new</span> BucketManager(auth, cfg);</li><li><span class="hljs-keyword">try</span> {</li><li>    bucketManager.delete(bucket, key);</li><li>} <span class="hljs-keyword">catch</span> (QiniuException ex) {</li><li>    <span class="hljs-comment">//如果遇到异常，说明删除失败</span></li><li>    System.err.println(ex.code());</li><li>    System.err.println(ex.response.toString());</li><li>}</li></ol></code></pre>
+
+<p><a id="rs-delete-after-days" target="_blank"></a></p>
+
+<h2>设置或更新文件的生存时间</h2>
+
+<p>可以给已经存在于空间中的文件设置文件生存时间，或者更新已设置了生存时间但尚未被删除的文件的新的生存时间。</p>
+
+<pre><div class="tools"><button title="" class="btn copybtn" data-toggle="tooltip" data-placement="top" container="body" data-original-title="拷贝代码" data-clipboard-text="//构造一个带指定Zone对象的配置类
+Configuration cfg = new Configuration(Zone.zone0());
+//...其他参数参考类注释
+
+String accessKey = &quot;access key&quot;;
+String secretKey = &quot;secret key&quot;;
+String bucket = &quot;bucket name&quot;;
+String key = &quot;file key&quot;;
+//过期天数，该文件10天后删除
+int days = 10;
+
+Auth auth = Auth.create(accessKey, secretKey);
+BucketManager bucketManager = new BucketManager(auth, cfg);
+try {
+    bucketManager.deleteAfterDays(bucket, key, days);
+} catch (QiniuException ex) {
+    System.err.println(ex.response.toString());
+}
+">拷贝</button></div><code class="hljs javascript"><ol start="1"><li><span class="hljs-comment">//构造一个带指定Zone对象的配置类</span></li><li>Configuration cfg = <span class="hljs-keyword">new</span> Configuration(Zone.zone0());</li><li><span class="hljs-comment">//...其他参数参考类注释</span></li><li></li><li><span class="hljs-built_in">String</span> accessKey = <span class="hljs-string">"access key"</span>;</li><li><span class="hljs-built_in">String</span> secretKey = <span class="hljs-string">"secret key"</span>;</li><li><span class="hljs-built_in">String</span> bucket = <span class="hljs-string">"bucket name"</span>;</li><li><span class="hljs-built_in">String</span> key = <span class="hljs-string">"file key"</span>;</li><li><span class="hljs-comment">//过期天数，该文件10天后删除</span></li><li>int days = <span class="hljs-number">10</span>;</li><li></li><li>Auth auth = Auth.create(accessKey, secretKey);</li><li>BucketManager bucketManager = <span class="hljs-keyword">new</span> BucketManager(auth, cfg);</li><li><span class="hljs-keyword">try</span> {</li><li>    bucketManager.deleteAfterDays(bucket, key, days);</li><li>} <span class="hljs-keyword">catch</span> (QiniuException ex) {</li><li>    System.err.println(ex.response.toString());</li><li>}</li></ol></code></pre>
+
+<p><a id="rs-list" target="_blank"></a></p>
+
+<h2>获取空间文件列表</h2>
+
+<pre><div class="tools"><button title="" class="btn copybtn" data-toggle="tooltip" data-placement="top" container="body" data-original-title="拷贝代码" data-clipboard-text="//构造一个带指定Zone对象的配置类
+Configuration cfg = new Configuration(Zone.zone0());
+//...其他参数参考类注释
+
+String accessKey = &quot;your access key&quot;;
+String secretKey = &quot;your secret key&quot;;
+
+String bucket = &quot;your bucket name&quot;;
+
+Auth auth = Auth.create(accessKey, secretKey);
+BucketManager bucketManager = new BucketManager(auth, cfg);
+
+//文件名前缀
+String prefix = &quot;&quot;;
+//每次迭代的长度限制，最大1000，推荐值 1000
+int limit = 1000;
+//指定目录分隔符，列出所有公共前缀（模拟列出目录效果）。缺省值为空字符串
+String delimiter = &quot;&quot;;
+
+//列举空间文件列表
+BucketManager.FileListIterator fileListIterator = bucketManager.createFileListIterator(bucket, prefix, limit, delimiter);
+while (fileListIterator.hasNext()) {
+    //处理获取的file list结果
+    FileInfo[] items = fileListIterator.next();
+    for (FileInfo item : items) {
+        System.out.println(item.key);
+        System.out.println(item.hash);
+        System.out.println(item.fsize);
+        System.out.println(item.mimeType);
+        System.out.println(item.putTime);
+        System.out.println(item.endUser);
+    }
+}
+">拷贝</button></div><code class="hljs cs"><ol start="1"><li><span class="hljs-comment">//构造一个带指定Zone对象的配置类</span></li><li>Configuration cfg = <span class="hljs-keyword">new</span> Configuration(Zone.zone0());</li><li><span class="hljs-comment">//...其他参数参考类注释</span></li><li></li><li>String accessKey = <span class="hljs-string">"your access key"</span>;</li><li>String secretKey = <span class="hljs-string">"your secret key"</span>;</li><li></li><li>String bucket = <span class="hljs-string">"your bucket name"</span>;</li><li></li><li>Auth auth = Auth.create(accessKey, secretKey);</li><li>BucketManager bucketManager = <span class="hljs-keyword">new</span> BucketManager(auth, cfg);</li><li></li><li><span class="hljs-comment">//文件名前缀</span></li><li>String prefix = <span class="hljs-string">""</span>;</li><li><span class="hljs-comment">//每次迭代的长度限制，最大1000，推荐值 1000</span></li><li><span class="hljs-keyword">int</span> limit = <span class="hljs-number">1000</span>;</li><li><span class="hljs-comment">//指定目录分隔符，列出所有公共前缀（模拟列出目录效果）。缺省值为空字符串</span></li><li>String delimiter = <span class="hljs-string">""</span>;</li><li></li><li><span class="hljs-comment">//列举空间文件列表</span></li><li>BucketManager.FileListIterator fileListIterator = bucketManager.createFileListIterator(bucket, prefix, limit, delimiter);</li><li><span class="hljs-keyword">while</span> (fileListIterator.hasNext()) {</li><li>    <span class="hljs-comment">//处理获取的file list结果</span></li><li>    FileInfo[] items = fileListIterator.next();</li><li>    <span class="hljs-keyword">for</span> (FileInfo item : items) {</li><li>        System.<span class="hljs-keyword">out</span>.println(item.key);</li><li>        System.<span class="hljs-keyword">out</span>.println(item.hash);</li><li>        System.<span class="hljs-keyword">out</span>.println(item.fsize);</li><li>        System.<span class="hljs-keyword">out</span>.println(item.mimeType);</li><li>        System.<span class="hljs-keyword">out</span>.println(item.putTime);</li><li>        System.<span class="hljs-keyword">out</span>.println(item.endUser);</li><li>    }</li><li>}</li></ol></code></pre>
+
+<p><a id="rs-fetch" target="_blank"></a></p>
+
+<h2>抓取网络资源到空间</h2>
+
+<pre><div class="tools"><button title="" class="btn copybtn" data-toggle="tooltip" data-placement="top" container="body" data-original-title="拷贝代码" data-clipboard-text="//构造一个带指定Zone对象的配置类
+Configuration cfg = new Configuration(Zone.zone0());
+//...其他参数参考类注释
+
+String accessKey = &quot;your access key&quot;;
+String secretKey = &quot;your secret key&quot;;
+
+String bucket = &quot;your bucket name&quot;;
+String key = &quot;your file key&quot;;
+String remoteSrcUrl = &quot;http://devtools.qiniu.com/qiniu.png&quot;;
+
+Auth auth = Auth.create(accessKey, secretKey);
+BucketManager bucketManager = new BucketManager(auth, cfg);
+
+//抓取网络资源到空间
+try {
+    FetchRet fetchRet = bucketManager.fetch(remoteSrcUrl, bucket, key);
+    System.out.println(fetchRet.hash);
+    System.out.println(fetchRet.key);
+    System.out.println(fetchRet.mimeType);
+    System.out.println(fetchRet.fsize);
+} catch (QiniuException ex) {
+    System.err.println(ex.response.toString());
+}
+">拷贝</button></div><code class="hljs javascript"><ol start="1"><li><span class="hljs-comment">//构造一个带指定Zone对象的配置类</span></li><li>Configuration cfg = <span class="hljs-keyword">new</span> Configuration(Zone.zone0());</li><li><span class="hljs-comment">//...其他参数参考类注释</span></li><li></li><li><span class="hljs-built_in">String</span> accessKey = <span class="hljs-string">"your access key"</span>;</li><li><span class="hljs-built_in">String</span> secretKey = <span class="hljs-string">"your secret key"</span>;</li><li></li><li><span class="hljs-built_in">String</span> bucket = <span class="hljs-string">"your bucket name"</span>;</li><li><span class="hljs-built_in">String</span> key = <span class="hljs-string">"your file key"</span>;</li><li><span class="hljs-built_in">String</span> remoteSrcUrl = <span class="hljs-string">"http://devtools.qiniu.com/qiniu.png"</span>;</li><li></li><li>Auth auth = Auth.create(accessKey, secretKey);</li><li>BucketManager bucketManager = <span class="hljs-keyword">new</span> BucketManager(auth, cfg);</li><li></li><li><span class="hljs-comment">//抓取网络资源到空间</span></li><li><span class="hljs-keyword">try</span> {</li><li>    FetchRet fetchRet = bucketManager.fetch(remoteSrcUrl, bucket, key);</li><li>    System.out.println(fetchRet.hash);</li><li>    System.out.println(fetchRet.key);</li><li>    System.out.println(fetchRet.mimeType);</li><li>    System.out.println(fetchRet.fsize);</li><li>} <span class="hljs-keyword">catch</span> (QiniuException ex) {</li><li>    System.err.println(ex.response.toString());</li><li>}</li></ol></code></pre>
+
+<p><a id="rs-batch" target="_blank"></a></p>
+
+<h2>资源管理批量操作</h2>
+
+<p><a id="rs-batch-stat" target="_blank"></a></p>
+
+<h3>批量获取文件信息</h3>
+
+<pre><div class="tools"><button title="" class="btn copybtn" data-toggle="tooltip" data-placement="top" container="body" data-original-title="拷贝代码" data-clipboard-text="//构造一个带指定Zone对象的配置类
+Configuration cfg = new Configuration(Zone.zone0());
+//...其他参数参考类注释
+
+String accessKey = &quot;your access key&quot;;
+String secretKey = &quot;your secret key&quot;;
+
+String bucket = &quot;your bucket name&quot;;
+
+Auth auth = Auth.create(accessKey, secretKey);
+BucketManager bucketManager = new BucketManager(auth, cfg);
+
+try {
+    //单次批量请求的文件数量不得超过1000
+    String[] keyList = new String[]{
+            &quot;qiniu.jpg&quot;,
+            &quot;qiniu.mp4&quot;,
+            &quot;qiniu.png&quot;,
+    };
+    BucketManager.BatchOperations batchOperations = new BucketManager.BatchOperations();
+    batchOperations.addStatOps(bucket, keyList);
+    Response response = bucketManager.batch(batchOperations);
+    BatchStatus[] batchStatusList = response.jsonToObject(BatchStatus[].class);
+
+    for (int i = 0; i &lt; keyList.length; i++) {
+        BatchStatus status = batchStatusList[i];
+        String key = keyList[i];
+        System.out.print(key+&quot;\t&quot;);
+        if (status.code == 200) {
+            //文件存在
+            System.out.println(status.data.hash);
+            System.out.println(status.data.mimeType);
+            System.out.println(status.data.fsize);
+            System.out.println(status.data.putTime);
+        } else {
+            System.out.println(status.data.error);
+        }
+    }
+} catch (QiniuException ex) {
+    System.err.println(ex.response.toString());
+}
+">拷贝</button></div><code class="hljs cs"><ol start="1"><li><span class="hljs-comment">//构造一个带指定Zone对象的配置类</span></li><li>Configuration cfg = <span class="hljs-keyword">new</span> Configuration(Zone.zone0());</li><li><span class="hljs-comment">//...其他参数参考类注释</span></li><li></li><li>String accessKey = <span class="hljs-string">"your access key"</span>;</li><li>String secretKey = <span class="hljs-string">"your secret key"</span>;</li><li></li><li>String bucket = <span class="hljs-string">"your bucket name"</span>;</li><li></li><li>Auth auth = Auth.create(accessKey, secretKey);</li><li>BucketManager bucketManager = <span class="hljs-keyword">new</span> BucketManager(auth, cfg);</li><li></li><li><span class="hljs-keyword">try</span> {</li><li>    <span class="hljs-comment">//单次批量请求的文件数量不得超过1000</span></li><li>    String[] keyList = <span class="hljs-keyword">new</span> String[]{</li><li>            <span class="hljs-string">"qiniu.jpg"</span>,</li><li>            <span class="hljs-string">"qiniu.mp4"</span>,</li><li>            <span class="hljs-string">"qiniu.png"</span>,</li><li>    };</li><li>    BucketManager.BatchOperations batchOperations = <span class="hljs-keyword">new</span> BucketManager.BatchOperations();</li><li>    batchOperations.addStatOps(bucket, keyList);</li><li>    Response response = bucketManager.batch(batchOperations);</li><li>    BatchStatus[] batchStatusList = response.jsonToObject(BatchStatus[].class);</li><li></li><li>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; keyList.length; i++) {</li><li>        BatchStatus status = batchStatusList[i];</li><li>        String key = keyList[i];</li><li>        System.<span class="hljs-keyword">out</span>.print(key+<span class="hljs-string">"\t"</span>);</li><li>        <span class="hljs-keyword">if</span> (status.code == <span class="hljs-number">200</span>) {</li><li>            <span class="hljs-comment">//文件存在</span></li><li>            System.<span class="hljs-keyword">out</span>.println(status.data.hash);</li><li>            System.<span class="hljs-keyword">out</span>.println(status.data.mimeType);</li><li>            System.<span class="hljs-keyword">out</span>.println(status.data.fsize);</li><li>            System.<span class="hljs-keyword">out</span>.println(status.data.putTime);</li><li>        } <span class="hljs-keyword">else</span> {</li><li>            System.<span class="hljs-keyword">out</span>.println(status.data.error);</li><li>        }</li><li>    }</li><li>} <span class="hljs-keyword">catch</span> (QiniuException ex) {</li><li>    System.err.println(ex.response.toString());</li><li>}</li></ol></code></pre>
+
+<p><a id="rs-batch-chgm" target="_blank"></a></p>
+
+<h3>批量修改文件类型</h3>
+
+<pre><div class="tools"><button title="" class="btn copybtn" data-toggle="tooltip" data-placement="top" container="body" data-original-title="拷贝代码" data-clipboard-text="//构造一个带指定Zone对象的配置类
+Configuration cfg = new Configuration(Zone.zone0());
+//...其他参数参考类注释
+
+String accessKey = &quot;your access key&quot;;
+String secretKey = &quot;your secret key&quot;;
+
+String bucket = &quot;your bucket name&quot;;
+
+Auth auth = Auth.create(accessKey, secretKey);
+BucketManager bucketManager = new BucketManager(auth, cfg);
+
+try {
+    //单次批量请求的文件数量不得超过1000
+    HashMap&lt;String, String&gt; keyMimeMap = new HashMap&lt;&gt;();
+    keyMimeMap.put(&quot;qiniu.jpg&quot;, &quot;image/jpg&quot;);
+    keyMimeMap.put(&quot;qiniu.png&quot;, &quot;image/png&quot;);
+    keyMimeMap.put(&quot;qiniu.mp4&quot;, &quot;video/mp4&quot;);
+    BucketManager.BatchOperations batchOperations = new BucketManager.BatchOperations();
+
+    //添加指令
+    for (Map.Entry&lt;String, String&gt; entry : keyMimeMap.entrySet()) {
+        String key = entry.getKey();
+        String newMimeType = entry.getValue();
+        batchOperations.addChgmOp(bucket, key, newMimeType);
+    }
+
+    Response response = bucketManager.batch(batchOperations);
+    BatchStatus[] batchStatusList = response.jsonToObject(BatchStatus[].class);
+
+    int index = 0;
+    for (Map.Entry&lt;String, String&gt; entry : keyMimeMap.entrySet()) {
+        String key = entry.getKey();
+        System.out.print(key + &quot;\t&quot;);
+        BatchStatus status = batchStatusList[index];
+        if (status.code == 200) {
+            System.out.println(&quot;change mime success&quot;);
+        } else {
+            System.out.println(status.data.error);
+        }
+        index += 1;
+    }
+} catch (QiniuException ex) {
+    System.err.println(ex.response.toString());
+}
+">拷贝</button></div><code class="hljs javascript"><ol start="1"><li><span class="hljs-comment">//构造一个带指定Zone对象的配置类</span></li><li>Configuration cfg = <span class="hljs-keyword">new</span> Configuration(Zone.zone0());</li><li><span class="hljs-comment">//...其他参数参考类注释</span></li><li></li><li><span class="hljs-built_in">String</span> accessKey = <span class="hljs-string">"your access key"</span>;</li><li><span class="hljs-built_in">String</span> secretKey = <span class="hljs-string">"your secret key"</span>;</li><li></li><li><span class="hljs-built_in">String</span> bucket = <span class="hljs-string">"your bucket name"</span>;</li><li></li><li>Auth auth = Auth.create(accessKey, secretKey);</li><li>BucketManager bucketManager = <span class="hljs-keyword">new</span> BucketManager(auth, cfg);</li><li></li><li><span class="hljs-keyword">try</span> {</li><li>    <span class="hljs-comment">//单次批量请求的文件数量不得超过1000</span></li><li>    HashMap&lt;<span class="hljs-built_in">String</span>, <span class="hljs-built_in">String</span>&gt; keyMimeMap = <span class="hljs-keyword">new</span> HashMap&lt;&gt;();</li><li>    keyMimeMap.put(<span class="hljs-string">"qiniu.jpg"</span>, <span class="hljs-string">"image/jpg"</span>);</li><li>    keyMimeMap.put(<span class="hljs-string">"qiniu.png"</span>, <span class="hljs-string">"image/png"</span>);</li><li>    keyMimeMap.put(<span class="hljs-string">"qiniu.mp4"</span>, <span class="hljs-string">"video/mp4"</span>);</li><li>    BucketManager.BatchOperations batchOperations = <span class="hljs-keyword">new</span> BucketManager.BatchOperations();</li><li></li><li>    <span class="hljs-comment">//添加指令</span></li><li>    <span class="hljs-keyword">for</span> (<span class="hljs-built_in">Map</span>.Entry&lt;<span class="hljs-built_in">String</span>, <span class="hljs-built_in">String</span>&gt; entry : keyMimeMap.entrySet()) {</li><li>        <span class="hljs-built_in">String</span> key = entry.getKey();</li><li>        <span class="hljs-built_in">String</span> newMimeType = entry.getValue();</li><li>        batchOperations.addChgmOp(bucket, key, newMimeType);</li><li>    }</li><li></li><li>    Response response = bucketManager.batch(batchOperations);</li><li>    BatchStatus[] batchStatusList = response.jsonToObject(BatchStatus[].class);</li><li></li><li>    int index = <span class="hljs-number">0</span>;</li><li>    <span class="hljs-keyword">for</span> (<span class="hljs-built_in">Map</span>.Entry&lt;<span class="hljs-built_in">String</span>, <span class="hljs-built_in">String</span>&gt; entry : keyMimeMap.entrySet()) {</li><li>        <span class="hljs-built_in">String</span> key = entry.getKey();</li><li>        System.out.print(key + <span class="hljs-string">"\t"</span>);</li><li>        BatchStatus status = batchStatusList[index];</li><li>        <span class="hljs-keyword">if</span> (status.code == <span class="hljs-number">200</span>) {</li><li>            System.out.println(<span class="hljs-string">"change mime success"</span>);</li><li>        } <span class="hljs-keyword">else</span> {</li><li>            System.out.println(status.data.error);</li><li>        }</li><li>        index += <span class="hljs-number">1</span>;</li><li>    }</li><li>} <span class="hljs-keyword">catch</span> (QiniuException ex) {</li><li>    System.err.println(ex.response.toString());</li><li>}</li></ol></code></pre>
+
+<p><a id="rs-batch-delete" target="_blank"></a></p>
+
+<h3>批量删除文件</h3>
+
+<pre><div class="tools"><button title="" class="btn copybtn" data-toggle="tooltip" data-placement="top" container="body" data-original-title="拷贝代码" data-clipboard-text="//构造一个带指定Zone对象的配置类
+Configuration cfg = new Configuration(Zone.zone0());
+//...其他参数参考类注释
+
+String accessKey = &quot;your access key&quot;;
+String secretKey = &quot;your secret key&quot;;
+
+String bucket = &quot;your bucket name&quot;;
+
+Auth auth = Auth.create(accessKey, secretKey);
+BucketManager bucketManager = new BucketManager(auth, cfg);
+
+try {
+    //单次批量请求的文件数量不得超过1000
+    String[] keyList = new String[]{
+            &quot;qiniu.jpg&quot;,
+            &quot;qiniu.mp4&quot;,
+            &quot;qiniu.png&quot;,
+    };
+    BucketManager.BatchOperations batchOperations = new BucketManager.BatchOperations();
+    batchOperations.addDeleteOp(bucket, keyList);
+    Response response = bucketManager.batch(batchOperations);
+    BatchStatus[] batchStatusList = response.jsonToObject(BatchStatus[].class);
+
+    for (int i = 0; i &lt; keyList.length; i++) {
+        BatchStatus status = batchStatusList[i];
+        String key = keyList[i];
+        System.out.print(key + &quot;\t&quot;);
+        if (status.code == 200) {
+            System.out.println(&quot;delete success&quot;);
+        } else {
+            System.out.println(status.data.error);
+        }
+    }
+} catch (QiniuException ex) {
+    System.err.println(ex.response.toString());
+}
+">拷贝</button></div><code class="hljs javascript"><ol start="1"><li><span class="hljs-comment">//构造一个带指定Zone对象的配置类</span></li><li>Configuration cfg = <span class="hljs-keyword">new</span> Configuration(Zone.zone0());</li><li><span class="hljs-comment">//...其他参数参考类注释</span></li><li></li><li><span class="hljs-built_in">String</span> accessKey = <span class="hljs-string">"your access key"</span>;</li><li><span class="hljs-built_in">String</span> secretKey = <span class="hljs-string">"your secret key"</span>;</li><li></li><li><span class="hljs-built_in">String</span> bucket = <span class="hljs-string">"your bucket name"</span>;</li><li></li><li>Auth auth = Auth.create(accessKey, secretKey);</li><li>BucketManager bucketManager = <span class="hljs-keyword">new</span> BucketManager(auth, cfg);</li><li></li><li><span class="hljs-keyword">try</span> {</li><li>    <span class="hljs-comment">//单次批量请求的文件数量不得超过1000</span></li><li>    <span class="hljs-built_in">String</span>[] keyList = <span class="hljs-keyword">new</span> <span class="hljs-built_in">String</span>[]{</li><li>            <span class="hljs-string">"qiniu.jpg"</span>,</li><li>            <span class="hljs-string">"qiniu.mp4"</span>,</li><li>            <span class="hljs-string">"qiniu.png"</span>,</li><li>    };</li><li>    BucketManager.BatchOperations batchOperations = <span class="hljs-keyword">new</span> BucketManager.BatchOperations();</li><li>    batchOperations.addDeleteOp(bucket, keyList);</li><li>    Response response = bucketManager.batch(batchOperations);</li><li>    BatchStatus[] batchStatusList = response.jsonToObject(BatchStatus[].class);</li><li></li><li>    <span class="hljs-keyword">for</span> (int i = <span class="hljs-number">0</span>; i &lt; keyList.length; i++) {</li><li>        BatchStatus status = batchStatusList[i];</li><li>        <span class="hljs-built_in">String</span> key = keyList[i];</li><li>        System.out.print(key + <span class="hljs-string">"\t"</span>);</li><li>        <span class="hljs-keyword">if</span> (status.code == <span class="hljs-number">200</span>) {</li><li>            System.out.println(<span class="hljs-string">"delete success"</span>);</li><li>        } <span class="hljs-keyword">else</span> {</li><li>            System.out.println(status.data.error);</li><li>        }</li><li>    }</li><li>} <span class="hljs-keyword">catch</span> (QiniuException ex) {</li><li>    System.err.println(ex.response.toString());</li><li>}</li></ol></code></pre>
+
+<h3>批量移动或重命名文件</h3>
+
+<pre><div class="tools"><button title="" class="btn copybtn" data-toggle="tooltip" data-placement="top" container="body" data-original-title="拷贝代码" data-clipboard-text="//构造一个带指定Zone对象的配置类
+Configuration cfg = new Configuration(Zone.zone0());
+//...其他参数参考类注释
+
+String accessKey = &quot;your access key&quot;;
+String secretKey = &quot;your secret key&quot;;
+
+String bucket = &quot;your bucket name&quot;;
+
+Auth auth = Auth.create(accessKey, secretKey);
+BucketManager bucketManager = new BucketManager(auth, cfg);
+
+try {
+    //单次批量请求的文件数量不得超过1000
+    String[] keyList = new String[]{
+            &quot;qiniu.jpg&quot;,
+            &quot;qiniu.mp4&quot;,
+            &quot;qiniu.png&quot;,
+    };
+    BucketManager.BatchOperations batchOperations = new BucketManager.BatchOperations();
+    for (String key : keyList) {
+        batchOperations.addMoveOp(bucket, key, bucket, key + &quot;_move&quot;);
+    }
+
+    Response response = bucketManager.batch(batchOperations);
+    BatchStatus[] batchStatusList = response.jsonToObject(BatchStatus[].class);
+
+    for (int i = 0; i &lt; keyList.length; i++) {
+        BatchStatus status = batchStatusList[i];
+        String key = keyList[i];
+        System.out.print(key + &quot;\t&quot;);
+        if (status.code == 200) {
+            System.out.println(&quot;move success&quot;);
+        } else {
+            System.out.println(status.data.error);
+        }
+    }
+} catch (QiniuException ex) {
+    System.err.println(ex.response.toString());
+}
+">拷贝</button></div><code class="hljs javascript"><ol start="1"><li><span class="hljs-comment">//构造一个带指定Zone对象的配置类</span></li><li>Configuration cfg = <span class="hljs-keyword">new</span> Configuration(Zone.zone0());</li><li><span class="hljs-comment">//...其他参数参考类注释</span></li><li></li><li><span class="hljs-built_in">String</span> accessKey = <span class="hljs-string">"your access key"</span>;</li><li><span class="hljs-built_in">String</span> secretKey = <span class="hljs-string">"your secret key"</span>;</li><li></li><li><span class="hljs-built_in">String</span> bucket = <span class="hljs-string">"your bucket name"</span>;</li><li></li><li>Auth auth = Auth.create(accessKey, secretKey);</li><li>BucketManager bucketManager = <span class="hljs-keyword">new</span> BucketManager(auth, cfg);</li><li></li><li><span class="hljs-keyword">try</span> {</li><li>    <span class="hljs-comment">//单次批量请求的文件数量不得超过1000</span></li><li>    <span class="hljs-built_in">String</span>[] keyList = <span class="hljs-keyword">new</span> <span class="hljs-built_in">String</span>[]{</li><li>            <span class="hljs-string">"qiniu.jpg"</span>,</li><li>            <span class="hljs-string">"qiniu.mp4"</span>,</li><li>            <span class="hljs-string">"qiniu.png"</span>,</li><li>    };</li><li>    BucketManager.BatchOperations batchOperations = <span class="hljs-keyword">new</span> BucketManager.BatchOperations();</li><li>    <span class="hljs-keyword">for</span> (<span class="hljs-built_in">String</span> key : keyList) {</li><li>        batchOperations.addMoveOp(bucket, key, bucket, key + <span class="hljs-string">"_move"</span>);</li><li>    }</li><li></li><li>    Response response = bucketManager.batch(batchOperations);</li><li>    BatchStatus[] batchStatusList = response.jsonToObject(BatchStatus[].class);</li><li></li><li>    <span class="hljs-keyword">for</span> (int i = <span class="hljs-number">0</span>; i &lt; keyList.length; i++) {</li><li>        BatchStatus status = batchStatusList[i];</li><li>        <span class="hljs-built_in">String</span> key = keyList[i];</li><li>        System.out.print(key + <span class="hljs-string">"\t"</span>);</li><li>        <span class="hljs-keyword">if</span> (status.code == <span class="hljs-number">200</span>) {</li><li>            System.out.println(<span class="hljs-string">"move success"</span>);</li><li>        } <span class="hljs-keyword">else</span> {</li><li>            System.out.println(status.data.error);</li><li>        }</li><li>    }</li><li>} <span class="hljs-keyword">catch</span> (QiniuException ex) {</li><li>    System.err.println(ex.response.toString());</li><li>}</li></ol></code></pre>
+
+<p><a id="rs-batch-copy" target="_blank"></a></p>
+
+<h3>批量复制文件</h3>
+
+<pre><div class="tools"><button title="" class="btn copybtn" data-toggle="tooltip" data-placement="top" container="body" data-original-title="拷贝代码" data-clipboard-text="//构造一个带指定Zone对象的配置类
+Configuration cfg = new Configuration(Zone.zone0());
+//...其他参数参考类注释
+
+String accessKey = &quot;your access key&quot;;
+String secretKey = &quot;your secret key&quot;;
+
+String bucket = &quot;your bucket name&quot;;
+
+Auth auth = Auth.create(accessKey, secretKey);
+BucketManager bucketManager = new BucketManager(auth, cfg);
+
+try {
+    //单次批量请求的文件数量不得超过1000
+    String[] keyList = new String[]{
+            &quot;qiniu.jpg&quot;,
+            &quot;qiniu.mp4&quot;,
+            &quot;qiniu.png&quot;,
+    };
+    BucketManager.BatchOperations batchOperations = new BucketManager.BatchOperations();
+    for (String key : keyList) {
+        batchOperations.addCopyOp(bucket, key, bucket, key + &quot;_copy&quot;);
+    }
+
+    Response response = bucketManager.batch(batchOperations);
+    BatchStatus[] batchStatusList = response.jsonToObject(BatchStatus[].class);
+
+    for (int i = 0; i &lt; keyList.length; i++) {
+        BatchStatus status = batchStatusList[i];
+        String key = keyList[i];
+        System.out.print(key + &quot;\t&quot;);
+        if (status.code == 200) {
+            System.out.println(&quot;copy success&quot;);
+        } else {
+            System.out.println(status.data.error);
+        }
+    }
+} catch (QiniuException ex) {
+    System.err.println(ex.response.toString());
+}
+">拷贝</button></div><code class="hljs javascript"><ol start="1"><li><span class="hljs-comment">//构造一个带指定Zone对象的配置类</span></li><li>Configuration cfg = <span class="hljs-keyword">new</span> Configuration(Zone.zone0());</li><li><span class="hljs-comment">//...其他参数参考类注释</span></li><li></li><li><span class="hljs-built_in">String</span> accessKey = <span class="hljs-string">"your access key"</span>;</li><li><span class="hljs-built_in">String</span> secretKey = <span class="hljs-string">"your secret key"</span>;</li><li></li><li><span class="hljs-built_in">String</span> bucket = <span class="hljs-string">"your bucket name"</span>;</li><li></li><li>Auth auth = Auth.create(accessKey, secretKey);</li><li>BucketManager bucketManager = <span class="hljs-keyword">new</span> BucketManager(auth, cfg);</li><li></li><li><span class="hljs-keyword">try</span> {</li><li>    <span class="hljs-comment">//单次批量请求的文件数量不得超过1000</span></li><li>    <span class="hljs-built_in">String</span>[] keyList = <span class="hljs-keyword">new</span> <span class="hljs-built_in">String</span>[]{</li><li>            <span class="hljs-string">"qiniu.jpg"</span>,</li><li>            <span class="hljs-string">"qiniu.mp4"</span>,</li><li>            <span class="hljs-string">"qiniu.png"</span>,</li><li>    };</li><li>    BucketManager.BatchOperations batchOperations = <span class="hljs-keyword">new</span> BucketManager.BatchOperations();</li><li>    <span class="hljs-keyword">for</span> (<span class="hljs-built_in">String</span> key : keyList) {</li><li>        batchOperations.addCopyOp(bucket, key, bucket, key + <span class="hljs-string">"_copy"</span>);</li><li>    }</li><li></li><li>    Response response = bucketManager.batch(batchOperations);</li><li>    BatchStatus[] batchStatusList = response.jsonToObject(BatchStatus[].class);</li><li></li><li>    <span class="hljs-keyword">for</span> (int i = <span class="hljs-number">0</span>; i &lt; keyList.length; i++) {</li><li>        BatchStatus status = batchStatusList[i];</li><li>        <span class="hljs-built_in">String</span> key = keyList[i];</li><li>        System.out.print(key + <span class="hljs-string">"\t"</span>);</li><li>        <span class="hljs-keyword">if</span> (status.code == <span class="hljs-number">200</span>) {</li><li>            System.out.println(<span class="hljs-string">"copy success"</span>);</li><li>        } <span class="hljs-keyword">else</span> {</li><li>            System.out.println(status.data.error);</li><li>        }</li><li>    }</li><li>} <span class="hljs-keyword">catch</span> (QiniuException ex) {</li><li>    System.err.println(ex.response.toString());</li><li>}</li></ol></code></pre>
+
+<p><a id="rs-batch-mixops" target="_blank"></a></p>
+
+<h3>批量混合指令操作</h3>
+
+<p>其实<code>batch</code>接口支持混合指令的处理，不过为了方便解析请求的回复，一般不推荐这样做。</p>
+
+<pre><div class="tools"><button title="" class="btn copybtn" data-toggle="tooltip" data-placement="top" container="body" data-original-title="拷贝代码" data-clipboard-text="//构造一个带指定Zone对象的配置类
+Configuration cfg = new Configuration(Zone.zone0());
+//...其他参数参考类注释
+
+String accessKey = &quot;your access key&quot;;
+String secretKey = &quot;your secret key&quot;;
+
+String bucket = &quot;your bucket name&quot;;
+
+Auth auth = Auth.create(accessKey, secretKey);
+BucketManager bucketManager = new BucketManager(auth, cfg);
+
+try {
+    //单次批量请求的文件数量不得超过1000
+    BucketManager.BatchOperations batchOperations = new BucketManager.BatchOperations();
+
+    //添加混合指令
+    batchOperations.addStatOps(bucket, &quot;qiniu.png&quot;, &quot;qiniu.jpg&quot;);
+    batchOperations.addCopyOp(bucket, &quot;qiniu.png&quot;, bucket, &quot;qiniu_copy1.png&quot;);
+    batchOperations.addMoveOp(bucket, &quot;qiniu2.png&quot;, bucket, &quot;qiniu3.png&quot;);
+    batchOperations.addDeleteOp(bucket, &quot;qiniu4.png&quot;);
+
+    Response response = bucketManager.batch(batchOperations);
+    BatchStatus[] batchStatusList = response.jsonToObject(BatchStatus[].class);
+
+    for (BatchStatus status : batchStatusList) {
+        if (status.code == 200) {
+            System.out.println(&quot;operation success&quot;);
+        } else {
+            System.out.println(status.data.error);
+        }
+    }
+} catch (QiniuException ex) {
+    System.err.println(ex.response.toString());
+}
+">拷贝</button></div><code class="hljs javascript"><ol start="1"><li><span class="hljs-comment">//构造一个带指定Zone对象的配置类</span></li><li>Configuration cfg = <span class="hljs-keyword">new</span> Configuration(Zone.zone0());</li><li><span class="hljs-comment">//...其他参数参考类注释</span></li><li></li><li><span class="hljs-built_in">String</span> accessKey = <span class="hljs-string">"your access key"</span>;</li><li><span class="hljs-built_in">String</span> secretKey = <span class="hljs-string">"your secret key"</span>;</li><li></li><li><span class="hljs-built_in">String</span> bucket = <span class="hljs-string">"your bucket name"</span>;</li><li></li><li>Auth auth = Auth.create(accessKey, secretKey);</li><li>BucketManager bucketManager = <span class="hljs-keyword">new</span> BucketManager(auth, cfg);</li><li></li><li><span class="hljs-keyword">try</span> {</li><li>    <span class="hljs-comment">//单次批量请求的文件数量不得超过1000</span></li><li>    BucketManager.BatchOperations batchOperations = <span class="hljs-keyword">new</span> BucketManager.BatchOperations();</li><li></li><li>    <span class="hljs-comment">//添加混合指令</span></li><li>    batchOperations.addStatOps(bucket, <span class="hljs-string">"qiniu.png"</span>, <span class="hljs-string">"qiniu.jpg"</span>);</li><li>    batchOperations.addCopyOp(bucket, <span class="hljs-string">"qiniu.png"</span>, bucket, <span class="hljs-string">"qiniu_copy1.png"</span>);</li><li>    batchOperations.addMoveOp(bucket, <span class="hljs-string">"qiniu2.png"</span>, bucket, <span class="hljs-string">"qiniu3.png"</span>);</li><li>    batchOperations.addDeleteOp(bucket, <span class="hljs-string">"qiniu4.png"</span>);</li><li></li><li>    Response response = bucketManager.batch(batchOperations);</li><li>    BatchStatus[] batchStatusList = response.jsonToObject(BatchStatus[].class);</li><li></li><li>    <span class="hljs-keyword">for</span> (BatchStatus status : batchStatusList) {</li><li>        <span class="hljs-keyword">if</span> (status.code == <span class="hljs-number">200</span>) {</li><li>            System.out.println(<span class="hljs-string">"operation success"</span>);</li><li>        } <span class="hljs-keyword">else</span> {</li><li>            System.out.println(status.data.error);</li><li>        }</li><li>    }</li><li>} <span class="hljs-keyword">catch</span> (QiniuException ex) {</li><li>    System.err.println(ex.response.toString());</li><li>}</li></ol></code></pre>
+
+<p><a id="rs-prefetch" target="_blank"></a></p>
+
+<h2>更新镜像存储空间中文件内容</h2>
+
+<p>对于配置了镜像存储的空间，如果镜像源站更新了文件内容，则默认情况下，七牛不会再主动从客户镜像源站同步新的副本，这个时候就需要利用这个<code>prefetch</code>接口来主动地将空间中的文件和更新后的源站副本进行同步。调用方式很简单，指定空间和文件名即可。</p>
+
+<pre><div class="tools"><button title="" class="btn copybtn" data-toggle="tooltip" data-placement="top" container="body" data-original-title="拷贝代码" data-clipboard-text="//构造一个带指定Zone对象的配置类
+Configuration cfg = new Configuration(Zone.zone0());
+//...其他参数参考类注释
+
+String accessKey = &quot;your access key&quot;;
+String secretKey = &quot;your secret key&quot;;
+
+String bucket = &quot;your bucket name&quot;;
+String key = &quot;your file key&quot;;
+
+Auth auth = Auth.create(accessKey, secretKey);
+BucketManager bucketManager = new BucketManager(auth, cfg);
+try {
+    bucketManager.prefetch(bucket, key);
+} catch (QiniuException ex) {
+    //如果遇到异常，说明更新失败
+    System.err.println(ex.code());
+    System.err.println(ex.response.toString());
+}
+">拷贝</button></div><code class="hljs javascript"><ol start="1"><li><span class="hljs-comment">//构造一个带指定Zone对象的配置类</span></li><li>Configuration cfg = <span class="hljs-keyword">new</span> Configuration(Zone.zone0());</li><li><span class="hljs-comment">//...其他参数参考类注释</span></li><li></li><li><span class="hljs-built_in">String</span> accessKey = <span class="hljs-string">"your access key"</span>;</li><li><span class="hljs-built_in">String</span> secretKey = <span class="hljs-string">"your secret key"</span>;</li><li></li><li><span class="hljs-built_in">String</span> bucket = <span class="hljs-string">"your bucket name"</span>;</li><li><span class="hljs-built_in">String</span> key = <span class="hljs-string">"your file key"</span>;</li><li></li><li>Auth auth = Auth.create(accessKey, secretKey);</li><li>BucketManager bucketManager = <span class="hljs-keyword">new</span> BucketManager(auth, cfg);</li><li><span class="hljs-keyword">try</span> {</li><li>    bucketManager.prefetch(bucket, key);</li><li>} <span class="hljs-keyword">catch</span> (QiniuException ex) {</li><li>    <span class="hljs-comment">//如果遇到异常，说明更新失败</span></li><li>    System.err.println(ex.code());</li><li>    System.err.println(ex.response.toString());</li><li>}</li></ol></code></pre>
+
+<p><a id="pfop" target="_blank"></a></p>
+
+<h1 id="8" class="anchor-target">持久化数据处理</h1>
+
+<p><a id="pfop-request" target="_blank"></a></p>
+
+<h2>发送数据处理请求</h2>
+
+<p>对于已经保存到七牛空间的文件，可以通过发送持久化的数据处理指令来进行处理，这些指令支持七牛官方提供的指令，也包括客户自己开发的自定义数据处理的指令。数据处理的结果还可以通过七牛主动通知的方式告知业务服务器。</p>
+
+<pre><div class="tools"><button title="" class="btn copybtn" data-toggle="tooltip" data-placement="top" container="body" data-original-title="拷贝代码" data-clipboard-text="String accessKey = &quot;access key&quot;;
+String secretKey = &quot;secret key&quot;;
+
+//待处理文件所在空间
+String bucket = &quot;bucket name&quot;;
+//待处理文件名
+String key = &quot;file key&quot;;
+
+Auth auth = Auth.create(accessKey, secretKey);
+
+//数据处理指令，支持多个指令
+String saveMp4Entry = String.format(&quot;%s:avthumb_test_target.mp4&quot;, bucket);
+String saveJpgEntry = String.format(&quot;%s:vframe_test_target.jpg&quot;, bucket);
+String avthumbMp4Fop = String.format(&quot;avthumb/mp4|saveas/%s&quot;, UrlSafeBase64.encodeToString(saveMp4Entry));
+String vframeJpgFop = String.format(&quot;vframe/jpg/offset/1|saveas/%s&quot;, UrlSafeBase64.encodeToString(saveJpgEntry));
+//将多个数据处理指令拼接起来
+String persistentOpfs = StringUtils.join(new String[]{
+        avthumbMp4Fop, vframeJpgFop
+}, &quot;;&quot;);
+
+//数据处理队列名称，必须
+String persistentPipeline = &quot;mps-pipe1&quot;;
+//数据处理完成结果通知地址
+String persistentNotifyUrl = &quot;http://api.example.com/qiniu/pfop/notify&quot;);
+
+//构造一个带指定Zone对象的配置类
+Configuration cfg = new Configuration(Zone.zone0());
+//...其他参数参考类注释
+
+//构建持久化数据处理对象
+OperationManager operationManager = new OperationManager(auth, cfg);
+try {
+
+    String persistentId = operationManager.pfop(bucket, key, persistentOpfs, persistentPipeline, persistentNotifyUrl, true);
+    //可以根据该 persistentId 查询任务处理进度
+    System.out.println(persistentId);
+
+    OperationStatus operationStatus = operationManager.prefop(persistentId);
+    //解析 operationStatus 的结果
+} catch (QiniuException e) {
+    System.err.println(e.response.toString());
+}
+">拷贝</button></div><code class="hljs javascript"><ol start="1"><li><span class="hljs-built_in">String</span> accessKey = <span class="hljs-string">"access key"</span>;</li><li><span class="hljs-built_in">String</span> secretKey = <span class="hljs-string">"secret key"</span>;</li><li></li><li><span class="hljs-comment">//待处理文件所在空间</span></li><li><span class="hljs-built_in">String</span> bucket = <span class="hljs-string">"bucket name"</span>;</li><li><span class="hljs-comment">//待处理文件名</span></li><li><span class="hljs-built_in">String</span> key = <span class="hljs-string">"file key"</span>;</li><li></li><li>Auth auth = Auth.create(accessKey, secretKey);</li><li></li><li><span class="hljs-comment">//数据处理指令，支持多个指令</span></li><li><span class="hljs-built_in">String</span> saveMp4Entry = <span class="hljs-built_in">String</span>.format(<span class="hljs-string">"%s:avthumb_test_target.mp4"</span>, bucket);</li><li><span class="hljs-built_in">String</span> saveJpgEntry = <span class="hljs-built_in">String</span>.format(<span class="hljs-string">"%s:vframe_test_target.jpg"</span>, bucket);</li><li><span class="hljs-built_in">String</span> avthumbMp4Fop = <span class="hljs-built_in">String</span>.format(<span class="hljs-string">"avthumb/mp4|saveas/%s"</span>, UrlSafeBase64.encodeToString(saveMp4Entry));</li><li><span class="hljs-built_in">String</span> vframeJpgFop = <span class="hljs-built_in">String</span>.format(<span class="hljs-string">"vframe/jpg/offset/1|saveas/%s"</span>, UrlSafeBase64.encodeToString(saveJpgEntry));</li><li><span class="hljs-comment">//将多个数据处理指令拼接起来</span></li><li><span class="hljs-built_in">String</span> persistentOpfs = StringUtils.join(<span class="hljs-keyword">new</span> <span class="hljs-built_in">String</span>[]{</li><li>        avthumbMp4Fop, vframeJpgFop</li><li>}, <span class="hljs-string">";"</span>);</li><li></li><li><span class="hljs-comment">//数据处理队列名称，必须</span></li><li><span class="hljs-built_in">String</span> persistentPipeline = <span class="hljs-string">"mps-pipe1"</span>;</li><li><span class="hljs-comment">//数据处理完成结果通知地址</span></li><li><span class="hljs-built_in">String</span> persistentNotifyUrl = <span class="hljs-string">"http://api.example.com/qiniu/pfop/notify"</span>);</li><li></li><li><span class="hljs-comment">//构造一个带指定Zone对象的配置类</span></li><li>Configuration cfg = <span class="hljs-keyword">new</span> Configuration(Zone.zone0());</li><li><span class="hljs-comment">//...其他参数参考类注释</span></li><li></li><li><span class="hljs-comment">//构建持久化数据处理对象</span></li><li>OperationManager operationManager = <span class="hljs-keyword">new</span> OperationManager(auth, cfg);</li><li><span class="hljs-keyword">try</span> {</li><li></li><li>    <span class="hljs-built_in">String</span> persistentId = operationManager.pfop(bucket, key, persistentOpfs, persistentPipeline, persistentNotifyUrl, <span class="hljs-literal">true</span>);</li><li>    <span class="hljs-comment">//可以根据该 persistentId 查询任务处理进度</span></li><li>    System.out.println(persistentId);</li><li></li><li>    OperationStatus operationStatus = operationManager.prefop(persistentId);</li><li>    <span class="hljs-comment">//解析 operationStatus 的结果</span></li><li>} <span class="hljs-keyword">catch</span> (QiniuException e) {</li><li>    System.err.println(e.response.toString());</li><li>}</li></ol></code></pre>
+
+<p><a id="pfop-status" target="_blank"></a></p>
+
+<h2>查询数据处理请求状态</h2>
+
+<p>由于数据处理是异步处理，可以根据发送处理请求时返回的 <code>persistentId</code> 去查询任务的处理进度，如果在设置了<code>persistentNotifyUrl</code> 的情况下，直接业务服务器等待处理结果通知即可，如果需要主动查询，可以采用如上代码中的：</p>
+
+<pre><div class="tools"><button title="" class="btn copybtn" data-toggle="tooltip" data-placement="top" container="body" data-original-title="拷贝代码" data-clipboard-text="OperationStatus operationStatus = operationManager.prefop(persistentId);
+//解析 operationStatus 的结果
+">拷贝</button></div><code class="hljs cpp"><ol start="1"><li>OperationStatus operationStatus = operationManager.prefop(persistentId);</li><li><span class="hljs-comment">//解析 operationStatus 的结果</span></li></ol></code></pre>
+
+<p><a id="fusion-cdn" target="_blank"></a></p>
+
+<h1 id="9" class="anchor-target">CDN相关功能</h1>
+
+<ul>
+<li><a href="https://developer.qiniu.com/kodo/sdk/java#fusion-refresh-urls" target="_blank">文件刷新</a></li>
+<li><a href="https://developer.qiniu.com/kodo/sdk/java#fusion-refresh-dirs" target="_blank">目录刷新</a></li>
+<li><a href="https://developer.qiniu.com/kodo/sdk/java#fusion-prefetch" target="_blank">文件预取操作</a></li>
+<li><a href="https://developer.qiniu.com/kodo/sdk/java#fusion-flux" target="_blank">获取域名流量</a></li>
+<li><a href="https://developer.qiniu.com/kodo/sdk/java#fusion-bandwidth" target="_blank">获取域名带宽</a></li>
+<li><a href="https://developer.qiniu.com/kodo/sdk/java#fusion-logs" target="_blank">获取日志下载链接</a></li>
+<li><a href="https://developer.qiniu.com/kodo/sdk/java#fusion-antileech" target="_blank">构建时间戳防盗链访问链接</a></li>
+</ul>
+
+<p><a id="fusion-refresh-urls" target="_blank"></a></p>
+
+<h2>文件刷新</h2>
+
+<pre><div class="tools"><button title="" class="btn copybtn" data-toggle="tooltip" data-placement="top" container="body" data-original-title="拷贝代码" data-clipboard-text="String accessKey = &quot;your access key&quot;;
+String secretKey = &quot;your secret key&quot;;
+Auth auth = Auth.create(accessKey, secretKey);
+CdnManager c = new CdnManager(auth);
+
+//待刷新的链接列表
+String[] urls = new String[]{
+        &quot;http://javasdk.qiniudn.com/gopher1.jpg&quot;,
+        &quot;http://javasdk.qiniudn.com/gopher2.jpg&quot;,
+        //....
+};
+try {
+    //单次方法调用刷新的链接不可以超过100个
+    CdnResult.RefreshResult result = c.refreshUrls(urls);
+    System.out.println(result.code);
+    //获取其他的回复内容
+} catch (QiniuException e) {
+    System.err.println(e.response.toString());
+}
+">拷贝</button></div><code class="hljs javascript"><ol start="1"><li><span class="hljs-built_in">String</span> accessKey = <span class="hljs-string">"your access key"</span>;</li><li><span class="hljs-built_in">String</span> secretKey = <span class="hljs-string">"your secret key"</span>;</li><li>Auth auth = Auth.create(accessKey, secretKey);</li><li>CdnManager c = <span class="hljs-keyword">new</span> CdnManager(auth);</li><li></li><li><span class="hljs-comment">//待刷新的链接列表</span></li><li><span class="hljs-built_in">String</span>[] urls = <span class="hljs-keyword">new</span> <span class="hljs-built_in">String</span>[]{</li><li>        <span class="hljs-string">"http://javasdk.qiniudn.com/gopher1.jpg"</span>,</li><li>        <span class="hljs-string">"http://javasdk.qiniudn.com/gopher2.jpg"</span>,</li><li>        <span class="hljs-comment">//....</span></li><li>};</li><li><span class="hljs-keyword">try</span> {</li><li>    <span class="hljs-comment">//单次方法调用刷新的链接不可以超过100个</span></li><li>    CdnResult.RefreshResult result = c.refreshUrls(urls);</li><li>    System.out.println(result.code);</li><li>    <span class="hljs-comment">//获取其他的回复内容</span></li><li>} <span class="hljs-keyword">catch</span> (QiniuException e) {</li><li>    System.err.println(e.response.toString());</li><li>}</li></ol></code></pre>
+
+<p><a id="fusion-refresh-dirs" target="_blank"></a></p>
+
+<h2>目录刷新</h2>
+
+<pre><div class="tools"><button title="" class="btn copybtn" data-toggle="tooltip" data-placement="top" container="body" data-original-title="拷贝代码" data-clipboard-text="String accessKey = &quot;your access key&quot;;
+String secretKey = &quot;your secret key&quot;;
+Auth auth = Auth.create(accessKey, secretKey);
+CdnManager c = new CdnManager(auth);
+
+//待刷新的目录列表，目录必须以 / 结尾
+String[] dirs = new String[]{
+        &quot;http://javasdk.qiniudn.com/gopher1/&quot;,
+        &quot;http://javasdk.qiniudn.com/gopher2/&quot;,
+        //....
+};
+try {
+    //单次方法调用刷新的目录不可以超过10个，另外刷新目录权限需要联系技术支持开通
+    CdnResult.RefreshResult result = c.refreshDirs(dirs);
+    System.out.println(result.code);
+    //获取其他的回复内容
+} catch (QiniuException e) {
+    System.err.println(e.response.toString());
+}
+">拷贝</button></div><code class="hljs javascript"><ol start="1"><li><span class="hljs-built_in">String</span> accessKey = <span class="hljs-string">"your access key"</span>;</li><li><span class="hljs-built_in">String</span> secretKey = <span class="hljs-string">"your secret key"</span>;</li><li>Auth auth = Auth.create(accessKey, secretKey);</li><li>CdnManager c = <span class="hljs-keyword">new</span> CdnManager(auth);</li><li></li><li><span class="hljs-comment">//待刷新的目录列表，目录必须以 / 结尾</span></li><li><span class="hljs-built_in">String</span>[] dirs = <span class="hljs-keyword">new</span> <span class="hljs-built_in">String</span>[]{</li><li>        <span class="hljs-string">"http://javasdk.qiniudn.com/gopher1/"</span>,</li><li>        <span class="hljs-string">"http://javasdk.qiniudn.com/gopher2/"</span>,</li><li>        <span class="hljs-comment">//....</span></li><li>};</li><li><span class="hljs-keyword">try</span> {</li><li>    <span class="hljs-comment">//单次方法调用刷新的目录不可以超过10个，另外刷新目录权限需要联系技术支持开通</span></li><li>    CdnResult.RefreshResult result = c.refreshDirs(dirs);</li><li>    System.out.println(result.code);</li><li>    <span class="hljs-comment">//获取其他的回复内容</span></li><li>} <span class="hljs-keyword">catch</span> (QiniuException e) {</li><li>    System.err.println(e.response.toString());</li><li>}</li></ol></code></pre>
+
+<p><a id="fusion-prefetch" target="_blank"></a></p>
+
+<h2>文件预取</h2>
+
+<pre><div class="tools"><button title="" class="btn copybtn" data-toggle="tooltip" data-placement="top" container="body" data-original-title="拷贝代码" data-clipboard-text="String accessKey = &quot;your access key&quot;;
+String secretKey = &quot;your secret key&quot;;
+Auth auth = Auth.create(accessKey, secretKey);
+CdnManager c = new CdnManager(auth);
+
+//待预取的文件链接
+String[] urls = new String[]{
+        &quot;http://javasdk.qiniudn.com/gopher1.jpg&quot;,
+        &quot;http://javasdk.qiniudn.com/gopher2.jpg&quot;,
+        //...
+};
+try {
+    //单次调用方法预取的链接数量不得超过100个
+    CdnResult.PrefetchResult result = c.prefetchUrls(urls);
+    System.out.println(result.code);
+    //获取其他的回复内容
+} catch (QiniuException e) {
+    System.err.println(e.response.toString());
+}
+">拷贝</button></div><code class="hljs javascript"><ol start="1"><li><span class="hljs-built_in">String</span> accessKey = <span class="hljs-string">"your access key"</span>;</li><li><span class="hljs-built_in">String</span> secretKey = <span class="hljs-string">"your secret key"</span>;</li><li>Auth auth = Auth.create(accessKey, secretKey);</li><li>CdnManager c = <span class="hljs-keyword">new</span> CdnManager(auth);</li><li></li><li><span class="hljs-comment">//待预取的文件链接</span></li><li><span class="hljs-built_in">String</span>[] urls = <span class="hljs-keyword">new</span> <span class="hljs-built_in">String</span>[]{</li><li>        <span class="hljs-string">"http://javasdk.qiniudn.com/gopher1.jpg"</span>,</li><li>        <span class="hljs-string">"http://javasdk.qiniudn.com/gopher2.jpg"</span>,</li><li>        <span class="hljs-comment">//...</span></li><li>};</li><li><span class="hljs-keyword">try</span> {</li><li>    <span class="hljs-comment">//单次调用方法预取的链接数量不得超过100个</span></li><li>    CdnResult.PrefetchResult result = c.prefetchUrls(urls);</li><li>    System.out.println(result.code);</li><li>    <span class="hljs-comment">//获取其他的回复内容</span></li><li>} <span class="hljs-keyword">catch</span> (QiniuException e) {</li><li>    System.err.println(e.response.toString());</li><li>}</li></ol></code></pre>
+
+<p><a id="fusion-flux" target="_blank"></a></p>
+
+<h2>获取域名流量</h2>
+
+<pre><div class="tools"><button title="" class="btn copybtn" data-toggle="tooltip" data-placement="top" container="body" data-original-title="拷贝代码" data-clipboard-text="String accessKey = &quot;your access key&quot;;
+String secretKey = &quot;your secret key&quot;;
+Auth auth = Auth.create(accessKey, secretKey);
+CdnManager c = new CdnManager(auth);
+
+//域名列表
+String[] domains = new String[]{
+        &quot;img1.example.com&quot;,
+        &quot;img2.example.com&quot;,
+};
+
+//开始和结束日期
+String fromDate = &quot;2017-01-02&quot;;
+String toDate = &quot;2017-01-10&quot;;
+//数据粒度，支持的取值为 5min ／ hour ／day
+String granularity = &quot;day&quot;;
+
+try {
+    CdnResult.FluxResult fluxResult = c.getFluxData(domains, fromDate, toDate, granularity);
+    //处理得到的结果数据
+    //...
+} catch (QiniuException e) {
+    System.err.println(e.response.toString());
+}
+">拷贝</button></div><code class="hljs javascript"><ol start="1"><li><span class="hljs-built_in">String</span> accessKey = <span class="hljs-string">"your access key"</span>;</li><li><span class="hljs-built_in">String</span> secretKey = <span class="hljs-string">"your secret key"</span>;</li><li>Auth auth = Auth.create(accessKey, secretKey);</li><li>CdnManager c = <span class="hljs-keyword">new</span> CdnManager(auth);</li><li></li><li><span class="hljs-comment">//域名列表</span></li><li><span class="hljs-built_in">String</span>[] domains = <span class="hljs-keyword">new</span> <span class="hljs-built_in">String</span>[]{</li><li>        <span class="hljs-string">"img1.example.com"</span>,</li><li>        <span class="hljs-string">"img2.example.com"</span>,</li><li>};</li><li></li><li><span class="hljs-comment">//开始和结束日期</span></li><li><span class="hljs-built_in">String</span> fromDate = <span class="hljs-string">"2017-01-02"</span>;</li><li><span class="hljs-built_in">String</span> toDate = <span class="hljs-string">"2017-01-10"</span>;</li><li><span class="hljs-comment">//数据粒度，支持的取值为 5min ／ hour ／day</span></li><li><span class="hljs-built_in">String</span> granularity = <span class="hljs-string">"day"</span>;</li><li></li><li><span class="hljs-keyword">try</span> {</li><li>    CdnResult.FluxResult fluxResult = c.getFluxData(domains, fromDate, toDate, granularity);</li><li>    <span class="hljs-comment">//处理得到的结果数据</span></li><li>    <span class="hljs-comment">//...</span></li><li>} <span class="hljs-keyword">catch</span> (QiniuException e) {</li><li>    System.err.println(e.response.toString());</li><li>}</li></ol></code></pre>
+
+<p><a id="fusion-bandwidth" target="_blank"></a></p>
+
+<h2>获取域名带宽</h2>
+
+<pre><div class="tools"><button title="" class="btn copybtn" data-toggle="tooltip" data-placement="top" container="body" data-original-title="拷贝代码" data-clipboard-text="String accessKey = &quot;your access key&quot;;
+String secretKey = &quot;your secret key&quot;;
+Auth auth = Auth.create(accessKey, secretKey);
+CdnManager c = new CdnManager(auth);
+
+//域名列表
+String[] domains = new String[]{
+        &quot;img1.example.com&quot;,
+        &quot;img2.example.com&quot;,
+};
+
+//开始和结束日期
+String fromDate = &quot;2017-01-02&quot;;
+String toDate = &quot;2017-01-10&quot;;
+//数据粒度，支持的取值为 5min ／ hour ／day
+String granularity = &quot;day&quot;;
+
+try {
+    CdnResult.BandwidthResult bandwidthResult = c.getBandwidthData(domains, fromDate, toDate, granularity);
+    //处理得到的结果数据
+    //...
+} catch (QiniuException e) {
+    System.err.println(e.response.toString());
+}
+">拷贝</button></div><code class="hljs javascript"><ol start="1"><li><span class="hljs-built_in">String</span> accessKey = <span class="hljs-string">"your access key"</span>;</li><li><span class="hljs-built_in">String</span> secretKey = <span class="hljs-string">"your secret key"</span>;</li><li>Auth auth = Auth.create(accessKey, secretKey);</li><li>CdnManager c = <span class="hljs-keyword">new</span> CdnManager(auth);</li><li></li><li><span class="hljs-comment">//域名列表</span></li><li><span class="hljs-built_in">String</span>[] domains = <span class="hljs-keyword">new</span> <span class="hljs-built_in">String</span>[]{</li><li>        <span class="hljs-string">"img1.example.com"</span>,</li><li>        <span class="hljs-string">"img2.example.com"</span>,</li><li>};</li><li></li><li><span class="hljs-comment">//开始和结束日期</span></li><li><span class="hljs-built_in">String</span> fromDate = <span class="hljs-string">"2017-01-02"</span>;</li><li><span class="hljs-built_in">String</span> toDate = <span class="hljs-string">"2017-01-10"</span>;</li><li><span class="hljs-comment">//数据粒度，支持的取值为 5min ／ hour ／day</span></li><li><span class="hljs-built_in">String</span> granularity = <span class="hljs-string">"day"</span>;</li><li></li><li><span class="hljs-keyword">try</span> {</li><li>    CdnResult.BandwidthResult bandwidthResult = c.getBandwidthData(domains, fromDate, toDate, granularity);</li><li>    <span class="hljs-comment">//处理得到的结果数据</span></li><li>    <span class="hljs-comment">//...</span></li><li>} <span class="hljs-keyword">catch</span> (QiniuException e) {</li><li>    System.err.println(e.response.toString());</li><li>}</li></ol></code></pre>
+
+<p><a id="fusion-logs" target="_blank"></a></p>
+
+<h2>获取日志下载链接</h2>
+
+<pre><div class="tools"><button title="" class="btn copybtn" data-toggle="tooltip" data-placement="top" container="body" data-original-title="拷贝代码" data-clipboard-text="String accessKey = &quot;your access key&quot;;
+String secretKey = &quot;your secret key&quot;;
+Auth auth = Auth.create(accessKey, secretKey);
+CdnManager c = new CdnManager(auth);
+
+//域名列表
+String[] domains = new String[]{
+        &quot;img1.example.com&quot;,
+        &quot;img2.example.com&quot;,
+};
+
+//具体日期
+String logDate = &quot;2017-01-02&quot;;
+
+try {
+    CdnResult.LogListResult logListResult = c.getCdnLogList(domains, logDate);
+    //处理得到的结果数据
+    //...
+} catch (QiniuException e) {
+    System.err.println(e.response.toString());
+}
+">拷贝</button></div><code class="hljs javascript"><ol start="1"><li><span class="hljs-built_in">String</span> accessKey = <span class="hljs-string">"your access key"</span>;</li><li><span class="hljs-built_in">String</span> secretKey = <span class="hljs-string">"your secret key"</span>;</li><li>Auth auth = Auth.create(accessKey, secretKey);</li><li>CdnManager c = <span class="hljs-keyword">new</span> CdnManager(auth);</li><li></li><li><span class="hljs-comment">//域名列表</span></li><li><span class="hljs-built_in">String</span>[] domains = <span class="hljs-keyword">new</span> <span class="hljs-built_in">String</span>[]{</li><li>        <span class="hljs-string">"img1.example.com"</span>,</li><li>        <span class="hljs-string">"img2.example.com"</span>,</li><li>};</li><li></li><li><span class="hljs-comment">//具体日期</span></li><li><span class="hljs-built_in">String</span> logDate = <span class="hljs-string">"2017-01-02"</span>;</li><li></li><li><span class="hljs-keyword">try</span> {</li><li>    CdnResult.LogListResult logListResult = c.getCdnLogList(domains, logDate);</li><li>    <span class="hljs-comment">//处理得到的结果数据</span></li><li>    <span class="hljs-comment">//...</span></li><li>} <span class="hljs-keyword">catch</span> (QiniuException e) {</li><li>    System.err.println(e.response.toString());</li><li>}</li></ol></code></pre>
+
+<p><a id="fusion-antileech" target="_blank"></a></p>
+
+<h2>构建时间戳防盗链访问链接</h2>
+
+<p>具体算法可以参考：<a href="https://developer.qiniu.com/fusion/kb/timestamp-hotlinking-prevention" target="_blank">时间戳防盗链</a></p>
+
+<pre><div class="tools"><button title="" class="btn copybtn" data-toggle="tooltip" data-placement="top" container="body" data-original-title="拷贝代码" data-clipboard-text="String host = &quot;http://video.example.com&quot;;
+String fileName = &quot;基本概括.mp4&quot;;
+
+//查询参数
+StringMap queryStringMap = new StringMap();
+queryStringMap.put(&quot;name&quot;, &quot;七牛&quot;);
+queryStringMap.put(&quot;year&quot;, 2017);
+queryStringMap.put(&quot;年龄&quot;, 28);
+
+//链接过期时间
+long deadline = System.currentTimeMillis() / 1000 + 3600;
+
+//签名密钥，从后台域名属性中获取
+String encryptKey = &quot;xxx&quot;;
+String signedUrl;
+try {
+    signedUrl = CdnManager.createTimestampAntiLeechUrl(host, fileName,
+            queryStringMap, encryptKey, deadline);
+    System.out.println(signedUrl);
+} catch (Exception ex) {
+    ex.printStackTrace();
+}
+">拷贝</button></div><code class="hljs javascript"><ol start="1"><li><span class="hljs-built_in">String</span> host = <span class="hljs-string">"http://video.example.com"</span>;</li><li><span class="hljs-built_in">String</span> fileName = <span class="hljs-string">"基本概括.mp4"</span>;</li><li></li><li><span class="hljs-comment">//查询参数</span></li><li>StringMap queryStringMap = <span class="hljs-keyword">new</span> StringMap();</li><li>queryStringMap.put(<span class="hljs-string">"name"</span>, <span class="hljs-string">"七牛"</span>);</li><li>queryStringMap.put(<span class="hljs-string">"year"</span>, <span class="hljs-number">2017</span>);</li><li>queryStringMap.put(<span class="hljs-string">"年龄"</span>, <span class="hljs-number">28</span>);</li><li></li><li><span class="hljs-comment">//链接过期时间</span></li><li>long deadline = System.currentTimeMillis() / <span class="hljs-number">1000</span> + <span class="hljs-number">3600</span>;</li><li></li><li><span class="hljs-comment">//签名密钥，从后台域名属性中获取</span></li><li><span class="hljs-built_in">String</span> encryptKey = <span class="hljs-string">"xxx"</span>;</li><li><span class="hljs-built_in">String</span> signedUrl;</li><li><span class="hljs-keyword">try</span> {</li><li>    signedUrl = CdnManager.createTimestampAntiLeechUrl(host, fileName,</li><li>            queryStringMap, encryptKey, deadline);</li><li>    System.out.println(signedUrl);</li><li>} <span class="hljs-keyword">catch</span> (Exception ex) {</li><li>    ex.printStackTrace();</li><li>}</li></ol></code></pre>
+
+<p><a id="api-references" target="_blank"></a></p>
+
+<h1 id="10" class="anchor-target">API 参考</h1>
+
+<ul>
+<li><a href="https://developer.qiniu.com/kodo" target="_blank">存储 API 参考</a></li>
+<li><a href="https://developer.qiniu.com/fusion" target="_blank">融合CDN API 参考</a></li>
+<li><a href="https://developer.qiniu.com/dora" target="_blank">官方数据处理 API 参考</a></li>
+</ul>
+
+<p><a id="faq" target="_blank"></a></p>
+
+<h1 id="11" class="anchor-target">常见问题</h1>
+
+<ul>
+<li>QiniuExeption 保留了请求响应的信息，失败情况下会抛出此异常，可以提交给我们排查问题。</li>
+<li>API 的使用，demo 可以参考<a href="https://github.com/qiniu/java-sdk/blob/master/src/test" target="_blank">单元测试</a>。</li>
+</ul>
+
+<p><a id="related-resources" target="_blank"></a></p>
+
+<h1 id="12" class="anchor-target">相关资源</h1>
+
+<p>如果您有任何关于我们文档或产品的建议和想法，欢迎您通过以下方式与我们互动讨论：</p>
+
+<ul>
+<li><a href="http://segmentfault.com/qiniu" target="_blank">技术论坛</a> - 在这里您可以和其他开发者愉快的讨论如何更好的使用七牛云服务</li>
+<li><a href="https://support.qiniu.com/tickets/new" target="_blank">提交工单</a> - 如果您的问题不适合在论坛讨论或希望及时解决，您也可以提交一个工单，我们的技术支持人员会第一时间回复您</li>
+<li><a href="http://blog.qiniu.com/" target="_blank">博客</a> - 这里会持续更新发布市场活动和技术分享文章</li>
+<li><a href="http://weibo.com/qiniutek" target="_blank">微博</a></li>
+<li><a href="https://support.qiniu.com/question" target="_blank">常见问题</a></li>
+</ul>
+
+<p><a id="contribute-code" target="_blank"></a></p>
+
+<h1 id="13" class="anchor-target">贡献代码</h1>
+
+<ol>
+<li><p>Fork</p></li>
+
+<li><p>创建您的特性分支 git checkout -b my-new-feature</p></li>
+
+<li><p>提交您的改动 git commit -am ‘Added some feature’</p></li>
+
+<li><p>将您的修改记录提交到远程 git 仓库 git push origin my-new-feature</p></li>
+
+<li><p>然后到 github 网站的该 git 远程仓库的 my-new-feature 分支下发起 Pull Request</p></li>
+</ol>
+
+<p><a id="license" target="_blank"></a></p>
+
+<h1 id="14" class="anchor-target">许可证</h1>
+
+<p>Copyright © 2014 qiniu.com</p>
+
+<p>基于 MIT 协议发布:</p>
+
+<ul>
+<li><a href="http://www.opensource.org/licenses/MIT" target="_blank">www.opensource.org/licenses/MIT</a></li>
+</ul>
+
+        </div>
+        <div class="rating-bottom">
+          <span>以上内容是否对您有帮助？</span>
+          <div class="rating">
+            <li index="1" data-toggle="tooltip" data-placement="top" container="body" title="" data-original-title="根本没有帮助"><i class="fa fa-star-o"></i></li>
+            <li index="2" data-toggle="tooltip" data-placement="top" container="body" title="" data-original-title="文档较差"><i class="fa fa-star-o"></i></li>
+            <li index="3" data-toggle="tooltip" data-placement="top" container="body" title="" data-original-title="文档一般"><i class="fa fa-star-o"></i></li>
+            <li index="4" data-toggle="tooltip" data-placement="top" container="body" title="" data-original-title="文档不错"><i class="fa fa-star-o"></i></li>
+            <li index="5" data-toggle="tooltip" data-placement="top" container="body" title="" data-original-title="文档很好"><i class="fa fa-star-o"></i></li>
+          </div>
+        </div>
+        <div class="feedback">
+          <div class="header">反馈</div>
+          <div class="body">
+            <div id="feedbackform">
+              <div>
+                <input type="email" id="creator" placeholder="请输入邮箱" required="">
+                <span class="err-info"></span>
+              </div>
+              <div>
+                <textarea rows="3" placeholder="请留下你宝贵的意见" id="content" required=""></textarea>
+              </div>
+              <div>
+                <button class="btn btn-primary" disabled="">提交</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <nav class="nav-anchor nav-anchor-right" style="left: 1257.5px; bottom: inherit;"><ul><li><a href="https://developer.qiniu.com/kodo/sdk/java#1" class="">简介</a></li><li><a href="https://developer.qiniu.com/kodo/sdk/java#2" class="">开源</a></li><li><a href="https://developer.qiniu.com/kodo/sdk/java#3" class="">安装</a></li><li><a href="https://developer.qiniu.com/kodo/sdk/java#4" class="">鉴权</a></li><li><a href="https://developer.qiniu.com/kodo/sdk/java#5" class="">文件上传</a></li><li><a href="https://developer.qiniu.com/kodo/sdk/java#6" class="">下载文件</a></li><li><a href="https://developer.qiniu.com/kodo/sdk/java#7" class="">资源管理</a></li><li><a href="https://developer.qiniu.com/kodo/sdk/java#8" class="active">持久化数据处理</a></li><li><a href="https://developer.qiniu.com/kodo/sdk/java#9">CDN相关功能</a></li><li><a href="https://developer.qiniu.com/kodo/sdk/java#10">API 参考</a></li><li><a href="https://developer.qiniu.com/kodo/sdk/java#11">常见问题</a></li><li><a href="https://developer.qiniu.com/kodo/sdk/java#12">相关资源</a></li><li><a href="https://developer.qiniu.com/kodo/sdk/java#13">贡献代码</a></li><li><a href="https://developer.qiniu.com/kodo/sdk/java#14">许可证</a></li></ul></nav></div>
+  </div>
+</div>
+
+    <a id="support-tab" href="https://support.qiniu.com/tickets/new" target="_blank">
+      <span>提交工单</span>
+    </a>
+    <a id="goTopBtn" class="">
+      <span>回到顶部</span>
+    </a>
+    <footer>
+      <div class="container">
+
+        <div class="footer-info">
+          <a href="https://developer.qiniu.com/"></a>
+          <span>开发者中心 Copyright © 2017 七牛云 Inc.</span>
+        </div>
+
+        <div class="row">
+          <div class="col-md-8">
+            <ul class="qiniu-sites list-unstyled">
+              <li><a href="http://www.qiniu.com/" target="_blank">七牛官网</a></li>
+              <li><a href="https://portal.qiniu.com/" target="_blank">开发者平台</a></li>
+              <li><a href="https://segmentfault.com/qiniu" target="_blank">问答社区</a></li>
+              <li><a href="https://support.qiniu.com/" target="_blank">技术支持</a></li>
+              <li><a href="https://developer.qiniu.com/brand">七牛标识</a></li>
+            </ul>
+          </div>
+
+          <div class="col-md-4">
+            <div class="social-follow">
+              <ul class="social-links list-unstyled">
+                <li><a href="https://github.com/qiniu" target="_blank"><i class="fa fa-lg fa-github-alt"></i></a></li>
+                <li><a href="http://e.weibo.com/qiniutek" target="_blank"><i class="fa fa-lg fa-weibo"></i></a></li>
+                <li class="social-weixin-qrcode">
+                  <a href="javascript:;"><i class="fa fa-lg fa-weixin"></i></a>
+                  <div class="popover fade top in" id="wexin-qrcode-popover" style="display: none;">
+                    <div class="arrow"></div>
+                    <div class="popover-content"><img width="140" src="./Java SDK - 七牛开发者中心_files/weixin-qrcode-e4ddfa8a1a16b96c60e4b671b676dfd168ab4f91b5a700a755dde294347fc0f0.png" alt="Weixin qrcode"></div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script type="text/javascript" src="./Java SDK - 七牛开发者中心_files/jquery.min.js"></script>
+    <script type="text/javascript" src="./Java SDK - 七牛开发者中心_files/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./Java SDK - 七牛开发者中心_files/highlight.min.js"></script>
+    <script type="text/javascript" src="./Java SDK - 七牛开发者中心_files/go.min.js"></script>
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-91376707-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+  
+
+</body></html>

@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<!--<![endif]-->
+
+<head>
+  <title>面向函数vs面向对象 | Jason&#39;s Blog</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="Jason's Blog">
+    <meta name="author" content="jason">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="Jason&#39;s Blog" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+    
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+  
+  
+  <link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="atom.xml">
+  
+  
+
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <!-- Dropdown Menu -->
+			 
+            
+        	<li>
+        		<a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/categories/language/" class="animsition-link">language<small>(1)</small></a></li>
+				    
+				</ul>
+        	</li>
+			
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
+            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/logo.png" alt="Logo" width="35px;"/> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">Jason's Blog</a></li>
+                            <li class="nolink"><span>Always </span>Creative.</li>
+                            
+                            <li><a href="https://github.com/jasonmg" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            
+                            
+                            <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a></li>
+                            
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+
+      
+<section id="intro">
+    <div class="container">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2017-05-21T04:18:28.000Z" itemprop="datePublished">
+          2017-05-21
+      </time>
+    
+    
+    | 
+    <a href='/tags/FP-OOP/'>FP, OOP</a>
+    
+    
+</span>
+                <h1>面向函数vs面向对象</h1>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<h1 id="顺应语言的潮流"><a href="#顺应语言的潮流" class="headerlink" title="顺应语言的潮流"></a>顺应语言的潮流</h1><p>如果你回望主流语言发展的方向，你会发现现在越来越多的语言开始转向（支持） 函数作为一等公民.</p>
+<ol>
+<li>Groovy 很早就开始支持函数编程范式。</li>
+<li>JavaScript 早就有非常多的函数特性。</li>
+<li>C++ 也在2011年标准支持lambda blocks。</li>
+<li>Java社区早在java8支持lambad表达式之前就有很多开源的library支持FP, 比如 functionaljava, javaslang 等等.</li>
+<li>google I/O 2017 宣布的 kotlin 作为Android的第一开发语言同样也支持 functional</li>
+<li>更不用说 Scala, Clojure…</li>
+<li>Java8 终于开始支持lambad表达式, 拥抱fp.</li>
+</ol>
+<h1 id="为什么主流语言开始拥抱FP"><a href="#为什么主流语言开始拥抱FP" class="headerlink" title="为什么主流语言开始拥抱FP"></a>为什么主流语言开始拥抱FP</h1><h2 id="Java对程序员的解放"><a href="#Java对程序员的解放" class="headerlink" title="Java对程序员的解放"></a>Java对程序员的解放</h2><ul>
+<li>JVM(compile once,ran everywhere).</li>
+<li>GC(内存管理自动化，更加专注于高层的抽象，或着说更多的时间在解决切实的业务问题)</li>
+</ul>
+<h2 id="随着语言的发展（硬件的发展）"><a href="#随着语言的发展（硬件的发展）" class="headerlink" title="随着语言的发展（硬件的发展）"></a>随着语言的发展（硬件的发展）</h2><ul>
+<li>程序员希望虚拟机或者框架帮助我们完成那些乏味的冗长的任务，比如 Spring 动态绑定, JVM gc 从而让我们有更多的时间关注在更重要的业务上。</li>
+<li>FP帮助我们更上一层的抽象，剥离底层的繁琐，从而更加专注于业务。</li>
+<li>想象一下OOP里面的概念,state, encapsulation, scoping, visibility… 允许你能够修改状态, 特别是当你运用多线程编程的时候, 你大部分的时间是在对状态进行交互，保证线程之间同步状态(lock, synchronized), 比起这些，FP 移除了可变状态，所以在多线程的时候就不存在lock的问题。</li>
+<li>OOP 通过封装class，并通过对象方法交互，鼓励创建class和相应的方法，但是封装这些方法在相应的class里面非常不利于代码的重用(don’t repeat yourself)，相反FP建议通过少量的数据结构(list, set, map…） 但是对这些数据结构做了大量的优化，并且附加了大量的通用方法(filter, map, foreach, reduce, flatMap, fold, foldLeft, traverse, sequence, join, zip, take, find…)，程序员通过这些简单的数据结构加上高阶函数来达到同样的目的。比如 通过提炼 filter方法实现通用:<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">// 分词</div><div class="line">regexToList(words, &quot;\\b\\w+\\b&quot;).stream().</div><div class="line">					filter(w -&gt; !NON_WORDS.contains(w))</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>比如非常流行的java框架 Apache Commons, 里面的 indexOfAny() 方法，这个方法接受一个String和array返回第一个array在String里面第一个包含char的位置：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">	// From Apache Commons Lang, http://commons.apache.org/lang/  </div><div class="line">	public static int indexOfAny(String str, char[] searchChars) &#123;</div><div class="line">        if (isEmpty(str) || ArrayUtils.isEmpty(searchChars)) &#123;  // 1 Safety checks</div><div class="line">        		return INDEX_NOT_FOUND; </div><div class="line">        &#125;</div><div class="line">        int csLen = str.length();                              // 2 Initialization</div><div class="line">        int csLast = csLen - 1;</div><div class="line">        int searchLen = searchChars.length; </div><div class="line">        int searchLast = searchLen - 1; </div><div class="line">        for(inti=0; i&lt;csLen; i++)&#123;                              // 3 Outer iteration</div><div class="line">            char ch = str.charAt(i);</div><div class="line">            for (int j = 0; j &lt; searchLen; j++) &#123;</div><div class="line">                if (searchChars[j] == ch) &#123;                     // 4 Inner iteration</div><div class="line">                    if (i &lt; csLast &amp;&amp; j &lt; searchLast &amp;&amp; CharUtils.isHighSurrogate(ch)) &#123;  // 5 Decisions, decisions, decisions</div><div class="line">                        if (searchChars[j + 1] == str.charAt(i + 1)) &#123; </div><div class="line">                        		return i;</div><div class="line">                        &#125; </div><div class="line">                     &#125; else &#123;</div><div class="line">                       	 	return i; </div><div class="line">                     &#125;</div><div class="line">                &#125; </div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        return INDEX_NOT_FOUND;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">// usage:     </div><div class="line">StringUtils.indexOfAny(&quot;zzabyycdxx&quot;,[&apos;z&apos;,&apos;a&apos;]) == 0StringUtils.indexOfAny(&quot;zzabyycdxx&quot;,[&apos;b&apos;,&apos;y&apos;]) == 3StringUtils.indexOfAny(&quot;aba&quot;, [&apos;z&apos;])           == -1</div></pre></td></tr></table></figure></p>
+<p>这个方法的过程描述起来就是：对于每一个要查找的字符searchChars,找到出现在被查找的字符串的位置，找到则返回，找不到换下一个字符继续重头遍历String. 用Scala for 语法糖重写起来就是：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">def firstIndexOfAny(input : String, searchChars : Seq[Char]) : Option[Int] = &#123; </div><div class="line">	def indexedInput = (0 until input.length).zip(input) 	// [&apos;a&apos;,&apos;b&apos;] -&gt; [(0, &apos;a&apos;),(1, &apos;b&apos;)]	val result = 	for ( pair &lt;- indexedInput;					char &lt;- searchChars;					if (char == pair._2)</div><div class="line">					)  yield (pair._1) </div><div class="line">	if (result.isEmpty)		None	else		Some(result.head) </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>同样的我们用 java8+functionaljava 实现一次, pretty Simple! ha!<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">public static int indexOfAny1(String str, List&lt;Character&gt; searchChars) &#123;</div><div class="line">    List&lt;P2&lt;Character, Integer&gt;&gt; listOfIndex = fj.data.List.fromString(str).zipIndex();</div><div class="line"></div><div class="line">    List&lt;Integer&gt; res = searchChars.map(chr -&gt;</div><div class="line">            fj.data.List.lookup(Equal.charEqual, listOfIndex, chr).orSome(0)</div><div class="line">    );</div><div class="line"></div><div class="line">    System.out.println(res);  //	List(4,8)</div><div class="line"></div><div class="line">    return res.head();</div><div class="line">&#125;</div><div class="line"></div><div class="line">System.out.println(indexOfAny1(&quot;0123a567b&quot;, List.list(&apos;a&apos;,&apos;b&apos;)));</div></pre></td></tr></table></figure></p>
+<p><tr></tr></p>
+<tr>
+
+<h1 id="拥抱FP"><a href="#拥抱FP" class="headerlink" title="拥抱FP"></a>拥抱FP</h1><p>学习新语言很容易，基本上只要了解新语法就可以了，把之前语言写的代码用新语法重新写一遍就可以了。但是学习新的编程范式不太容易，you have to change the way you think.当GC成为主流，它所带来的好处就是消除了困扰c/c++程序员经常颤抖的内存泄漏，内存管理等底层问题，它帮助我们在运行的时候动态的管理内存的分配和回收，让我们更加专注于业务的理解和实现。 同样的FP所带来的好处是，它致力于分解抽离底层算法和业务逻辑，让你有更多的时间去完成真正老板想要看到的东西，让程序员可以享受这种高抽象(低复杂度)和高性能的方法所带来效率上的提升。</p>
+<hr>
+<ol>
+<li>OOP 封装可变(状态)在class里面（方法不可重用）</li>
+<li>FP 尽可能的减少可变状态，组合已有的高阶抽象方法</li>
+</ol>
+<hr>
+<ol>
+<li>OOP 也符合 Imperative programming(命令式编程)的风格，也就是你的代码基本上就是命令式的一行接着一行的按照你写代码的顺序执行，跳转，循环 去改变变量的状态值最后得到返回的结果</li>
+<li>FP 是描述程序的逻辑，用transformation, modeling matematical formulas, 尽量减少对属性(参数)的修改来达到相同的目的.</li>
+</ol>
+<p>比如给你一个list of String要求你遍历list 1. 去掉那些长度为1的string 2. 长度大于1的第一个字母大写 返回一个字符串中间用逗号分隔每一个 list中的每一个string。<br>Imperative programming style:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">public class TheCompanyProcess &#123;	public String cleanNames(List&lt;String&gt; listOfNames) &#123;		StringBuilder result = new StringBuilder(); </div><div class="line">			for(int i = 0; i &lt; listOfNames.size(); i++) &#123;					if (listOfNames.get(i).length() &gt; 1)&#123; </div><div class="line">						result.append(capitalizeString(listOfNames.get(i))).append(&quot;,&quot;);</div><div class="line">					&#125; </div><div class="line">			&#125;		return result.substring(0, result.length() - 1).toString(); </div><div class="line">	&#125;	public String capitalizeString(String s) &#123;		return s.substring(0, 1).toUpperCase() + s.substring(1, s.length());	&#125; </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>fp style:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">// 伪代码</div><div class="line">listOfEmps    -&gt; filter(x.length &gt; 1)    -&gt; transform(x.capitalize)    -&gt; convert(x + &quot;,&quot; + y)</div></pre></td></tr></table></figure>
+<p>那么更高层次的抽象这些所带来的好处是什么?</p>
+<ol>
+<li>它鼓励从不同的角度思考问题，看到不同问题的共同点，然后提炼出相同的东西（细粒度的方法）以达到重用。</li>
+<li>对于共用的方法可以提供更高的优化从而共享效率带来的提升。</li>
+<li>它允许有些解决方案变的很容易, 比如多线程运行，在imperative program里面你必须自己实现，因为你自己控制了底层的循环(for loop), 而在java8中实现知识一行代码的改动<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">listOfEmps</div><div class="line">	.parallelStream() // 并发实现 </div><div class="line">	.filter(...)</div><div class="line">	.transform(...)</div><div class="line">	.convert(...)</div></pre></td></tr></table></figure>
+</li>
+</ol>
+</tr>
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+        <nav class="pagination" role="pagination">
+    
+    <a class="pull-left" href="/2017/05/21/java8/" style="float: left;">
+        ← java8
+    </a>
+    
+    
+    <a class="pull-right" href="/2017/03/08/RactiveAPI/">
+         →
+    </a>
+    
+</nav>
+
+        <div class="duoshuo">
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+	var disqus_shortname = 'jason1900';
+	window.addEventListener('load', function(){
+		(function(){
+			var dsq = document.createElement('script');
+			dsq.type = 'text/javascript';
+			dsq.async = true;
+			dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+			(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+		}());
+	});
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+
+</div>
+    </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By jason. All Rights Reserved.
+                </p>
+                <p>Theme By <a href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/jasonmg" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    
+                    
+                    <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a>&nbsp;</li>
+                    
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+
+    resizeHero();
+
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/jquery.flexslider-min.js"></script><!-- Flexslider plugin -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$('#intro').find('img').each(function(){
+  var alt = this.alt;
+
+  if (alt){
+    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
+  }
+
+  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
+});
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+<!-- Initiate flexslider plugin -->
+<script type="text/javascript">
+    $(document).ready(function($) {
+      (function(){
+        console.log('font');
+        var getCss = function(path) {
+          var head = document.getElementsByTagName('head')[0];
+          link = document.createElement('link');
+          link.href = path;
+          link.rel = 'stylesheet';
+          link.type = 'text/css';
+          head.appendChild(link);
+        };
+        getCss('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+        getCss('https://fonts.googleapis.com/css?family=Open+Sans:400,600');
+      })();
+      $('.flexslider').flexslider({
+        animation: "fade",
+        prevText: "",
+        nextText: "",
+        directionNav: true
+      });
+    });
+</script>
+
+</body>
+</html>

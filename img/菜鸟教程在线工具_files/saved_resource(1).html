@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<!-- saved from url=(0060)http://www.runoob.com/try/try.php?filename=tryjs_intro_style -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><!--<base href="//www.runoob.com/try/demo_source/" target="_blank">--><base href="." target="_blank"> 
+ 
+<title>菜鸟教程(runoob.com)</title> 
+</head>
+<body>
+	
+<h1>我的第一段 JavaScript</h1>
+<p id="demo" style="color: rgb(255, 0, 0);">
+JavaScript 能改变 HTML 元素的样式。
+</p>
+<script>
+function myFunction()
+{
+	x=document.getElementById("demo") // 找到元素
+	if(x.style.color=="#ffffff"){
+	} else {
+		x.style.color="#ff0000"; 
+	}
+	         // 改变样式
+}
+</script>
+<button type="button" onclick="myFunction()">点击这里</button>
+	
+
+</body></html>
