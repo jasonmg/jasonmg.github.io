@@ -267,10 +267,9 @@
     <link href="http://yoursite.com/2017/05/21/%E8%8C%83%E7%95%B4/"/>
     <id>http://yoursite.com/2017/05/21/范畴/</id>
     <published>2017-05-21T08:57:18.000Z</published>
-    <updated>2017-05-21T13:41:45.000Z</updated>
+    <updated>2017-05-23T15:42:22.000Z</updated>
     
-    <content type="html"><![CDATA[<p>#范畴</p>
-<ol>
+    <content type="html"><![CDATA[<h1 id="范畴"><a href="#范畴" class="headerlink" title="范畴"></a><a href="https://segmentfault.com/a/1190000008000905" target="_blank" rel="external">范畴</a></h1><ol>
 <li>用箭头将对象连接起来就可以构造出范畴</li>
 <li>范畴论与箭头(函数)的复合有关 </li>
 <li>复合是从右向左发生的</li>
@@ -292,13 +291,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;#范畴&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;用箭头将对象连接起来就可以构造出范畴&lt;/li&gt;
-&lt;li&gt;范畴论与箭头(函数)的复合有关 &lt;/li&gt;
-&lt;li&gt;复合是从右向左发生的&lt;/li&gt;
-&lt;li&gt;复合是可结合的（结合律）&lt;/li&gt;
-&lt;li&gt;任一对象 A，都有一个箭头，它是复合的最小单位。
+      &lt;h1 id=&quot;范畴&quot;&gt;&lt;a href=&quot;#范畴&quot; class=&quot;headerlink&quot; title=&quot;范畴&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://segmentfault.com/a/1190000008000905&quot; target=&quot;_blank&quot; rel=&quot;exter
     
     </summary>
     

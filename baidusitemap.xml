@@ -4,6 +4,23 @@
 
     
   <url>
+    <loc>http://yoursite.com/2017/05/21/%E8%8C%83%E7%95%B4/</loc>
+    <lastmod>2017-05-23T15:42:22.000Z</lastmod>
+    <data>
+        <display>
+        <title>范畴</title>
+        <pubTime>2017-05-21T08:57:18.000Z</pubTime>
+        
+        <tag>category</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2017/05/23/traversable/</loc>
     <lastmod>2017-05-23T15:20:16.000Z</lastmod>
     <data>
@@ -29,23 +46,6 @@
         <pubTime>2017-05-21T12:03:46.000Z</pubTime>
         
         <tag>list</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2017/05/21/%E8%8C%83%E7%95%B4/</loc>
-    <lastmod>2017-05-21T13:41:45.000Z</lastmod>
-    <data>
-        <display>
-        <title>范畴</title>
-        <pubTime>2017-05-21T08:57:18.000Z</pubTime>
-        
-        <tag>category</tag>
          
          
            
