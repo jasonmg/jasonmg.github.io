@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-05-21T16:27:01.000Z</updated>
+  <updated>2017-05-23T15:20:16.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,11 +16,34 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>traversable</title>
+    <link href="http://yoursite.com/2017/05/23/traversable/"/>
+    <id>http://yoursite.com/2017/05/23/traversable/</id>
+    <published>2017-05-23T14:56:54.000Z</published>
+    <updated>2017-05-23T15:20:16.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="可遍历类"><a href="#可遍历类" class="headerlink" title="可遍历类"></a>可遍历类</h1><p><a href="http://adit.io/posts/2013-04-17-functors,_applicatives,_and_monads_in_pictures.html" target="_blank" rel="external">Coffee</a></p>
+<p>Functor     提供给我们一种方法 把普通函数应用到一种高阶类型，并返回高阶类型<br>Applicative is a monoidal functor 提供给我们一种方法 把 高阶类型中的函数 应用到高阶类型，并返回高阶类型。<br>Foldable   提供给我们一种方法 处理一种顺序存储的数据类型 并折叠成一个值</p>
+<p>今天我们来理解一下 Traversable type class,首先来看一下 类型类的定义：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">class (Functor t, Foldable t) =&gt; Traversable t where</div><div class="line">    traverse :: Applicative f =&gt; (a -&gt; f b) -&gt; t a -&gt; f (t b)</div><div class="line">    traverse f = sequenceA . fmap f</div><div class="line">    sequenceA :: Applicative f =&gt; t (f a) -&gt; f (t a)</div><div class="line">    sequenceA = traverse id</div></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;可遍历类&quot;&gt;&lt;a href=&quot;#可遍历类&quot; class=&quot;headerlink&quot; title=&quot;可遍历类&quot;&gt;&lt;/a&gt;可遍历类&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;http://adit.io/posts/2013-04-17-functors,_applicative
+    
+    </summary>
+    
+    
+      <category term="haskell" scheme="http://yoursite.com/tags/haskell/"/>
+    
+  </entry>
+  
+  <entry>
     <title>foldRight foldLeft</title>
     <link href="http://yoursite.com/2017/05/21/foldRight-foldLeft/"/>
     <id>http://yoursite.com/2017/05/21/foldRight-foldLeft/</id>
     <published>2017-05-21T12:03:46.000Z</published>
-    <updated>2017-05-21T16:27:01.000Z</updated>
+    <updated>2017-05-23T14:53:55.000Z</updated>
     
     <content type="html"><![CDATA[<p>当我们用到FP list我们会接触到list里面大量的工具方法，比如 foreach, map, flatMap, reduce 等等, 但是有一种方法 fold, foldLeft, foldRight 也会大量用到本章主要讲解 fp list中 fold* 的用法。</p>
 <p>fold 简单理解就是折叠的意思：</p>
@@ -46,7 +69,9 @@
 <p>foldr, foldl 对spine的遍历方向都是一样的（从右向左）, 两者的不同是结合顺序(括号的顺序).</p>
 <p>foldr的递归定义f 接受list head 和剩余的fold返回值，根据foldr折叠的时候分两个阶段和惰性求值的特性，如果f不要求对第二个参数求值(rest of the fold)这样的话list中的元素就不会再求值<br>这样带来的好处就是 foldr 不仅可以避免对list里的一些或者全部元素求值，还可以避免对list的spine进行遍历。 </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">foldr f acc (x:xs) = f x (foldr f acc xs)</div><div class="line">                         ^--------------^</div><div class="line">                         rest of the fold</div></pre></td></tr></table></figure>
-<p>由于这样的特性，所以foldr可以用于那些可能无限长度的list进行操作。</p>
+<p>list的递归遍历都是有左向右的，不管是foldr or foldl 对list的遍历顺序都是一样的，只是在把函数应用到每个元素并求值的结合顺序不一致，foldr是从右向左应用函数从递归的最里面求值一层一层的最后出来，<br>foldl是从左向右从递归的开始求值直至到最后。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">[1..3] == 1 : 2 : 3 : []</div><div class="line"></div><div class="line">foldr f z [1, 2, 3]</div><div class="line">1 `f` (foldr f z [2 ,3])</div><div class="line">1 `f` (2 `f` (foldr z [3]))</div><div class="line">1 `f` (2 `f` (3 `f` (foldr f z [])))</div><div class="line">1 `f` (2 `f` (3 `f` z)</div></pre></td></tr></table></figure></p>
+<p>对于 对结合律无关的函数foldr,foldl返回的结果都是一样的，但是对于 结合律有关的函数,比如(^)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">foldr (^) 2 [1..3] </div><div class="line">1 ^ (2 ^ (3 ^ 2))</div><div class="line">1 ^ (2 ^ 9)</div><div class="line">1 ^ 512</div><div class="line">1</div><div class="line"></div><div class="line">foldl (^) 2 [1..3]</div><div class="line">(((2 ^ 1) ^ 2) ^ 3)</div><div class="line">((2 ^ 2) ^ 3)</div><div class="line">(4 ^ 3)</div><div class="line">64</div></pre></td></tr></table></figure></p>
+<p>由于以上的特性，所以foldr可以用于那些可能无限长度的list进行操作，但是foldl不适合用于long list。</p>
 ]]></content>
     
     <summary type="html">
@@ -605,6 +630,38 @@
   </entry>
   
   <entry>
+    <title>Ractive programming</title>
+    <link href="http://yoursite.com/2017/05/21/RactiveAPI/"/>
+    <id>http://yoursite.com/2017/05/21/RactiveAPI/</id>
+    <published>2017-05-21T04:18:28.000Z</published>
+    <updated>2017-05-21T08:55:42.000Z</updated>
+    
+    <content type="html"><![CDATA[<ol>
+<li><p>RxJava支持很多java 8 Stream类似的相同高层次操作比如map和filter，区别是RxJava是异步的。</p>
+</li>
+<li><p>Reactive programming is programming with asynchronous data streams.</p>
+</li>
+<li>You are able to create data streams of anything, not just from click and hover events. Streams are cheap and ubiquitous, anything can be a stream: variables, user inputs, properties, caches, data structures, etc。</li>
+<li>A stream is a sequence of ongoing events ordered in time。</li>
+<li>Reactive Programming raises the level of abstraction of your code so you can focus on the interdependence of events that define the business logic, rather than having to constantly fiddle with a large amount of implementation details</li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;ol&gt;
+&lt;li&gt;&lt;p&gt;RxJava支持很多java 8 Stream类似的相同高层次操作比如map和filter，区别是RxJava是异步的。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Reactive programming is programming with asynchron
+    
+    </summary>
+    
+    
+      <category term="FP, reactive" scheme="http://yoursite.com/tags/FP-reactive/"/>
+    
+  </entry>
+  
+  <entry>
     <title>面向函数vs面向对象</title>
     <link href="http://yoursite.com/2017/05/21/%E9%9D%A2%E5%90%91%E5%87%BD%E6%95%B0vs%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"/>
     <id>http://yoursite.com/2017/05/21/面向函数vs面向对象/</id>
@@ -676,38 +733,6 @@
     
     
       <category term="FP, OOP" scheme="http://yoursite.com/tags/FP-OOP/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Ractive programming</title>
-    <link href="http://yoursite.com/2017/05/21/RactiveAPI/"/>
-    <id>http://yoursite.com/2017/05/21/RactiveAPI/</id>
-    <published>2017-05-21T04:18:28.000Z</published>
-    <updated>2017-05-21T08:55:42.000Z</updated>
-    
-    <content type="html"><![CDATA[<ol>
-<li><p>RxJava支持很多java 8 Stream类似的相同高层次操作比如map和filter，区别是RxJava是异步的。</p>
-</li>
-<li><p>Reactive programming is programming with asynchronous data streams.</p>
-</li>
-<li>You are able to create data streams of anything, not just from click and hover events. Streams are cheap and ubiquitous, anything can be a stream: variables, user inputs, properties, caches, data structures, etc。</li>
-<li>A stream is a sequence of ongoing events ordered in time。</li>
-<li>Reactive Programming raises the level of abstraction of your code so you can focus on the interdependence of events that define the business logic, rather than having to constantly fiddle with a large amount of implementation details</li>
-</ol>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;RxJava支持很多java 8 Stream类似的相同高层次操作比如map和filter，区别是RxJava是异步的。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Reactive programming is programming with asynchron
-    
-    </summary>
-    
-    
-      <category term="FP, reactive" scheme="http://yoursite.com/tags/FP-reactive/"/>
     
   </entry>
   

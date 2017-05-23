@@ -17,7 +17,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>Ractive programming | Jason&#39;s Blog</title>
+  <title>traversable | Jason&#39;s Blog</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -155,42 +155,32 @@
         <div class="row col-md-offset-2">
             <div class="col-md-8">
     			<span class="post-meta">
-      <time datetime="2017-05-21T04:18:28.000Z" itemprop="datePublished">
-          2017-05-21
+      <time datetime="2017-05-23T14:56:54.000Z" itemprop="datePublished">
+          2017-05-23
       </time>
     
     
     | 
-    <a href='/tags/FP-reactive/'>FP, reactive</a>
+    <a href='/tags/haskell/'>haskell</a>
     
     
 </span>
-                <h1>Ractive programming</h1>
+                <h1>traversable</h1>
             </div>
         </div>
         <div class="col-md-8 col-md-offset-2">
-      		<ol>
-<li><p>RxJava支持很多java 8 Stream类似的相同高层次操作比如map和filter，区别是RxJava是异步的。</p>
-</li>
-<li><p>Reactive programming is programming with asynchronous data streams.</p>
-</li>
-<li>You are able to create data streams of anything, not just from click and hover events. Streams are cheap and ubiquitous, anything can be a stream: variables, user inputs, properties, caches, data structures, etc。</li>
-<li>A stream is a sequence of ongoing events ordered in time。</li>
-<li>Reactive Programming raises the level of abstraction of your code so you can focus on the interdependence of events that define the business logic, rather than having to constantly fiddle with a large amount of implementation details</li>
-</ol>
+      		<h1 id="可遍历类"><a href="#可遍历类" class="headerlink" title="可遍历类"></a>可遍历类</h1><p><a href="http://adit.io/posts/2013-04-17-functors,_applicatives,_and_monads_in_pictures.html" target="_blank" rel="external">Coffee</a></p>
+<p>Functor     提供给我们一种方法 把普通函数应用到一种高阶类型，并返回高阶类型<br>Applicative is a monoidal functor 提供给我们一种方法 把 高阶类型中的函数 应用到高阶类型，并返回高阶类型。<br>Foldable   提供给我们一种方法 处理一种顺序存储的数据类型 并折叠成一个值</p>
+<p>今天我们来理解一下 Traversable type class,首先来看一下 类型类的定义：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">class (Functor t, Foldable t) =&gt; Traversable t where</div><div class="line">    traverse :: Applicative f =&gt; (a -&gt; f b) -&gt; t a -&gt; f (t b)</div><div class="line">    traverse f = sequenceA . fmap f</div><div class="line">    sequenceA :: Applicative f =&gt; t (f a) -&gt; f (t a)</div><div class="line">    sequenceA = traverse id</div></pre></td></tr></table></figure></p>
 
             <div class="clearfix"></div>
             <hr class="nogutter">
         </div>
         <nav class="pagination" role="pagination">
     
-    <a class="pull-left" href="/2017/05/21/java8/" style="float: left;">
-        ← java8
-    </a>
     
-    
-    <a class="pull-right" href="/2017/05/21/面向函数vs面向对象/">
-        面向函数vs面向对象 →
+    <a class="pull-right" href="/2017/05/21/foldRight-foldLeft/">
+        foldRight foldLeft →
     </a>
     
 </nav>

@@ -4,8 +4,25 @@
 
     
   <url>
+    <loc>http://yoursite.com/2017/05/23/traversable/</loc>
+    <lastmod>2017-05-23T15:20:16.000Z</lastmod>
+    <data>
+        <display>
+        <title>traversable</title>
+        <pubTime>2017-05-23T14:56:54.000Z</pubTime>
+        
+        <tag>haskell</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2017/05/21/foldRight-foldLeft/</loc>
-    <lastmod>2017-05-21T16:27:01.000Z</lastmod>
+    <lastmod>2017-05-23T14:53:55.000Z</lastmod>
     <data>
         <display>
         <title>foldRight foldLeft</title>
