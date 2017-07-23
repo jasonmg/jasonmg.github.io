@@ -1,7 +1,7 @@
 <html>
 <head>
 	
-	<title>learn haskell - 1</title>
+	<title>learn haskell - advance</title>
 	<meta name="keywords" content="My Blog, Spider Bitch!" />
 
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
@@ -23,10 +23,8 @@
 
 <body>
 
-<h2 class="title">learn haskell - 1</h2>
-<p>#15 Monoid, Semigroup</p>
-<p>##Algebra</p>
-<ol>
+<h2 class="title">learn haskell - advance</h2>
+<h1 id="15-Monoid-Semigroup"><a href="#15-Monoid-Semigroup" class="headerlink" title="15 Monoid, Semigroup"></a>15 Monoid, Semigroup</h1><h2 id="Algebra"><a href="#Algebra" class="headerlink" title="Algebra"></a>Algebra</h2><ol>
 <li>Algebra generally refers to one of the most import fields of mathematics. In this usage, it means the study of mathematical symbols and the rules governing their manipulation.</li>
 <li>In Haskell or more generally say in Functional programming, “An algebra” refers to some operations and the set they operate over. that means we care less about the particulars of the values or data we are working with and more about the general rules of the use.</li>
 <li>In Haskell, these algebras can be implemented with typeclasses; the typeclasses define the set of operations. when we talk about operations over a set, the set is type the operations are for.</li>
@@ -47,10 +45,10 @@
 <blockquote>
 <p>There is some sense in which it might fell strange to think of this as a combining or <em>mappending</em> operation. Unless we recall that mappending is less about combining and more about condensing or reducing.  i.e. (Bool for monoid)</p>
 </blockquote>
-<p>##common usage<br>A common use of monoids is to structure and describe common modes of processing data. </p>
+<h2 id="common-usage"><a href="#common-usage" class="headerlink" title="common usage"></a>common usage</h2><p>A common use of monoids is to structure and describe common modes of processing data. </p>
 <p>Sometimes this is to describe an API for incrementally processing a large dataset, sometimes to describe guarantees needed to roll up aggregations(think summation) in a parallel, concurrent, or distributed processing framework.</p>
 <p>One reason is that with a monoid we get another function called mconcat for free. mconcat takes a list of values in a monoid and combines them all together. For example mconcat [a,b,c] is equal to a <code>mappend</code> (b <code>mappend</code> c). Any time you have a monoid you have this quick and easy way to combine a whole list together.(<a href="http://blog.sigfpe.com/2009/01/haskell-monoids-and-their-uses.html" target="_blank" rel="external">http://blog.sigfpe.com/2009/01/haskell-monoids-and-their-uses.html</a>)</p>
-<p>#Semigroup<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">class Semigroup a where</div><div class="line">	(&lt;&gt;) :: a -&gt; a -&gt; a</div></pre></td></tr></table></figure></p>
+<h1 id="Semigroup"><a href="#Semigroup" class="headerlink" title="Semigroup"></a>Semigroup</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">class Semigroup a where</div><div class="line">	(&lt;&gt;) :: a -&gt; a -&gt; a</div></pre></td></tr></table></figure>
 <ol>
 <li>Compared with Moniod, Semigroup simple drop the identity value, keep associativity and it;s law.</li>
 </ol>
@@ -61,7 +59,7 @@
 <li>Functor is a way of lifting over structure(mapping) in such a manner that you don’t have to care about the structure because you’re not allowed to touch the structure anyway.</li>
 <li>the Goal of the functor fmap is to leave the outer struture untouched while transforming the type arguments inside.</li>
 </ol>
-<p>#<a href="https://segmentfault.com/a/1190000003954370#articleHeader9" target="_blank" rel="external">函子的复合</a><br>让自己相信范畴之间的函子可以复合并不太难，函子的复合类似于集合之间的函数复合。两个函子的复合，就是两个函子分别对各自的对象进行映射的复合，对于态射也是这样。恒等态射穿过两个函子之后，它还是恒等态射。复合的态射穿过两个函子之后还是复合的态射。函子的复合只涉及这些东西。特别是，自函子很容易复合。还记得 maybeTail 么？下面我用 Haskell 内建的列表来重新实现它（用 [] 替换 Nil，用 : 替换 Cons）：</p>
+<h1 id="函子的复合"><a href="#函子的复合" class="headerlink" title="函子的复合"></a><a href="https://segmentfault.com/a/1190000003954370#articleHeader9" target="_blank" rel="external">函子的复合</a></h1><p>让自己相信范畴之间的函子可以复合并不太难，函子的复合类似于集合之间的函数复合。两个函子的复合，就是两个函子分别对各自的对象进行映射的复合，对于态射也是这样。恒等态射穿过两个函子之后，它还是恒等态射。复合的态射穿过两个函子之后还是复合的态射。函子的复合只涉及这些东西。特别是，自函子很容易复合。还记得 maybeTail 么？下面我用 Haskell 内建的列表来重新实现它（用 [] 替换 Nil，用 : 替换 Cons）：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">maybeTail :: [a] -&gt; Maybe [a]</div><div class="line">maybeTail [] = Nothing</div><div class="line">maybeTail (x:xs) = Just xs</div></pre></td></tr></table></figure>
 <p>maybeTail 返回的结果是两个作用于 a 的函子 Maybe 与 [] 复合后的类型。这些函子，每一个都配备了一个 fmap，但是如果我们想将一个函数 f 作用于复合的函子 Maybe [] 所包含的内容，该怎么做？我们不得不突破两层函子的封装：使用 fmap 突破 Maybe，再使用 fmap 突破列表。例如，要对一个 Maybe [Int] 中所包含的元素求平方，可以这样做：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">square x = x * x</div><div class="line"></div><div class="line">mis :: Maybe [Int]</div><div class="line">mis = Just [1, 2, 3]</div><div class="line"></div><div class="line">mis2 = fmap (fmap square) mis</div></pre></td></tr></table></figure>
@@ -72,13 +70,12 @@
 <li>Monoid gives us a means of mashing two values of the same type together.<br>Monoid’s core operation, mappend smashes the structures together — when you mappend two list, they become one list, so the structures themselves have been joined.</li>
 <li>Functor, on the other hand, if for function application over some structure we don’t want to have to think about.<br>Functor’s core operation, fmap applies a function to a value that is within some structure while leaving that structure unaltered.</li>
 </ol>
-<p>#Applicative</p>
-<ol>
+<h1 id="Applicative"><a href="#Applicative" class="headerlink" title="Applicative"></a>Applicative</h1><ol>
 <li>The applicative typeclass allows for function application lifted over structure (like Functor). But with Applicative the function we’re applying is also embedded in some structure.</li>
 <li>Applicative is moniodal functor.</li>
 </ol>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">class Functor f =&gt; Applicative f where</div><div class="line">	pure           :: a -&gt; f a</div><div class="line">	(apply or &lt;*&gt;) :: f (a -&gt; b) -&gt; f a -&gt; f b</div></pre></td></tr></table></figure>
-<p>#Lifts<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">liftA :: Applicative f =&gt; (a  -&gt; b) -&gt; f a  -&gt; f b</div><div class="line">liftM :: Monad       f =&gt; (a1 -&gt; r) -&gt; f a1 -&gt; f r</div><div class="line"></div><div class="line">liftA2 :: Applicative f =&gt; (a-&gt; b-&gt; c) -&gt; f a  -&gt; f b  -&gt; f c</div><div class="line">liftM2 :: Monad       f =&gt; (a1-&gt;a2-&gt;c) -&gt; f a1 -&gt; f a2 -&gt; f c</div></pre></td></tr></table></figure></p>
+<h1 id="Lifts"><a href="#Lifts" class="headerlink" title="Lifts"></a>Lifts</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">liftA :: Applicative f =&gt; (a  -&gt; b) -&gt; f a  -&gt; f b</div><div class="line">liftM :: Monad       f =&gt; (a1 -&gt; r) -&gt; f a1 -&gt; f r</div><div class="line"></div><div class="line">liftA2 :: Applicative f =&gt; (a-&gt; b-&gt; c) -&gt; f a  -&gt; f b  -&gt; f c</div><div class="line">liftM2 :: Monad       f =&gt; (a1-&gt;a2-&gt;c) -&gt; f a1 -&gt; f a2 -&gt; f c</div></pre></td></tr></table></figure>
 <h1 id="Monad"><a href="#Monad" class="headerlink" title="Monad"></a>Monad</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">class Applicative m =&gt; monad m where</div><div class="line">	(&gt;&gt;= or bind)  :: m a -&gt; (a -&gt; m b) -&gt; m b </div><div class="line">	(&gt;&gt;)           :: m a -&gt; m b -&gt; m b</div><div class="line">	return         :: a -&gt; m a</div></pre></td></tr></table></figure>
 <ol>
 <li>Monads are applicative functors.</li>
@@ -92,7 +89,7 @@
 <ol>
 <li>Writer Monad is for values that have another value attached that acts as a sort of log value.</li>
 </ol>
-<p>#Reader monad<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">addStuff :: Int -&gt; Int  </div><div class="line">addStuff x = let  </div><div class="line">    a = (*2) x  </div><div class="line">    b = (+10) x  </div><div class="line">    in a+b</div></pre></td></tr></table></figure></p>
+<h1 id="Reader-monad"><a href="#Reader-monad" class="headerlink" title="Reader monad"></a>Reader monad</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">addStuff :: Int -&gt; Int  </div><div class="line">addStuff x = let  </div><div class="line">    a = (*2) x  </div><div class="line">    b = (+10) x  </div><div class="line">    in a+b</div></pre></td></tr></table></figure>
 <ol>
 <li>We see that the reader monad allows us to treat functions as values with a context. We can act as if we already know what the functions will return. It does this by gluing functions together into one function and then giving that function’s parameter to all of the functions that it was glued from. So if we have a lot of functions that are all just missing one parameter and they’d eventually be applied to the same thing, we can use the reader monad to sort of extract their future results and the &gt;&gt;= implementation will make sure that it all works out.</li>
 </ol>

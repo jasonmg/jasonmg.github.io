@@ -1,7 +1,7 @@
 <html>
 <head>
 	
-	<title>learn haskell - 0</title>
+	<title>learn haskell - basic</title>
 	<meta name="keywords" content="My Blog, Spider Bitch!" />
 
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
@@ -23,7 +23,7 @@
 
 <body>
 
-<h2 class="title">learn haskell - 0</h2>
+<h2 class="title">learn haskell - basic</h2>
 <ol>
 <li>Typealias :: </li>
 </ol>
@@ -40,22 +40,19 @@
 <li>newtype ::  </li>
 </ol>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">newtype Many = (Int, String)</div></pre></td></tr></table></figure>
-<p>#Syntax Rules</p>
-<ol>
+<h2 id="Syntax-Rules"><a href="#Syntax-Rules" class="headerlink" title="Syntax Rules"></a>Syntax Rules</h2><ol>
 <li>Any operator that starts with a colon (:) must be an infix type or data constructor. all infix data constructors must start with a colon. The type constructor of functions, (-&gt;) is the only infix type constructor that doesn’t start with a colon. Another exception is that they cannot be :: as this syntax is reserved for type assertions.</li>
 </ol>
-<h1 id="Record-syntax"><a href="#Record-syntax" class="headerlink" title="Record syntax"></a>Record syntax</h1><ol>
+<h2 id="Record-syntax"><a href="#Record-syntax" class="headerlink" title="Record syntax"></a>Record syntax</h2><ol>
 <li>Records in Haskell are product types with additional syntax to provide convenient accessors to fields within the recod.</li>
 </ol>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">data Person = Person String Int deriving (Eq, Show) </div><div class="line">data Person = </div><div class="line">   		Person &#123; name :: String,</div><div class="line">   				   age :: Int &#125;</div><div class="line">   				 deriving (Eq, Show)</div></pre></td></tr></table></figure>
-<p>#ghci</p>
-<ol>
+<h2 id="ghci"><a href="#ghci" class="headerlink" title="ghci"></a>ghci</h2><ol>
 <li>you can using the :{ :} block syntax to write multiple line in REPL.</li>
 <li>type :set -Wall when init ghci</li>
 <li>use :browse to see a list of the type signatures and functions we loaded from the module xxx .</li>
 </ol>
-<p>#1 basic expression and function</p>
-<ol>
+<h1 id="1-basic-expression-and-function"><a href="#1-basic-expression-and-function" class="headerlink" title="1 basic expression and function"></a>1 basic expression and function</h1><ol>
 <li>we use :load to  load your test.hs in GHCi</li>
 <li>unload the file from ghci, use :m or :module</li>
 <li>the order of the declarations in source code doesn’t matter because GHCI loads the entire file at once. but when you enter code one by one in GHCi it’s matters.</li>
@@ -75,22 +72,19 @@
 <li>parenthesizing <strong>infix</strong> functions if you want refer it without apply arugments, or use them as prefix operators. however (-2) is special, try use (2-) instead.</li>
 </ol>
 <h3 id="where-and-let-in"><a href="#where-and-let-in" class="headerlink" title="where and let..in"></a>where and let..in</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">printInc n = print pluseTwo</div><div class="line">		where plusTwo= n +2</div><div class="line"></div><div class="line">printInc2 n = let plusTwo = n +2</div><div class="line">  		in print plusTwo</div></pre></td></tr></table></figure>
-<p>####desugaring let to lambda<br>printInc2 n = (\plusTwo -&gt; print plusTwo) ( n + 2 )</p>
+<h4 id="desugaring-let-to-lambda"><a href="#desugaring-let-to-lambda" class="headerlink" title="desugaring let to lambda"></a>desugaring let to lambda</h4><p>printInc2 n = (\plusTwo -&gt; print plusTwo) ( n + 2 )</p>
 <h4 id=""><a href="#" class="headerlink" title="($)"></a>($)</h4><p>this is mean evaluate everything to the right of me first, ie: (2^) $ 2+2 = 16</p>
-<p>#2 strings</p>
-<ol>
+<h1 id="2-strings"><a href="#2-strings" class="headerlink" title="2 strings"></a>2 strings</h1><ol>
 <li>type are a way of categorizing values.</li>
 <li><em>:type</em> to find out the type of a value, expression or function, the <strong>::</strong>symbol is read as “has the type”, and everything after <strong>::</strong> is our types.</li>
 </ol>
-<p>#3 basic type</p>
-<ol>
+<h1 id="3-basic-type"><a href="#3-basic-type" class="headerlink" title="3 basic type"></a>3 basic type</h1><ol>
 <li>term level is where your values live and is the code that executes when your program is running . </li>
 <li>type level is used during the static analysis &amp; verification of your program.</li>
 <li>A typeclass is a set of operations defined with respect to a polymorphic type. when a type is an instance of a typeclass, values of that type can be used in the standard operations defined for that typeclass.</li>
 <li>A guideline for differentiating the two kinds of constructors is that type constructors always go to the left of the <strong>=</strong> in a data declaration.</li>
 </ol>
-<p>#Type Constructor &amp; Data Constructor</p>
-<ol>
+<h1 id="Type-Constructor-amp-Data-Constructor"><a href="#Type-Constructor-amp-Data-Constructor" class="headerlink" title="Type Constructor &amp; Data Constructor"></a>Type Constructor &amp; Data Constructor</h1><ol>
 <li>Type constructor is used to refer to types which must have arguments applied to become a type.</li>
 <li>type constructor is the name of the type and is capitalized When you are reading or writing type signatures(the type level of your code) the type names or type constructors are what you use.</li>
 </ol>
@@ -99,8 +93,7 @@
 <li>Data constructors in haskell provide a means of creating values that inhabit a given type. </li>
 <li>Data constructor are the values that inhabit the type they are defined in. they are values that show up in your code, at the term level instead of the tpe level.</li>
 </ol>
-<p>#4 Advanced Type</p>
-<ol>
+<h1 id="4-Advanced-Type"><a href="#4-Advanced-Type" class="headerlink" title="4 Advanced Type"></a>4 Advanced Type</h1><ol>
 <li>Every value has a type, Types are how we group a set of values together that share something in common.</li>
 <li>(-&gt;) is the type constructor for functions, the value of type(-&gt;) that shows up at term-level is the function. p149</li>
 <li>In Haskell, type signatures may have three kinds of types:<ul>
@@ -111,23 +104,20 @@
 </li>
 <li>Haskell;s type inference is built on an extended version of Damas-Hindley-Minler type system.</li>
 </ol>
-<p>#4.1 Newtype</p>
-<ol>
+<h2 id="4-1-Newtype"><a href="#4-1-Newtype" class="headerlink" title="4.1 Newtype"></a>4.1 Newtype</h2><ol>
 <li>newtype is different in that it permits only one constructor and only one field.</li>
 <li>it has no runtime overhead, as it reusees the representation of the type it contains. The differents between newtype and type is contains is gone by the time the compiler generates the code.</li>
 <li>{-# GeneralizedNewTypeDeriving #-}  we can use it to reuse the typeclass instance which it contains without define it by our own. </li>
 </ol>
-<h2 id="why-you-might-use-newtype"><a href="#why-you-might-use-newtype" class="headerlink" title="why you might use newtype"></a>why you might use newtype</h2><ol>
+<h3 id="why-you-might-use-newtype"><a href="#why-you-might-use-newtype" class="headerlink" title="why you might use newtype"></a>why you might use newtype</h3><ol>
 <li>Signal intent: using newtype make it clear that you only intend for it to be a wrapper for the underlying type.</li>
 <li>Improve type safety: avoid mixing up many values of the same representation, such as Text or Integer</li>
 <li>Add different typeclass instances to a type that is otherwise unchanged representationally.</li>
 </ol>
-<p>#4.2 Type alias(Synonyms)</p>
-<ol>
+<h3 id="4-2-Type-alias-Synonyms"><a href="#4-2-Type-alias-Synonyms" class="headerlink" title="4.2 Type alias(Synonyms)"></a>4.2 Type alias(Synonyms)</h3><ol>
 <li>Try to avoid using type synonyms with unstructured data like text or binary. Type synonyms are best used when you want something lighter weight than <strong>newtypes</strong> but also want your type signatures to be more explicit.</li>
 </ol>
-<p>#5 typeclass</p>
-<ol>
+<h1 id="5-typeclass"><a href="#5-typeclass" class="headerlink" title="5 typeclass"></a>5 typeclass</h1><ol>
 <li>A typeclass is a means of expressing faculties or interfaces that multiple datatypes may have in common. this enables us to write code exclusively in terms of those commonalities without repeating yourself for each instance.</li>
 <li>Typeclasses and types in Haskell are, in a sense, opposites. Where a declaration of a type defines how that type in particular is created, a declaration of a typeclass defines how a set of types are consumed or used in computations.</li>
 <li>typeclass are being like interfaces in other programming languages.</li>
@@ -136,32 +126,25 @@
 <li>keep your typeclass instances for a type in the same file as that type.</li>
 </ol>
 <h2 id="side-effect"><a href="#side-effect" class="headerlink" title="side effect"></a>side effect</h2><p>The function is not just applied to the arguments that are in it’s scope but also asked to affect the world outside it’s scope in some way, namely by showing you it’s result on the screen. this is known as a side effect.</p>
-<p>#6 More Functional patterns</p>
-<ol>
+<h1 id="6-More-Functional-patterns"><a href="#6-More-Functional-patterns" class="headerlink" title="6 More Functional patterns"></a>6 More Functional patterns</h1><ol>
 <li>A value that can be used as an argument to a function is a first-class value.</li>
 </ol>
-<p>##High Order Function</p>
-<ol>
+<h2 id="High-Order-Function"><a href="#High-Order-Function" class="headerlink" title="High Order Function"></a>High Order Function</h2><ol>
 <li>We were able to rely on the behavior of compare but make changes in the part we wanted to change. This is the value of HOFs. they give us the beginning of a powerful method for reusing and composing code.</li>
 </ol>
-<p>##Point free style</p>
-<ol>
+<h2 id="Point-free-style"><a href="#Point-free-style" class="headerlink" title="Point free style"></a>Point free style</h2><ol>
 <li>it’s important to remember that the functions in composition are applied from right to left, like Pacman munching from the right side, reducing the expressions as he goes.</li>
 </ol>
-<p>#11 Alegbraic datatypes</p>
-<ol>
+<h1 id="11-Alegbraic-datatypes"><a href="#11-Alegbraic-datatypes" class="headerlink" title="11 Alegbraic datatypes"></a>11 Alegbraic datatypes</h1><ol>
 <li>data constructors can take arguments. those are guments will be specific types, but not specific values. you can’t say “bool without the possibility of False as a value.”</li>
 <li>Alegbraic datatypes in Haskell are algebraic because we can describe the patterns of argument structures using two basic operations: Sum and Product. Chapter 11.7</li>
 </ol>
-<p>#11.1 Kind</p>
-<ol>
+<h2 id="11-1-Kind"><a href="#11-1-Kind" class="headerlink" title="11.1 Kind"></a>11.1 Kind</h2><ol>
 <li>Kind are types of type constructors, primarily encoding the number of arguments they take.</li>
 <li>kinds are types one level up. they are used to describe the types of type constructors.</li>
 <li>the kind * represents a concrete type. There is nothing left awaiting application.</li>
 </ol>
-<p>#12 Maybe Either and Kind</p>
-<p>##lifted and unlifted types</p>
-<ol>
+<h1 id="12-Maybe-Either-and-Kind"><a href="#12-Maybe-Either-and-Kind" class="headerlink" title="12 Maybe Either and Kind"></a>12 Maybe Either and Kind</h1><h2 id="lifted-and-unlifted-types"><a href="#lifted-and-unlifted-types" class="headerlink" title="lifted and unlifted types"></a>lifted and unlifted types</h2><ol>
 <li>To be precise , Kind * is the kind of all standard lifted types, while types that have the kind # are unlifted. A lifted type, which includes any datatype you could define yourself, is any that can be inhabited by bottom.</li>
 <li>Unlifted types are any type which cannot be inhabited by bottom. types of kind # are often native machine types and raw pointers. p493</li>
 <li></li>

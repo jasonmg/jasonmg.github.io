@@ -24,24 +24,20 @@
 <body>
 
 <h2 class="title">learn storm</h2>
-<p>#Storm</p>
-<ol>
+<h1 id="Storm"><a href="#Storm" class="headerlink" title="Storm"></a>Storm</h1><ol>
 <li>When designing a topology, one important thing to keep in mind is message reliability. If a message can’t be processed, you need to decide what to do with the individual message and what to do with the topology as a whole. </li>
 <li>In Storm, it is the author’s responsibility to guarantee message reliability according to the needs of each topology. </li>
 </ol>
-<p>##Bolt</p>
-<h3 id="Reliable-versus-Unreliable-Bolts"><a href="#Reliable-versus-Unreliable-Bolts" class="headerlink" title="Reliable versus Unreliable Bolts"></a>Reliable versus Unreliable Bolts</h3><ol>
+<h2 id="Bolt"><a href="#Bolt" class="headerlink" title="Bolt"></a>Bolt</h2><h3 id="Reliable-versus-Unreliable-Bolts"><a href="#Reliable-versus-Unreliable-Bolts" class="headerlink" title="Reliable versus Unreliable Bolts"></a>Reliable versus Unreliable Bolts</h3><ol>
 <li>the best way to keep track of the original spout instance is to include a reference to the originating spout in the message tuple. This technique is called <strong>Anchoring</strong>. </li>
 <li>A topology is a tree of nodes in which messages (tuples) travel along one or more branches. Each node will ack(tuple) or fail(tuple) so that Storm knows when a mes- sage fails and notifies the spout or spouts that produced the message.</li>
 </ol>
-<p>#Thrift</p>
-<ol>
+<h1 id="Thrift"><a href="#Thrift" class="headerlink" title="Thrift"></a>Thrift</h1><ol>
 <li>Its primary goal is to enable efficient and reliable communication across                          programming languages by abstracting the portions of each language that tend to<br>require the most customization into a common library that is implemented in each      language.</li>
 <li>Specifically, Thrift allows developers to<br>define datatypes and service interfaces in a single language-neutral<br>file and generate all the necessary code to build RPC clients and<br>servers</li>
 <li>A key design choice in the implementation of Thrift was to decouple<br>the transport layer from the code generation layer.</li>
 </ol>
-<p>##Type</p>
-<ol>
+<h2 id="Type"><a href="#Type" class="headerlink" title="Type"></a>Type</h2><ol>
 <li><p>base types supported by Thrift are:</p>
 <ul>
 <li>bool A boolean value, true or false</li>
