@@ -1,714 +1,261 @@
-<!DOCTYPE html>
-<!--[if lte IE 8 ]>
-<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
-<![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!-->
-<!--
-***************  *      *     *
-      8          *    *       *
-      8          *  *         *
-      8          **           *
-      8          *  *         *
-      8          *    *       *
-      8          *      *     *
-      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
--->
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
-<!--<![endif]-->
-
+<html>
 <head>
-  <title>Jason&#39;s Blog</title>
-  <!-- Meta data -->
-    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="generator" content="Jason's Blog">
-    <meta name="author" content="jason">
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
+	
+	<title>Jason&#39;s Blog</title>
+	<meta name="keywords" content="My Blog, Spider Bitch!" />
 
-    <!-- Favicon, (keep icon in root folder) -->
-    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <link rel="alternate" href="/atom.xml" title="Jason&#39;s Blog" type="application/atom+xml">
-    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
     
-    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    <link href="/css/home.css?v=2" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/bootstrap-theme.min.css">
     
 
-    <!--[if IE 8]>
-    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
-    <![endif]-->
+    <link rel="alternate" type="application/atom+xml" href="/atom.xml" title="Atom feed">
 
-    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
-    <script src="/js/jquery-1.11.1.min.js"></script>
-    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+    
+	<link rel="shortcut icon" type="image/x-icon" href="/img/logo.png?v=2"/>
+    
 
-    <!-- Load these in the <head> for quicker IE8+ load times -->
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-    <script src="/js/html5shiv.min.js"></script>
-    <script src="/js/respond.min.js"></script>
-    <![endif]-->
-
-  
-  
-  <link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="atom.xml">
-  
-  
-
-  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
 </head>
 
-<!--
-<body class="home-template">
--->
-<body id="index" class="lightnav animsition">
-
-      <!-- ============================ Off-canvas navigation =========================== -->
-
-    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
-        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
-            <img src="/img/close.png" alt="Close"/>
-        </div>
-        <!-- Lists in Slidebars -->
-        <ul class="sb-menu">
-            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
-            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
-            <!-- Dropdown Menu -->
-			 
-            
-        	<li>
-        		<a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
-            	<ul class="sb-submenu">
-				  	
-				    <li><a href="/categories/JavaScript/" class="animsition-link">JavaScript<small>(0)</small></a></li>
-				    
-				    <li><a href="/categories/blog/" class="animsition-link">blog<small>(0)</small></a></li>
-				    
-				    <li><a href="/categories/language/" class="animsition-link">language<small>(1)</small></a></li>
-				    
-				</ul>
-        	</li>
-			
-            
-        </ul>
-        <!-- Lists in Slidebars -->
-        <ul class="sb-menu secondary">
-            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
-            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
-        </ul>
-    </div>
-    
-    <!-- ============================ END Off-canvas navigation =========================== -->
-
-    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
-
-    <div id="sb-site">
-        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
-
-        <!-- ============================ Header & Logo bar =========================== -->
-
-        <div id="navigation" class="navbar navbar-fixed-top">
-            <div class="navbar-inner">
-                <div class="container">
-                    <!-- Nav logo -->
-                    <div class="logo">
-                        <a href="/" title="Logo" class="animsition-link">
-                         <img src="/img/logo.png" alt="Logo" width="35px;"/> 
-                        </a>
-                    </div>
-                    <!-- // Nav logo -->
-                    <!-- Info-bar -->
-                    <nav>
-                        <ul class="nav">
-                            <li><a href="/" class="animsition-link">Jason's Blog</a></li>
-                            <li class="nolink"><span>Always </span>Creative.</li>
-                            
-                            <li><a href="https://github.com/jasonmg" title="Github" target="_blank"><i class="icon-github"></i></a></li>
-                            
-                            
-                            
-                            
-                            <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a></li>
-                            
-                            
-                            <li class="nolink"><span>Welcome!</span></li>
-                        </ul>
-                    </nav>
-                    <!--// Info-bar -->
-                </div>
-                <!-- // .container -->
-                <div class="learnmore sb-toggle-right">More</div>
-                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+<body>
+<nav class="navbar navbar-default navbar-fixed-top" style="opacity: .9" role="navigation">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                 <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar before"></span>
-                <span class="icon-bar main"></span>
-                <span class="icon-bar after"></span>
-                </button>
-            </div>
-            <!-- // .navbar-inner -->
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Jason&#39;s Blog</a>
         </div>
 
-        <!-- ============================ Header & Logo bar =========================== -->
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+            
+                
+                    <li  class="active" >
+                        <a href="/"> Blog</a>
+                    </li>
+                
+                    <li >
+                        <a href="https://github.com/jasonmg"> GitHub</a>
+                    </li>
+                
+                    <li >
+                        <a href="/about.html"> About</a>
+                    </li>
+                
+            
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
 
-
-      <!-- ============================ Hero Image =========================== -->
-
-<section id="hero" class="scrollme">
-    <div class="container-fluid element-img" style="background: url(/img/bg_img1.jpg) no-repeat center center fixed;background-size: cover">
-        <div class="row">
-            <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 vertical-align cover boost text-center">
-                <div class="center-me animateme" data-when="exit" data-from="0" data-to="0.6" data-opacity="0" data-translatey="100">
-                    <div>
+<div class="row" style="padding-top: 70px">
+    <div class="container center-block">
+        <div class="col-md-2"></div>
+        <div class="col-md-8 col-sm-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Blog</h3>
+                </div>
+                <ul class="list-group">
+                    
+                    
                         
-                        <h2>Life is Brilliant! &nbsp;&nbsp;&nbsp;&nbsp     得知若惊 失之若惊</h2>
-                        <p></p>
                         
-                        <h2></h2>
-                        <p></p>
+<li class="list-group-item title">
+    <a target="_blank" href="/2017/03/05/JavaScript/">JavaScript
+    <span class ="badge pull-right">2017/3/5<span>
+    </a>
+</li>
+
+
                         
-
-                    </div>
-                </div>
-            </div>
-            <!-- // .col-md-12 -->
-        </div>
-        <div class="herofade beige-dk"></div>
-    </div>
-</section>
-
-<!-- Height spacing helper -->
-<div class="heightblock"></div>
-<!-- // End height spacing helper -->
-
-<!-- ============================ END Hero Image =========================== -->
-<!-- ============================ Content =========================== -->
-
-<section id="intro">
-    <div class="container">
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2017/05/23/traversable/">traversable</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2017-05-23T14:56:54.000Z" itemprop="datePublished">
-          2017-05-23
-      </time>
-    
-    
-    | 
-    <a href='/tags/haskell/'>haskell</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        可遍历类Coffee
-Functor     提供给我们一种方法 把普通函数应用到一种高阶类型，并返回高阶类型Applicative is a monoidal functor 提供给我们一种方法 把 高阶类型中的函数 应用到高阶类型，并返回高阶类型。Foldable   提供给我们一种方法 处理一种顺序存储的数据类型 并折叠成一个值
-今天我们来理解一下 Traversable type class,首先来看一下 类型类的定义：1234
-                      
-                    </p>
                     
-                    <p class="pull-right readMore">
-                        <a href="/2017/05/23/traversable/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2017/05/21/foldRight-foldLeft/">foldRight foldLeft</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2017-05-21T12:03:46.000Z" itemprop="datePublished">
-          2017-05-21
-      </time>
-    
-    
-    | 
-    <a href='/tags/list/'>list</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        当我们用到FP list我们会接触到list里面大量的工具方法，比如 foreach, map, flatMap, reduce 等等, 但是有一种方法 fold, foldLeft, foldRight 也会大量用到本章主要讲解 fp list中 fold* 的用法。
-fold 简单理解就是折叠的意思：
-
-foldLeft 是从左边开始折叠
-foldRight 是从右边开始折叠
-fold 是从右边开始折叠 但是没有初始值
-
-那么fol
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2017/05/21/foldRight-foldLeft/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2017/05/21/建立个人博客/">建立个人博客</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2017-05-21T09:11:40.000Z" itemprop="datePublished">
-          2017-05-21
-      </time>
-    
-    
-    | 
-    <a href='/tags/blog/'>blog</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        github-page+Hexohttp://www.jianshu.com/p/ecd51e8ef2fahttps://segmentfault.com/a/1190000004947261https://github.com/hexojs/hexo/wiki/Themes
-
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2017/05/21/建立个人博客/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2017/05/21/python2vs3/">python2vs3</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2017-05-21T09:10:05.000Z" itemprop="datePublished">
-          2017-05-21
-      </time>
-    
-    
-    | 
-    <a href='/tags/python/'>python</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
                         
-除法
-
-
-
-
-python2
-python3
-
-
-
-
-10/3 = 3
-10/3 = 3.333333 
-
-
-
-10 //3 = 3
-
-
-
-
-返回闭包时牢记的一点就是：返回函数不要引用任何循环变量，或者后续会发生变化的变量。
-
-此外，我们也需要跟踪程序的执行，查看变量的值是否正确，这个过程称为调试。Python的pdb可以让我们以单步方式执行代码。
-
-
-
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2017/05/21/python2vs3/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2017/05/21/learn-database/">learn database</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2017-05-21T09:09:16.000Z" itemprop="datePublished">
-          2017-05-21
-      </time>
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        #DataBase
-Relational Database 
-##Advantage
-
-A relational database is an excellent choice for query flexibility.
-
-##weakness
-
-Partitioning is not one of the strong suits of relational databases like Post- greSQL. 
-If your
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2017/05/21/learn-database/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2017/05/21/learn-storm/">learn storm</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2017-05-21T09:08:00.000Z" itemprop="datePublished">
-          2017-05-21
-      </time>
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        #Storm
-
-When designing a topology, one important thing to keep in mind is message reliability. If a message can’t be processed, you need to decide what to do with the individual message and what to do with the topology a
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2017/05/21/learn-storm/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2017/05/21/范畴/">范畴</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2017-05-21T08:57:18.000Z" itemprop="datePublished">
-          2017-05-21
-      </time>
-    
-    
-    | 
-    <a href='/tags/category/'>category</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        范畴
-用箭头将对象连接起来就可以构造出范畴
-范畴论与箭头(函数)的复合有关 
-复合是从右向左发生的
-复合是可结合的（结合律）
-任一对象 A，都有一个箭头，它是复合的最小单位。(id)
-一个范畴由对象与箭头（态射）构成。箭头可以复合，这种复合满足结合律。每个对象都有一个恒等箭头，它是箭头复合的基本单位。
-在积极阻碍我们探视对象的内部方面，范畴论具有非凡的意义。范畴论中的一个对象，像一个星云。对于它，你所知的只是它与其他对象之间的关系，亦即
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2017/05/21/范畴/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2017/05/21/函数式编程/">函数式编程</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2017-05-21T08:56:41.000Z" itemprop="datePublished">
-          2017-05-21
-      </time>
-    
-    
-    | 
-    <a href='/tags/functional/'>functional</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        #Closures
-
-A closure is a function that carries an implicit binding to all the variables referenced within it. in other words, the function encloses a context around the things it references.
-
-
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2017/05/21/函数式编程/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2017/05/21/learn-haskell-1/">learn haskell - 1</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2017-05-21T08:48:19.000Z" itemprop="datePublished">
-          2017-05-21
-      </time>
-    
-    
-    | 
-    <a href='/tags/haskell/'>haskell</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        #15 Monoid, Semigroup
-##Algebra
-
-Algebra generally refers to one of the most import fields of mathematics. In this usage, it means the study of mathematical symbols and the rules governing their manipulation.
-In Haskell 
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2017/05/21/learn-haskell-1/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2017/05/21/learn-haskell-0/">learn haskell - 0</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2017-05-21T08:48:07.000Z" itemprop="datePublished">
-          2017-05-21
-      </time>
-    
-    
-    | 
-    <a href='/tags/haskell/'>haskell</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
                         
-Typealias :: 
+<li class="list-group-item title">
+    <a target="_blank" href="/2017/05/21/RactiveAPI/">Ractive programming
+    <span class ="badge pull-right">2017/5/21<span>
+    </a>
+</li>
 
-1type String = [Char]
 
-typeclass :: 
+                        
+                    
+                        
+                    
+                        
+                        
+<li class="list-group-item title">
+    <a target="_blank" href="/2017/05/21/foldRight-foldLeft/">foldRight foldLeft
+    <span class ="badge pull-right">2017/5/21<span>
+    </a>
+</li>
 
-12345class TooMany a where		tooMany :: a -&gt; Boolinstance TooMany Int where		tooMany n = n &gt; 40
 
-datatype  :: 
+                        
+                    
+                        
+                        
+<li class="list-group-item title">
+    <a target="_blank" href="/2017/05/21/java8/">java8
+    <span class ="badge pull-right">2017/5/21<span>
+    </a>
+</li>
 
-1data MyType = MyData | MyData1 deriving (Eq, Sho
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2017/05/21/learn-haskell-0/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <nav class="pagination" role="pagination">
-          
-          <a class="pull-right" href="/page/2/">Older Posts →</a>
-        </nav>
-    </div>
-</section>
-<section id="statement">
-    <div class="container text-center wow fadeInUp" data-wow-delay="0.5s">
-        <div class="row">
-            <p>走吧 走吧 人生难免经历苦痛挣扎</p>
-        </div>
-    </div>
-</section>
-<!-- ============================ END Content =========================== -->
 
-      
-<!-- ============================ Footer =========================== -->
+                        
+                    
+                        
+                        
+<li class="list-group-item title">
+    <a target="_blank" href="/2017/05/21/learn-database/">learn database
+    <span class ="badge pull-right">2017/5/21<span>
+    </a>
+</li>
 
-<footer>
-    <div class="container">
-            <div class="copy">
-                <p>
-                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By jason. All Rights Reserved.
-                </p>
-                <p>Theme By <a href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
-            </div>
-            <div class="social">
-                <ul>
+
+                        
                     
-                    <li><a href="https://github.com/jasonmg" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                        
+                        
+<li class="list-group-item title">
+    <a target="_blank" href="/2017/05/21/learn-haskell-0/">learn haskell - 0
+    <span class ="badge pull-right">2017/5/21<span>
+    </a>
+</li>
+
+
+                        
                     
+                        
+                        
+<li class="list-group-item title">
+    <a target="_blank" href="/2017/05/21/learn-haskell-1/">learn haskell - 1
+    <span class ="badge pull-right">2017/5/21<span>
+    </a>
+</li>
+
+
+                        
                     
+                        
+                        
+<li class="list-group-item title">
+    <a target="_blank" href="/2017/05/21/learn-storm/">learn storm
+    <span class ="badge pull-right">2017/5/21<span>
+    </a>
+</li>
+
+
+                        
                     
+                        
+                        
+<li class="list-group-item title">
+    <a target="_blank" href="/2017/05/21/python2vs3/">python2vs3
+    <span class ="badge pull-right">2017/5/21<span>
+    </a>
+</li>
+
+
+                        
                     
-                    <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a>&nbsp;</li>
+                        
+                        
+<li class="list-group-item title">
+    <a target="_blank" href="/2017/05/23/traversable/">traversable
+    <span class ="badge pull-right">2017/5/23<span>
+    </a>
+</li>
+
+
+                        
+                    
+                        
+                        
+<li class="list-group-item title">
+    <a target="_blank" href="/2017/05/21/函数式编程/">函数式编程
+    <span class ="badge pull-right">2017/5/21<span>
+    </a>
+</li>
+
+
+                        
+                    
+                        
+                        
+<li class="list-group-item title">
+    <a target="_blank" href="/2017/05/21/建立个人博客/">建立个人博客
+    <span class ="badge pull-right">2017/5/21<span>
+    </a>
+</li>
+
+
+                        
+                    
+                        
+                        
+<li class="list-group-item title">
+    <a target="_blank" href="/2017/05/21/范畴/">范畴
+    <span class ="badge pull-right">2017/5/21<span>
+    </a>
+</li>
+
+
+                        
+                    
+                        
+                        
+<li class="list-group-item title">
+    <a target="_blank" href="/2017/05/21/面向函数vs面向对象/">面向函数vs面向对象
+    <span class ="badge pull-right">2017/5/21<span>
+    </a>
+</li>
+
+
+                        
+                    
+                        
+                        
+<li class="list-group-item title">
+    <a target="_blank" href="/2017/07/23/test-md/">test.md
+    <span class ="badge pull-right">2017/7/23<span>
+    </a>
+</li>
+
+
+                        
                     
                     
                 </ul>
             </div>
-            <div class="clearfix"> </div>
         </div>
-</footer>
 
-<!-- ============================ END Footer =========================== -->
-      <!-- Load our scripts -->
-<!-- Resizable 'on-demand' full-height hero -->
-<script type="text/javascript">
-    var resizeHero = function () {
-        var hero = $(".cover,.heightblock"),
-            window1 = $(window);
-        hero.css({
-            "height": window1.height()
-        });
-    };
-
-    resizeHero();
-
-    $(window).resize(function () {
-        resizeHero();
-    });
-</script>
-<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
-<script src="/js/jquery.flexslider-min.js"></script><!-- Flexslider plugin -->
-<script src="/js/scripts.js"></script><!-- Theme scripts -->
+        <div class="col-md-2">
+        </div>
+<div style="display:none">
+<script src="http://s4.cnzz.com/stat.php?id=undefined&web_id=undefined" language="JavaScript"></script>
+</div>
+    </div>
+</div>
 
 
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
-<script type="text/javascript">
-$('#intro').find('img').each(function(){
-  var alt = this.alt;
 
-  if (alt){
-    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
-  }
+<!--加载导航栏所需js文件-->
+<script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 
-  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
-});
-(function($){
-  $('.fancybox').fancybox();
-})(jQuery);
-</script>
 
-<!-- Initiate flexslider plugin -->
-<script type="text/javascript">
-    $(document).ready(function($) {
-      (function(){
-        console.log('font');
-        var getCss = function(path) {
-          var head = document.getElementsByTagName('head')[0];
-          link = document.createElement('link');
-          link.href = path;
-          link.rel = 'stylesheet';
-          link.type = 'text/css';
-          head.appendChild(link);
-        };
-        getCss('https://fonts.googleapis.com/css?family=Montserrat:400,700');
-        getCss('https://fonts.googleapis.com/css?family=Open+Sans:400,600');
-      })();
-      $('.flexslider').flexslider({
-        animation: "fade",
-        prevText: "",
-        nextText: "",
-        directionNav: true
-      });
-    });
-</script>
 
 </body>
 </html>

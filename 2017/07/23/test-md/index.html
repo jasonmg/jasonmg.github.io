@@ -1,7 +1,7 @@
 <html>
 <head>
 	
-	<title>traversable</title>
+	<title>test.md</title>
 	<meta name="keywords" content="My Blog, Spider Bitch!" />
 
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
@@ -23,13 +23,10 @@
 
 <body>
 
-<h2 class="title">traversable</h2>
-<h1 id="可遍历类"><a href="#可遍历类" class="headerlink" title="可遍历类"></a>可遍历类</h1><p><a href="http://adit.io/posts/2013-04-17-functors,_applicatives,_and_monads_in_pictures.html" target="_blank" rel="external">Coffee</a></p>
-<p>Functor     提供给我们一种方法 把普通函数应用到一种高阶类型，并返回高阶类型<br>Applicative is a monoidal functor 提供给我们一种方法 把 高阶类型中的函数 应用到高阶类型，并返回高阶类型。<br>Foldable   提供给我们一种方法 处理一种顺序存储的数据类型 并折叠成一个值</p>
-<p>今天我们来理解一下 Traversable type class,首先来看一下 类型类的定义：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">class (Functor t, Foldable t) =&gt; Traversable t where</div><div class="line">    traverse :: Applicative f =&gt; (a -&gt; f b) -&gt; t a -&gt; f (t b)</div><div class="line">    traverse f = sequenceA . fmap f</div><div class="line">    sequenceA :: Applicative f =&gt; t (f a) -&gt; f (t a)</div><div class="line">    sequenceA = traverse id</div></pre></td></tr></table></figure></p>
+<h2 class="title">test.md</h2>
 
 
-<!--<a href="http://yoursite.com/2017/05/23/traversable/#disqus_thread" class="article-comment-link">Comments</a>-->
+<!--<a href="http://yoursite.com/2017/07/23/test-md/#disqus_thread" class="article-comment-link">Comments</a>-->
 <div id="disqus_thread"></div>
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */

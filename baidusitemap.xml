@@ -4,6 +4,37 @@
 
     
   <url>
+    <loc>http://yoursite.com/2017/03/05/Start/</loc>
+    <lastmod>2017-07-23T15:47:36.000Z</lastmod>
+    <data>
+        <display>
+        <title>你好</title>
+        <pubTime>2017-03-05T08:48:07.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2017/07/23/test-md/</loc>
+    <lastmod>2017-07-23T14:34:36.000Z</lastmod>
+    <data>
+        <display>
+        <title>test.md</title>
+        <pubTime>2017-07-23T14:34:36.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+    
+  <url>
     <loc>http://yoursite.com/2017/05/21/%E8%8C%83%E7%95%B4/</loc>
     <lastmod>2017-05-24T01:09:49.000Z</lastmod>
     <data>
@@ -237,21 +268,5 @@
     </data>
     </url>
 
-    
-  <url>
-    <loc>http://yoursite.com/2017/03/05/Start/</loc>
-    <lastmod>2017-03-06T01:20:52.000Z</lastmod>
-    <data>
-        <display>
-        <title>你好</title>
-        <pubTime>2017-03-04T16:00:00.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
     
 </urlset>
