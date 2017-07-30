@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-05-23T15:20:16.000Z</updated>
+  <updated>2017-07-30T13:39:01.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,148 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>kafka</title>
+    <link href="http://yoursite.com/2017/07/30/kafka/"/>
+    <id>http://yoursite.com/2017/07/30/kafka/</id>
+    <published>2017-07-29T16:26:53.000Z</published>
+    <updated>2017-07-30T13:39:01.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="多集群"><a href="#多集群" class="headerlink" title="多集群"></a>多集群</h1><ul>
+<li>分离不同类型的数据</li>
+<li>分离不同的安全策略</li>
+<li>多个数据中心（灾难恢复)</li>
+</ul>
+<p>当系统需要和多个数据中心交互的时候，通常情况是在不同的数据中心之间复制消息，这样应用程序便可以统一的访问用户的动态数据（数据分布在不同的数据中心），或者是监控程序可以从不同的数据中心收集数据到分析系统和报警系统所在的服务器。 之所以这样，是因为消息的冗余机制是在一个kafka集群的基础的简历的，不能在多个集群之间冗余。</p>
+<p>kafka Mirror Maker 实现图:</p>
+<p><img src="/2017/07/30/kafka/multiple_datacenter_arhitecture.png" alt="multiple datacenter architecture"></p>
+<h1 id="消费者"><a href="#消费者" class="headerlink" title="消费者"></a>消费者</h1><h2 id="offset"><a href="#offset" class="headerlink" title="offset"></a>offset</h2><ul>
+<li>每一个分区对应消息的offset是唯一的。 partition + topic + groupId</li>
+<li>我们称 在topic分区中更新当前位置的操作叫做 commit。</li>
+<li>offset 可以存储在zookeeper或者kafka broker上</li>
+<li>consumer作为consumer group的一部分去消费一个topic上的消息。 group保证同一个topic上一个分区的消息只能被一个consumer消费，而不是group里面所有的consumer。<br><img src="/2017/07/30/kafka/topic_paertitions.png" alt="topic partitions"></li>
+</ul>
+<h2 id="consumer怎样存储offset"><a href="#consumer怎样存储offset" class="headerlink" title="consumer怎样存储offset"></a>consumer怎样存储offset</h2><ul>
+<li>对于不同的分区，consumer发送commited offset到 _consumer_offsets Topic.只要所有的consumer都在运行，就没有问题。但是当有新的consumer加入或推出的时候就会触发再平衡，再平衡之后，每一个consumer被分配新的分区这个时候它怎么知道当前分区读到哪一个位置了？ 这个时候consumer就会通过读取每个分区对应的最新的offset来继续服务。</li>
+<li>如果commited offset 小于最后一次客户端提交offset，那么这中间的消息机会重复消费。反之亦然。</li>
+</ul>
+<p>kafka consumer api 提供了多种不同的方式去提交offset。</p>
+<ol>
+<li><p>自动提交， enable.auto.commit = true，那么auto.commit.interval.ms 毫秒之后就会自动提交， 自动提交又 poll循环实现，每一次你拉取消息，consumer就会检查是否需要提交。如果是，则提交。</p>
+<blockquote>
+<p>如果配置自动提交，在提交间隔之间，一个consumer死掉或者新的加入，触发在平衡，之后所有的consumer就会读取分配分区的offset进行消费，这个时候在那个间隔之间的消息就会重复消费，你可以配置自动提交时间间隔，但是这种情况时不可避免的，这要看你怎么权衡消费系统。</p>
+</blockquote>
+</li>
+<li><p>手动提交。 auto.commit.offset = false，手动提交可以尽可能的避免丢失消息，或者在再平衡过程之后重复消费消息。</p>
+<ul>
+<li>最简单的事 commitSync()方法，它会提交最新的上一次poll操作返回的offset，提交成功则返回，失败则抛出异常。</li>
+<li><p>切记调用commitSync()之前，处理完poll回来的所有消息。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">while</span> (<span class="keyword">true</span>) &#123;        ConsumerRecords&lt;String, String&gt; records = consumer.poll(<span class="number">100</span>);        <span class="keyword">for</span> (ConsumerRecord&lt;String, String&gt; record : records)        &#123;            System.out.println(<span class="string">"topic = %s, partition = %s, offset = %d, customer =    %s, country = %s\n"</span>,                                record.topic(), record.partition(), record.off-    set(), record.key(), record.value());&#125; <span class="keyword">try</span> &#123;          consumer.commitSync();        &#125; <span class="keyword">catch</span> (CommitFailedException e) &#123;            log.error(<span class="string">"commit failed"</span>, e)        &#125;&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>异步提交，同样的我们可以异步的提交offset通过调用commitAsync(),这样提交操作就不会阻塞在等待broker响应提交的请求上，增加了系统的吞吐量。</p>
+<ul>
+<li><p>异步的提交会重试提交，当发生提交错误的时候直至成功。除非碰到那种不可修复的错误。之所以停止重试，是因为commitAsync()收到回复的时候也许之后的commit成功了，想象一下，如果发送提交offset=2000，由于暂时的原因失败了，这个时候我们处理另外的请求offset=3000，如果提交2000请求发生在提交3000请求之后，就会导致更多的消息重读。 因此保证异步提交offset的顺序非常重要。通常情况下对于commitAsync方法我们可以传入回调接口去打印失败的日志。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">while</span> (<span class="keyword">true</span>) &#123;        ConsumerRecords&lt;String, String&gt; records = consumer.poll(<span class="number">100</span>);        <span class="keyword">for</span> (ConsumerRecord&lt;String, String&gt; record : records) &#123;            System.out.println(<span class="string">"topic = %s, partition = %s, offset = %d, customer =    %s, country = %s\n"</span>,                                record.topic(), record.partition(), record.off-    set(), record.key(), record.value());        &#125;        consumer.commitAsync(<span class="keyword">new</span> OffsetCommitCallback() &#123;            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onComplete</span><span class="params">(Map&lt;TopicPartition, OffsetAndMetadata&gt; offsets,    Exception exception)</span> </span>&#123;                <span class="keyword">if</span> (e != <span class="keyword">null</span>)                    log.error(<span class="string">"Commit failed for offsets &#123;&#125;"</span>, offsets, e);&#125; &#125;);&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>我们应该在最后consumer close方法之前调用 commitSync方法保证commit真正的成功。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"> <span class="keyword">try</span> &#123;        <span class="keyword">while</span> (<span class="keyword">true</span>) &#123;            ConsumerRecords&lt;String, String&gt; records = consumer.poll(<span class="number">100</span>);            <span class="keyword">for</span> (ConsumerRecord&lt;String, String&gt; record : records) &#123;                System.out.println(<span class="string">"topic = %s, partition = %s, offset = %d, cus-    tomer = %s, country = %s\n"</span>,                                  record.topic(), record.partition(), record.off-    set(), record.key(), record.value());&#125;            consumer.commitAsync();        &#125;    &#125; <span class="keyword">catch</span> (Exception e) &#123;        log.error(<span class="string">"Unexpected error"</span>, e);    &#125; <span class="keyword">finally</span> &#123;        <span class="keyword">try</span> &#123;            consumer.commitSync();        &#125; <span class="keyword">finally</span> &#123;            consumer.close();        &#125;&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>提交指定的offset，如果poll返回了特别大的消息，并且你象提交offset在处理消息的过程中，去避免由于处理失败导致处理过的消息的重读。你可以提交指定分区的offset。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">private</span> Map&lt;TopicPartition, OffsetAndMetadata&gt; currentOffsets;    <span class="keyword">int</span> count = <span class="number">0</span>;....    <span class="keyword">while</span> (<span class="keyword">true</span>) &#123;        ConsumerRecords&lt;String, String&gt; records = consumer.poll(<span class="number">100</span>);        <span class="keyword">for</span> (ConsumerRecord&lt;String, String&gt; record : records)        &#123;            System.out.println(<span class="string">"topic = %s, partition = %s, offset = %d, customer =    %s, country = %s\n"</span>,                                record.topic(), record.partition(), record.off-    set(), record.key(), record.value());            currentOffsets.put(<span class="keyword">new</span> TopicPartition(record.topic(), record.parti-    tion()),                               record.offset());            <span class="keyword">if</span> (count % <span class="number">1000</span> == <span class="number">0</span>)                consumer.commitAsync(currentOffsets);            count++;&#125; </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<hr>
+<ul>
+<li>提高消费横向扩展的主要方式就是在consumer group 中增加consumer，直至等于该topic<br>partitions的个数。这样的话consumer就可以干一些i/o，费时间的计算等工作。 这也是为什么topic要配置多个partitions的原因，就是为了消费的横向扩展。</li>
+<li>一个topic被不同应用系统消费也是非常常见的，也是kafka设计的主要驱动之一。方法就是不同的应用创建不同的consumer group，这样每一个consumer group就可以得到topic全部分区的消息，而不是其中几个分区的消息。同时kafka也可以保证横向扩展的consumer group不会影响系统的效率。</li>
+</ul>
+<p><img src="/2017/07/30/kafka/kafka_group.png" alt="kafka group"></p>
+<h2 id="topic-partition-rebalance"><a href="#topic-partition-rebalance" class="headerlink" title="topic partition rebalance"></a>topic partition rebalance</h2><ul>
+<li>你可以在consumer subscibe broker的时候指定rebalance listeners</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">private Map&lt;TopicPartition, OffsetAndMetadata&gt; currentOffsets;    private class HandleRebalance implements ConsumerRebalanceListener &#123;        public void onPartitionsAssigned(Collection&lt;TopicPartition&gt; partitions) &#123;        &#125;        public void onPartitionsRevoked(Collection&lt;TopicPartition&gt; partitions) &#123;            consumer.commitSync(currentOffsets);&#125;&#125;try &#123;    consumer.subscribe(topics, new HandleRebalance());    while (true) &#123;        ConsumerRecords&lt;String, String&gt; records = consumer.poll(100);        for (ConsumerRecord&lt;String, String&gt; record : records)        &#123;            System.out.println(&quot;topic = %s, partition = %s, offset = %d, cus-tomer = %s, country = %s\n&quot;,                                record.topic(), record.partition(), record.off-set(), record.key(), record.value());             currentOffsets.put(new TopicPartition(record.topic(), record.partition()),record.offset());&#125;        consumer.commitAsync(currentOffsets);    &#125;&#125; catch (WakeupException e) &#123;    // ignore, we&apos;re closing&#125; catch (Exception e) &#123;    log.error(&quot;Unexpected error&quot;, e);&#125; finally &#123;    try &#123;        consumer.commitSync(currentOffsets);    &#125; finally &#123;        consumer.close();    &#125;&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>当在一个consumer group中增加或减少consumer的时候都会出发 partition的rebalance。</li>
+<li>再平衡保证了 consumer的高可用和横向扩展性。</li>
+<li>再平衡并不赞成经常处罚，因为在再平衡的过程中consumer无法继续消费消息，导致效率的降低。</li>
+</ul>
+<ul>
+<li>consumers维持和consumer group的关系，以及和partitions的关联关系是通过发送心跳请求到broker来实现的。(Group Coordinator，对于不同的consumer group，broker可以是不同的)，只要定时收到来自consumer的心跳，broker就认定它是活动的。</li>
+<li>实际上consumer通过从broker拉取消息的同时发送心跳的，如果consumer停止发送心跳一定的时间，consumer和broker之间的会话就会过期，group coordinator就是认定这个consumer已经死亡从而触发再平衡。</li>
+<li>当一个consumer加入到group中时会发送 JoinGroup 请求到group coordinator，第一个加入的consumer被认定为group leader， leader通过group coordinator查询得到group中所有的consumer的信息，然后负责分配不同consumer对应的partition，kafka有两个内置的分区分配策略，这个可以在配置文件中配置。 当分配好不同的consumer对应的partition之后，leader发送分配的信息给 group coordinator，通过它发送到所有的consumer上，每一个consumer将只会看到自己的分区消息。 当再平衡触发的时候以上的过程回重复执行。</li>
+</ul>
+<h2 id="如何保证消费消息exactly-once"><a href="#如何保证消费消息exactly-once" class="headerlink" title="如何保证消费消息exactly once"></a>如何保证消费消息exactly once</h2><ul>
+<li>use ConsumerRebanlanceListener and seek()方法</li>
+<li>存储offset和处理消息在一个事务中</li>
+<li>存储offset和消息处理到同一个地方， 消息处理存储到db，那么offset也应该存储到db。</li>
+</ul>
+<h2 id="topic-partition-replication"><a href="#topic-partition-replication" class="headerlink" title="topic partition replication"></a>topic partition replication</h2><p><img src="/2017/07/30/kafka/replication_of_partitions_in_cluster.png" alt="replication of partition in a cluster"></p>
+<h1 id="topic"><a href="#topic" class="headerlink" title="topic"></a>topic</h1><ul>
+<li>每一种topic都可以根据consumer的需求配置它的存储策略。</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;多集群&quot;&gt;&lt;a href=&quot;#多集群&quot; class=&quot;headerlink&quot; title=&quot;多集群&quot;&gt;&lt;/a&gt;多集群&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;分离不同类型的数据&lt;/li&gt;
+&lt;li&gt;分离不同的安全策略&lt;/li&gt;
+&lt;li&gt;多个数据中心（灾难恢复)&lt;/li&gt;
+&lt;/ul
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>大数据术语</title>
+    <link href="http://yoursite.com/2017/07/29/%E6%9C%AF%E8%AF%AD/"/>
+    <id>http://yoursite.com/2017/07/29/术语/</id>
+    <published>2017-07-29T12:54:29.000Z</published>
+    <updated>2017-07-29T13:07:44.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="failover"><a href="#failover" class="headerlink" title="failover"></a>failover</h1><blockquote>
+<p>失效备援, 为系统备援能力的一种，当系统中其中一项设备失效而无法运作时，另一项设备即可自动接手原失效系统所执行的工作</p>
+</blockquote>
+<h1 id="failback"><a href="#failback" class="headerlink" title="failback"></a>failback</h1><blockquote>
+<p>故障恢复, 是当系统主服务恢复之后，从备用服务切换到主服务的过程，这个过程相对来说比较长，因为它要把在主服务失败期间，备用服务生成的数据拷贝回主服务之后才能切换成功。</p>
+</blockquote>
+<h1 id="fault-tolerant"><a href="#fault-tolerant" class="headerlink" title="fault tolerant"></a>fault tolerant</h1><blockquote>
+<p>故障容限, 系统对于未预期的硬件或者软件异常能够很好的作出响应， 具体分为硬件层次的故障容错，和<br>软件层次的故障容错。 硬件容错是在发生故障的时候（电力中断）有备用电源继续提供服务。 软件容错<br>一般是可以通过冗余（冗余的磁盘、计算机以及数据中心）来提供容错，但是事务 使得构建容错的软件应用程序成为可能。</p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;failover&quot;&gt;&lt;a href=&quot;#failover&quot; class=&quot;headerlink&quot; title=&quot;failover&quot;&gt;&lt;/a&gt;failover&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;失效备援, 为系统备援能力的一种，当系统中其中一项设备失效而无法运
+    
+    </summary>
+    
+      <category term="bigdata" scheme="http://yoursite.com/categories/bigdata/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>mac工具</title>
+    <link href="http://yoursite.com/2017/07/24/mac%E5%B7%A5%E5%85%B7/"/>
+    <id>http://yoursite.com/2017/07/24/mac工具/</id>
+    <published>2017-07-23T16:16:31.000Z</published>
+    <updated>2017-07-23T16:16:47.000Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>traversable</title>
