@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-07-30T13:39:01.000Z</updated>
+  <updated>2017-08-13T10:20:06.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,116 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>代码风格要素</title>
+    <link href="http://yoursite.com/2017/08/13/%E4%BB%A3%E7%A0%81%E9%A3%8E%E6%A0%BC%E8%A6%81%E7%B4%A0/"/>
+    <id>http://yoursite.com/2017/08/13/代码风格要素/</id>
+    <published>2017-08-13T09:26:29.000Z</published>
+    <updated>2017-08-13T10:20:06.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>The elements of programming style</p>
+<ol>
+<li>Write clearly - don’t be too clever<br> 代码写清楚，别耍小聪明。</li>
+</ol>
+<h2 id="Expression-代码表达"><a href="#Expression-代码表达" class="headerlink" title="Expression 代码表达"></a>Expression 代码表达</h2><ol>
+<li>Say what you mean, simply and directly.<br> 想干什么，写的简单点，直接点。</li>
+<li>Use library functions.<br> 有库函数，就用库函数。</li>
+<li>Avoid temporary variables.<br> 避免临时变量？？？</li>
+<li>Write clearly - don’t sacrifice clarity for ‘efficiency.’<br> 不要因为性能优化而牺牲程序的简洁，清晰性。</li>
+<li>Let the machine do the dirty work.<br> 让程序做重复的工作。</li>
+<li>Replace repetitive expressions by calls to a common function.<br> 不要重复写代码。</li>
+<li>Parenthesize to avoid ambiguity.<br> 括号来避免歧义。</li>
+<li>Choose variable names that won’t be confused.<br> 变量名要有意义。</li>
+<li>Avoid unnecessary branches.<br> 避免不必要的分支。</li>
+<li>Use the good features of a language; avoid the bad ones.<br> 用语言好的特使。</li>
+</ol>
+<h2 id="Control-Structure-控制结构"><a href="#Control-Structure-控制结构" class="headerlink" title="Control Structure 控制结构"></a>Control Structure 控制结构</h2><ol>
+<li>Make your programs read from top to bottom.<br> 确保你的程序循序渐进。</li>
+<li>Use IF, ELSE IF, ELSE IF, ELSE to implement multi-way branches.<br>   用 if else then else 实现多分支逻辑。</li>
+<li>Use the fundamental control flow constructs.<br> 用基本的条件控制结构</li>
+<li>Write first in an easy-to-understand pseudo-language; then translate into whatever language you have to use.<br> 先用伪代码，然后翻译成你使用的语言。</li>
+<li>Avoid THEN-IF and null ELSE.<br> 避免then if and null else</li>
+<li>Avoid ELSE GOTO and ELSE RETURN.<br> 避免goto语句。</li>
+<li>Follow each decision as closely as possible with its associated action.<br> 语言逻辑块要尽可能的在一块。不要太分散。</li>
+<li>Use data arrays to avoid repetitive control sequences.<br> 使用数组避免重复。</li>
+<li>Choose a data representation that makes the program simple.<br> 选择让程序更简洁的数据表达形式。</li>
+<li>Don’t stop with your first draft.<br> 先用伪代码，然后翻译成你使用的语言。</li>
+</ol>
+<h2 id="Program-Structure-代码结构"><a href="#Program-Structure-代码结构" class="headerlink" title="Program Structure 代码结构"></a>Program Structure 代码结构</h2><ol>
+<li>Modularize. Use subroutines.<br> 模块化，用子程序。</li>
+<li>Make the coupling between modules visible.<br> 模块间的耦合要可见，清晰。</li>
+<li>Each module should do one thing well.<br> 每个模块只做一件事情。</li>
+<li>Make sure every module hides something.<br> 每个模块保证隐藏细节</li>
+<li>Let the data structure the program.<br> 编程之前，先选择好的数据结构。</li>
+<li>Don’t patch bad code - rewrite it.<br> 不要给垃圾代码打补丁，直接从写。</li>
+<li>Write and test a big program in small pieces.<br> 把大的程序分成一小片一小片，写和测试。</li>
+<li>Use recursive procedures for recursively-defined data structures.<br> 使用递归程序来处理递归定义的数据结构</li>
+</ol>
+<h2 id="Input-and-Output-输入输出"><a href="#Input-and-Output-输入输出" class="headerlink" title="Input and Output 输入输出"></a>Input and Output 输入输出</h2><ol>
+<li>Test input for validity and plausibility.<br> 正确和错误的输入都要测试。</li>
+<li>Make sure input cannot violate the limits of the program.<br> 确保输入不会超出程序的限制。</li>
+<li>Terminate input by end-of-file or marker, not by count.<br> 依靠文件结束符号来表示读入结束，而不是记文件的字节数。</li>
+<li>Identify bad input; recover if possible.<br> 识别错误的输入，尽可能的纠正。</li>
+<li>Treat end of file conditions in a uniform manner.<br> 统一的方法来处理文件结束</li>
+<li>Make input easy to prepare and output self-explanatory.<br> 让输入数据很容易构造出来，让输出数据不言自明。</li>
+<li>Use uniform input formats.<br> 使用统一的输入格式。</li>
+<li>Make input easy to proofread.<br> 让输入更容易校对。</li>
+<li>Use free-form input when possible.<br> 如果可能，提供更自由的输入格式。</li>
+<li>Use self-identifying input. Allow defaults. Echo both on output.<br> 使用输入提示，允许使用默认值，应在开始运行时显出出来。</li>
+<li><p>Localize input and output in subroutines.<br> 输入输出都放在自程序中</p>
+<h2 id="Common-Blunders"><a href="#Common-Blunders" class="headerlink" title="Common Blunders"></a>Common Blunders</h2></li>
+<li><p>Make sure all variables are initialized before use.<br> 确保所有变量在使用前都初始化。</p>
+</li>
+<li>Don’t stop at one bug.<br> 不要因为一个bug而停止不前。</li>
+<li>Use debugging compilers.<br> 打开编译程序的调试选项。</li>
+<li>Initialize constants with DATA statements or INITIAL attributes; initialize variables with executable code.<br> 常量结构用数据声明初始化，变量结构用执行代码初始化。</li>
+<li>Watch out for off-by-one errors.<br> 小心 off-by-one错误。</li>
+<li>Take care to branch the right way on equality.<br> 在判断进入分支的相等表达式的时候，要注意。</li>
+<li>Avoid multiple exits from loops.<br> 当循环中有多个点可以跳出循环的时候，要格外小心。</li>
+<li>Make sure your code ‘does nothing’ gracefully.<br> 如果什么也不做，那么也要优雅的表现出这个意思。</li>
+<li>Test programs at their boundary values.<br> 用边界值去测试你的程序</li>
+<li>Program defensively.<br> 防御性编程。</li>
+<li>10.0 times 0.1 is hardly ever 1.0.<br> 10.0 乘以 0.1 不一定永远是 1.0</li>
+<li>Don’t compare floating point numbers just for equality.<br> 不要直接判断浮点类型</li>
+</ol>
+<h2 id="Efficiency-and-Instrumentation"><a href="#Efficiency-and-Instrumentation" class="headerlink" title="Efficiency and Instrumentation"></a>Efficiency and Instrumentation</h2><ol>
+<li>Make it right before you make it faster.<br> 优化之前，先让代码正确。</li>
+<li>Keep it right when you make it faster.<br> 优化之前，先保证程序正确。</li>
+<li>Make it clear before you make it faster.<br> 优化之前，先让程序简单明了。</li>
+<li>Don’t sacrifice clarity for small gains in ‘efficiency.’<br> 不要因为一点的性能去牺牲程序的简洁性</li>
+<li>Let your compiler do the simple optimizations.<br> 让编译器做一些简单的优化</li>
+<li>Don’t strain to re-use code; reorganize instead.<br> 不要过分追求重用代码，下次用的时候再重构也不迟。</li>
+<li>Make sure special cases are truly special.<br>确保特殊情况真的特殊。</li>
+<li>Keep it simple to make it faster.<br>保持简单来获得性能。</li>
+<li>Don’t diddle code to make it faster - find a better algorithm.<br> 不要死磕代码来提高性能， 尝试着用一个好的算法或者数据结构。</li>
+<li>Instrument your programs. Measure before making ‘efficiency’ changes.<br>  用工具分析一下你的代码，在做优化之前先测评一下。</li>
+</ol>
+<h2 id="Documentation"><a href="#Documentation" class="headerlink" title="Documentation"></a>Documentation</h2><ol>
+<li>Make sure comments and code agree.<br>注释和代码保持一致。</li>
+<li>Don’t just echo the code with comments - make every comment count.<br>不要重复注释，每一个注释都应该有意义。</li>
+<li>Don’t comment bad code - rewrite it.<br>不要尝试修改垃圾代码，直接重写它。</li>
+<li>Use variable names that mean something.<br>不要瞎起变量名。</li>
+<li>Use statement labels that mean something.<br>声明的语句的标签名字要有意义。</li>
+<li>Format a program to help the reader understand it.<br>提交代码之前格式化</li>
+<li>Indent to show the logical structure of a program.<br>不同的逻辑结构用缩紧来区分</li>
+<li>Document your data layouts.<br>为你的数据布局写一个文档</li>
+<li>Don’t over-comment.<br>不要过度注释</li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;The elements of programming style&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Write clearly - don’t be too clever&lt;br&gt; 代码写清楚，别耍小聪明。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;Expression-代码表达&quot;&gt;&lt;
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>kafka</title>
