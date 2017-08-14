@@ -4,6 +4,23 @@
 
     
   <url>
+    <loc>http://yoursite.com/2017/05/21/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/</loc>
+    <lastmod>2017-08-14T08:54:38.000Z</lastmod>
+    <data>
+        <display>
+        <title>函数式编程</title>
+        <pubTime>2017-05-21T08:56:41.000Z</pubTime>
+        
+        <tag>functional</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2017/05/21/learn-storm/</loc>
     <lastmod>2017-08-14T08:52:22.000Z</lastmod>
     <data>
@@ -243,23 +260,6 @@
         <pubTime>2017-05-21T12:03:46.000Z</pubTime>
         
         <tag>list</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2017/05/21/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/</loc>
-    <lastmod>2017-05-21T08:56:54.000Z</lastmod>
-    <data>
-        <display>
-        <title>函数式编程</title>
-        <pubTime>2017-05-21T08:56:41.000Z</pubTime>
-        
-        <tag>functional</tag>
          
          
            
