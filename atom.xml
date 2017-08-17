@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-08-13T10:20:06.000Z</updated>
+  <updated>2017-08-17T13:20:32.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,61 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>linux常用命令</title>
+    <link href="http://yoursite.com/2017/08/16/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
+    <id>http://yoursite.com/2017/08/16/linux常用命令/</id>
+    <published>2017-08-16T03:53:25.000Z</published>
+    <updated>2017-08-17T13:20:32.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="查看系统版本"><a href="#查看系统版本" class="headerlink" title="查看系统版本"></a>查看系统版本</h1><ul>
+<li>Redhat系<br>cat /etc/redhat-release     –&gt;     <code>CentOS Linux release 7.3.1611 (Core)</code></li>
+</ul>
+<ul>
+<li>查看系统内核版本<br>uname -a<br>Linux localhost.localdomain 3.10.0-514.16.1.el7.x86_64 #1 SMP Wed Apr 12 15:04:24 UTC 2017 x86_64 x86_64 x86_64 GNU/Linu</li>
+</ul>
+<h1 id="查看端口占用状态"><a href="#查看端口占用状态" class="headerlink" title="查看端口占用状态"></a>查看端口占用状态</h1><p>Netstat 命令用于显示各种网络相关信息，如网络连接，路由表，接口状态 (Interface Statistics)，masquerade 连接，多播成员 (Multicast Memberships) 等等。</p>
+<p>Active Internet connections，称为有源TCP连接，其中”Recv-Q”和”Send-Q”指%0A的是接收队列和发送队列。这些数字一般都应该是0。如果不是则表示软件包正在队列中堆积。这种情况只能在非常少的情况见到。</p>
+<ol>
+<li>-a (all)显示所有选项，默认不显示LISTEN相关</li>
+<li>-t (tcp)仅显示tcp相关选项</li>
+<li>-u (udp)仅显示udp相关选项</li>
+<li>-n 拒绝显示别名，能显示数字的全部转化成数字</li>
+<li>-l 仅列出有在 Listen (监听) 的服務状态</li>
+<li>-p 显示建立相关链接的程序名</li>
+<li>-r 显示路由信息，路由表</li>
+<li>-e 显示扩展信息，例如uid等</li>
+<li>-s 按各个协议进行统计</li>
+<li>-c 每隔一个固定时间，执行该netstat命令。</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">-- 查询指定端口运行的进程</div><div class="line"></div><div class="line">[root@localhost ~]# netstat -anp | grep &apos;:8080&apos;</div><div class="line">tcp6       0      0 :::8080                 :::*                    LISTEN      73699/java</div><div class="line"></div><div class="line">-- 查询所有tcp链接端口</div><div class="line"></div><div class="line">[root@localhost ~]# netstat -nat</div><div class="line">Active Internet connections (servers and established)</div><div class="line">Proto Recv-Q Send-Q Local Address           Foreign Address         State</div><div class="line">tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN</div><div class="line">tcp        0      0 127.0.0.1:25            0.0.0.0:*               LISTEN</div></pre></td></tr></table></figure>
+<h1 id="Netcat-网络工具"><a href="#Netcat-网络工具" class="headerlink" title="Netcat 网络工具"></a><a href="https://www.oschina.net/translate/linux-netcat-command" target="_blank" rel="external">Netcat</a> 网络工具</h1><p>netcat是网络工具中的瑞士军刀，它能通过TCP和UDP在网络中读写数据。netcat所做的就是在两台电脑之间建立链接并返回两个数据流，在这之后所能做的事就看你的想像力了。你能建立一个服务器，传输文件，与朋友聊天，传输流媒体或者用它作为其它协议的独立客户端。</p>
+<ol>
+<li>-z 告诉netcat使用0 IO,连接成功后立即关闭连接， 不进行数据交换</li>
+<li>-v 指使用冗余选项</li>
+<li>-n 告诉netcat 不要使用DNS反向查询IP地址的域名</li>
+</ol>
+<ul>
+<li>端口扫描<br>端口扫描经常被系统管理员和黑客用来发现在一些机器上开放的端口，帮助他们识别系统中的漏洞。<br><code>$nc -z -v -n 172.31.100.7 21-25</code><br>一旦你发现开放的端口，你可以容易的使用netcat 连接服务抓取他们的banner。<br><code>$nc -v 172.31.100.7 21</code></li>
+</ul>
+<h2 id="Chat-Server"><a href="#Chat-Server" class="headerlink" title="Chat Server"></a>Chat Server</h2><p>假如你想和你的朋友聊聊，有很多的软件和信息服务可以供你使用。但是，如果你没有这么奢侈的配置，比如你在计算机实验室，所有的对外的连接都是被限制的，你怎样和整天坐在隔壁房间的朋友沟通那？不要郁闷了，netcat提供了这样一种方法，你只需要创建一个Chat服务器，一个预先确定好的端口，这样子他就可以联系到你了。<br>Server(A) <code>$nc -l 1567</code><br>Client(B) <code>$nc 172.31.100.7 1567</code><br>netcat 命令在1567端口启动了一个tcp 服务器，所有的标准输出和输入会输出到该端口。输出和输入都在此shell中展示, 不管你在机器B上键入什么都会出现在机器A上。</p>
+<h2 id="文件传输"><a href="#文件传输" class="headerlink" title="文件传输"></a>文件传输</h2><p>大部分时间中，我们都在试图通过网络或者其他工具传输文件。有很多种方法，比如FTP,SCP,SMB等等，但是当你只是需要临时或者一次传输文件，真的值得浪费时间来安装配置一个软件到你的机器上嘛。假设，你想要传一个文件file.txt 从A 到B。A或者B都可以作为服务器或者客户端，以下，让A作为服务器，B为客户端。<br>Server <code>$nc -l 1567 &lt; file.txt</code><br>Client <code>$nc -n 172.31.100.7 1567 &gt; file.txt</code></p>
+<p>这里我们创建了一个服务器在A上并且重定向netcat的输入为文件file.txt，那么当任何成功连接到该端口，netcat会发送file的文件内容。<br>在客户端我们重定向输出到file.txt，当B连接到A，A发送文件内容，B保存文件内容到file.txt.</p>
+<p>没有必要创建文件源作为Server，我们也可以相反的方法使用。像下面的我们发送文件从B到A，但是服务器创建在A上，这次我们仅需要重定向netcat的输出并且重定向B的输入文件。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;查看系统版本&quot;&gt;&lt;a href=&quot;#查看系统版本&quot; class=&quot;headerlink&quot; title=&quot;查看系统版本&quot;&gt;&lt;/a&gt;查看系统版本&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;Redhat系&lt;br&gt;cat /etc/redhat-release     –&amp;gt;    
+    
+    </summary>
+    
+      <category term="linux" scheme="http://yoursite.com/categories/linux/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>代码风格要素</title>
@@ -804,38 +859,6 @@ morphism: 形态
   </entry>
   
   <entry>
-    <title>Ractive programming</title>
-    <link href="http://yoursite.com/2017/05/21/RactiveAPI/"/>
-    <id>http://yoursite.com/2017/05/21/RactiveAPI/</id>
-    <published>2017-05-21T04:18:28.000Z</published>
-    <updated>2017-05-21T08:55:42.000Z</updated>
-    
-    <content type="html"><![CDATA[<ol>
-<li><p>RxJava支持很多java 8 Stream类似的相同高层次操作比如map和filter，区别是RxJava是异步的。</p>
-</li>
-<li><p>Reactive programming is programming with asynchronous data streams.</p>
-</li>
-<li>You are able to create data streams of anything, not just from click and hover events. Streams are cheap and ubiquitous, anything can be a stream: variables, user inputs, properties, caches, data structures, etc。</li>
-<li>A stream is a sequence of ongoing events ordered in time。</li>
-<li>Reactive Programming raises the level of abstraction of your code so you can focus on the interdependence of events that define the business logic, rather than having to constantly fiddle with a large amount of implementation details</li>
-</ol>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;RxJava支持很多java 8 Stream类似的相同高层次操作比如map和filter，区别是RxJava是异步的。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Reactive programming is programming with asynchron
-    
-    </summary>
-    
-    
-      <category term="FP, reactive" scheme="http://yoursite.com/tags/FP-reactive/"/>
-    
-  </entry>
-  
-  <entry>
     <title>面向函数vs面向对象</title>
     <link href="http://yoursite.com/2017/05/21/%E9%9D%A2%E5%90%91%E5%87%BD%E6%95%B0vs%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"/>
     <id>http://yoursite.com/2017/05/21/面向函数vs面向对象/</id>
@@ -907,6 +930,38 @@ morphism: 形态
     
     
       <category term="FP, OOP" scheme="http://yoursite.com/tags/FP-OOP/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Ractive programming</title>
+    <link href="http://yoursite.com/2017/05/21/RactiveAPI/"/>
+    <id>http://yoursite.com/2017/05/21/RactiveAPI/</id>
+    <published>2017-05-21T04:18:28.000Z</published>
+    <updated>2017-05-21T08:55:42.000Z</updated>
+    
+    <content type="html"><![CDATA[<ol>
+<li><p>RxJava支持很多java 8 Stream类似的相同高层次操作比如map和filter，区别是RxJava是异步的。</p>
+</li>
+<li><p>Reactive programming is programming with asynchronous data streams.</p>
+</li>
+<li>You are able to create data streams of anything, not just from click and hover events. Streams are cheap and ubiquitous, anything can be a stream: variables, user inputs, properties, caches, data structures, etc。</li>
+<li>A stream is a sequence of ongoing events ordered in time。</li>
+<li>Reactive Programming raises the level of abstraction of your code so you can focus on the interdependence of events that define the business logic, rather than having to constantly fiddle with a large amount of implementation details</li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;ol&gt;
+&lt;li&gt;&lt;p&gt;RxJava支持很多java 8 Stream类似的相同高层次操作比如map和filter，区别是RxJava是异步的。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Reactive programming is programming with asynchron
+    
+    </summary>
+    
+    
+      <category term="FP, reactive" scheme="http://yoursite.com/tags/FP-reactive/"/>
     
   </entry>
   
