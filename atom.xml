@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-08-17T13:20:32.000Z</updated>
+  <updated>2017-09-01T15:53:46.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,11 +16,171 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>license</title>
+    <link href="http://yoursite.com/2017/09/01/license/"/>
+    <id>http://yoursite.com/2017/09/01/license/</id>
+    <published>2017-09-01T13:42:15.000Z</published>
+    <updated>2017-09-01T15:53:46.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="GPL-GNU-Public-General-License"><a href="#GPL-GNU-Public-General-License" class="headerlink" title="GPL(GNU Public General License)"></a>GPL(GNU Public General License)</h1><p>强开源约束授权</p>
+<p>GPL的出发点是代码的开源/免费使用和引用/修改/衍生代码的开源/免费使用，但不允许修改后和衍生的代码做为闭源的商业软件发布和销售。</p>
+<p>GPL协议的主要内容是只要在一个软件中使用(“使用”指类库引用，修改后的代码或者衍生代码)GPL 协议的产品，则该软件产品必须也采用GPL协议，既必须也是开源和免费, 这就是所谓的 <strong>”传染性”</strong>。</p>
+<h1 id="LGPL（GNU-Lesser-General-Public-License）"><a href="#LGPL（GNU-Lesser-General-Public-License）" class="headerlink" title="LGPL（GNU Lesser General Public License）"></a>LGPL（GNU Lesser General Public License）</h1><p>LGPL是GPL的一个为主要为<strong>类库使用</strong>设计的开源协议。 </p>
+<p>和GPL要求任何使用/修改/衍生之GPL类库的的软件必须采用GPL协议不同，LGPL允许商业软件通过<strong>类库引用(link)方式</strong>使用LGPL类库而<strong>不需要开源</strong>商业软件的代码。这使得采用LGPL协议的开源代码可以被商业软件作为类库引用并发布和销售。</p>
+<p>但是如果<strong>修改（不只是引用）</strong>LGPL协议的代码或者衍生，则所有修改的代码，涉及修改部分的额外代码和衍生的代码都必须采用LGPL协议。</p>
+<p>因此LGPL协议的开源代码很适合作为第三方类库被商业软件引用，但不适合希望以LGPL协议代码为基础，通过修改和衍生的方式做二次开发的商业软件采用。<br>GPL/LGPL都保障原作者的知识产权，避免有人利用开源代码复制并开发类似的产品。</p>
+<h1 id="MPL-License（Mozilla-Public-License）"><a href="#MPL-License（Mozilla-Public-License）" class="headerlink" title="MPL License（Mozilla Public License）"></a>MPL License（Mozilla Public License）</h1><p>弱开源约束授权</p>
+<p>允许免费重发布、免费修改，但要求修改后的代码版权归软件的发起者。这种授权维护了商业软件的利益，它要求基于这种软件的修改无偿贡献版权给该软件。但MPL是允许修改，无偿使用的。</p>
+<p>MPL软件对链接没有要求。(要求假如你修改了一个基于MPL协议的源代码，则必须列入或公开你所做的修改，假如其他源代码不是基于MPL则不需要公开其源代码)</p>
+<h1 id="MIT-Licence"><a href="#MIT-Licence" class="headerlink" title="MIT Licence"></a>MIT Licence</h1><p>MIT是和BSD一样宽范的许可协议，作者只想保留版权，而无任何其他了限制。<br>也就是说，你必须在你的发行版里<strong>包含原许可协议</strong>的声明，无论你是以二进制发布的还是以源代码发布的。</p>
+<h1 id="BSD-Licence"><a href="#BSD-Licence" class="headerlink" title="BSD Licence"></a>BSD Licence</h1><p>BSD开源协议是一个给于使用者很大自由的协议。<br>基本上使用者可以”为所欲为”，可以自由的使用，修改源代码，也可以将修改后的代码作为开源或者专有软件再发布。</p>
+<p>但”为所欲为”的前提当你发布使用了BSD协议的代码，或者以BSD协议代码为基础做二次开发自己的产品时，需要满足三个条件：</p>
+<ol>
+<li>如果再发布的产品中包含源代码，则在源代码中必须带有原来代码中的BSD协议。</li>
+<li>如果再发布的只是二进制类库/软件，则需要在类库/软件的文档和版权声明中包含原来代码中的BSD协议。</li>
+<li>不可以用开源代码的作者/机构名字和原来产品的名字做市场推广。</li>
+</ol>
+<p>BSD 代码鼓励代码共享，但需要尊重代码作者的著作权, BSD由于允许使用者修改和重新发布代码，也允许使用或在BSD代码上开发商业软件发布和销售，因此是对商业集成很友好的协议。</p>
+<p>而很多的公司企业在选用开源产品的时候都首选BSD协议，因为可以完全控制这些第三方的代码，在必要的时候可以修改或者二次开发。</p>
+<h1 id="Apache-Licence"><a href="#Apache-Licence" class="headerlink" title="Apache Licence"></a>Apache Licence</h1><p>Apache Licence是著名的非盈利开源组织Apache采用的协议。</p>
+<p>该协议和BSD类似，同样鼓励代码共享和尊重原作者的著作权，同样允许代码修改，再发布（作为开源或商业软件）。</p>
+<p>需要满足的条件也和BSD类似                </p>
+<ol>
+<li>需要给代码的用户一份Apache Licence</li>
+<li>如果你修改了代码，需要再被修改的文件中说明。</li>
+<li>在延伸的代码中（修改和有源代码衍生的代码中）需要带有原来代码中的协议，商标，专利声明和其他原来作者规定需要包含的说明。</li>
+<li>如果再发布的产品中包含一个Notice文件，则在Notice文件中需要带有Apache Licence。</li>
+</ol>
+<p>Apache Licence也是对商业应用友好的许可。</p>
+<hr>
+<p>最后奉上阮一峰的一张<a href="http://www.ruanyifeng.com/blog/2011/05/how_to_choose_free_software_licenses.html" target="_blank" rel="external">图</a>，简单清晰。<br><img src="/2017/09/01/license/license.png" alt="license"></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;GPL-GNU-Public-General-License&quot;&gt;&lt;a href=&quot;#GPL-GNU-Public-General-License&quot; class=&quot;headerlink&quot; title=&quot;GPL(GNU Public General License)&quot;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>hadoop</title>
+    <link href="http://yoursite.com/2017/09/01/hadoop/"/>
+    <id>http://yoursite.com/2017/09/01/hadoop/</id>
+    <published>2017-09-01T08:42:54.000Z</published>
+    <updated>2017-09-01T15:52:37.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="hadoop-Yarn"><a href="#hadoop-Yarn" class="headerlink" title="hadoop Yarn"></a><a href="https://www.ibm.com/developerworks/cn/opensource/os-cn-hadoop-yarn/" target="_blank" rel="external">hadoop Yarn</a></h1>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;hadoop-Yarn&quot;&gt;&lt;a href=&quot;#hadoop-Yarn&quot; class=&quot;headerlink&quot; title=&quot;hadoop Yarn&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://www.ibm.com/developerworks/cn/openso
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>framework</title>
+    <link href="http://yoursite.com/2017/08/28/framework/"/>
+    <id>http://yoursite.com/2017/08/28/framework/</id>
+    <published>2017-08-28T06:16:11.000Z</published>
+    <updated>2017-09-01T15:51:04.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Web-App-Architectures"><a href="#Web-App-Architectures" class="headerlink" title="Web App Architectures"></a><a href="https://michaelwashburnjr.com/an-analysis-of-web-app-architecture/" target="_blank" rel="external">Web App Architectures</a></h1>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Web-App-Architectures&quot;&gt;&lt;a href=&quot;#Web-App-Architectures&quot; class=&quot;headerlink&quot; title=&quot;Web App Architectures&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://michae
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>10 Tips for Writing Better Code</title>
+    <link href="http://yoursite.com/2017/08/25/10-Tips-for-Writing-Better-Code/"/>
+    <id>http://yoursite.com/2017/08/25/10-Tips-for-Writing-Better-Code/</id>
+    <published>2017-08-25T11:42:24.000Z</published>
+    <updated>2017-08-25T13:02:24.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>好的代码应该是简洁易读，容易理解，容易debug 和修改，最重要的是bug少，虽然写代码的时候比较费一点时间，但是这是相当值得的，因为你会花更少的时间去维护，并且你的代码可重用性是相当强。</p>
+<p>实际上我们可以认为好的代码是 可重用的，代码可能只是你段时间内完成工作任务或者特定功能的目标，但是没有人去重用它（包括你自己），一定是你写的代码有什么问题，比如说太复杂了，太局部于某一方面，及其有可能在某些情况下宕掉，或者别人根本不信任你的代码。</p>
+<p>我认为如果持之以恒的坚守如下的代码规范，能让的代码看上去越来越优雅。</p>
+<ol>
+<li><p>遵守单一职责<br><strong>函数</strong> 是最重要的程序员利器，越是可以重用，你可以写越少的代码，并且越高的稳定性。小而简的函数很易于遵循单一职责。</p>
+</li>
+<li><p>尽可能少用公共变量<br>你应该尽可能少的在函数之间共享变量，不管是对象内函数调用对象的成员变量还是全局变量，尽可能的通过参数传递变量，这样的话，代码会变得非常容易的理解和重用。</p>
+</li>
+<li><p>缩小副作用的区域范围<br>理想情况下，副作用（打印到终端，改变外部变量状态，io操作等等）应该放在单独的模块下，不应该分散在项目当中，并且，函数中的副作用通常是违反单一职责原则。</p>
+</li>
+<li><p>偏向于不可变的对象／变量<br>如果对象的状态只有在初始化的时候设置一次，之后就不可能再被更改，那么这就会让debug变的非常容易，因为如果初始状态没有问题，中间没有可能被别的程序修改，你的思维就不会交织在一起，就像多线程编程容易出错但又难于重现的原因，同时这样也会大大的降低程序的复杂度。</p>
+</li>
+<li><p>接口优于类<br>接口作为参数，将提高函数的重用性，因为你可以对接口实现类进行更改的同时，保证依赖接口的函数不做更改。</p>
+</li>
+<li><p>模块化<br>如果可能，应该把一个大的项目分割成小的独立的模块，这样能保证模块的重用。<br>减少模块间的依赖关系</p>
+<ul>
+<li>每个模块应该有单一的定义良好的职责。</li>
+<li>不要重复你自己。</li>
+<li>你应该努力尽可能的保证你的项目<strong>小</strong>而<strong>定义良好</strong></li>
+</ul>
+</li>
+<li><p>尽量避免继承</p>
+</li>
+<li><p>设计和开的同时不要忘了测试<br>我并不是测试驱动开发的推崇者，但是单元测试可以让你的代码更自然的遵循一些参考，同时也及早的帮你发现很多错误，避免写一些无意义的测试，好的编程以为着更高层级的测试，集成测试或者功能测试，这些都非常有利于发现bug。</p>
+</li>
+<li><p>尽量用标准的类库而不是自己造一个<br>我曾见过非常多的比标准库更好的std::vector 或者 std::string, 但是这样总是会浪费你的时间和精力，除了你及其有可能引入新的bug，其它的开发者也基本上不会用你的代码版本。</p>
+</li>
+<li><p>避免写新的代码<br>最好的编程是不写代码，你写越多的代码，你就写越多的bug，并且越来越难以发现。 在开始写代码之前问一下你自己，有没有别的什么工具可以实现这个功能？你真的需要自己写一个这样的功能而不是用一个经过良好测试的已经存在的代码？</p>
+</li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;好的代码应该是简洁易读，容易理解，容易debug 和修改，最重要的是bug少，虽然写代码的时候比较费一点时间，但是这是相当值得的，因为你会花更少的时间去维护，并且你的代码可重用性是相当强。&lt;/p&gt;
+&lt;p&gt;实际上我们可以认为好的代码是 可重用的，代码可能只是你段时间内完成工作
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>spark基础</title>
+    <link href="http://yoursite.com/2017/08/24/spark%E5%9F%BA%E7%A1%80/"/>
+    <id>http://yoursite.com/2017/08/24/spark基础/</id>
+    <published>2017-08-24T06:43:38.000Z</published>
+    <updated>2017-09-01T07:30:07.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="DStreamDAG"><a href="#DStreamDAG" class="headerlink" title="DStreamDAG"></a><a href="https://github.com/lw-lin/CoolplaySpark/blob/master/Spark%20Streaming%20%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90%E7%B3%BB%E5%88%97/1.1%20DStream%2C%20DStreamGraph%20%E8%AF%A6%E8%A7%A3.md" target="_blank" rel="external">DStreamDAG</a></h1><h1 id="RDD"><a href="#RDD" class="headerlink" title="RDD"></a>RDD</h1><p>Spark revolves around the concept of a resilient distributed dataset (RDD), which is a fault-tolerant collection of elements that can be operated on in parallel.There are two ways to create RDDs: parallelizing an existing collection in your driver program, or referencing a dataset in an external storage system.</p>
+<p>One important parameter for parallel collections is the number of partitions to cut the dataset into. Spark will run one task for each partition of the cluster. Typically you want 2-4 partitions for each CPU in your cluster. Normally, Spark tries to set the number of partitions automatically based on your cluster. However, you can also set it manually by passing it as a second parameter to parallelize (e.g. sc.parallelize(data, 10)). Note: some places in the code use the term slices (a synonym for partitions) to maintain backward compatibility.</p>
+<h1 id="Streaming"><a href="#Streaming" class="headerlink" title="Streaming"></a>Streaming</h1><p>Spark Streaming is an extension of the core Spark API that enables scalable, high-throughput, fault-tolerant stream processing of live data streams.Data can be ingested from many sources like Kafka, Flume, Kinesis, or TCP sockets,. Finally, processed data can be pushed out to filesystems, databases, and live dashboards. In fact, you can apply Spark’s machine learning and graph processing algorithms on data streams.</p>
+<p>Internally, it works as follows. Spark Streaming receives live input data streams and divides the data into batches, which are then processed by the Spark engine to generate the final stream of results in batches.</p>
+<p>Spark Streaming provides a high-level abstraction called discretized stream or DStream, which represents a continuous stream of data. DStreams can be created either from input data streams from sources such as Kafka, Flume, and Kinesis, or by applying high-level operations on other DStreams. Internally, a DStream is represented as a sequence of RDDs.</p>
+<h1 id="DStreams"><a href="#DStreams" class="headerlink" title="DStreams"></a>DStreams</h1><p>Discretized Stream or DStream is the basic abstraction provided by Spark Streaming. It represents a continuous stream of data, either the input data stream received from source, or the processed data stream generated by transforming the input stream. Internally, a DStream is represented by a continuous series of RDDs, which is Spark’s abstraction of an immutable, distributed dataset (see Spark Programming Guide for more details). Each RDD in a DStream contains data from a certain interval, as shown in the following figure.</p>
+<h1 id="Window-Operations"><a href="#Window-Operations" class="headerlink" title="Window Operations"></a>Window Operations</h1><p>Spark Streaming also provides windowed computations, which allow you to apply transformations over a sliding window of data. The following figure illustrates this sliding window.</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;DStreamDAG&quot;&gt;&lt;a href=&quot;#DStreamDAG&quot; class=&quot;headerlink&quot; title=&quot;DStreamDAG&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://github.com/lw-lin/CoolplaySpark/blob/ma
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>linux常用命令</title>
     <link href="http://yoursite.com/2017/08/16/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
     <id>http://yoursite.com/2017/08/16/linux常用命令/</id>
     <published>2017-08-16T03:53:25.000Z</published>
-    <updated>2017-08-17T13:20:32.000Z</updated>
+    <updated>2017-09-01T07:28:01.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="查看系统版本"><a href="#查看系统版本" class="headerlink" title="查看系统版本"></a>查看系统版本</h1><ul>
 <li>Redhat系<br>cat /etc/redhat-release     –&gt;     <code>CentOS Linux release 7.3.1611 (Core)</code></li>
@@ -56,7 +216,17 @@
 <h2 id="文件传输"><a href="#文件传输" class="headerlink" title="文件传输"></a>文件传输</h2><p>大部分时间中，我们都在试图通过网络或者其他工具传输文件。有很多种方法，比如FTP,SCP,SMB等等，但是当你只是需要临时或者一次传输文件，真的值得浪费时间来安装配置一个软件到你的机器上嘛。假设，你想要传一个文件file.txt 从A 到B。A或者B都可以作为服务器或者客户端，以下，让A作为服务器，B为客户端。<br>Server <code>$nc -l 1567 &lt; file.txt</code><br>Client <code>$nc -n 172.31.100.7 1567 &gt; file.txt</code></p>
 <p>这里我们创建了一个服务器在A上并且重定向netcat的输入为文件file.txt，那么当任何成功连接到该端口，netcat会发送file的文件内容。<br>在客户端我们重定向输出到file.txt，当B连接到A，A发送文件内容，B保存文件内容到file.txt.</p>
 <p>没有必要创建文件源作为Server，我们也可以相反的方法使用。像下面的我们发送文件从B到A，但是服务器创建在A上，这次我们仅需要重定向netcat的输出并且重定向B的输入文件。</p>
-]]></content>
+<h1 id="expect"><a href="#expect" class="headerlink" title="expect"></a><a href="http://www.cnblogs.com/lzrabbit/p/4298794.html" target="_blank" rel="external">expect</a></h1><p>Expect是一个用来处理交互的命令。借助Expect，我们可以将交互过程写在一个脚本上，使之自动化完成。形象的说，ssh登录，ftp登录等都符合交互的定义。下文我们首先提出一个问题，然后介绍基础知四个命令，最后提出解决方法。</p>
+<p>Expect中最关键的四个命令是send,expect,spawn,interact。</p>
+<ol>
+<li>send：用于向进程发送字符串</li>
+<li>expect：从进程接收字符串</li>
+<li>spawn：启动新的进程</li>
+<li>interact：允许用户交互</li>
+</ol>
+<p>匹配到hi,hello,bye任意一个字符串时，执行相应的输出。等同于如下写法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">#!/usr/bin/expect -f</div><div class="line">set timeout -1</div><div class="line">spawn ftp ftp.test.com      //打开新的进程，该进程用户连接远程ftp服务器</div><div class="line">expect &#123;</div><div class="line">&quot;hi&quot; &#123; send &quot;You said hi\n&quot;&#125;</div><div class="line">&quot;hello&quot; &#123; send &quot;Hello yourself\n&quot;&#125;</div><div class="line">&quot;bye&quot; &#123; send &quot;That was unexpected\n&quot;&#125;</div><div class="line">&#125;</div><div class="line">interact</div></pre></td></tr></table></figure>
+<h1 id="Find"><a href="#Find" class="headerlink" title="Find"></a><a href="http://man.linuxde.net/find" target="_blank" rel="external">Find</a></h1>]]></content>
     
     <summary type="html">
     
@@ -185,9 +355,28 @@
     <link href="http://yoursite.com/2017/07/30/kafka/"/>
     <id>http://yoursite.com/2017/07/30/kafka/</id>
     <published>2017-07-29T16:26:53.000Z</published>
-    <updated>2017-07-30T13:39:01.000Z</updated>
+    <updated>2017-08-30T12:41:46.000Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="多集群"><a href="#多集群" class="headerlink" title="多集群"></a>多集群</h1><ul>
+    <content type="html"><![CDATA[<p>Apache Kafka is a publish/subscribe messaging system designed to solve this prob‐ lem. It is often described as a “distributed commit log”. A filesystem or database com‐ mit log is designed to provide a durable record of all transactions so that they can be replayed to consistently build the state of a system. Similarly, data within Kafka is stored durably, in order, and can be read deterministically. In addition, the data can be distributed within the system to provide additional protections against failures, as well as significant opportunities for scaling performance.</p>
+<h1 id="消息和批处理"><a href="#消息和批处理" class="headerlink" title="消息和批处理"></a>消息和批处理</h1><p>The unit of data within Kafka is called a message. If you are approaching Kafka from a database background, you can think of this as similar to a row or a record. A message is simply an array of bytes, as far as Kafka is concerned, so the data contained within it does not have a specific format or meaning to Kafka. Messages can have an optional bit of metadata which is referred to as a key. The key is also a byte array, and as with the message, has no specific meaning to Kafka. Keys are used when messages are to be written to partitions in a more controlled manner. The simplest such scheme is to treat partitions as a hash ring, and assure that messages with the same key are always written to the same partition. Usage of keys is discussed more thoroughly in Chap‐ ter 3.<br>For efficiency, messages are written into Kafka in batches. A batch is just a collection of messages, all of which are being produced to the same topic and partition. An indi‐ vidual round trip across the network for each message would result in excessive over‐ head, and collecting messages together into a batch reduces this. This, of course, presents a tradeoff between latency and throughput: the larger the batches, the more messages that can be handled per unit of time, but the longer it takes an individual message to propagate. Batches are also typically compressed, which provides for more efficient data transfer and storage at the cost of some processing power.</p>
+<h1 id="Topic-amp-Partitions"><a href="#Topic-amp-Partitions" class="headerlink" title="Topic &amp; Partitions"></a>Topic &amp; Partitions</h1><p>Messages in Kafka are categorized into topics. The closest analogy for a topic is a data‐ base table, or a folder in a filesystem.<br>Topics are additionally broken down into a number of partitions.<br> Going back to the “commit log” description, a partition is a sin‐ gle log. Messages are written to it in an append-only fashion, and are read in order from beginning to end. . Note that as a topic generally has multiple partitions, there is no guarantee of time-ordering of messages across the entire topic, just within a single partition. Figure 1-5 shows a topic with 4 partitions, with writes being appended to the end of each one. Partitions are also the way that Kafka provides redundancy and scalability. Each partition can be hosted on a different server, which means that a sin‐ gle topic can be scaled horizontally across multiple servers to provide for perfor‐ mance far beyond the ability of a single server.</p>
+<h1 id="Producer"><a href="#Producer" class="headerlink" title="Producer"></a>Producer</h1><p>the producer does not care what partition a specific message is written to and will balance messages over all partitions of a topic evenly. In some cases, the pro‐ ducer will direct messages to specific partitions. This is typically done using the mes‐ sage key and a partitioner that will generate a hash of the key and map it to a specific partition. </p>
+<h1 id="Consumers"><a href="#Consumers" class="headerlink" title="Consumers"></a>Consumers</h1><p>The consumer keeps track of which messages it has already consumed by keeping track of the o set of messages. The offset is another bit of metadata, an integer value that continually increases, that Kafka adds to each message as it is produced. Each message within a given partition has a unique offset. By storing the offset of the last consumed message for each parti‐ tion, either in Zookeeper or in Kafka itself, a consumer can stop and restart without losing its place.</p>
+<h1 id="Consumer-Group"><a href="#Consumer-Group" class="headerlink" title="Consumer Group"></a>Consumer Group</h1><p>Consumers work as part of a consumer group. This is one or more consumers that work together to consume a topic. The group assures that each partition is only con‐ sumed by one member.</p>
+<h1 id="Brokers-amp-Clusters"><a href="#Brokers-amp-Clusters" class="headerlink" title="Brokers &amp; Clusters"></a>Brokers &amp; Clusters</h1><p>A single Kafka server is called a broker. The broker receives messages from producers, assigns offsets to them, and commits the messages to storage on disk. It also services consumers, responding to fetch requests for partitions and responding with the mes‐ sages that have been committed to disk. Depending on the specific hardware and its performance characteristics, a single broker can easily handle thousands of partitions and millions of messages per second.</p>
+<p>Kafka brokers are designed to operate as part of a cluster. Within a cluster of brokers, one will also function as the cluster controller (elected automatically from the live members of the cluster). The controller is responsible for administrative operations, including assigning partitions to brokers and monitoring for broker failures.</p>
+<p> A parti‐ tion is owned by a single broker in the cluster, and that broker is called the leader for the partition. A partition may be assigned to multiple brokers, which will result in the partition being replicated (as in Figure 1-7). This provides redundancy of messages in the partition, such that another broker can take over leadership if there is a broker failure. However, all consumers and producers operating on that partition must con‐ nect to the leader. Cluster operations, including partition replication, are covered in detail in Chapter 6.</p>
+<h1 id="Why-kafka"><a href="#Why-kafka" class="headerlink" title="Why kafka"></a>Why kafka</h1><h2 id="Multiple-Producers"><a href="#Multiple-Producers" class="headerlink" title="Multiple Producers"></a>Multiple Producers</h2><p>Kafka is able to seamlessly handle multiple producers, whether those clients are using many topics or the same topic. This makes the system ideal for aggregating data from many front end systems and providing the data in a consistent format. For example, a site that serves content to users via a number of microservices can have a single topic for page views which all services can write to using a common format. Consumer applications can then received one unified view of page views for the site without having to coordinate the multiple producer streams.</p>
+<h2 id="Multiple-Consumers"><a href="#Multiple-Consumers" class="headerlink" title="Multiple Consumers"></a>Multiple Consumers</h2><p>In addition to multiple consumers, Kafka is designed for multiple consumers to read any single stream of messages without interfering with each other. This is in opposi‐ tion to many queuing systems where once a message is consumed by one client, it is not available to any other client. At the same time, multiple Kafka consumers can choose to operate as part of a group and share a stream, assuring that the entire group processes a given message only once.</p>
+<h1 id="Disk-based-Retention"><a href="#Disk-based-Retention" class="headerlink" title="Disk-based Retention"></a>Disk-based Retention</h1><p>Not only can Kafka handle multiple consumers, but durable message retention means that consumers do not always need to work in real time. Messages are committed to disk, and will be stored with configurable retention rules. These options can be selected on a per-topic basis, allowing for different streams of messages to have differ‐ ent amounts of retention depending on what the consumer needs are. Durable reten‐ tion means that if a consumer falls behind, either due to slow processing or a burst in traffic, there is no danger of losing data. It also means that maintenance can be per‐ formed on consumers, taking applications offline for a short period of time, with no concern about messages backing up on the producer or getting lost. The consumers can just resume processing where they stopped.</p>
+<h1 id="Scalable"><a href="#Scalable" class="headerlink" title="Scalable"></a>Scalable</h1><p>Flexible scalability has been designed into Kafka from the start, allowing for the abil‐ ity to easily handle any amount of data. Users can start with a single broker as a proof of concept, expand to a small development cluster of 3 brokers, and move into pro‐ duction with a larger cluster of tens, or even hundreds, of brokers that grows over time as the data scales up. Expansions can be performed while the cluster is online, with no impact to the availability of the system as a whole. This also means that a cluster of multiple brokers can handle the failure of an individual broker and con‐ tinue servicing clients. Clusters that need to tolerate more simultaneous failures can be configured with higher replication factors. Replication is discussed in more detail in Chapter 6.</p>
+<h1 id="High-Performance"><a href="#High-Performance" class="headerlink" title="High Performance"></a>High Performance</h1><p>All of these features come together to make Apache Kafka a publish/subscribe mes‐ saging system with excellent performance characteristics under high load. Producers, consumers, and brokers can all be scaled out to handle very large message streams with ease. This can be done while still providing sub-second message latency from producing a message to availability to consumers.</p>
+<h1 id="Zookeeper"><a href="#Zookeeper" class="headerlink" title="Zookeeper"></a>Zookeeper</h1><p>Apache Kafka uses Zookeeper to store metadata information about the Kafka cluster, as well as consumer client details. While it is possible to run a Zookeeper server using scripts contained within the Kafka distribution, it is trivial to install a full version of Zookeeper from the distribution.<br><img src="/2017/07/30/kafka/kafka_zookeeper.png" alt="kafka_zookeeper"></p>
+<h1 id="topic-Defaults"><a href="#topic-Defaults" class="headerlink" title="topic Defaults"></a>topic Defaults</h1><p>The Kafka server configuration specifies many default configurations for topics that are created. Several of these parameters, including partition counts and message retention, can be set per-topic using the administrative tools (covered in Chapter 9). The defaults in the server configuration should be set to baseline values that are appropriate for the majority of the topics in the cluster.</p>
+<blockquote>
+<p>In previous versions of Kafka, it was possible to specify per-topic overrides for these configurations in the broker configuration using parameters named log.reten tion.hours.per.topic, log.retention.bytes.per.topic, and log.seg ment.bytes.per.topic. These parameters are no longer supported, and overrides must be specified using the administrative tools.</p>
+</blockquote>
+<h1 id="多集群"><a href="#多集群" class="headerlink" title="多集群"></a>多集群</h1><ul>
 <li>分离不同类型的数据</li>
 <li>分离不同的安全策略</li>
 <li>多个数据中心（灾难恢复)</li>
@@ -215,25 +404,25 @@
 <li><p>手动提交。 auto.commit.offset = false，手动提交可以尽可能的避免丢失消息，或者在再平衡过程之后重复消费消息。</p>
 <ul>
 <li>最简单的事 commitSync()方法，它会提交最新的上一次poll操作返回的offset，提交成功则返回，失败则抛出异常。</li>
-<li><p>切记调用commitSync()之前，处理完poll回来的所有消息。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">while</span> (<span class="keyword">true</span>) &#123;        ConsumerRecords&lt;String, String&gt; records = consumer.poll(<span class="number">100</span>);        <span class="keyword">for</span> (ConsumerRecord&lt;String, String&gt; record : records)        &#123;            System.out.println(<span class="string">"topic = %s, partition = %s, offset = %d, customer =    %s, country = %s\n"</span>,                                record.topic(), record.partition(), record.off-    set(), record.key(), record.value());&#125; <span class="keyword">try</span> &#123;          consumer.commitSync();        &#125; <span class="keyword">catch</span> (CommitFailedException e) &#123;            log.error(<span class="string">"commit failed"</span>, e)        &#125;&#125;</div></pre></td></tr></table></figure>
-</li>
+<li>切记调用commitSync()之前，处理完poll回来的所有消息。</li>
 </ul>
-</li>
-<li><p>异步提交，同样的我们可以异步的提交offset通过调用commitAsync(),这样提交操作就不会阻塞在等待broker响应提交的请求上，增加了系统的吞吐量。</p>
-<ul>
-<li><p>异步的提交会重试提交，当发生提交错误的时候直至成功。除非碰到那种不可修复的错误。之所以停止重试，是因为commitAsync()收到回复的时候也许之后的commit成功了，想象一下，如果发送提交offset=2000，由于暂时的原因失败了，这个时候我们处理另外的请求offset=3000，如果提交2000请求发生在提交3000请求之后，就会导致更多的消息重读。 因此保证异步提交offset的顺序非常重要。通常情况下对于commitAsync方法我们可以传入回调接口去打印失败的日志。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">while</span> (<span class="keyword">true</span>) &#123;        ConsumerRecords&lt;String, String&gt; records = consumer.poll(<span class="number">100</span>);        <span class="keyword">for</span> (ConsumerRecord&lt;String, String&gt; record : records) &#123;            System.out.println(<span class="string">"topic = %s, partition = %s, offset = %d, customer =    %s, country = %s\n"</span>,                                record.topic(), record.partition(), record.off-    set(), record.key(), record.value());        &#125;        consumer.commitAsync(<span class="keyword">new</span> OffsetCommitCallback() &#123;            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onComplete</span><span class="params">(Map&lt;TopicPartition, OffsetAndMetadata&gt; offsets,    Exception exception)</span> </span>&#123;                <span class="keyword">if</span> (e != <span class="keyword">null</span>)                    log.error(<span class="string">"Commit failed for offsets &#123;&#125;"</span>, offsets, e);&#125; &#125;);&#125;</div></pre></td></tr></table></figure>
-</li>
-<li><p>我们应该在最后consumer close方法之前调用 commitSync方法保证commit真正的成功。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"> <span class="keyword">try</span> &#123;        <span class="keyword">while</span> (<span class="keyword">true</span>) &#123;            ConsumerRecords&lt;String, String&gt; records = consumer.poll(<span class="number">100</span>);            <span class="keyword">for</span> (ConsumerRecord&lt;String, String&gt; record : records) &#123;                System.out.println(<span class="string">"topic = %s, partition = %s, offset = %d, cus-    tomer = %s, country = %s\n"</span>,                                  record.topic(), record.partition(), record.off-    set(), record.key(), record.value());&#125;            consumer.commitAsync();        &#125;    &#125; <span class="keyword">catch</span> (Exception e) &#123;        log.error(<span class="string">"Unexpected error"</span>, e);    &#125; <span class="keyword">finally</span> &#123;        <span class="keyword">try</span> &#123;            consumer.commitSync();        &#125; <span class="keyword">finally</span> &#123;            consumer.close();        &#125;&#125;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>提交指定的offset，如果poll返回了特别大的消息，并且你象提交offset在处理消息的过程中，去避免由于处理失败导致处理过的消息的重读。你可以提交指定分区的offset。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">private</span> Map&lt;TopicPartition, OffsetAndMetadata&gt; currentOffsets;    <span class="keyword">int</span> count = <span class="number">0</span>;....    <span class="keyword">while</span> (<span class="keyword">true</span>) &#123;        ConsumerRecords&lt;String, String&gt; records = consumer.poll(<span class="number">100</span>);        <span class="keyword">for</span> (ConsumerRecord&lt;String, String&gt; record : records)        &#123;            System.out.println(<span class="string">"topic = %s, partition = %s, offset = %d, customer =    %s, country = %s\n"</span>,                                record.topic(), record.partition(), record.off-    set(), record.key(), record.value());            currentOffsets.put(<span class="keyword">new</span> TopicPartition(record.topic(), record.parti-    tion()),                               record.offset());            <span class="keyword">if</span> (count % <span class="number">1000</span> == <span class="number">0</span>)                consumer.commitAsync(currentOffsets);            count++;&#125; </div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 </ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">while (true) &#123;        ConsumerRecords&lt;String, String&gt; records = consumer.poll(100);        for (ConsumerRecord&lt;String, String&gt; record : records)        &#123;            System.out.println(&quot;topic = %s, partition = %s, offset = %d, customer =    %s, country = %s\n&quot;,                                record.topic(), record.partition(), record.off-    set(), record.key(), record.value());&#125; try &#123;          consumer.commitSync();        &#125; catch (CommitFailedException e) &#123;            log.error(&quot;commit failed&quot;, e)        &#125;&#125;</div></pre></td></tr></table></figure>
+<ol>
+<li><p>异步提交，同样的我们可以异步的提交offset通过调用commitAsync(),这样提交操作就不会阻塞在等待broker响应提交的请求上，增加了系统的吞吐量。</p>
+<ul>
+<li>异步的提交会重试提交，当发生提交错误的时候直至成功。除非碰到那种不可修复的错误。之所以停止重试，是因为commitAsync()收到回复的时候也许之后的commit成功了，想象一下，如果发送提交offset=2000，由于暂时的原因失败了，这个时候我们处理另外的请求offset=3000，如果提交2000请求发生在提交3000请求之后，就会导致更多的消息重读。 因此保证异步提交offset的顺序非常重要。通常情况下对于commitAsync方法我们可以传入回调接口去打印失败的日志。</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">while (true) &#123;        ConsumerRecords&lt;String, String&gt; records = consumer.poll(100);        for (ConsumerRecord&lt;String, String&gt; record : records) &#123;            System.out.println(&quot;topic = %s, partition = %s, offset = %d, customer =    %s, country = %s\n&quot;,                                record.topic(), record.partition(), record.off-    set(), record.key(), record.value());        &#125;        consumer.commitAsync(new OffsetCommitCallback() &#123;            public void onComplete(Map&lt;TopicPartition, OffsetAndMetadata&gt; offsets,    Exception exception) &#123;                if (e != null)                    log.error(&quot;Commit failed for offsets &#123;&#125;&quot;, offsets, e);&#125; &#125;);&#125;</div></pre></td></tr></table></figure>
+<pre><code>* 我们应该在最后consumer close方法之前调用 commitSync方法保证commit真正的成功。
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"> try &#123;        while (true) &#123;            ConsumerRecords&lt;String, String&gt; records = consumer.poll(100);            for (ConsumerRecord&lt;String, String&gt; record : records) &#123;                System.out.println(&quot;topic = %s, partition = %s, offset = %d, cus-    tomer = %s, country = %s\n&quot;,                                  record.topic(), record.partition(), record.off-    set(), record.key(), record.value());&#125;            consumer.commitAsync();        &#125;    &#125; catch (Exception e) &#123;        log.error(&quot;Unexpected error&quot;, e);    &#125; finally &#123;        try &#123;            consumer.commitSync();        &#125; finally &#123;            consumer.close();        &#125;&#125;</div></pre></td></tr></table></figure>
+<ol>
+<li>提交指定的offset，如果poll返回了特别大的消息，并且你象提交offset在处理消息的过程中，去避免由于处理失败导致处理过的消息的重读。你可以提交指定分区的offset。</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">private</span> Map&lt;TopicPartition, OffsetAndMetadata&gt; currentOffsets;    <span class="keyword">int</span> count = <span class="number">0</span>;....    <span class="keyword">while</span> (<span class="keyword">true</span>) &#123;        ConsumerRecords&lt;String, String&gt; records = consumer.poll(<span class="number">100</span>);        <span class="keyword">for</span> (ConsumerRecord&lt;String, String&gt; record : records)        &#123;            System.out.println(<span class="string">"topic = %s, partition = %s, offset = %d, customer =    %s, country = %s\n"</span>,                                record.topic(), record.partition(), record.off-    set(), record.key(), record.value());            currentOffsets.put(<span class="keyword">new</span> TopicPartition(record.topic(), record.parti-    tion()),                               record.offset());            <span class="keyword">if</span> (count % <span class="number">1000</span> == <span class="number">0</span>)                consumer.commitAsync(currentOffsets);            count++;&#125; </div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <hr>
 <ul>
 <li>提高消费横向扩展的主要方式就是在consumer group 中增加consumer，直至等于该topic<br>partitions的个数。这样的话consumer就可以干一些i/o，费时间的计算等工作。 这也是为什么topic要配置多个partitions的原因，就是为了消费的横向扩展。</li>
@@ -267,11 +456,7 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;多集群&quot;&gt;&lt;a href=&quot;#多集群&quot; class=&quot;headerlink&quot; title=&quot;多集群&quot;&gt;&lt;/a&gt;多集群&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;分离不同类型的数据&lt;/li&gt;
-&lt;li&gt;分离不同的安全策略&lt;/li&gt;
-&lt;li&gt;多个数据中心（灾难恢复)&lt;/li&gt;
-&lt;/ul
+      &lt;p&gt;Apache Kafka is a publish/subscribe messaging system designed to solve this prob‐ lem. It is often described as a “distributed commit log
     
     </summary>
     
@@ -855,163 +1040,6 @@ morphism: 形态
     
     
       <category term="haskell" scheme="http://yoursite.com/tags/haskell/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>面向函数vs面向对象</title>
-    <link href="http://yoursite.com/2017/05/21/%E9%9D%A2%E5%90%91%E5%87%BD%E6%95%B0vs%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"/>
-    <id>http://yoursite.com/2017/05/21/面向函数vs面向对象/</id>
-    <published>2017-05-21T04:18:28.000Z</published>
-    <updated>2017-05-21T08:55:06.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="顺应语言的潮流"><a href="#顺应语言的潮流" class="headerlink" title="顺应语言的潮流"></a>顺应语言的潮流</h1><p>如果你回望主流语言发展的方向，你会发现现在越来越多的语言开始转向（支持） 函数作为一等公民.</p>
-<ol>
-<li>Groovy 很早就开始支持函数编程范式。</li>
-<li>JavaScript 早就有非常多的函数特性。</li>
-<li>C++ 也在2011年标准支持lambda blocks。</li>
-<li>Java社区早在java8支持lambad表达式之前就有很多开源的library支持FP, 比如 functionaljava, javaslang 等等.</li>
-<li>google I/O 2017 宣布的 kotlin 作为Android的第一开发语言同样也支持 functional</li>
-<li>更不用说 Scala, Clojure…</li>
-<li>Java8 终于开始支持lambad表达式, 拥抱fp.</li>
-</ol>
-<h1 id="为什么主流语言开始拥抱FP"><a href="#为什么主流语言开始拥抱FP" class="headerlink" title="为什么主流语言开始拥抱FP"></a>为什么主流语言开始拥抱FP</h1><h2 id="Java对程序员的解放"><a href="#Java对程序员的解放" class="headerlink" title="Java对程序员的解放"></a>Java对程序员的解放</h2><ul>
-<li>JVM(compile once,ran everywhere).</li>
-<li>GC(内存管理自动化，更加专注于高层的抽象，或着说更多的时间在解决切实的业务问题)</li>
-</ul>
-<h2 id="随着语言的发展（硬件的发展）"><a href="#随着语言的发展（硬件的发展）" class="headerlink" title="随着语言的发展（硬件的发展）"></a>随着语言的发展（硬件的发展）</h2><ul>
-<li>程序员希望虚拟机或者框架帮助我们完成那些乏味的冗长的任务，比如 Spring 动态绑定, JVM gc 从而让我们有更多的时间关注在更重要的业务上。</li>
-<li>FP帮助我们更上一层的抽象，剥离底层的繁琐，从而更加专注于业务。</li>
-<li>想象一下OOP里面的概念,state, encapsulation, scoping, visibility… 允许你能够修改状态, 特别是当你运用多线程编程的时候, 你大部分的时间是在对状态进行交互，保证线程之间同步状态(lock, synchronized), 比起这些，FP 移除了可变状态，所以在多线程的时候就不存在lock的问题。</li>
-<li>OOP 通过封装class，并通过对象方法交互，鼓励创建class和相应的方法，但是封装这些方法在相应的class里面非常不利于代码的重用(don’t repeat yourself)，相反FP建议通过少量的数据结构(list, set, map…） 但是对这些数据结构做了大量的优化，并且附加了大量的通用方法(filter, map, foreach, reduce, flatMap, fold, foldLeft, traverse, sequence, join, zip, take, find…)，程序员通过这些简单的数据结构加上高阶函数来达到同样的目的。比如 通过提炼 filter方法实现通用:<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">// 分词</div><div class="line">regexToList(words, &quot;\\b\\w+\\b&quot;).stream().</div><div class="line">					filter(w -&gt; !NON_WORDS.contains(w))</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>比如非常流行的java框架 Apache Commons, 里面的 indexOfAny() 方法，这个方法接受一个String和array返回第一个array在String里面第一个包含char的位置：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">	// From Apache Commons Lang, http://commons.apache.org/lang/  </div><div class="line">	public static int indexOfAny(String str, char[] searchChars) &#123;</div><div class="line">        if (isEmpty(str) || ArrayUtils.isEmpty(searchChars)) &#123;  // 1 Safety checks</div><div class="line">        		return INDEX_NOT_FOUND; </div><div class="line">        &#125;</div><div class="line">        int csLen = str.length();                              // 2 Initialization</div><div class="line">        int csLast = csLen - 1;</div><div class="line">        int searchLen = searchChars.length; </div><div class="line">        int searchLast = searchLen - 1; </div><div class="line">        for(inti=0; i&lt;csLen; i++)&#123;                              // 3 Outer iteration</div><div class="line">            char ch = str.charAt(i);</div><div class="line">            for (int j = 0; j &lt; searchLen; j++) &#123;</div><div class="line">                if (searchChars[j] == ch) &#123;                     // 4 Inner iteration</div><div class="line">                    if (i &lt; csLast &amp;&amp; j &lt; searchLast &amp;&amp; CharUtils.isHighSurrogate(ch)) &#123;  // 5 Decisions, decisions, decisions</div><div class="line">                        if (searchChars[j + 1] == str.charAt(i + 1)) &#123; </div><div class="line">                        		return i;</div><div class="line">                        &#125; </div><div class="line">                     &#125; else &#123;</div><div class="line">                       	 	return i; </div><div class="line">                     &#125;</div><div class="line">                &#125; </div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        return INDEX_NOT_FOUND;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">// usage:     </div><div class="line">StringUtils.indexOfAny(&quot;zzabyycdxx&quot;,[&apos;z&apos;,&apos;a&apos;]) == 0StringUtils.indexOfAny(&quot;zzabyycdxx&quot;,[&apos;b&apos;,&apos;y&apos;]) == 3StringUtils.indexOfAny(&quot;aba&quot;, [&apos;z&apos;])           == -1</div></pre></td></tr></table></figure></p>
-<p>这个方法的过程描述起来就是：对于每一个要查找的字符searchChars,找到出现在被查找的字符串的位置，找到则返回，找不到换下一个字符继续重头遍历String. 用Scala for 语法糖重写起来就是：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">def firstIndexOfAny(input : String, searchChars : Seq[Char]) : Option[Int] = &#123; </div><div class="line">	def indexedInput = (0 until input.length).zip(input) 	// [&apos;a&apos;,&apos;b&apos;] -&gt; [(0, &apos;a&apos;),(1, &apos;b&apos;)]	val result = 	for ( pair &lt;- indexedInput;					char &lt;- searchChars;					if (char == pair._2)</div><div class="line">					)  yield (pair._1) </div><div class="line">	if (result.isEmpty)		None	else		Some(result.head) </div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>同样的我们用 java8+functionaljava 实现一次, pretty Simple! ha!<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">public static int indexOfAny1(String str, List&lt;Character&gt; searchChars) &#123;</div><div class="line">    List&lt;P2&lt;Character, Integer&gt;&gt; listOfIndex = fj.data.List.fromString(str).zipIndex();</div><div class="line"></div><div class="line">    List&lt;Integer&gt; res = searchChars.map(chr -&gt;</div><div class="line">            fj.data.List.lookup(Equal.charEqual, listOfIndex, chr).orSome(0)</div><div class="line">    );</div><div class="line"></div><div class="line">    System.out.println(res);  //	List(4,8)</div><div class="line"></div><div class="line">    return res.head();</div><div class="line">&#125;</div><div class="line"></div><div class="line">System.out.println(indexOfAny1(&quot;0123a567b&quot;, List.list(&apos;a&apos;,&apos;b&apos;)));</div></pre></td></tr></table></figure></p>
-<p><tr></tr></p>
-<tr>
-
-<h1 id="拥抱FP"><a href="#拥抱FP" class="headerlink" title="拥抱FP"></a>拥抱FP</h1><p>学习新语言很容易，基本上只要了解新语法就可以了，把之前语言写的代码用新语法重新写一遍就可以了。但是学习新的编程范式不太容易，you have to change the way you think.当GC成为主流，它所带来的好处就是消除了困扰c/c++程序员经常颤抖的内存泄漏，内存管理等底层问题，它帮助我们在运行的时候动态的管理内存的分配和回收，让我们更加专注于业务的理解和实现。 同样的FP所带来的好处是，它致力于分解抽离底层算法和业务逻辑，让你有更多的时间去完成真正老板想要看到的东西，让程序员可以享受这种高抽象(低复杂度)和高性能的方法所带来效率上的提升。</p>
-<hr>
-<ol>
-<li>OOP 封装可变(状态)在class里面（方法不可重用）</li>
-<li>FP 尽可能的减少可变状态，组合已有的高阶抽象方法</li>
-<li>OOP 抽象数据，</li>
-<li>FP 抽象行为。</li>
-</ol>
-<hr>
-<ol>
-<li>OOP 也符合 Imperative programming(命令式编程)的风格，也就是你的代码基本上就是命令式的一行接着一行的按照你写代码的顺序执行，跳转，循环 去改变变量的状态值最后得到返回的结果</li>
-<li>FP 是描述程序的逻辑，用transformation, modeling matematical formulas, 尽量减少对属性(参数)的修改来达到相同的目的.</li>
-</ol>
-<p>比如给你一个list of String要求你遍历list 1. 去掉那些长度为1的string 2. 长度大于1的第一个字母大写 返回一个字符串中间用逗号分隔每一个 list中的每一个string。<br>Imperative programming style:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">public class TheCompanyProcess &#123;	public String cleanNames(List&lt;String&gt; listOfNames) &#123;		StringBuilder result = new StringBuilder(); </div><div class="line">			for(int i = 0; i &lt; listOfNames.size(); i++) &#123;					if (listOfNames.get(i).length() &gt; 1)&#123; </div><div class="line">						result.append(capitalizeString(listOfNames.get(i))).append(&quot;,&quot;);</div><div class="line">					&#125; </div><div class="line">			&#125;		return result.substring(0, result.length() - 1).toString(); </div><div class="line">	&#125;	public String capitalizeString(String s) &#123;		return s.substring(0, 1).toUpperCase() + s.substring(1, s.length());	&#125; </div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>fp style:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">// 伪代码</div><div class="line">listOfEmps    -&gt; filter(x.length &gt; 1)    -&gt; transform(x.capitalize)    -&gt; convert(x + &quot;,&quot; + y)</div></pre></td></tr></table></figure>
-<p>那么更高层次的抽象这些所带来的好处是什么?</p>
-<ol>
-<li>它鼓励从不同的角度思考问题，看到不同问题的共同点，然后提炼出相同的东西（细粒度的方法）以达到重用。</li>
-<li>对于共用的方法可以提供更高的优化从而共享效率带来的提升。</li>
-<li>它允许有些解决方案变的很容易, 比如多线程运行，在imperative program里面你必须自己实现，因为你自己控制了底层的循环(for loop), 而在java8中实现知识一行代码的改动<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">listOfEmps</div><div class="line">	.parallelStream() // 并发实现 </div><div class="line">	.filter(...)</div><div class="line">	.transform(...)</div><div class="line">	.convert(...)</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<hr>
-<p>FYI:</p>
-<p><a href="https://www.ibm.com/developerworks/cn/java/j-ft6/" target="_blank" rel="external">函数式思维: 耦合和组合，第 2 部分</a></p>
-</tr>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;顺应语言的潮流&quot;&gt;&lt;a href=&quot;#顺应语言的潮流&quot; class=&quot;headerlink&quot; title=&quot;顺应语言的潮流&quot;&gt;&lt;/a&gt;顺应语言的潮流&lt;/h1&gt;&lt;p&gt;如果你回望主流语言发展的方向，你会发现现在越来越多的语言开始转向（支持） 函数作为一等公民.&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="FP, OOP" scheme="http://yoursite.com/tags/FP-OOP/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Ractive programming</title>
-    <link href="http://yoursite.com/2017/05/21/RactiveAPI/"/>
-    <id>http://yoursite.com/2017/05/21/RactiveAPI/</id>
-    <published>2017-05-21T04:18:28.000Z</published>
-    <updated>2017-05-21T08:55:42.000Z</updated>
-    
-    <content type="html"><![CDATA[<ol>
-<li><p>RxJava支持很多java 8 Stream类似的相同高层次操作比如map和filter，区别是RxJava是异步的。</p>
-</li>
-<li><p>Reactive programming is programming with asynchronous data streams.</p>
-</li>
-<li>You are able to create data streams of anything, not just from click and hover events. Streams are cheap and ubiquitous, anything can be a stream: variables, user inputs, properties, caches, data structures, etc。</li>
-<li>A stream is a sequence of ongoing events ordered in time。</li>
-<li>Reactive Programming raises the level of abstraction of your code so you can focus on the interdependence of events that define the business logic, rather than having to constantly fiddle with a large amount of implementation details</li>
-</ol>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;RxJava支持很多java 8 Stream类似的相同高层次操作比如map和filter，区别是RxJava是异步的。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Reactive programming is programming with asynchron
-    
-    </summary>
-    
-    
-      <category term="FP, reactive" scheme="http://yoursite.com/tags/FP-reactive/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>你好</title>
-    <link href="http://yoursite.com/2017/03/05/Start/"/>
-    <id>http://yoursite.com/2017/03/05/Start/</id>
-    <published>2017-03-05T08:48:07.000Z</published>
-    <updated>2017-07-23T15:47:36.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>你好， 世界！</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;你好， 世界！&lt;/p&gt;
-
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>JavaScript</title>
-    <link href="http://yoursite.com/2017/03/05/JavaScript/"/>
-    <id>http://yoursite.com/2017/03/05/JavaScript/</id>
-    <published>2017-03-04T16:00:00.000Z</published>
-    <updated>2017-08-14T08:51:58.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h1><blockquote>
-<p>闭包是可访问上一层函数作用域里变量的函数，即便上一层函数已经关闭。</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">var add = (function () &#123;</div><div class="line">    var counter = 0;</div><div class="line">    return function () &#123;return counter += 1;&#125;</div><div class="line">&#125;)();</div><div class="line"></div><div class="line">add();</div><div class="line">add();</div><div class="line">add();</div><div class="line"></div><div class="line">// 计数器为 3</div></pre></td></tr></table></figure>
-<h2 id="实例解析"><a href="#实例解析" class="headerlink" title="实例解析:"></a>实例解析:</h2><p>变量 add 指定了函数自我调用的返回字值。<br><br>自我调用函数只执行一次。设置计数器为 0。并返回函数表达式。<br><br>add变量可以作为一个函数使用。非常棒的部分是它可以访问函数上一层作用域的计数器。<br><br>这个叫作 JavaScript 闭包。它使得函数拥有私有变量变成可能。<br><br>计数器受匿名函数的作用域保护，只能通过 add 方法修改。<br></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;闭包&quot;&gt;&lt;a href=&quot;#闭包&quot; class=&quot;headerlink&quot; title=&quot;闭包&quot;&gt;&lt;/a&gt;闭包&lt;/h1&gt;&lt;blockquote&gt;
-&lt;p&gt;闭包是可访问上一层函数作用域里变量的函数，即便上一层函数已经关闭。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;figu
-    
-    </summary>
-    
-      <category term="language" scheme="http://yoursite.com/categories/language/"/>
-    
-    
-      <category term="js" scheme="http://yoursite.com/tags/js/"/>
     
   </entry>
   

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  
+  <title>10 Tips for Writing Better Code | Jason&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="好的代码应该是简洁易读，容易理解，容易debug 和修改，最重要的是bug少，虽然写代码的时候比较费一点时间，但是这是相当值得的，因为你会花更少的时间去维护，并且你的代码可重用性是相当强。
+实际上我们可以认为好的代码是 可重用的，代码可能只是你段时间内完成工作任务或者特定功能的目标，但是没有人去重用它（包括你自己），一定是你写的代码有什么问题，比如说太复杂了，太局部于某一方面，及其有可能在某些情况">
+<meta property="og:type" content="article">
+<meta property="og:title" content="10 Tips for Writing Better Code">
+<meta property="og:url" content="http://yoursite.com/2017/08/25/10-Tips-for-Writing-Better-Code/index.html">
+<meta property="og:site_name" content="Jason's Blog">
+<meta property="og:description" content="好的代码应该是简洁易读，容易理解，容易debug 和修改，最重要的是bug少，虽然写代码的时候比较费一点时间，但是这是相当值得的，因为你会花更少的时间去维护，并且你的代码可重用性是相当强。
+实际上我们可以认为好的代码是 可重用的，代码可能只是你段时间内完成工作任务或者特定功能的目标，但是没有人去重用它（包括你自己），一定是你写的代码有什么问题，比如说太复杂了，太局部于某一方面，及其有可能在某些情况">
+<meta property="og:updated_time" content="2017-08-25T13:02:24.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="10 Tips for Writing Better Code">
+<meta name="twitter:description" content="好的代码应该是简洁易读，容易理解，容易debug 和修改，最重要的是bug少，虽然写代码的时候比较费一点时间，但是这是相当值得的，因为你会花更少的时间去维护，并且你的代码可重用性是相当强。
+实际上我们可以认为好的代码是 可重用的，代码可能只是你段时间内完成工作任务或者特定功能的目标，但是没有人去重用它（包括你自己），一定是你写的代码有什么问题，比如说太复杂了，太局部于某一方面，及其有可能在某些情况">
+  
+    <link rel="alternate" href="/atom.xml" title="Jason&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/logo.png">
+  
+  <link rel="stylesheet" href="/css/typing.css">
+</head>
+
+  
+    
+      <body>
+    
+  
+      <div id="container" class="container">
+        <article id="post-10-Tips-for-Writing-Better-Code" class="article article-type-post" itemscope itemprop="blogPost">
+  <header id="header" class="header">
+  <nav id="main-nav" class="main-nav">
+    
+      <a class="main-nav-link" href="/">Home</a>
+    
+      <a class="main-nav-link" href="/archives">Archives</a>
+    
+      <a class="main-nav-link" href="/about.html">About</a>
+    
+  </nav>
+  <nav id="sub-nav">
+    
+      <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+    
+  </nav>
+</header>
+
+  <hr/>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      10 Tips for Writing Better Code
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry typo" itemprop="articleBody">
+      
+        <p>好的代码应该是简洁易读，容易理解，容易debug 和修改，最重要的是bug少，虽然写代码的时候比较费一点时间，但是这是相当值得的，因为你会花更少的时间去维护，并且你的代码可重用性是相当强。</p>
+<p>实际上我们可以认为好的代码是 可重用的，代码可能只是你段时间内完成工作任务或者特定功能的目标，但是没有人去重用它（包括你自己），一定是你写的代码有什么问题，比如说太复杂了，太局部于某一方面，及其有可能在某些情况下宕掉，或者别人根本不信任你的代码。</p>
+<p>我认为如果持之以恒的坚守如下的代码规范，能让的代码看上去越来越优雅。</p>
+<ol>
+<li><p>遵守单一职责<br><strong>函数</strong> 是最重要的程序员利器，越是可以重用，你可以写越少的代码，并且越高的稳定性。小而简的函数很易于遵循单一职责。</p>
+</li>
+<li><p>尽可能少用公共变量<br>你应该尽可能少的在函数之间共享变量，不管是对象内函数调用对象的成员变量还是全局变量，尽可能的通过参数传递变量，这样的话，代码会变得非常容易的理解和重用。</p>
+</li>
+<li><p>缩小副作用的区域范围<br>理想情况下，副作用（打印到终端，改变外部变量状态，io操作等等）应该放在单独的模块下，不应该分散在项目当中，并且，函数中的副作用通常是违反单一职责原则。</p>
+</li>
+<li><p>偏向于不可变的对象／变量<br>如果对象的状态只有在初始化的时候设置一次，之后就不可能再被更改，那么这就会让debug变的非常容易，因为如果初始状态没有问题，中间没有可能被别的程序修改，你的思维就不会交织在一起，就像多线程编程容易出错但又难于重现的原因，同时这样也会大大的降低程序的复杂度。</p>
+</li>
+<li><p>接口优于类<br>接口作为参数，将提高函数的重用性，因为你可以对接口实现类进行更改的同时，保证依赖接口的函数不做更改。</p>
+</li>
+<li><p>模块化<br>如果可能，应该把一个大的项目分割成小的独立的模块，这样能保证模块的重用。<br>减少模块间的依赖关系</p>
+<ul>
+<li>每个模块应该有单一的定义良好的职责。</li>
+<li>不要重复你自己。</li>
+<li>你应该努力尽可能的保证你的项目<strong>小</strong>而<strong>定义良好</strong></li>
+</ul>
+</li>
+<li><p>尽量避免继承</p>
+</li>
+<li><p>设计和开的同时不要忘了测试<br>我并不是测试驱动开发的推崇者，但是单元测试可以让你的代码更自然的遵循一些参考，同时也及早的帮你发现很多错误，避免写一些无意义的测试，好的编程以为着更高层级的测试，集成测试或者功能测试，这些都非常有利于发现bug。</p>
+</li>
+<li><p>尽量用标准的类库而不是自己造一个<br>我曾见过非常多的比标准库更好的std::vector 或者 std::string, 但是这样总是会浪费你的时间和精力，除了你及其有可能引入新的bug，其它的开发者也基本上不会用你的代码版本。</p>
+</li>
+<li><p>避免写新的代码<br>最好的编程是不写代码，你写越多的代码，你就写越多的bug，并且越来越难以发现。 在开始写代码之前问一下你自己，有没有别的什么工具可以实现这个功能？你真的需要自己写一个这样的功能而不是用一个经过良好测试的已经存在的代码？</p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <ul class="article-meta">
+        <li>
+          <span class="label">Published Date:</span>
+          <a href="/2017/08/25/10-Tips-for-Writing-Better-Code/" class="article-date">
+  <time datetime="2017-08-25T11:42:24.000Z" itemprop="datePublished">2017-08-25</time>
+</a>
+
+        </li>
+        
+        
+        <hr/>
+      </ul>
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav" class="article-nav">
+  
+    <a href="/2017/08/28/framework/" id="article-nav-newer" class="article-nav-link-wrap newer">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          framework
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/08/24/spark基础/" id="article-nav-older" class="article-nav-link-wrap older">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">spark基础</div>
+    </a>
+  
+</nav>
+
+
+  
+</article>
+
+
+
+
+      </div>
+      
+    <footer id="footer" class="post-footer footer">
+      <hr/>
+      <div id="footerContent" class="footer-content">
+        <p>kilimanjaro</p>
+
+
+      </div>
+    </footer>
+
+      
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/typing.js"></script>
+<!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+
+
+
+
+
+
+
+    </div>
+  </body>
+</html>

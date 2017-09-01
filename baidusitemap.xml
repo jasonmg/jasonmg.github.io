@@ -4,8 +4,68 @@
 
     
   <url>
+    <loc>http://yoursite.com/2017/09/01/license/</loc>
+    <lastmod>2017-09-01T15:53:46.000Z</lastmod>
+    <data>
+        <display>
+        <title>license</title>
+        <pubTime>2017-09-01T13:42:15.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2017/09/01/hadoop/</loc>
+    <lastmod>2017-09-01T15:52:37.000Z</lastmod>
+    <data>
+        <display>
+        <title>hadoop</title>
+        <pubTime>2017-09-01T08:42:54.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2017/08/28/framework/</loc>
+    <lastmod>2017-09-01T15:51:04.000Z</lastmod>
+    <data>
+        <display>
+        <title>framework</title>
+        <pubTime>2017-08-28T06:16:11.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2017/08/24/spark%E5%9F%BA%E7%A1%80/</loc>
+    <lastmod>2017-09-01T07:30:07.000Z</lastmod>
+    <data>
+        <display>
+        <title>spark基础</title>
+        <pubTime>2017-08-24T06:43:38.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2017/08/16/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</loc>
-    <lastmod>2017-08-17T13:20:32.000Z</lastmod>
+    <lastmod>2017-09-01T07:28:01.000Z</lastmod>
     <data>
         <display>
         <title>linux常用命令</title>
@@ -16,6 +76,36 @@
              
               <breadCrumb title="linux" url="http://yoursite.com/categories/linux/"/>
           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2017/07/30/kafka/</loc>
+    <lastmod>2017-08-30T12:41:46.000Z</lastmod>
+    <data>
+        <display>
+        <title>kafka</title>
+        <pubTime>2017-07-29T16:26:53.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2017/08/25/10-Tips-for-Writing-Better-Code/</loc>
+    <lastmod>2017-08-25T13:02:24.000Z</lastmod>
+    <data>
+        <display>
+        <title>10 Tips for Writing Better Code</title>
+        <pubTime>2017-08-25T11:42:24.000Z</pubTime>
+        
+         
+           
         </display>
     </data>
     </url>
@@ -95,21 +185,6 @@
         <display>
         <title>代码风格要素</title>
         <pubTime>2017-08-13T09:26:29.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2017/07/30/kafka/</loc>
-    <lastmod>2017-07-30T13:39:01.000Z</lastmod>
-    <data>
-        <display>
-        <title>kafka</title>
-        <pubTime>2017-07-29T16:26:53.000Z</pubTime>
         
          
            
@@ -229,21 +304,6 @@
         
         <tag>haskell</tag>
          
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2017/03/05/Start/</loc>
-    <lastmod>2017-07-23T15:47:36.000Z</lastmod>
-    <data>
-        <display>
-        <title>你好</title>
-        <pubTime>2017-03-05T08:48:07.000Z</pubTime>
-        
          
            
         </display>
