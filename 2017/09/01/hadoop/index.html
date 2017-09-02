@@ -5,16 +5,35 @@
   
   <title>hadoop | Jason&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="hadoop Yarn">
+  <meta name="description" content="hadoop 1.x
+
+JobTracker接收Job请求
+JobTracker根据Job的输入参数向NameNode请求包含这些文件数据块的DataNode节点列表
+JobTracker确定Job的执行计划：确定执行此job的Map、Reduce的task数量，并且分配这些task到离数据块最近的节点上
+JobTracker提交所有task到每个TaskTracker节点。TaskTracker">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hadoop">
 <meta property="og:url" content="http://yoursite.com/2017/09/01/hadoop/index.html">
 <meta property="og:site_name" content="Jason's Blog">
-<meta property="og:description" content="hadoop Yarn">
-<meta property="og:updated_time" content="2017-09-01T15:52:37.000Z">
+<meta property="og:description" content="hadoop 1.x
+
+JobTracker接收Job请求
+JobTracker根据Job的输入参数向NameNode请求包含这些文件数据块的DataNode节点列表
+JobTracker确定Job的执行计划：确定执行此job的Map、Reduce的task数量，并且分配这些task到离数据块最近的节点上
+JobTracker提交所有task到每个TaskTracker节点。TaskTracker">
+<meta property="og:image" content="http://yoursite.com/2017/09/01/hadoop/hadoop_0.png">
+<meta property="og:image" content="http://yoursite.com/2017/09/01/hadoop/yarn.png">
+<meta property="og:image" content="http://yoursite.com/2017/09/01/hadoop/yarn1.png">
+<meta property="og:updated_time" content="2017-09-02T10:05:02.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hadoop">
-<meta name="twitter:description" content="hadoop Yarn">
+<meta name="twitter:description" content="hadoop 1.x
+
+JobTracker接收Job请求
+JobTracker根据Job的输入参数向NameNode请求包含这些文件数据块的DataNode节点列表
+JobTracker确定Job的执行计划：确定执行此job的Map、Reduce的task数量，并且分配这些task到离数据块最近的节点上
+JobTracker提交所有task到每个TaskTracker节点。TaskTracker">
+<meta name="twitter:image" content="http://yoursite.com/2017/09/01/hadoop/hadoop_0.png">
   
     <link rel="alternate" href="/atom.xml" title="Jason&#39;s Blog" type="application/atom+xml">
   
@@ -64,7 +83,34 @@
     
     <div class="article-entry typo" itemprop="articleBody">
       
-        <h1 id="hadoop-Yarn"><a href="#hadoop-Yarn" class="headerlink" title="hadoop Yarn"></a><a href="https://www.ibm.com/developerworks/cn/opensource/os-cn-hadoop-yarn/" target="_blank" rel="external">hadoop Yarn</a></h1>
+        <h1 id="hadoop-1-x"><a href="#hadoop-1-x" class="headerlink" title="hadoop 1.x"></a>hadoop 1.x</h1><p><img src="/2017/09/01/hadoop/hadoop_0.png" alt="hadoop_v0.1"></p>
+<ol>
+<li>JobTracker接收Job请求</li>
+<li>JobTracker根据Job的输入参数向NameNode请求包含这些文件数据块的DataNode节点列表</li>
+<li>JobTracker确定Job的执行计划：确定执行此job的Map、Reduce的task数量，并且分配这些task到离数据块最近的节点上</li>
+<li>JobTracker提交所有task到每个TaskTracker节点。TaskTracker会定时的向JobTracker发送心跳，若一定时间内没有收到心跳，JobTracker就认为这个TaskTracker节点失败，然后JobTracker就会把此节点上的task重新分配到其它节点上</li>
+<li>一旦所有的task执行完成，JobTracker会更新job状态为完成，若一定数量的task总数执行失败，这个job就会被标记为失败</li>
+<li>JobTracker发送job运行状态信息给Client端</li>
+</ol>
+<p><a href="http://blog.csdn.net/suifeng3051/article/details/22416305" target="_blank" rel="external">detail</a></p>
+<h1 id="Yet-Another-Resource-Negotiator"><a href="#Yet-Another-Resource-Negotiator" class="headerlink" title="Yet Another Resource Negotiator"></a><a href="https://www.ibm.com/developerworks/cn/opensource/os-cn-hadoop-yarn/" target="_blank" rel="external">Yet Another Resource Negotiator</a></h1><h2 id=""><a href="#" class="headerlink" title=""></a><img src="/2017/09/01/hadoop/yarn.png" alt="yarn"></h2><p><img src="/2017/09/01/hadoop/yarn1.png" alt="yarn1"></p>
+<p><a href="http://blog.csdn.net/suifeng3051/article/details/49486927" target="_blank" rel="external">Yarn</a>主要由以下几个组件组成：</p>
+<ol>
+<li>ResourceManager：Global（全局）的进程 </li>
+<li>NodeManager：运行在每个节点上的进程</li>
+<li>ApplicationMaster：Application-specific（应用级别）的进程</li>
+</ol>
+<ul>
+<li><em>Scheduler：是ResourceManager的一个组件</em></li>
+<li><em>Container：节点上一组CPU和内存资源</em></li>
+</ul>
+<p>Container是Yarn对计算机计算资源的抽象，它其实就是一组CPU和内存资源，所有的应用都会运行在Container中。ApplicationMaster是对运行在Yarn中某个应用的抽象，它其实就是某个类型应用的实例，ApplicationMaster是应用级别的，它的主要功能就是向ResourceManager（全局的）申请计算资源（Containers）并且和NodeManager交互来执行和监控具体的task。Scheduler是ResourceManager专门进行资源管理的一个组件，负责分配NodeManager上的Container资源，NodeManager也会不断发送自己Container使用情况给ResourceManager。</p>
+<ol>
+<li>YARN 允许使用 Message Passing Interface 等标准通信模式，同时执行各种不同的编程模型，包括图形处理、迭代式处理、机器学习和一般集群计算。</li>
+<li>NodeManager 管理一个 YARN 集群中的每个节点（Container）。NodeManager 提供针对集群中每个节点的服务，从监督对一个容器的终生管理到监视资源和跟踪节点健康</li>
+<li>ApplicationMaster 管理一个在 YARN 内运行的应用程序的每个实例。ApplicationMaster 负责协调来自 ResourceManager 的资源，并通过 NodeManager 监视容器的执行和资源使用（CPU、内存等的资源分配）。</li>
+</ol>
+
       
     </div>
     <footer class="article-footer">
